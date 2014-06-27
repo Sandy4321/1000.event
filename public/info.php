@@ -1,5 +1,5 @@
 <?php
 
-if($_GET['user'] == 'sasha') {
+if($_GET['user'] == 'smoren') {
 	phpinfo();
 }
