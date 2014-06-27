@@ -1,1 +1,21 @@
-index.phtml
+<?
+
+// Подключаем css в head
+#$this->headLink()->appendStylesheet('/css/bootstrap-editable.css');
+
+// Подключаем js в конец body
+#$this->inlineScript()->appendFile('/js/index.js');
+
+// Подключаем js в head
+#$this->headScript()->appendFile('/js/jquery.form.js');
+
+?>
+
+<p>Перевод строки: <?= $this->t('Россия')?></p>
+<p>Вывод переменной из контроллера: <?= $this->vData;?></p>
+<p><a href="<?= $this->url(array(), null, true);?>">Ссылка на главную</a></p>
+<p><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile'), null, true);?>">Ссылка на Модуль: user / Контроллер: profile / Действие: index</a></p>
+<p><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'view'), null, true);?>">Ссылка на Модуль: user / Контроллер: profile / Действие: view</a></p>
+
+<p>Ниже дамп переменной:</p>
+<? Sas_Debug::dump($this->vData);?>

@@ -24,6 +24,9 @@ class IndexController extends Sas_Controller_Action
 	 */
 	public function indexAction()
 	{
-		$Profile = new Models_Users(123);
+		//$Profile = new Models_Users(123);
+
+		$data = 'test: vData';
+		$this->view->assign('vData', $data);
 	}
 }
