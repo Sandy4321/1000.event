@@ -1,0 +1,4880 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1000.event\n"
+"POT-Creation-Date: 2014-06-24 21:25+0400\n"
+"PO-Revision-Date: 2014-06-27 13:43+0400\n"
+"Last-Translator: Alexander\n"
+"Language-Team: \n"
+"Language: en_EN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: t;translate\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPath-1: ../../lib/Sas\n"
+
+#: ../../lib/Sas/View/Helper/RollerPage.php:37
+#: ../../lib/Sas/View/Helper/RollerPageButton.php:58
+msgid "Назад"
+msgstr "Back"
+
+#: ../../lib/Sas/View/Helper/RollerPage.php:85
+#: ../../lib/Sas/View/Helper/RollerPageButton.php:122
+msgid "Далее"
+msgstr "Next"
+
+#: ../Modules/default/layouts/menu-mobile.phtml:3
+#: ../Modules/default/layouts/menu-site.phtml:11
+msgid "Главная"
+msgstr "Home"
+
+#: ../Modules/default/layouts/menu-mobile.phtml:4
+#: ../Modules/default/layouts/menu-site.phtml:12
+msgid "О нас"
+msgstr "About"
+
+#: ../Modules/default/layouts/menu-mobile.phtml:5
+#: ../Modules/default/layouts/menu-site.phtml:13
+msgid "Контакты"
+msgstr "Contacts"
+
+#: ../Modules/default/layouts/menu-mobile.phtml:7
+#: ../Modules/default/layouts/menu-site.phtml:15
+msgid "Регистрация"
+msgstr "Registration"
+
+#: ../Modules/default/layouts/menu-mobile.phtml:8
+#: ../Modules/default/layouts/menu-site.phtml:16
+#: ../Modules/default/views/scripts/index/index.phtml:11
+#: ../Modules/user/views/scripts/login/index.phtml:12
+msgid "Вход"
+msgstr "Enter"
+
+#: ../Modules/default/views/scripts/index/index.phtml:6
+#: ../Modules/user/views/scripts/login/index.phtml:7
+msgid "Логин"
+msgstr "Login"
+
+#: ../Modules/default/views/scripts/index/index.phtml:8
+#: ../Modules/user/views/scripts/login/index.phtml:9
+msgid "Пароль"
+msgstr "Password"
+
+#~ msgid "Саша"
+#~ msgstr "Sasha"
+
+#~ msgid "Недостаточно карат для списания."
+#~ msgstr "Not enough carats to make a payment."
+
+#~ msgid "Email адрес не может быть пустым"
+#~ msgstr "Email field can not be empty."
+
+#~ msgid "Email адрес не корректен"
+#~ msgstr "Email address is not valid."
+
+#~ msgid "Данный email зарегистрирован, но не подтвержден."
+#~ msgstr "This email is registered but not verified."
+
+#~ msgid "Регистрация на данный email запрещена."
+#~ msgstr "Registration of this email is forbidden."
+
+#~ msgid "Данный email уже использован для регистрации."
+#~ msgstr "This email address is already registered in the club."
+
+#~ msgid "Пароль не может быть менее 6 символов"
+#~ msgstr "The password should contain at least 6 symbols."
+
+#~ msgid "Промо код не верный."
+#~ msgstr "Promo-code is not valid."
+
+#~ msgid "Выберите Ваш пол."
+#~ msgstr "Select your sex."
+
+#~ msgid "Имя не может быть менее трёх букв"
+#~ msgstr "Name should contain at least 3 letters."
+
+#~ msgid "Имя не может быть более 50 букв"
+#~ msgstr "Name should contain no more than 50 letters."
+
+#~ msgid "Выбранный язык не доступен."
+#~ msgstr "Selected language is not available."
+
+#~ msgid "Дата рождения указана неверно."
+#~ msgstr "Date of birth is not valid."
+
+#~ msgid "Языковой параметр может содержать только значения yes или no."
+#~ msgstr "Language parameter can be only \"yes\" or \"no\"."
+
+#~ msgid "Фамилия не может быть менее трёх букв"
+#~ msgstr "Family name should contain at least 3 letters."
+
+#~ msgid "Фамилия не может быть более 50 букв"
+#~ msgstr "Family name should contain no more than 50 letters."
+
+#~ msgid "Ссылка на facebook не корректна."
+#~ msgstr "Link to Facebook profile is not valid."
+
+#~ msgid "Ссылка на linkedin не корректна."
+#~ msgstr "Link to LinkedIn profile is not valid."
+
+#~ msgid "Ссылка на вКонтакте не корректна."
+#~ msgstr "Link to Vk profile is not valid."
+
+#~ msgid "Допустимое значение для отметки рекуррентных платежей yes|no"
+#~ msgstr "Valid value for recurrent payments yes|no"
+
+#~ msgid ""
+#~ "Списание ранее выданных карат за активацию опции автоматического "
+#~ "продления Клубной карты."
+#~ msgstr ""
+#~ "Return of the bonus carats for selecting an option of \"Automatic renewal "
+#~ "of the membership card\"."
+
+#~ msgid ""
+#~ "Для отключения опции автоматического продления Клубной карты Ваш баланс "
+#~ "должен быть не менее %s карат."
+#~ msgstr ""
+#~ "To switch off an automatic renewal of the Membership card your balance "
+#~ "should be at least %s carats."
+
+#~ msgid "Текущий пароль введён не верно."
+#~ msgstr "Your password is incorrect."
+
+#~ msgid "Код подтверждения: "
+#~ msgstr "Verification code:"
+
+#~ msgid "Ошибка отправки СМС с кодом подтверждения номера телефона."
+#~ msgstr "Error occurred while we tried to text you a verification code."
+
+#~ msgid ""
+#~ "Код подтверждения телефонного номера отсутствует, так как не был "
+#~ "сгенерирован ранее"
+#~ msgstr ""
+#~ "Mobile phone verification code is absent, since it was not generated "
+#~ "before"
+
+#~ msgid ""
+#~ "В качестве кода подтверждения номера телефона принимаются только цифры."
+#~ msgstr "The phone verification code should contain only digits."
+
+#~ msgid "Код подтверждения номера телефона не верен."
+#~ msgstr "Verification code is not correct."
+
+#~ msgid "Вам добавлены 30 дней Клубной Карты за приглашение 3-х человек."
+#~ msgstr "You got 30 days to your Membership card for inviting 3 friends."
+
+#~ msgid "Колесо Фортуны"
+#~ msgstr "Wheel of Fortune"
+
+#~ msgid "Ваш статус опубликован в Топ-20"
+#~ msgstr "You status was published in Top-20"
+
+#~ msgid "Публикация поста в премиум ленте"
+#~ msgstr "Publish the post in the favourite contacts' news feed "
+
+#~ msgid "Оплата подарка"
+#~ msgstr "Payment for a gift"
+
+#~ msgid "Игра \"Колесо Фортуны\""
+#~ msgstr "Game \"Wheel of Fortune\""
+
+#~ msgid "Возврат бонусных карат"
+#~ msgstr "Bonus carat refund"
+
+#~ msgid "Возврат карат"
+#~ msgstr "Carat refund"
+
+#~ msgid "Отправка платного вопроса"
+#~ msgstr "Question sent"
+
+#~ msgid "Бонусные караты за приглашение нового пользователя."
+#~ msgstr "Bonus carats for inviting a new member of the Club."
+
+#~ msgid "Клубная карта"
+#~ msgstr "Membership card"
+
+#~ msgid "Пополнение счёта"
+#~ msgstr "Account top up"
+
+#~ msgid "История"
+#~ msgstr "History"
+
+#~ msgid "Общение"
+#~ msgstr "Dialogs"
+
+#~ msgid ""
+#~ "Только владелец Клубной карты может видеть полный номер телефона или "
+#~ "перейти в профиль."
+#~ msgstr ""
+#~ "Only a Membership card holder can view a full phone number or get a link "
+#~ "to the user's profile."
+
+#~ msgid "Лента"
+#~ msgstr "News Feed"
+
+#~ msgid "Флирт"
+#~ msgstr "Flirt"
+
+#~ msgid "Новости"
+#~ msgstr "News"
+
+#~ msgid "Встречи"
+#~ msgstr "Meetings"
+
+#~ msgid "Дни"
+#~ msgstr "Days"
+
+#~ msgid "Места"
+#~ msgstr "Places"
+
+#~ msgid "Афиша"
+#~ msgstr "Events"
+
+#~ msgid "Я иду"
+#~ msgstr "I'm going"
+
+#~ msgid "Мои"
+#~ msgstr "My"
+
+#~ msgid "Пригласить друзей"
+#~ msgstr "Invite friends"
+
+#~ msgid "Вы отправили предложение обменяться телефонными номерами."
+#~ msgstr "You sent the offer to exchange phone numbers."
+
+#~ msgid ""
+#~ "предлагает Вам обменяться телефонными номерами. Вы согласны на обмен?"
+#~ msgstr "offers to exchange phone numbers. Would you agree?"
+
+#~ msgid "Вы отказались обменяться телефонными номерами."
+#~ msgstr "You declined the request to exchange phone numbers."
+
+#~ msgid "Вам отказали в обмене телефонными номерами."
+#~ msgstr "Your request to exchange phone numbers was declined."
+
+#~ msgid "и"
+#~ msgstr "and"
+
+#~ msgid "Вы обменялись телефонными номерами."
+#~ msgstr "You exchanged phone numbers."
+
+#~ msgid ""
+#~ "Номер телефона пользователя Вы всегда можете посмотреть в его/ее профиле."
+#~ msgstr "You can see user's phone number in his/her profile."
+
+#~ msgid "я приглашаю Вас посетить вместе со мной мероприятие:"
+#~ msgstr "I invite you to join me to the following event:"
+
+#~ msgid "которое состоится"
+#~ msgstr "which will take place"
+
+#~ msgid "в"
+#~ msgstr "in"
+
+#~ msgid "Подробнее о мероприятии"
+#~ msgstr "More about the event."
+
+#~ msgid "Уведомления"
+#~ msgstr "Notifications"
+
+#~ msgid "Посты"
+#~ msgstr "Posts"
+
+#~ msgid "Профиль"
+#~ msgstr "Profile"
+
+#~ msgid "Редактировать"
+#~ msgstr "Edit"
+
+#~ msgid "Альбом"
+#~ msgstr "Album"
+
+#~ msgid "Счет"
+#~ msgstr "Account"
+
+#~ msgid "Пригласить"
+#~ msgstr "Invite"
+
+#~ msgid "Поиск"
+#~ msgstr "Search"
+
+#~ msgid "Романтика"
+#~ msgstr "Dating"
+
+#~ msgid "Бизнес"
+#~ msgstr "Networking"
+
+#~ msgid "Интересы"
+#~ msgstr "Hobbies"
+
+#~ msgid "Цели"
+#~ msgstr "Goals"
+
+#~ msgid "Избранное"
+#~ msgstr "Favourites"
+
+#~ msgid "Заблокированные"
+#~ msgstr "Blocked"
+
+#~ msgid "Пользователя не существует."
+#~ msgstr "This user does not exist."
+
+#~ msgid "Тип товара/услуги не соответствует допустимому."
+#~ msgstr "This type of service or goods is not allowed."
+
+#~ msgid "Количество товара/услуги не верное."
+#~ msgstr "Quantity of goods or service is not correct."
+
+#~ msgid "Ошибка создания счета для оплаты."
+#~ msgstr "Error occurred when generating a bill."
+
+#~ msgid "Нет ключа (key) для отметки рекуррентных платежей."
+#~ msgstr "No key to mark recurrent payments."
+
+#~ msgid ""
+#~ "Ключ (key) для рекуррентных платежей не верный. Допустимое значение yes|"
+#~ "no."
+#~ msgstr "The key for recurrent payments is not valid. Valid value is yes|no."
+
+#~ msgid "Для вступления в Клуб, Вы обязаны принять Правила пользования."
+#~ msgstr "To join the Club you have to accept User agreement."
+
+#~ msgid "Введённые пароли не совпадают"
+#~ msgstr "The passwords you entered are not the same"
+
+#~ msgid "Поздравляем! Вы успешно зарегистрированы."
+#~ msgstr "Congratulations! Your registration was successfully completed!"
+
+#~ msgid ""
+#~ "На Ваш email %s отправлено письмо, содержащее ссылку для активации "
+#~ "аккаунта."
+#~ msgstr "We sent you an email to %s with the link to activate your account."
+
+#~ msgid "Чтобы восстановить пароль введите Ваш email адрес."
+#~ msgstr "To recover your password, please, enter your email."
+
+#~ msgid ""
+#~ "На адрес электронной почты: %s в течении этого часа уже было отправлено "
+#~ "письмо с инструкцией для восстановления пароля. Пожалуйста, проверьте "
+#~ "Вашу почту на наличие письма от Клуба OnTheList."
+#~ msgstr ""
+#~ "We already sent the password recovery link to this email address %s "
+#~ "within the last hour. Please, check your email."
+
+#~ msgid ""
+#~ "Письмо с инструкцией для восстановления пароля было отправлено по адресу "
+#~ "%s. Высланная Вам ссылка для восстановления пароля действительна в "
+#~ "течение одного часа."
+#~ msgstr ""
+#~ "We sent the password recovery instructions to %s. Please, note that the "
+#~ "password recovery link is valid for one hour only."
+
+#~ msgid ""
+#~ "К сожалению, произошла ошибка при попытке отправить электронное письмо на "
+#~ "Ваш адрес: %s. Приносим Вам свои извинения за доставленные неудобства."
+#~ msgstr ""
+#~ "Unfortunately, due to a technical problem we cannot send a letter to %s "
+#~ "at this moment. Sorry for the inconvenience."
+
+#~ msgid ""
+#~ "Адрес эл. почты для Вашего аккаунта %s не был подтвержден. Мы попробовали "
+#~ "снова отправить Вам письмо с ссылкой для завершения регистрации, но, к "
+#~ "сожалению, вновь произошла ошибка при отправке письма. Пожалуйста, "
+#~ "обратитесь напрямую к нашему администратору."
+#~ msgstr ""
+#~ "The email %s for your account was not verified. We tried to send you "
+#~ "another email with the link to confirm your email but, unfortunately, we "
+#~ "could not deliver the email. Please, contact the administrator directly "
+#~ "at info@onthelist.ru"
+
+#~ msgid ""
+#~ "Указанный Вами адрес эл. почты уже зарегистрирован в системе, но "
+#~ "регистрация не была завершена. Сейчас мы отправили Вам новое письмо, "
+#~ "содержащее ссылку для завершения регистрации."
+#~ msgstr ""
+#~ "Your email %s was already registered in the system, but the registration "
+#~ "was not completed. We just sent you another letter with the link to "
+#~ "complete the registration."
+
+#~ msgid ""
+#~ "Ваш аккаунт заблокирован или удален. Если Вы удалили свой аккаунт по "
+#~ "ошибке, обратитесь к <a href=\"mailto:%s\">администрации Клуба</a> с "
+#~ "просьбой о восстановлении."
+#~ msgstr ""
+#~ "Your account was blocked or deleted. If you deleted your account by "
+#~ "mistake, please, contact <a href=\"%s\">the administration of the club</"
+#~ "a>."
+
+#~ msgid "Указанный Вами email: %s не найден."
+#~ msgstr "The email address: %s was not found."
+
+#~ msgid "Email адрес является обязательным."
+#~ msgstr "Email address is required."
+
+#~ msgid "Email адрес указан не корректно."
+#~ msgstr "Email address is not valid."
+
+#~ msgid "Имя отправителя является обязательным."
+#~ msgstr "Sender's name is required"
+
+#~ msgid "Текст письма не может быть пустым."
+#~ msgstr "The letter can not be empty."
+
+#~ msgid "Ваше письмо отправлено."
+#~ msgstr "Your letter was sent."
+
+#~ msgid "Сохранено"
+#~ msgstr "Saved"
+
+#~ msgid "Ошибка при сохранении города"
+#~ msgstr "Error: cannot save city to the database."
+
+#~ msgid "Ошибка при сохранении настроек уведомлений"
+#~ msgstr "Error: cannot save notification settings to the database."
+
+#~ msgid "Ошибка при сохранении"
+#~ msgstr "Error: cannot save to the database"
+
+#~ msgid "Ошибка при сохранении русского языка"
+#~ msgstr "Error: cannot save Russian language to the database."
+
+#~ msgid "Ошибка при сохранении английского языка"
+#~ msgstr "Error: cannot save English language to the database."
+
+#~ msgid "Ошибка при сохранении немецкого языка"
+#~ msgstr "Error: cannot save German language to the database."
+
+#~ msgid "Ошибка при сохранении французского языка"
+#~ msgstr "Error: cannot save French language to the database."
+
+#~ msgid "Ошибка при сохранении итальянского языка"
+#~ msgstr "Error: cannot save Italian language to the database."
+
+#~ msgid "Ошибка при сохранении испанского языка"
+#~ msgstr "Error: cannot save Spanish language to the database."
+
+#~ msgid "Ошибка при сохранении телефонного номера."
+#~ msgstr "Error: cannot save phone number to the database."
+
+#~ msgid "Номер телефона подтвержден."
+#~ msgstr "The phone number is verified."
+
+#~ msgid "Код подтверждения номера телефона не верный."
+#~ msgstr "Verification code is not correct."
+
+#~ msgid "Новый пароль не может быть менее 6 и более 32 символов."
+#~ msgstr "The password should contain between 6 and 32 symbols."
+
+#~ msgid "Пароль не совпадает с подтверждением."
+#~ msgstr "The password and password confirmation do not match."
+
+#~ msgid "Пароль изменен"
+#~ msgstr "The password was successfully changed"
+
+#~ msgid "Ошибка при сохранении нового пароля"
+#~ msgstr "Error: cannot save new password to the database."
+
+#~ msgid "Отсутствует параметр интересов (hobby) для добавления."
+#~ msgstr "No parameter (hobby) to add."
+
+#~ msgid "Список передаваемых интересов должен быть числом или массивом."
+#~ msgstr "The list of transmitting interests should be a number or a massive."
+
+#~ msgid "Интересы добавлены"
+#~ msgstr "Interests were added."
+
+#~ msgid "Интерес добавлен"
+#~ msgstr "Interest was added."
+
+#~ msgid "Отсутствует параметр интересов (hobby) для удаления."
+#~ msgstr "No parameter (hobby) to delete"
+
+#~ msgid "Удаление выполнено."
+#~ msgstr "Deletion completed."
+
+#~ msgid "Отсутствует параметр цели (target) для добавления."
+#~ msgstr "No parameter (target) to add."
+
+#~ msgid "Список передаваемых целей должен быть числом или массивом."
+#~ msgstr "The list of transmitting goals should be a number or a massive."
+
+#~ msgid "Цели добавлены"
+#~ msgstr "Goals were added."
+
+#~ msgid "Цель добавлена"
+#~ msgstr "Goal was added."
+
+#~ msgid "Отсутствует параметр цели (target) для удаления."
+#~ msgstr "No parameter (target) to delete."
+
+#~ msgid "Отсутствует параметр проф-интереса (prof_interest) для добавления."
+#~ msgstr "No parameter (proа interests) to add."
+
+#~ msgid "Список передаваемых проф-интересов должен быть числом или массивом."
+#~ msgstr ""
+#~ "The list of transmitting prof interests should be a number or a massive."
+
+#~ msgid "Профессиональные интересы добавлены"
+#~ msgstr "Professional interests were added."
+
+#~ msgid "Профессиональный интерес добавлен"
+#~ msgstr "Professional interest was added."
+
+#~ msgid ""
+#~ "Отсутствует параметр профессионального интереса (prof_interest) для "
+#~ "удаления."
+#~ msgstr "No parameter (prof interests) to delete."
+
+#~ msgid "Отсутствует параметр текста статуса (status_text) для добавления."
+#~ msgstr "No parameter (status) to add."
+
+#~ msgid "Текст статуса не может быть пустым."
+#~ msgstr "Status cannot be empty."
+
+#~ msgid ""
+#~ "Код подтверждения сгенерирован и отправлен на Ваш телефонный номер по СМС."
+#~ msgstr "Verification code was sent to your phone in a text message."
+
+#~ msgid "Ваша заявка на вступление в Клуб отправлена Администратору."
+#~ msgstr "Your application was sent to the Administrator."
+
+#~ msgid "Аватарка профиля изменена."
+#~ msgstr "You profile photo was changed."
+
+#~ msgid "При редактировании аватарки произошла ошибка."
+#~ msgstr "Error occurred when you tried to edit your profile picture."
+
+#~ msgid "Ошибка при повороте аватарки."
+#~ msgstr "Avatar rotation error."
+
+#~ msgid "Аватарка профиля загружена."
+#~ msgstr "Profile photo was uploaded."
+
+#~ msgid "При загрузке фотографии произошла ошибка."
+#~ msgstr "Error occurred when you tried to upload a photo to the album."
+
+#~ msgid ""
+#~ "Фотография не соответствует формату или превышен максимальный размер "
+#~ "снимка (10 Мб)."
+#~ msgstr ""
+#~ "The format of the photo is not supported or it's size exceeds the limit "
+#~ "(10 Mb)."
+
+#~ msgid "Файл с резюме отсутствует."
+#~ msgstr "CV file is absent."
+
+#~ msgid "Файл с резюме содержит ошибки."
+#~ msgstr "CV file contains errors."
+
+#~ msgid "Файл с резюме превышает допустимый размер для загрузки."
+#~ msgstr "The size of the CV file exceeds the maximum limit."
+
+#~ msgid "Ошибка сохранения резюме"
+#~ msgstr "Error: cannot save CV to the database."
+
+#~ msgid "Партнер не определен."
+#~ msgstr "Partner is not defined."
+
+#~ msgid "Выберите категорию отзыва."
+#~ msgstr "Select your comment category."
+
+#~ msgid ""
+#~ "Ваш отзыв отправлен администрации и будет рассмотрен в ближайшее время. "
+#~ "Спасибо за то, что помогаете работе Клуба!"
+#~ msgstr ""
+#~ "Your feedback was sent to the administrator and will be reviewed shortly. "
+#~ "Thank you for helping to make the Club better!"
+
+#~ msgid "Ошибка отправки отзыва."
+#~ msgstr "Error: cannot send feedback."
+
+#~ msgid "Мероприятие не определено."
+#~ msgstr "The event is not defined."
+
+#~ msgid "Приглашение на мероприятие отправлено."
+#~ msgstr "You invitation to the event has been sent."
+
+#~ msgid ""
+#~ "Во время формирования платежа произошла ошибка, попробуйте совершить "
+#~ "оплату позднее."
+#~ msgstr ""
+#~ "An error occurred during the payment process. Please, try to make a "
+#~ "payment later."
+
+#~ msgid "OnTheList.ru - приглашение в Клуб"
+#~ msgstr "OnTheList.ru - invitation to the Club"
+
+#~ msgid "Здравствуйте!"
+#~ msgstr "Hello!"
+
+#~ msgid "%s приглашает Вас в Клуб OnTheList www.onthelist.ru"
+#~ msgstr "%s invites you to OnTheList Private Club www.onthelist.ru"
+
+#~ msgid "Чтобы зарегистрироваться в Клубе пройдите по ссылке:"
+#~ msgstr "To register, please, follow the link:"
+
+#~ msgid "Добро пожаловать в Клуб!"
+#~ msgstr "Welcome to the Club!"
+
+#~ msgid "С уважением,"
+#~ msgstr "Kind regards,"
+
+#~ msgid "Администрация Клуба OnTheList"
+#~ msgstr "OnTheList Administration"
+
+#~ msgid "Внимание: Это письмо не требует ответа."
+#~ msgstr "Attention: Do not reply to this letter."
+
+#~ msgid ""
+#~ "Почтовый ящик, с которого вы получили это письмо, не является контактным."
+#~ msgstr "You can't contact us by replying to this email."
+
+#~ msgid ""
+#~ "После регистрации Вы сразу получите подарок от нашего партнёра, компании "
+#~ "Uber - 2 бесплатные поездки на Мерседесе S-класса с лимитом 1 000 руб. "
+#~ "каждая."
+#~ msgstr ""
+#~ "After the registration you will get a present from our partner - Uber: 2 "
+#~ "free rides on Mercedes S-class with a limit of 1000 rubles for each ride."
+
+#~ msgid "Ваши гости"
+#~ msgstr "Viewed your profile"
+
+#~ msgid "Новые члены Клуба"
+#~ msgstr "New Club members"
+
+#~ msgid "Мои события"
+#~ msgstr "My events"
+
+#~ msgid "Нравятся Ваши фотографии"
+#~ msgstr "Liked your photo"
+
+#~ msgid "Добавили Вас в избранное"
+#~ msgstr "Added you to favourite contacts"
+
+#~ msgid "Именинники сегодня"
+#~ msgstr "Celebrating birthdays today"
+
+#~ msgid "Участники"
+#~ msgstr "Participants"
+
+#~ msgid "Вам нравится"
+#~ msgstr "You liked"
+
+#~ msgid ""
+#~ "Когда Вы лайкнули мероприятие произошла ошибка. Пожалуйста обратитесь к "
+#~ "администратору."
+#~ msgstr ""
+#~ "Error occurred when you liked the event. Please, inform the Administrator."
+
+#~ msgid ""
+#~ "Когда Вы лайкнули комментарий мероприятия произошла ошибка. Пожалуйста "
+#~ "обратитесь к администратору."
+#~ msgstr ""
+#~ "Error occurred when you liked the comment for the event. Please, inform "
+#~ "the administrator."
+
+#~ msgid "Мероприятие удалено."
+#~ msgstr "Event was deleted."
+
+#~ msgid "Вы не можете удалить чужое мероприятие"
+#~ msgstr "You cannot delete someone else's event"
+
+#~ msgid "При удалении мероприятия произошла ошибка."
+#~ msgstr "Error occurred when you tried to delete the event."
+
+#~ msgid "Ошибка при установке отметки iGo"
+#~ msgstr "Error occurred when you tried to join the event."
+
+#~ msgid "Ошибка при установке отметки CheckIn"
+#~ msgstr "CheckIn error"
+
+#~ msgid "Запрос на обмен телефонными номерами отправлен"
+#~ msgstr "Phone exchange was completed"
+
+#~ msgid ""
+#~ "Во время отправки запроса на обмен телефонами произошла ошибка. "
+#~ "Пожалуйста обратитесь к администратору."
+#~ msgstr ""
+#~ "Error: we can't send your request to exchange phone numbers. Please, "
+#~ "inform the administrator."
+
+#~ msgid "Вы уже отправляли запрос на обмен телефонными номерами."
+#~ msgstr "You already sent a request to exchange phone numbers."
+
+#~ msgid ""
+#~ "Чтобы меняться телефонами на сайте, Вы должны подтвердить Ваш номер "
+#~ "телефона в <a href=\"%s\">настройках</a> своего профиля."
+#~ msgstr ""
+#~ "To exchange phone numbers with other members, you need to confirm your "
+#~ "phone number in <a href=\"%s\">settings</a> of your account."
+
+#~ msgid "Профиль пользователя не найден."
+#~ msgstr "User's profile is not found."
+
+#~ msgid ""
+#~ "Чтобы обменяться номерами телефонов, Вы должны подтвердить Ваш номер "
+#~ "телефона в <a href=\"%s\">настройках</a> своего профиля."
+#~ msgstr ""
+#~ "To exchange phone numbers with other members, you need to confirm your "
+#~ "phone number in <a href=\"%s\">settings</a> of your account."
+
+#~ msgid "Обмен телефонными номерами выполнен."
+#~ msgstr "Phone number exchange was completed."
+
+#~ msgid ""
+#~ "Обмен телефонными номерами выполнен. Полный номер телефона Вы сможете "
+#~ "увидеть в профиле пользователя только при наличии <a href=\"javascript:"
+#~ "void(0);\" onclick=\"goBuyCard('Просмотр номера телефона доступен только "
+#~ "владельцам Клубных карт.')\">Клубной карты</a>."
+#~ msgstr ""
+#~ "Phone number exchange was completed. You can see the phone number in the "
+#~ "user's profile if you have <a href=\"javascript:void(0);\" onclick="
+#~ "\"goBuyCard('To view Members' phone numbers you need to have a membership "
+#~ "card.')\">a Membership card</a>."
+
+#~ msgid ""
+#~ "При обмене телефонами произошла ошибка. Пожалуйста обратитесь к "
+#~ "администратору."
+#~ msgstr ""
+#~ "An error occurred during phone exchange. Please, inform the administrator."
+
+#~ msgid "Вы уже отказались обменяться телефонными номерами ранее."
+#~ msgstr "You declined the request to exchange phone numbers."
+
+#~ msgid "При отказе от обмена телефонными номерами произошла ошибка."
+#~ msgstr ""
+#~ "Error occurred when you declined the request to exchange phone numbers."
+
+#~ msgid "Вы уже согласились обменяться телефонными номерами ранее."
+#~ msgstr "You declined the request to exchange phone numbers."
+
+#~ msgid "Поздравляем, у Вас совпадения симпатий в игре \"Флирт\""
+#~ msgstr "Congratulations, you have a match in the game \"Flirt\"!"
+
+#~ msgid "Телефоны"
+#~ msgstr "Phones"
+
+#~ msgid "Желаем Вам удачного свидания!"
+#~ msgstr "Have a wonderful date!"
+
+#~ msgid "Совпадения в игре"
+#~ msgstr "Your matches"
+
+#~ msgid "Сообщение удалено."
+#~ msgstr "Message was deleted."
+
+#~ msgid "Ошибка удаления сообщения."
+#~ msgstr "Error occurred when you tried to delete the message."
+
+#~ msgid "Переписка удалена."
+#~ msgstr "Dialog was deleted."
+
+#~ msgid "Сообщение отправлено."
+#~ msgstr "Message was sent."
+
+#~ msgid "Ошибка отправки сообщения."
+#~ msgstr "Error occurred when you tried to send the message."
+
+#~ msgid "Ошибка записи лайка фотографии"
+#~ msgstr "Error occurred when you liked the photo."
+
+#~ msgid "Ошибка записи лайка статуса"
+#~ msgstr "Error occurred when you liked the post."
+
+#~ msgid "Ошибка записи лайка поста"
+#~ msgstr "Error occurred when you liked the post."
+
+#~ msgid "Ошибка записи лайка комментария поста"
+#~ msgstr "Like error "
+
+#~ msgid "Ваш пост понравился"
+#~ msgstr "Your post was liked"
+
+#~ msgid "Ваш комментарий понравился"
+#~ msgstr "Your comment was liked"
+
+#~ msgid "Пользователь добавлен в избранное."
+#~ msgstr "A user was added to your Favourites."
+
+#~ msgid "Ошибка добавления в избранное."
+#~ msgstr "Error occurred when you add user to Favourites."
+
+#~ msgid "Уведомление о добавлении в избранное отправлено пользователю."
+#~ msgstr "A notification was sent to the Club member."
+
+#~ msgid ""
+#~ "При отправке уведомления пользователю о добавлении в избранное произошла "
+#~ "ошибка."
+#~ msgstr ""
+#~ "Error occurred when we tried to send a notification to the Club member."
+
+#~ msgid "Пользователь уже был добавлен в Избранные контакты ранее."
+#~ msgstr "The Club member was added to your Favourites already."
+
+#~ msgid "Ошибка добавления в Избранное."
+#~ msgstr "Error occurred when you tried to add the Club member to Favourites."
+
+#~ msgid "Пользователь был удален из Вашего Избранного."
+#~ msgstr "The Club member was removed from your Favourites."
+
+#~ msgid "При удалении пользователя из Избранных контактов произошла ошибка."
+#~ msgstr ""
+#~ "Error occurred when you tried to delete the Club member from Favourites."
+
+#~ msgid "Пользователь заблокирован."
+#~ msgstr "A user was blocked."
+
+#~ msgid "Ошибка удаления пользователя из списка заблокированных."
+#~ msgstr ""
+#~ "Error occurred when you tried to delete the Club member from Block list."
+
+#~ msgid "Пользователь удалён из Вашего списка заблокированных."
+#~ msgstr "A user was removed from the Block list."
+
+#~ msgid "Ошибка удаления из списка заблокированных."
+#~ msgstr "Error occurred when you tried to unblock the Club member."
+
+#~ msgid "Количество фотографий в галерее не может превышать 9 шт."
+#~ msgstr "The maximum number of pictures in the album is 9"
+
+#~ msgid "При попытке загрузки фотографии в альбом произошла ошибка."
+#~ msgstr "Error occurred when you tried to upload a photo to the album."
+
+#~ msgid ""
+#~ "Фотография не соответствует формату или превышен максимально допустимый "
+#~ "размер снимка (10 Мб.)."
+#~ msgstr ""
+#~ "The format of the photo is not supported or it's size exceeds the limit "
+#~ "(10 Mb)."
+
+#~ msgid "Фотография удалена."
+#~ msgstr "Photo was deleted."
+
+#~ msgid "При попытке удалить фотографию произошла ошибка."
+#~ msgstr "Error occurred when you tried to delete the photo."
+
+#~ msgid "Не достаточно данных для удаления фотографии."
+#~ msgstr "Not enough data to delete the photo."
+
+#~ msgid "Ошибка сохранения подписи к фотографии."
+#~ msgstr "Error occurred when you tried to add a comment to the photo."
+
+#~ msgid "Для сохранения подписи к фотографии недостаточно параметров."
+#~ msgstr "Not enough parameters to add a comment to the photo."
+
+#~ msgid "Фотография профиля"
+#~ msgstr "Profile photo"
+
+#~ msgid "Ваша фотография понравилась"
+#~ msgstr "People who like your photo"
+
+#~ msgid "Профиль удален."
+#~ msgstr "Profile was deleted."
+
+#~ msgid "Как вступить"
+#~ msgstr "How to join"
+
+#~ msgid "Члены клуба"
+#~ msgstr "Club members"
+
+#~ msgid "Конфиденциальность"
+#~ msgstr "Confidentiality"
+
+#~ msgid "Правила"
+#~ msgstr "Rules"
+
+#~ msgid "Вступить в клуб"
+#~ msgstr "Join the club"
+
+#~ msgid "Пресса"
+#~ msgstr "Media"
+
+#~ msgid "О нас говорят"
+#~ msgstr "Press about us"
+
+#~ msgid "Партнеры"
+#~ msgstr "Partners"
+
+#~ msgid "Привилегии"
+#~ msgstr "Privileges"
+
+#~ msgid "Клуб для успешных людей"
+#~ msgstr "Club for successful people"
+
+#~ msgid "Войти через Facebook"
+#~ msgstr "Enter via Facebook"
+
+#~ msgid "Запомнить меня"
+#~ msgstr "Remember me"
+
+#~ msgid "Забыли пароль?"
+#~ msgstr "Forgot your password?"
+
+#~ msgid "СВОИ ЛЮДИ"
+#~ msgstr "PEOPLE FROM YOUR CIRCLE"
+
+#~ msgid ""
+#~ "Попасть в Клуб можно только после прохождения скрининга администрацией "
+#~ "Клуба. Решение принимается на основании предоставляемых кандидатом "
+#~ "профилей социальных сетей: вКонтакте, Facebook, LinkedIn. В некоторых "
+#~ "случаях администрация клуба просит предоставить резюме кандидата."
+#~ msgstr ""
+#~ "To join the Club you need to submit an application, which will be "
+#~ "reviewed by the Administrator of the Club. The decision is made based on "
+#~ "public information from social networks: VK, Facebook, LinkedIn. In some "
+#~ "cases the administration of the Club asks for the applicant's CV."
+
+#~ msgid ""
+#~ "Приглашение, полученное от текущего члена Клуба или организации-партнера, "
+#~ "значительно упрощает процедуру скрининга."
+#~ msgstr ""
+#~ "An invitation, received from a current member of the Club or our "
+#~ "corporate partner, simplifies the application screening. "
+
+#~ msgid "Романтические знакомства"
+#~ msgstr "Dating"
+
+#~ msgid "Бизнес контакты"
+#~ msgstr "Business contacts"
+
+#~ msgid "Общение по интересам"
+#~ msgstr "People with same interests"
+
+#~ msgid "Новые друзья"
+#~ msgstr "New friends"
+
+#~ msgid "МЕРОПРИЯТИЯ"
+#~ msgstr "EVENTS"
+
+#~ msgid ""
+#~ "Назначить деловую встречу, пригласить на романтическое свидание или "
+#~ "присоединиться к участию в клубном мероприятии можно всего за несколько "
+#~ "кликов без предварительной переписки. Для этого достаточно лишь выбрать "
+#~ "нужного Вам человека или мероприятие, и все остальное за Вас сделает "
+#~ "система."
+#~ msgstr ""
+#~ "In a few clicks you can set up a business meeting, a romantic date or "
+#~ "join one of the events of the Club. You just need to select an "
+#~ "interesting person or an event - the system will take care of the rest."
+
+#~ msgid "ВЕЧЕРИНКИ"
+#~ msgstr "PARTIES"
+
+#~ msgid "СВИДАНИЯ"
+#~ msgstr "DATES"
+
+#~ msgid "АФИША"
+#~ msgstr "EVENTS"
+
+#~ msgid "ПРИВИЛЕГИИ"
+#~ msgstr "PRIVILEGES"
+
+#~ msgid "Бесплатные поездки на <nobr>мерседесах S-класса</nobr> и Майбах"
+#~ msgstr "Complimentary Uber rides in S-class and Maybach"
+
+#~ msgid ""
+#~ "Партнер Клуба, компания Uber, дарит каждому члену клуба 2 бесплатные "
+#~ "поездки с персональным водителем  на мерседесе S-класса и Майбах. "
+#~ "Передвигайтесь по миру с удовольствием и роскошью!"
+#~ msgstr ""
+#~ "Our partner, Uber, presents 2 free rides in Moscow to every member of the "
+#~ "Club. Travel with Uber and OnTheList in luxury and style!"
+
+#~ msgid "МЕГАФОН"
+#~ msgstr "MEGAFON"
+
+#~ msgid "Безлимитный тариф от Мегафон по специальной цене"
+#~ msgstr "Unlimited mobile tariff by Megafon for a great price"
+
+#~ msgid ""
+#~ "Оператор Мегафон открыл для членов клуба специальный тариф за 850 рублей "
+#~ "в месяц, который включает 4000 минут, 200 смс и безлимитный интернет, а "
+#~ "также скидку 50% на международный роуминг. Общайтесь больше, платите "
+#~ "меньше!"
+#~ msgstr ""
+#~ "Megafon launched a special mobile tariff for all OnTheList Club members. "
+#~ "For 850 rubles per month you get 4000 minutes, 200 text messages, "
+#~ "unlimited mobile internet, and 50% discount on international roaming. "
+#~ "Talk more, pay less!"
+
+#~ msgid "Известные люди о нас"
+#~ msgstr "Well-known people say"
+
+#~ msgid "Партнёры"
+#~ msgstr "Partners"
+
+#~ msgid "Рестораны"
+#~ msgstr "Restaurants"
+
+#~ msgid "Информационные партнёры"
+#~ msgstr "Media partners"
+
+#~ msgid "Подробнее о привилегии"
+#~ msgstr "More about the privilege"
+
+#~ msgid "Привилегия доступна только Членам клуба."
+#~ msgstr "The privilege is available for Club members only."
+
+#~ msgid "Привилегия доступна только владельцам Клубных карт."
+#~ msgstr "You need a Membership card to access the privilege."
+
+#~ msgid "Нет привилегий"
+#~ msgstr "No privileges"
+
+#~ msgid "Выход"
+#~ msgstr "Quit"
+
+#~ msgid "Телефонная книга"
+#~ msgstr "Phone book"
+
+#~ msgid "Настройки"
+#~ msgstr "Settings"
+
+#~ msgid "История операций"
+#~ msgstr "Past transactions"
+
+#~ msgid "Дата"
+#~ msgstr "Date"
+
+#~ msgid "Название операции"
+#~ msgstr "Transaction name"
+
+#~ msgid "Значение"
+#~ msgstr "Value"
+
+#~ msgid ""
+#~ "Вы еще ни разу не приобретали клубную карту - попробуйте! Мы уверены, что "
+#~ "Вам понравится пользоваться сайтом без ограничений."
+#~ msgstr ""
+#~ "You have never had a membership card - try it! We are sure that you will "
+#~ "love to use all functionality of the website without limits."
+
+#~ msgid "Ваша Клубная карта закончилась:"
+#~ msgstr "Your Membership card expired:"
+
+#~ msgid "Вам принадлежит Клубная Карта сроком действия до"
+#~ msgstr "You have a Membership card valid until:"
+
+#~ msgid ""
+#~ "Вы можете приобрести Клубную карту и караты с помощью телефона, "
+#~ "банковской карты, электронного кошелька или через терминал."
+#~ msgstr ""
+#~ "You can purchase a Membership card and carats using your mobile phone, "
+#~ "debit or credit card, electronic money, or a cash terminal."
+
+#~ msgid "Клубную Карту могут приобрести только действующие участники Клуба"
+#~ msgstr "Membership card can be purchased by approved Club members only."
+
+#~ msgid "Пополнить Клубную Карту"
+#~ msgstr "Top up your Membership card"
+
+#~ msgid ""
+#~ "Вы можете получить Клубную Карту бесплатно, приглашая в Клуб OnTheList "
+#~ "своих друзей, коллег и деловых партнеров."
+#~ msgstr ""
+#~ "You can receive a Membership card for free by inviting your friends, "
+#~ "colleagues and business partners  to OnTheList."
+
+#~ msgid ""
+#~ "За каждого приглашенного человека, который пройдет скрининг и подтвердит "
+#~ "свои контактные данные, к  Вашей Клубной Карте добавиться %s дней "
+#~ "абонентского доступа."
+#~ msgstr ""
+#~ "For every invited person, who passes screening and confirms his/her phone "
+#~ "number, your will get %s carats."
+
+#~ msgid "OnTheList"
+#~ msgstr "OnTheList"
+
+#~ msgid "Срок действия"
+#~ msgstr "Expiration date"
+
+#~ msgid "Цена за 1 месяц"
+#~ msgstr "Price for 1 month"
+
+#~ msgid "Сумма в рублях"
+#~ msgstr "Amount in rubles"
+
+#~ msgid "Ваш выбор"
+#~ msgstr "Please select"
+
+#~ msgid "Оплатить"
+#~ msgstr "Pay"
+
+#~ msgid "Пожалуйста, подождите, идет обработка запроса."
+#~ msgstr "Please wait, we are dealing with your request."
+
+#~ msgid "Караты"
+#~ msgstr "Carats"
+
+#~ msgid "Цена за 1 карат"
+#~ msgstr "Price for 1 carat"
+
+#~ msgid "Введите ответ"
+#~ msgstr "Enter your answer"
+
+#~ msgid "Ответить"
+#~ msgstr "Answer"
+
+#~ msgid "Ответ"
+#~ msgstr "Answer"
+
+#~ msgid "Вопросы отправлены"
+#~ msgstr "Questions were sent"
+
+#~ msgid "Ответ отправлен"
+#~ msgstr "Answer was sent"
+
+#~ msgid "Ваш ответ прочитан"
+#~ msgstr "Your answer was read"
+
+#~ msgid "Ваши вопросы отправлены"
+#~ msgstr "Your questions were sent"
+
+#~ msgid "Ваши вопросы прочитаны"
+#~ msgstr "Your questions were read"
+
+#~ msgid "Задать вопрос"
+#~ msgstr "Ask a question"
+
+#~ msgid "Пригласить на свидание"
+#~ msgstr "Invite for a date"
+
+#~ msgid "Добавить в фавориты"
+#~ msgstr "Add to Favourites"
+
+#~ msgid "В чёрный список"
+#~ msgstr "Add to Blacklist"
+
+#~ msgid "Работа"
+#~ msgstr "Job title"
+
+#~ msgid "Образование"
+#~ msgstr "Education"
+
+#~ msgid "Увлечения"
+#~ msgstr "Interests"
+
+#~ msgid "Любимые места"
+#~ msgstr "Favourite places"
+
+#~ msgid "Показать вопросы"
+#~ msgstr "Show questions"
+
+#~ msgid ""
+#~ "Пожалуйста, не публикуйте в ответах на вопросы свои контактные данные, а "
+#~ "также ссылки на свои страницы в социальных сетях."
+#~ msgstr ""
+#~ "Please, do not provide your contact information, as well as links to your "
+#~ "profiles in social networks."
+
+#~ msgid "Отмена"
+#~ msgstr "Cancel"
+
+#~ msgid "Удалить переписку"
+#~ msgstr "Delete all messages"
+
+#~ msgid "У Вас нет сообщений"
+#~ msgstr "You do not have any messages"
+
+#~ msgid "Вопрос"
+#~ msgstr "Question"
+
+#~ msgid "Dashboard"
+#~ msgstr "Dashboard"
+
+#~ msgid "Премиум лента и посты избранных контактов"
+#~ msgstr "Premium posts and posts of your favourite contacts"
+
+#~ msgid "Посты членов Клуба"
+#~ msgstr "Club members' posts"
+
+#~ msgid "Ссылка на профиль доступна только владельцем Клубных карт"
+#~ msgstr "To get a link to a profile you need a Membership card"
+
+#~ msgid "Подробнее"
+#~ msgstr "More"
+
+#~ msgid "Лента событий"
+#~ msgstr "Headlines"
+
+#~ msgid "Нравится"
+#~ msgstr "Like"
+
+#~ msgid "Показать еще..."
+#~ msgstr "Show more..."
+
+#~ msgid "Фотографии дня:"
+#~ msgstr "Photos of the day:"
+
+#~ msgid "Состоявшиеся контакты"
+#~ msgstr "Your contacts"
+
+#~ msgid "У Вас нет назначенных встреч и новых контактов"
+#~ msgstr "You do not have scheduled dates, meetings or new contacts"
+
+#~ msgid "Последние события"
+#~ msgstr "Last events"
+
+#~ msgid "Приглашает вас на свидание."
+#~ msgstr "Invites you for a date."
+
+#~ msgid "Телефон"
+#~ msgstr "Phone"
+
+#~ msgid "Место"
+#~ msgstr "Place"
+
+#~ msgid "Время"
+#~ msgstr "Time"
+
+#~ msgid "У Вас было назначено свидание на"
+#~ msgstr "You had a date scheduled on"
+
+#~ msgid "Свидание состоялось?"
+#~ msgstr "Did you have a date?"
+
+#~ msgid "Да"
+#~ msgstr "Yes"
+
+#~ msgid "Нет"
+#~ msgstr "No"
+
+#~ msgid "Отлично!"
+#~ msgstr "Great!"
+
+#~ msgid ""
+#~ "Пожалуйста ответьте на несколько вопросов, это поможет нам предоставлять "
+#~ "Вам более качественный сервис"
+#~ msgstr "Please, answer a few questions. It will help improve our service."
+
+#~ msgid "Встреча прошла в назначенном месте?"
+#~ msgstr "Did you have a date in the place agreed earlier?"
+
+#~ msgid "Очень жаль"
+#~ msgstr "We are sorry"
+
+#~ msgid "Пожалуйста, выберите причину, по которой свидание не состоялось"
+#~ msgstr "Please, choose the reason why the date did not happen"
+
+#~ msgid "Свидание было перенесено"
+#~ msgstr "The date was rescheduled"
+
+#~ msgid "Свидание было отменено"
+#~ msgstr "We cancelled the date"
+
+#~ msgid "Она не пришла"
+#~ msgstr "She did not come"
+
+#~ msgid "Он не пришел"
+#~ msgstr "He did not come"
+
+#~ msgid "Я не пришел"
+#~ msgstr "I did not come"
+
+#~ msgid "Я не пришла"
+#~ msgstr "I did not come"
+
+#~ msgid "Готово"
+#~ msgstr "ОК"
+
+#~ msgid "Оцените место свидания"
+#~ msgstr "Please rate the place of the date"
+
+#~ msgid "Ваше мнение о месте свидания"
+#~ msgstr "Your opinion about the place of the date"
+
+#~ msgid "(опционально)"
+#~ msgstr "(optional)"
+
+#~ msgid ""
+#~ "Ваши оценки являются конфиденциальной информацией и не буду переданы "
+#~ "другому лицу"
+#~ msgstr ""
+#~ "Your feedback is strictly confidential and will NOT be shared with anyone"
+
+#~ msgid "На сколько бы Вы оценили внешние данные?"
+#~ msgstr "How good looking was your date?"
+
+#~ msgid "Насколько интересно Вам было общаться?"
+#~ msgstr "How interesting was talking to this person?"
+
+#~ msgid "Выберите"
+#~ msgstr "Select"
+
+#~ msgid "Очень интересно"
+#~ msgstr "Very interesting"
+
+#~ msgid "Интересно"
+#~ msgstr "Interesting"
+
+#~ msgid "Средне"
+#~ msgstr "Average"
+
+#~ msgid "Скучно"
+#~ msgstr "Boring"
+
+#~ msgid "Оцените манеры поведения"
+#~ msgstr "How would you evaluate manners and behavior?"
+
+#~ msgid "Очень хорошо"
+#~ msgstr "Very good"
+
+#~ msgid "Хорошо"
+#~ msgstr "Good"
+
+#~ msgid "Плохо"
+#~ msgstr "Bad"
+
+#~ msgid "Вы хотели бы встретиться с этим человеком еще раз?"
+#~ msgstr "Do you want to meet with this person again?"
+
+#~ msgid "Ваше мнение о свидании в целом"
+#~ msgstr "Your overall opinion about the date"
+
+#~ msgid "Где состоялась встреча?"
+#~ msgstr "Where was your date?"
+
+#~ msgid "Название места свидания"
+#~ msgstr "The name of the place"
+
+#~ msgid "Ближайшее мероприятие"
+#~ msgstr "Coming event"
+
+#~ msgid "Я играю"
+#~ msgstr "I want to play"
+
+#~ msgid "Я не играю"
+#~ msgstr "I do not want to play"
+
+#~ msgid "Сохранить"
+#~ msgstr "Save"
+
+#~ msgid "Ваши гости:"
+#~ msgstr "Visited your profile:"
+
+#~ msgid "Новые члены Клуба:"
+#~ msgstr "New Club members:"
+
+#~ msgid "Нравятся Ваши фотографии:"
+#~ msgstr "Liked your photo:"
+
+#~ msgid "Добавили Вас в избранное:"
+#~ msgstr "Added you to Favourites"
+
+#~ msgid "Именинники сегодня:"
+#~ msgstr "Celebrating birthdays today:"
+
+#~ msgid "Доступно только для владельцев <a href=\"%s\">Клубных карт</a>"
+#~ msgstr ""
+#~ "This option is available to the <a href=\"%s\">Membership card holders</"
+#~ "a> only"
+
+#~ msgid "Все новости"
+#~ msgstr "All news"
+
+#~ msgid "Оповещения"
+#~ msgstr "Notifications"
+
+#~ msgid "У Вас нет новых оповещений"
+#~ msgstr "You do not have new notifications"
+
+#~ msgid "Свежая 20-ка"
+#~ msgstr "Fresh 20"
+
+#~ msgid "Новый статус"
+#~ msgstr "New status"
+
+#~ msgid "Поделитесь планами или настроением"
+#~ msgstr "Share your plans, thoughts or feelings"
+
+#~ msgid "Опубликовать"
+#~ msgstr "Publish"
+
+#~ msgid "Удалить"
+#~ msgstr "Delete"
+
+#~ msgid "Предыдущая публикация"
+#~ msgstr "Last publication"
+
+#~ msgid "Топ-20"
+#~ msgstr "Top-20"
+
+#~ msgid "Пн"
+#~ msgstr "Mo"
+
+#~ msgid "Вт"
+#~ msgstr "Tu"
+
+#~ msgid "Ср"
+#~ msgstr "We"
+
+#~ msgid "Чт"
+#~ msgstr "Th"
+
+#~ msgid "Пт"
+#~ msgstr "Fr"
+
+#~ msgid "Сб"
+#~ msgstr "Sa"
+
+#~ msgid "Вс"
+#~ msgstr "Su"
+
+#~ msgid "Назначенные свидания"
+#~ msgstr "Invitation for a date"
+
+#~ msgid "Обмен телефонами"
+#~ msgstr "Phone exchange"
+
+#~ msgid "Обмен номерами телефонов доступен только для владельцев Клубных карт"
+#~ msgstr "You need to have a Membership card to exchange phones"
+
+#~ msgid "Купить Клубную карту"
+#~ msgstr "Purchase a Cub card"
+
+#~ msgid "У Вас отсутствует номер телефона, либо он не подтвержден."
+#~ msgstr "You did not provide a phone number or it is not confirmed"
+
+#~ msgid "Настройки Вашего профиля"
+#~ msgstr "Your profile settings"
+
+#~ msgid "не имеет номера телефона, либо он не подтвержден."
+#~ msgstr "has no phone number, or it is not confirmed."
+
+#~ msgid "Назад к профилю"
+#~ msgstr "Return to profile"
+
+#~ msgid "Вы не можете осуществить повторный обмен телефонами."
+#~ msgstr "You can't exchange phones second time."
+
+#~ msgid "Подробнее смотрите на странице"
+#~ msgstr "Read more on this page"
+
+#~ msgid "Выберите Ваши любимые места, куда Вас смогут приглашать на свидания."
+#~ msgstr ""
+#~ "Choose your favourite places, where other members can invite you out for "
+#~ "a date."
+
+#~ msgid "Свободные дни"
+#~ msgstr "Free dates"
+
+#~ msgid ""
+#~ "Выберите в календаре удобные для свиданий дни и время, когда Вас смогут "
+#~ "приглашать на свидания."
+#~ msgstr ""
+#~ "Please, select convenient days and time slots when other members can "
+#~ "invite you for a date."
+
+#~ msgid "Отметить весь столбец"
+#~ msgstr "Select whole column"
+
+#~ msgid "Отметить всю строку"
+#~ msgstr "Select all row"
+
+#~ msgid "История обмена телефонами"
+#~ msgstr "History of phone exchange"
+
+#~ msgid "Дата и время"
+#~ msgstr "Date and time"
+
+#~ msgid "Обмен телефонами не состоялся"
+#~ msgstr "Phone exchange did not happen"
+
+#~ msgid "История встреч и приглашений"
+#~ msgstr "History of dates and meetings"
+
+#~ msgid "Встреча"
+#~ msgstr "Meeting"
+
+#~ msgid "Приглашение отклонено"
+#~ msgstr "Invitation was declined"
+
+#~ msgid "Приглашение на встречу"
+#~ msgstr "Invitation to meet"
+
+#~ msgid "Назначенные встречи, полученные и отправленные приглашения."
+#~ msgstr "Scheduled dates and meetings, received and sent invitations."
+
+#~ msgid "Назначенные встречи"
+#~ msgstr "Scheduled meetings"
+
+#~ msgid "Закрыть и убрать в архив истории"
+#~ msgstr "Close and send to archive"
+
+#~ msgid "Полученные приглашения"
+#~ msgstr "Received invitations for a date"
+
+#~ msgid "приглашает Вас на свидание"
+#~ msgstr "Invites you for a date."
+
+#~ msgid "Ожидает Вашего ответа"
+#~ msgstr "Waiting for your answer"
+
+#~ msgid "Приглашение отправлено"
+#~ msgstr "Invitation was sent"
+
+#~ msgid "Свернуть"
+#~ msgstr "Minimize"
+
+#~ msgid "Отправленные приглашения"
+#~ msgstr "Invitations sent"
+
+#~ msgid "Ожидает ответа"
+#~ msgstr "Waiting for your answer"
+
+#~ msgid "Подробнее о приглашении"
+#~ msgstr "Read more about the invitation"
+
+#~ msgid "Свернуть приглашение"
+#~ msgstr "Hide the details"
+
+#~ msgid "Входящие запросы на обмен телефонами"
+#~ msgstr "Incoming requests to exchange phones"
+
+#~ msgid "Убрать в архив"
+#~ msgstr "Sent to archive"
+
+#~ msgid "Предложение отклонено"
+#~ msgstr "Invitation was declined"
+
+#~ msgid "Предложение отозвано"
+#~ msgstr "Invitation for a meeting was revoked"
+
+#~ msgid "Запрос отправлен"
+#~ msgstr "Request sent"
+
+#~ msgid "Отклонить"
+#~ msgstr "Decline"
+
+#~ msgid "Принять"
+#~ msgstr "Accept"
+
+#~ msgid "Убрать в историю"
+#~ msgstr "Send to history"
+
+#~ msgid "Отправленные запросы на обмен телефонами"
+#~ msgstr "Sent requests for phone exchange"
+
+#~ msgid "Отозвать"
+#~ msgstr "Revoke"
+
+#~ msgid "Все"
+#~ msgstr "All"
+
+#~ msgid "Комментарий длиной не более 200 символов"
+#~ msgstr "Please, keep your comment under 200 symbols"
+
+#~ msgid "Отправить"
+#~ msgstr "Send"
+
+#~ msgid "Осталось"
+#~ msgstr "Remaining"
+
+#~ msgid "символов"
+#~ msgstr "symbols"
+
+#~ msgid "Переход на профиль только для владельцев Клубной карты"
+#~ msgstr "The link to profile is available to Membership card holders only"
+
+#~ msgid "Вы создали новое мероприятие"
+#~ msgstr "You created a new event"
+
+#~ msgid "Начало"
+#~ msgstr "Start"
+
+#~ msgid "Окончание"
+#~ msgstr "End"
+
+#~ msgid "Стоимость"
+#~ msgstr "Price"
+
+#~ msgid "Бесплатно"
+#~ msgstr "Free"
+
+#~ msgid "руб."
+#~ msgstr "Rub."
+
+#~ msgid "карат"
+#~ msgstr "carats"
+
+#~ msgid "Уже идут"
+#~ msgstr "Going"
+
+#~ msgid "Пойти"
+#~ msgstr "Go"
+
+#~ msgid "Комментарии"
+#~ msgstr "Comment"
+
+#~ msgid "Создать отчет о мероприятии"
+#~ msgstr "Create a report after the event"
+
+#~ msgid "Создать новое мероприятие"
+#~ msgstr "Create new event"
+
+#~ msgid "Вы не можете создавать более одного мероприятия в день."
+#~ msgstr "You cannot create more than 1 event per 24 hours."
+
+#~ msgid "Категория мероприятия"
+#~ msgstr "Event category"
+
+#~ msgid "День"
+#~ msgstr "Day"
+
+#~ msgid "Месяц"
+#~ msgstr "Month"
+
+#~ msgid "Год"
+#~ msgstr "Year"
+
+#~ msgid "Стоимость участия"
+#~ msgstr "Ticket price"
+
+#~ msgid "Цена"
+#~ msgstr "Price"
+
+#~ msgid "Валюта"
+#~ msgstr "Currency"
+
+#~ msgid "Место проведения"
+#~ msgstr "Event place"
+
+#~ msgid "Название мероприятия"
+#~ msgstr "Event name"
+
+#~ msgid "Краткий анонс"
+#~ msgstr "Short description"
+
+#~ msgid "Полное описание"
+#~ msgstr "Full description"
+
+#~ msgid "Сопроводительная картинка"
+#~ msgstr "Covering picture"
+
+#~ msgid "Рекомендуемая пропорция изображений 4х3,<br>например: 640х480"
+#~ msgstr "Recommended proportion for images is 4х3,<br> for example: 640х480"
+
+#~ msgid "Выбрать фото"
+#~ msgstr "Select a picture"
+
+#~ msgid "Заменить"
+#~ msgstr "Change"
+
+#~ msgid "Сохранить и опубликовать"
+#~ msgstr "Save and publish"
+
+#~ msgid "Изменить мероприятие"
+#~ msgstr "Change the event"
+
+#~ msgid "Редактирование мероприятия"
+#~ msgstr "Edit the event"
+
+#~ msgid "Текущая картинка"
+#~ msgstr "Current picture"
+
+#~ msgid "Удалить текущую картинку"
+#~ msgstr "Delete the current picture"
+
+#~ msgid "Загрузить новую картинку вместо старой"
+#~ msgstr "Replace the picture with a new one"
+
+#~ msgid "Загрузить сопроводительную картинку"
+#~ msgstr "Upload a photo"
+
+#~ msgid "Сохранить изменения"
+#~ msgstr "Save changes"
+
+#~ msgid "Мероприятия, на которые я пойду"
+#~ msgstr "Events I plan to attend"
+
+#~ msgid "Воскресенье"
+#~ msgstr "Sunday"
+
+#~ msgid "Понедельник"
+#~ msgstr "Monday"
+
+#~ msgid "Вторник"
+#~ msgstr "Tuesday"
+
+#~ msgid "Среда"
+#~ msgstr "Wednesday"
+
+#~ msgid "Четверг"
+#~ msgstr "Thursday"
+
+#~ msgid "Пятница"
+#~ msgstr "Friday"
+
+#~ msgid "Суббота"
+#~ msgstr "Saturday"
+
+#~ msgid ""
+#~ "Пожалуйста, заполните <a href=\"%s\">Ваш профиль</a> и отправьте "
+#~ "администратору."
+#~ msgstr ""
+#~ "Please, complete <a href=\"%s\">your profile</a>and send it to the "
+#~ "administrator."
+
+#~ msgid "Сегодня"
+#~ msgstr "Today"
+
+#~ msgid "Завтра"
+#~ msgstr "Tomorrow"
+
+#~ msgid "Создать"
+#~ msgstr "Create"
+
+#~ msgid "Данная возможность доступна только членам Клуба"
+#~ msgstr "This functionality is available to Club members only"
+
+#~ msgid ""
+#~ "Пожалуйста, заполните Ваш <a href=\"%s\">профиль</a> и отправьте "
+#~ "администратору."
+#~ msgstr ""
+#~ "Please, complete your <a href=\"%s\">profile</a> and send it to the "
+#~ "administrator."
+
+#~ msgid "Управление моими мероприятиями"
+#~ msgstr "Manage my events"
+
+#~ msgid "Отчёт о мероприятии"
+#~ msgstr "Report"
+
+#~ msgid "Отчёты о мероприятиях"
+#~ msgstr "Reports"
+
+#~ msgid "Поиск по названию"
+#~ msgstr "Search by name"
+
+#~ msgid "Поиск мероприятий"
+#~ msgstr "Event search"
+
+#~ msgid "Уже здесь"
+#~ msgstr "Here"
+
+#~ msgid "Пойдут"
+#~ msgstr "Going"
+
+#~ msgid "Игра Флирт"
+#~ msgstr "Flirt game"
+
+#~ msgid "Правила игры"
+#~ msgstr "Game rules"
+
+#~ msgid ""
+#~ "Если Вы ставите отметку «Флирт», то система запоминает Ваш выбор, но не "
+#~ "показывает его другому игроку."
+#~ msgstr ""
+#~ "If you press \"Flirt\" the system will remember your choice, but will not "
+#~ "show it to another player."
+
+#~ msgid ""
+#~ "При совпадении симпатий система автоматически обменивает вас телефонными "
+#~ "номерами (поэтому играть могут только участники с подтвержденными "
+#~ "номерами)."
+#~ msgstr ""
+#~ "If you have a flirt match the system will exchange both players with "
+#~ "mobile phone numbers (this is why only people who confirmed their phone "
+#~ "numbers can play)."
+
+#~ msgid ""
+#~ "Значок красного сердца возле меню «Флирт» появляется тогда, когда кто-то "
+#~ "из игроков, чью фотографию Вы еще не видели, поставил Вам отметку «Флирт»."
+#~ msgstr ""
+#~ "The red heart appears near the menu \"Flirt\" when someone, whose photo "
+#~ "you have not seen yet, wants to flirt with you."
+
+#~ msgid "Поздравляем, у Вас совпадение симпатий в игре «Флирт»!"
+#~ msgstr "Congratulations, you have a match in the game \"Flirt\"!"
+
+#~ msgid "Информация доступна только для владельцев Клубных карт."
+#~ msgstr "This option is available to the Membership card holders only"
+
+#~ msgid "Клубную карту можно приобрести <a href=\"%s\">здесь</a>"
+#~ msgstr "You can purchase your membership card <a href=\"%s\">here</a>"
+
+#~ msgid "Удачи в продолжении игры!"
+#~ msgstr "Good luck in the game!"
+
+#~ msgid "Играть еще раз"
+#~ msgstr "Play once again"
+
+#~ msgid "История прошедших игр"
+#~ msgstr "Game history"
+
+#~ msgid "не заходила по ссылке"
+#~ msgstr "did not open the Wheel of Fortune's link"
+
+#~ msgid "не заходил по ссылке"
+#~ msgstr "did not open the Wheel of Fortune's link"
+
+#~ msgid "ответила Да"
+#~ msgstr "answered 'Yes'"
+
+#~ msgid "ответил Да"
+#~ msgstr "answered 'Yes'"
+
+#~ msgid "ответила Нет"
+#~ msgstr "answered 'No'"
+
+#~ msgid "ответил Нет"
+#~ msgstr "answered 'Yes'"
+
+#~ msgid "Тел.:"
+#~ msgstr "Phone:"
+
+#~ msgid "Вы ответили Да"
+#~ msgstr "You answered 'Yes'"
+
+#~ msgid "Вы ответили Нет"
+#~ msgstr "You answered 'No'"
+
+#~ msgid "Вы не заходили по ссылке"
+#~ msgstr "You did not open the Wheel of Fortune's link"
+
+#~ msgid "Подарки"
+#~ msgstr "Gifts"
+
+#~ msgid "Онлайн"
+#~ msgstr "Online"
+
+#~ msgid "Просмотр профиля"
+#~ msgstr "Profile's view"
+
+#~ msgid "Статус:"
+#~ msgstr "Status:"
+
+#~ msgid "Выберите подарок"
+#~ msgstr "Select a gift"
+
+#~ msgid "Комментарий к подарку..."
+#~ msgstr "Gift comment..."
+
+#~ msgid "Подарить"
+#~ msgstr "Make a gift"
+
+#~ msgid "Ваш подарок доставлен получателю."
+#~ msgstr "Your gift was delivered."
+
+#~ msgid "Доставка невозможна."
+#~ msgstr "Delivery is not possible."
+
+#~ msgid "Проверьте баланс счета."
+#~ msgstr "Check your account balance."
+
+#~ msgid "Пригласите друзей"
+#~ msgstr "Invite friends"
+
+#~ msgid ""
+#~ "За каждого приглашённого человека, прошедшего скрининг и подтвердившего "
+#~ "свои контактные данные, Вам добавиться %s дней к Вашей Клубной карте."
+#~ msgstr ""
+#~ "For every invited person, who passes screening and confirms his/her "
+#~ "contact details, you will get %s extra days to your Membership card."
+
+#~ msgid "Внимание"
+#~ msgstr "Attention"
+
+#~ msgid "Письмо с приглашением успешно отправлено"
+#~ msgstr "Invitation was sent"
+
+#~ msgid "От кого"
+#~ msgstr "From"
+
+#~ msgid "Кому"
+#~ msgstr "To"
+
+#~ msgid "Введите адрес получателя"
+#~ msgstr "Enter the recipient’s address"
+
+#~ msgid "Тема"
+#~ msgstr "Subject"
+
+#~ msgid "Отправить приглашение"
+#~ msgstr "Send the invitation"
+
+#~ msgid "Приглашено друзей"
+#~ msgstr "Invited friends"
+
+#~ msgid "Системные уведомления"
+#~ msgstr "System notifications"
+
+#~ msgid "В данный момент у Вас нет новых Уведомлений"
+#~ msgstr "You do not have new Notifications at this moment"
+
+#~ msgid "г."
+#~ msgstr "city"
+
+#~ msgid "О себе"
+#~ msgstr "About"
+
+#~ msgid "Профиль пользователя"
+#~ msgstr "User's profile"
+
+#~ msgid "Добавлено в Ваши фавориты"
+#~ msgstr "Added to your Favourites"
+
+#~ msgid "Взаимно добавить в фавориты"
+#~ msgstr "Also add to Favourites"
+
+#~ msgid "Обменяться телефонами"
+#~ msgstr "Exchange phones"
+
+#~ msgid "Фотоальбом"
+#~ msgstr "Album"
+
+#~ msgid "Возраст"
+#~ msgstr "Age"
+
+#~ msgid "от"
+#~ msgstr "from"
+
+#~ msgid "до"
+#~ msgstr "to"
+
+#~ msgid "Рост"
+#~ msgstr "Height"
+
+#~ msgid "Дети"
+#~ msgstr "Children"
+
+#~ msgid "Не важно"
+#~ msgstr "Doesn’t matter"
+
+#~ msgid "Есть"
+#~ msgstr "Yes"
+
+#~ msgid "Курение"
+#~ msgstr "Smoking"
+
+#~ msgid "Курит"
+#~ msgstr "Smoke"
+
+#~ msgid "Не курит"
+#~ msgstr "Do not smoke"
+
+#~ msgid "Говорит на"
+#~ msgstr "Speaks"
+
+#~ msgid "или"
+#~ msgstr "or"
+
+#~ msgid "Русском"
+#~ msgstr "Russian"
+
+#~ msgid "Английском"
+#~ msgstr "English"
+
+#~ msgid "Немецком"
+#~ msgstr "German"
+
+#~ msgid "Итальянском"
+#~ msgstr "Italian"
+
+#~ msgid "Французском"
+#~ msgstr "French"
+
+#~ msgid "Испанском"
+#~ msgstr "Spanish"
+
+#~ msgid "Найти"
+#~ msgstr "Find"
+
+#~ msgid "Статус"
+#~ msgstr "Status"
+
+#~ msgid "Город"
+#~ msgstr "City"
+
+#~ msgid "Компания"
+#~ msgstr "Company"
+
+#~ msgid "Должность"
+#~ msgstr "Position"
+
+#~ msgid "Профиль удалён"
+#~ msgstr "Account was deleted"
+
+#~ msgid "Запрошенного Вами профиля пользователя не существует"
+#~ msgstr "This user does not exist"
+
+#~ msgid "Страница"
+#~ msgstr "Page"
+
+#~ msgid "Найдено анкет"
+#~ msgstr "People found"
+
+#~ msgid "г. "
+#~ msgstr "city"
+
+#~ msgid "Приглашение на свидание"
+#~ msgstr "Invitation for a date"
+
+#~ msgid "У Вас недостаточно карат чтобы пригласить на свидание"
+#~ msgstr "You do not have enough carats to invite for a date"
+
+#~ msgid "Текущее состояние счёта: %s карат"
+#~ msgstr "Account balance %s carats"
+
+#~ msgid "Пополнить счёт"
+#~ msgstr "Top-up account"
+
+#~ msgid "Нельзя приглашать на свидание дважды."
+#~ msgstr "You can't send a second invitation."
+
+#~ msgid "Проверить список свиданий"
+#~ msgstr "Look up a date history"
+
+#~ msgid "Выберите удобные дату и время"
+#~ msgstr "Choose convenient date and time"
+
+#~ msgid "На этот день у Вас уже есть назначенные свидания"
+#~ msgstr "You already have dates scheduled on this day"
+
+#~ msgid "Предложите одно или несколько мест"
+#~ msgstr "Propose you time and place"
+
+#~ msgid "Адрес"
+#~ msgstr "Address"
+
+#~ msgid "Метро"
+#~ msgstr "Metro"
+
+#~ msgid "Добавить место"
+#~ msgstr "Add place"
+
+#~ msgid "Стоимость услуг OnTheList за организацию свидания %s карат"
+#~ msgstr "The costs of setting up the date is %s carats"
+
+#~ msgid ""
+#~ "Данная сумма спишется с Вашего счета только в том случае, если "
+#~ "приглашение будет принято."
+#~ msgstr "Your account will be debited only if the invitation is accepted."
+
+#~ msgid ""
+#~ "<span style=\"color: red;\">Как гость Клуба,</span> Вы можете только "
+#~ "смотреть профили пользователей. Для того чтобы писать сообщения, меняться "
+#~ "телефонами и встречаться с другими членами Клуба необходимо заполнить <a "
+#~ "href=\"%s\">Ваш профиль</a> и нажать кнопку «Отправить анкету "
+#~ "администратору»"
+#~ msgstr ""
+#~ "<span style=\"color: red;\">You are browsing in guest mode. </span> You "
+#~ "cannot interact with other people, exchange messages, contacts, create "
+#~ "and attend meetings. To gain full access the Club's online functionality "
+#~ "you will need to complete the necessary fields in <a href=\"%s\">your "
+#~ "profile</a>  and activate it pressing the button \"Send profile to the "
+#~ "administrator\""
+
+#~ msgid "Сообщения"
+#~ msgstr "Messages"
+
+#~ msgid "Обменяться"
+#~ msgstr "Exchange"
+
+#~ msgid "Встретиться"
+#~ msgstr "Meet"
+
+#~ msgid "Отзыв"
+#~ msgstr "Feedback"
+
+#~ msgid "Только для Членов Клуба"
+#~ msgstr "Only for Club members"
+
+#~ msgid "Подарить подарок"
+#~ msgstr "Make a gift"
+
+#~ msgid "Ошибка 404, страница не найдена"
+#~ msgstr "Error 404, user is not found"
+
+#~ msgid "Страница, которую Вы запросили, отсутствует на сайте."
+#~ msgstr "The page you requested was not found."
+
+#~ msgid "В избранное"
+#~ msgstr "Add to Favourites"
+
+#~ msgid "Из избранного"
+#~ msgstr "Delete from Favourites"
+
+#~ msgid "Заблокировать"
+#~ msgstr "Block"
+
+#~ msgid "Разблокировать"
+#~ msgstr "Unblock"
+
+#~ msgid "ВУЗ"
+#~ msgstr "University"
+
+#~ msgid "Профессиональные интересы"
+#~ msgstr "Professional interests"
+
+#~ msgid "Цели и планы"
+#~ msgstr "Goals and plans"
+
+#~ msgid "Разговаривает на"
+#~ msgstr "Speak"
+
+#~ msgid "Задайте вопросы из предложенных категорий"
+#~ msgstr "Please choose several questions from those categories"
+
+#~ msgid "Свой вопрос"
+#~ msgstr "Custom question"
+
+#~ msgid "Не выбирать вопрос из этой категории"
+#~ msgstr "Do not take any question from this category"
+
+#~ msgid "Вы можете задать свой вопрос"
+#~ msgstr "You can ask a custom question"
+
+#~ msgid "Стоимость каждого своего вопроса составляет"
+#~ msgstr "The cost of asking a custom question is"
+
+#~ msgid "Введено"
+#~ msgstr "Entered"
+
+#~ msgid "символов из"
+#~ msgstr "symbols from"
+
+#~ msgid "Сформулируйте вопрос длиной не более 1000 символов"
+#~ msgstr "Please, keep your question under 1000 symbols"
+
+#~ msgid "Добавить свой вопрос"
+#~ msgstr "Add your custom question"
+
+#~ msgid "У вас недостаточно карат для создания своего вопроса"
+#~ msgstr "You do not have enough carats to ask a custom question"
+
+#~ msgid "Баланс счета"
+#~ msgstr "Account balance"
+
+#~ msgid ""
+#~ "%sПополните баланс%s своего счёта и вы сможете задать свой вопрос за %s "
+#~ "карат."
+#~ msgstr ""
+#~ "%sTop up%s your account and you will be able to ask a custom question for "
+#~ "%s carats."
+
+#~ msgid "Деловые знакомства"
+#~ msgstr "Networking"
+
+#~ msgid "Поиск интересам"
+#~ msgstr "Search by interests"
+
+#~ msgid "Профессиональные интересы:"
+#~ msgstr "Professional interests:"
+
+#~ msgid "Семейное положение"
+#~ msgstr "Marital status"
+
+#~ msgid "Состоит в браке"
+#~ msgstr "Married"
+
+#~ msgid "Не состоит в браке"
+#~ msgstr "Not married"
+
+#~ msgid "Личные интересы:"
+#~ msgstr "Hobbies:"
+
+#~ msgid "Планы и Цели:"
+#~ msgstr "Plans and Goals:"
+
+#~ msgid "Места для свиданий от OnTheList"
+#~ msgstr "Places recommended by OnTheList"
+
+#~ msgid "Ближайшее метро"
+#~ msgstr "Closest tube station"
+
+#~ msgid "Сайт"
+#~ msgstr "Website"
+
+#~ msgid "Открыть в новом окне"
+#~ msgstr "Open in a new window"
+
+#~ msgid "Новый премиум пост"
+#~ msgstr "New premium post"
+
+#~ msgid "%s карат"
+#~ msgstr "%s carats"
+
+#~ msgid "<a href=\"%s\" title=\"%s\">премиум (%s карат)</a>"
+#~ msgstr "<a href=\"%s\" title=\"%s\">premium (%s carats)</a>"
+
+#~ msgid "Купить караты"
+#~ msgstr "Purchase carats"
+
+#~ msgid "Возможность публикации доступна только для членов Клуба"
+#~ msgstr "To publish an event you need to be a Club member"
+
+#~ msgid "Новый пост"
+#~ msgstr "New post"
+
+#~ msgid "премиум (%s карат)"
+#~ msgstr "premium (%s carats)"
+
+#~ msgid "Удалить пост"
+#~ msgstr "Delete the post"
+
+#~ msgid "Скрыть пост"
+#~ msgstr "Hide the post"
+
+#~ msgid "премиум"
+#~ msgstr "premium"
+
+#~ msgid ""
+#~ "Просмотр людей которым понравился Ваш пост, доступен только владельцем "
+#~ "Клубной карты."
+#~ msgstr "To get a link to a profile you need a Membership card"
+
+#~ msgid "Только для членов Клуба"
+#~ msgstr "Only for membership card holders"
+
+#~ msgid "Свежая 20-ка постов"
+#~ msgstr "Fresh 20 posts"
+
+#~ msgid "Удалить комментарий"
+#~ msgstr "Delete the comment"
+
+#~ msgid "Комментариев еще нет, Ваш будет первый!"
+#~ msgstr "No comments yet, be the first to comment!"
+
+#~ msgid "Ваш комментарий"
+#~ msgstr "Enter your comment"
+
+#~ msgid "Свернуть комментарии"
+#~ msgstr "Hide comments"
+
+#~ msgid "Текущий статус"
+#~ msgstr "Your status"
+
+#~ msgid "Сохранить фотографию"
+#~ msgstr "Save photo"
+
+#~ msgid "Кликните на фотографию для редактирования"
+#~ msgstr "Click on the picture to edit"
+
+#~ msgid "Загрузить фото"
+#~ msgstr "Upload picture"
+
+#~ msgid "Кликните для редактирования"
+#~ msgstr "Click to edit"
+
+#~ msgid "Редактировать фото"
+#~ msgstr "Edit photo"
+
+#~ msgid "Загрузить фотографию"
+#~ msgstr "Upload photo"
+
+#~ msgid "Выберите область на снимке"
+#~ msgstr "Select the area on the picture"
+
+#~ msgid "Закрыть"
+#~ msgstr "Close"
+
+#~ msgid "Мой профиль"
+#~ msgstr "My profile"
+
+#~ msgid "Телефонный номер"
+#~ msgstr "Mobile number"
+
+#~ msgid "Номер не подтвержден!"
+#~ msgstr "The phone is not verified"
+
+#~ msgid "Пример: +7 123 456 78 90"
+#~ msgstr "For example: +7 123 456 78 90"
+
+#~ msgid "Код подтверждения"
+#~ msgstr "Confirmation code"
+
+#~ msgid "Получить код"
+#~ msgstr "Get the code"
+
+#~ msgid "Подтвердить"
+#~ msgstr "Confirm"
+
+#~ msgid "Введите новый e-mail"
+#~ msgstr "Enter new email"
+
+#~ msgid "Введите Ваш Skype"
+#~ msgstr "Enter you Skype"
+
+#~ msgid "Введите новый пароль"
+#~ msgstr "Enter new password"
+
+#~ msgid "Публичная информация"
+#~ msgstr "Public information"
+
+#~ msgid ""
+#~ "Публичная информация показывается только тем пользователям, которым Вы "
+#~ "взаимно подходите по параметрам"
+#~ msgstr ""
+#~ "Public information is shown only to those users with whom you have "
+#~ "mutually satisfied search criteria"
+
+#~ msgid "Приватная информация"
+#~ msgstr "Private information"
+
+#~ msgid ""
+#~ "Приватная информация никому не показывается, используется для поиска "
+#~ "взаимно соответствующих анкет"
+#~ msgstr ""
+#~ "Private information is NOT shown to anyone, used to search mutually "
+#~ "satisfied profiles"
+
+#~ msgid "День рождения"
+#~ msgstr "Birthday"
+
+#~ msgid "см."
+#~ msgstr "cm"
+
+#~ msgid "Отношение к курению"
+#~ msgstr "Smoking"
+
+#~ msgid "Курю"
+#~ msgstr "Smoke"
+
+#~ msgid "Не курю"
+#~ msgstr "Do not smoke"
+
+#~ msgid "Я свободно говорю на"
+#~ msgstr "I speak"
+
+#~ msgid "Настройки фильтра профиля"
+#~ msgstr "Filter settings"
+
+#~ msgid ""
+#~ "Количество пользователей, которым потенциально доступен Ваш профиль: %s"
+#~ msgstr "Number of people that can potentially see your profile: %s"
+
+#~ msgid ""
+#~ "Ваш профиль будет показываться только тем, кто удовлетворяет следующим "
+#~ "критериям:"
+#~ msgstr ""
+#~ "Your profile will be shown only to those users who satisfy those criteria:"
+
+#~ msgid "Настройки оповещений"
+#~ msgstr "Notification settings"
+
+#~ msgid ""
+#~ "Выберите удобные для Вас средства оповещения о событиях на сайте Клуба "
+#~ "OnTheList:"
+#~ msgstr ""
+#~ "Choose how you would like to receive notifications from OnTheList Private "
+#~ "Club:"
+
+#~ msgid "Свидания"
+#~ msgstr "Dates"
+
+#~ msgid ""
+#~ "Поступило приглашение на свидание, свидание принято или отказано, "
+#~ "истечение срока давности"
+#~ msgstr ""
+#~ "An invitation for a date has been received, the invitation is accepted or "
+#~ "declined, out of date"
+
+#~ msgid "Фавориты"
+#~ msgstr "Favourites"
+
+#~ msgid "Добавление в Фавориты"
+#~ msgstr "Add to your Favourites"
+
+#~ msgid "Поступил новый вопрос, получен ответ на Ваш вопрос"
+#~ msgstr "A new question is received, you got an answer for your question"
+
+#~ msgid "Сообщения от администрации сайта"
+#~ msgstr "Notifications from the Club administration"
+
+#~ msgid "Важная информация"
+#~ msgstr "Important information"
+
+#~ msgid "Блокировка и удаление"
+#~ msgstr "Block and delete"
+
+#~ msgid "Временно скрыть профиль"
+#~ msgstr "Hide temporarily"
+
+#~ msgid "Удалить профиль"
+#~ msgstr "Delete profile"
+
+#~ msgid "Введите пароль"
+#~ msgstr "Enter password"
+
+#~ msgid "Счёт"
+#~ msgstr "Account"
+
+#~ msgid "Получить Клубную карту бесплатно"
+#~ msgstr "Receive Membership Card for free"
+
+#~ msgid ""
+#~ "Для пользователей без Клубной карты на сайте действуют некоторые "
+#~ "ограничения."
+#~ msgstr ""
+#~ "Without a Membership card you may use the website with some minor "
+#~ "restrictions."
+
+#~ msgid "Клубная карта позволяет полноценно пользоваться сайтом Клуба:"
+#~ msgstr "Membership card unlocks all functionality of the website"
+
+#~ msgid "Искать людей для деловых знакомств"
+#~ msgstr "Access to business and networking search"
+
+#~ msgid ""
+#~ "Видеть в профиле людей город, компанию, должность и информацию о ВУЗе"
+#~ msgstr ""
+#~ "See full profiles of other members including city, company, title, "
+#~ "education"
+
+#~ msgid "Вести переписку без ограничений"
+#~ msgstr "Exchange messages without restrictions"
+
+#~ msgid ""
+#~ "Приглашать на встречи, свидания и обмениваться телефонами без переписки"
+#~ msgstr ""
+#~ "Invite to meetings, dates and exchange phone numbers without chatting"
+
+#~ msgid "Получать уведомления о том, кто Вами интересуется"
+#~ msgstr "Get notifications about people who visited your profile"
+
+#~ msgid ""
+#~ "Значок члена Клуба в профиле, который увеличивает интерес к Вашей анкете"
+#~ msgstr "OnTheList member badge that will increase interest to your profile"
+
+#~ msgid "Вам принадлежит Клубная Карта сроком действия до:"
+#~ msgstr "You have a Membership card valid until:"
+
+#~ msgid ""
+#~ "На Вашем счету: <span id=\"CntBalance\">%s</span> + <span id="
+#~ "\"CntBalanceBonus\">%s</span> (бонусы) = <span id=\"CntBalanceAll\">%s</"
+#~ "span> карат"
+#~ msgstr ""
+#~ "You have: <span id=\"CntBalance\">%s</span> + <span id=\"CntBalanceBonus"
+#~ "\">%s</span> (bonus) = <span id=\"CntBalanceAll\">%s</span> carats"
+
+#~ msgid ""
+#~ "Вы можете купить Клубную карту и караты с помощью телефона, банковской "
+#~ "карты, электронного кошелька или через терминал."
+#~ msgstr ""
+#~ "You can top up your account and carats using your mobile phone, debit or "
+#~ "credit card, electronic money, or a cash terminal."
+
+#~ msgid "Клубную карту могут приобрести только действующие участники Клуба."
+#~ msgstr "Membership card can be purchased by approved members only."
+
+#~ msgid "Покупка Клубной карты"
+#~ msgstr "Purchase of a Membership card"
+
+#~ msgid "Стоимость за <nobr>1 месяц</nobr>"
+#~ msgstr "Price for <nobr>1 month</nobr>"
+
+#~ msgid "Подарок от Uber"
+#~ msgstr "А рresent from Uber"
+
+#~ msgid "Купить"
+#~ msgstr "Purchase"
+
+#~ msgid ""
+#~ "Осталось <span style=\"color: #cc0000;\">%s</span> <a href=\"%s\">промо-"
+#~ "кодов Uber</a>"
+#~ msgstr ""
+#~ "<span style=\"color: #cc0000;\">%s</span> <a href=\"%s\">Uber</a> promo-"
+#~ "codes left"
+
+#~ msgid ""
+#~ "Для отключения автоматического продления Клубной карты Ваш баланс должен "
+#~ "быть не менее 200 карат."
+#~ msgstr ""
+#~ "To switch off an automatic renewal of the Membership card your balance "
+#~ "should be more than 200 carats."
+
+#~ msgid ""
+#~ "Вы обязаны вернуть 200 карат, которые Вы получили в качестве бонуса за "
+#~ "выбор опции \"Автоматическое продление Клубной карты\" (см. ниже "
+#~ "условиями оплаты)."
+#~ msgstr ""
+#~ "You have to return 200 carats that you have received as a bonus for "
+#~ "selecting an option of \"Automatic renewal of the membership card\" (see "
+#~ "below)."
+
+#~ msgid "Автоматическое продление Клубной карты (получить бонус 200 карат)."
+#~ msgstr ""
+#~ "Automatic renewal of my membership card (get a bonus of 200 carats)."
+
+#~ msgid ""
+#~ "Приобретая Клубную карту, я согласен с <a href=\"%s\" target=\"_blank"
+#~ "\">условиями оплаты</a>."
+#~ msgstr ""
+#~ "By purchasing the membership card I agree to <a href=\"%s\" target="
+#~ "\"_blank\">terms and conditions</a>."
+
+#~ msgid "Покупка карат"
+#~ msgstr "Carats purchase"
+
+#~ msgid "Количество карат"
+#~ msgstr "Carat refund"
+
+#~ msgid "Цена в руб. за <nobr>1 карат</nobr>"
+#~ msgstr "Price for 1 carat"
+
+#~ msgid "На Вашем счету: %s карат"
+#~ msgstr "Your account balance: %s carats"
+
+#~ msgid ""
+#~ "Вы можете купить клубную карту и караты с помощью телефона, банковской "
+#~ "карты, электронного кошелька или через терминал."
+#~ msgstr ""
+#~ "You can top up your account and carats using your mobile phone, debit or "
+#~ "credit card, electronic money, or a cash terminal."
+
+#~ msgid "Клубную Карту могут приобрести только действующие участники Клуба."
+#~ msgstr "Membership card can be purchased by approved members only."
+
+#~ msgid "Покупка Клубной Карты"
+#~ msgstr "Purchase of a Membership card"
+
+#~ msgid "Покупка Карат"
+#~ msgstr "Carats purchase"
+
+#~ msgid ""
+#~ "Дополнительную информацию об условиях оплаты Вы можете прочитать <a href="
+#~ "\"%s\">здесь</a>"
+#~ msgstr "You can read about additional payment terms <a href=\"%s\">here</a>"
+
+#~ msgid "Я подарил"
+#~ msgstr "Gifts I made"
+
+#~ msgid "Я подарила"
+#~ msgstr "Gifts I made"
+
+#~ msgid "Мне подарили"
+#~ msgstr "Gifts I received"
+
+#~ msgid "Вам пока ничего не подарили"
+#~ msgstr "You have not received any gifts"
+
+#~ msgid "Вы никому ничего не подарили"
+#~ msgstr "You have not made any gifts"
+
+#~ msgid "Редактировать профиль"
+#~ msgstr "Edit your profile"
+
+#~ msgid "Планы и Цели"
+#~ msgstr "Plans and Goals"
+
+#~ msgid "У Вас нет Клубной карты"
+#~ msgstr "You do not have a Membership card"
+
+#~ msgid "Ваша Клубная карта действительна до"
+#~ msgstr "Your Membership card is valid until"
+
+#~ msgid "Мои посты"
+#~ msgstr "My posts"
+
+#~ msgid "Введите комментарий"
+#~ msgstr "Enter your comment"
+
+#~ msgid "Вы можете загрузить не более %s фотографий в формате JPG"
+#~ msgstr "You can upload *.JPG files only and no more than %s files"
+
+#~ msgid "Добавить фото"
+#~ msgstr "Add photo"
+
+#~ msgid "Выбрать другое фото"
+#~ msgstr "Select another photo"
+
+#~ msgid "Только члены Клуба могут загружать свои фотографии в альбом."
+#~ msgstr "Only Club members can create photo albums"
+
+#~ msgid "Ваша фотография нравится: (%s)"
+#~ msgstr "People who like your photo: (%s)"
+
+#~ msgid "Настройки профиля"
+#~ msgstr "Profile settings"
+
+#~ msgid ""
+#~ "Чтобы повысить интерес к своей анкете, пожалуйста, заполните свой профиль "
+#~ "максимально подробно."
+#~ msgstr ""
+#~ "To increase the interest to your profile, please, complete all the "
+#~ "sections"
+
+#~ msgid ""
+#~ "Только пользователи с подтвержденным номером телефона могут обмениваться "
+#~ "телефонами и приглашать друг друга на встречи и свидания. Подтвердить "
+#~ "свой номер телефона можно в разделе \"Контактные данные\""
+#~ msgstr ""
+#~ "Only members with verified phone numbers can exchange contacts and invite "
+#~ "each other for dates or business meetings. You can verify your number in "
+#~ "the section \"Contact details\""
+
+#~ msgid "Ваша анкета находится на рассмотрении администратора Клуба."
+#~ msgstr "Your application is under review by the administration of the Club."
+
+#~ msgid ""
+#~ "Вы сможете общаться с другими членами Клуба после того, как Ваш профиль "
+#~ "будет одобрен администратором."
+#~ msgstr ""
+#~ "You will be able to communicate with other Club members only after the "
+#~ "administration approves your profile. "
+
+#~ msgid "Пожалуйста, заполните Ваш профиль и отправьте администратору."
+#~ msgstr "Please, complete your profile and send it to the administrator."
+
+#~ msgid ""
+#~ "<strong>Для отправки</strong> Вашей анкеты администратору "
+#~ "<strong>заполните</strong> разделы профиля."
+#~ msgstr ""
+#~ "<strong>To send</strong> your profile to the administrator for approval, "
+#~ "please, <strong>complete</strong>  the following form."
+
+#~ msgid ""
+#~ "<strong>Обязательные разделы</strong> для заполнения отмечены звездочкой "
+#~ "<span class=\"required\">*</span>."
+#~ msgstr ""
+#~ "<strong>Compulsory sections</strong> are marked with stars <span class="
+#~ "\"required\">*</span>."
+
+#~ msgid ""
+#~ "Обязательные разделы профиля, которые Вы не заполнили, отмечены иконками "
+#~ "и названиями <span class=\"text-red\">красного цвета</span>."
+#~ msgstr ""
+#~ "Compulsory sections of the form that you didn't complete are highlighted "
+#~ "with <span class=\"text-red\">red</span> captions and icons."
+
+#~ msgid ""
+#~ "После того, как Вы заполните необходимые поля профиля, <strong>кнопка "
+#~ "<span class=\"text-success\">&laquo;Отправить анкету администратору&raquo;"
+#~ "</span> будет активирована.</strong>"
+#~ msgstr ""
+#~ "After you complete the mandatory sections of the form, the button \"Send "
+#~ "profile to the administrator\" will be activated."
+
+#~ msgid ""
+#~ "Возникли проблемы при заполнении формы? Мы Вам поможем! Пришлите нам "
+#~ "письмо с указанием вашего логина на <a href=\"mailto:help@onthelist.ru"
+#~ "\">help@onthelist.ru</a>."
+#~ msgstr ""
+#~ "Do you have any problems with completing the form? We can help you! "
+#~ "Please, send an email to <a href=\"mailto:help@onthelist.ru"
+#~ "\">help@onthelist.ru</a> specifying your Login."
+
+#~ msgid "Отправить анкету администратору"
+#~ msgstr "Send the profile to the administrator"
+
+#~ msgid "Купить Клубную Карту"
+#~ msgstr "Purchase a Membership card"
+
+#~ msgid "Ваша Клубная Карта действительна до:"
+#~ msgstr "Your Membership card is valid until:"
+
+#~ msgid "Мой статус"
+#~ msgstr "My status"
+
+#~ msgid ""
+#~ "ВНИМАНИЕ! Вам не доступен сервис SMS информирования. Ваш номер телефона "
+#~ "отсутствует или не подтвержден!"
+#~ msgstr ""
+#~ "ATTENTION! You can get SMS notifications. Your phone number is missing or "
+#~ "is not verified."
+
+#~ msgid ""
+#~ "Поступило приглашение на встречу, приглашение принято или Вам отказано"
+#~ msgstr ""
+#~ "An invitation for a date has been received, the invitation was accepted "
+#~ "or declined"
+
+#~ msgid "Вас добавили в Избранное"
+#~ msgstr "You have been added to Favourites"
+
+#~ msgid "Опция доступна только для владельцев Клубной Карты"
+#~ msgstr "This option is available to the Membership card holders only"
+
+#~ msgid "Уведомлять меня о новых сообщениях когда я не на сайте"
+#~ msgstr "Send notifications about new messages when I am offline"
+
+#~ msgid "Новости Клуба"
+#~ msgstr "News"
+
+#~ msgid ""
+#~ "Email и СМС рассылки о новостях, вечеринках и мероприятиях проводимых "
+#~ "Клубом"
+#~ msgstr "Email and SMS notifications about Club news, parties and events"
+
+#~ msgid "Контактная информация"
+#~ msgstr "Contact information"
+
+#~ msgid "Дополнительная информация"
+#~ msgstr "Extra information"
+
+#~ msgid "Интересы и увлечения"
+#~ msgstr "Interests and hobbies"
+
+#~ msgid "Расскажите другим членам Клуба о своих увлечениях и целях в жизни"
+#~ msgstr "Please share your hobbies, goals and plans  with other Club members"
+
+#~ msgid "Карьера и профессиональные интересы"
+#~ msgstr "Career and professional interests"
+
+#~ msgid ""
+#~ "Для вступления в Клуб необходимо указать Компанию и Должность или ВУЗ"
+#~ msgstr ""
+#~ "To join the Club you need to specify your Company and Job title or "
+#~ "University"
+
+#~ msgid ""
+#~ "Заполните этот блок только в том случае, если Вам интересны романтические "
+#~ "свидания! Данная информация не отображается в Вашем профиле, а "
+#~ "используется при поиске, который доступен только тем членам Клуба, "
+#~ "которых интересуют романтические знакомства."
+#~ msgstr ""
+#~ "Please, complete this section only if you are interested in new romantic "
+#~ "relationships! The information below will not be shown in your profile "
+#~ "and will be used only by the search mechanism, which is available only to "
+#~ "members who indicated their interest in dating."
+
+#~ msgid "Мне интересны романтические знакомства."
+#~ msgstr "I am interested in new romantic relationships."
+
+#~ msgid "Мой рост"
+#~ msgstr "My height"
+
+#~ msgid "Личные данные"
+#~ msgstr "Personal information"
+
+#~ msgid "Имя"
+#~ msgstr "Name"
+
+#~ msgid "Фамилия"
+#~ msgstr "Surname"
+
+#~ msgid "Ваша фамилия не показывается другим членам Клуба"
+#~ msgstr "Your surname is not shown to other Club members"
+
+#~ msgid "Дата рождения"
+#~ msgstr "Date of birth"
+
+#~ msgid "Д:"
+#~ msgstr "D:"
+
+#~ msgid "М:"
+#~ msgstr "M:"
+
+#~ msgid "Г:"
+#~ msgstr "Y:"
+
+#~ msgid "Не показывается другим членам клуба"
+#~ msgstr "In not shown to other Club members"
+
+#~ msgid "Ваш город"
+#~ msgstr "Your city"
+
+#~ msgid "Введите название"
+#~ msgstr "Enter the name"
+
+#~ msgid "Название города вводится на родном языке"
+#~ msgstr "Please enter the name of the city in your native language"
+
+#~ msgid "Вы можете загрузить свою фотографию только в формате JPG"
+#~ msgstr "You can upload *.JPG files only and no more than %s files"
+
+#~ msgid "Максимальный размер до 10 Мб"
+#~ msgstr "Maximum photo side is 10 MB"
+
+#~ msgid ""
+#~ "Согласно правилам Клуба, основной фотографией профиля может быть только "
+#~ "Ваша портретная фотография без тёмных очков!"
+#~ msgstr ""
+#~ "Following the etiquette of the Club, as a profile photo, please, use only "
+#~ "your portrait picture without a sunglasses!"
+
+#~ msgid "Необходимо предварительно заполнить Дату вашего рождения"
+#~ msgstr "You need to provide your Date of Birth first"
+
+#~ msgid "Удаление профиля или смена пароля"
+#~ msgstr "Delete the profile or change the password"
+
+#~ msgid "Удаление профиля"
+#~ msgstr "Delete profile"
+
+#~ msgid "Введите пароль для подтверждения операции Удаление профиля"
+#~ msgstr "Please, enter your password to delete your profile completely"
+
+#~ msgid "Ваш пароль"
+#~ msgstr "Your password"
+
+#~ msgid "Сменить пароль"
+#~ msgstr "Change password"
+
+#~ msgid "Ваш новый пароль будет выслан Вам на Ваш email."
+#~ msgstr "New password will be sent to your email address."
+
+#~ msgid "Пароль не менее 6 символов"
+#~ msgstr "The password should contain at least 6 symbols"
+
+#~ msgid "Профили в социальных сетях"
+#~ msgstr "Links to your profiles in social networks"
+
+#~ msgid ""
+#~ "Данная информация является <strong>главным фактором</strong> для "
+#~ "рассмотрения Вашей заявки. Ссылки не будут отображаться в системе и "
+#~ "используются лишь только для скрининга Вашей анкеты. У пользователей, "
+#~ "которые оставляют их пустыми, мы просим дополнительную информацию. Данная "
+#~ "информация требуется лишь только для того, чтобы оценить Вашу анкету."
+#~ msgstr ""
+#~ "This information is the main factor for evaluating your application. The "
+#~ "links to your social network profiles will NOT be visible to other "
+#~ "members - we use the links only to evaluate your application. Applicants "
+#~ "who do not provide the links are asked to provide additional information."
+
+#~ msgid ""
+#~ "После отправки заявки на вступление в Клуб, данный информационный блок "
+#~ "будет заблокирован для изменений и скрыт."
+#~ msgstr ""
+#~ "After you send your profile to the administrator, this section will "
+#~ "become hidden and blocked for editing."
+
+#~ msgid "Ссылка на Facebook"
+#~ msgstr "A link to your Facebook"
+
+#~ msgid "Например"
+#~ msgstr "For example"
+
+#~ msgid "Ссылка на вКонтакте"
+#~ msgstr "Link to VK"
+
+#~ msgid "Ссылка на LinkedIn"
+#~ msgstr "A link to your LinkedIn"
+
+#~ msgid ""
+#~ "Если у Вас нет аккаунта не в одной из перечисленных социальных сетей, "
+#~ "загрузите Ваше резюме."
+#~ msgstr ""
+#~ "If you do not have accounts in any of those public social networks, "
+#~ "please, upload your CV."
+
+#~ msgid "Ваше резюме"
+#~ msgstr "Your resume"
+
+#~ msgid "Выберите файл"
+#~ msgstr "Select file"
+
+#~ msgid "Резюме загружено"
+#~ msgstr "CV is uploaded"
+
+#~ msgid ""
+#~ "Возможность загрузить резюме появиться после заполнения Вашей даты "
+#~ "рождения."
+#~ msgstr "You can upload your CV after you provide your Date of Birth."
+
+#~ msgid ""
+#~ "На адрес электронной почты: %s в течении этого часа уже было отправлено "
+#~ "письмо с инструкцией для восстановления пароля."
+#~ msgstr ""
+#~ "We already sent the password recovery link to this email address %s "
+#~ "within the last hour."
+
+#~ msgid ""
+#~ "Пожалуйста, <strong>проверьте Вашу почту</strong> на наличие письма от "
+#~ "Клуба OnTheList:"
+#~ msgstr ""
+#~ "Please, <strong>check your email</strong> - you should receive a letter "
+#~ "from OnTheList:"
+
+#~ msgid "Отправитель:"
+#~ msgstr "Sender:"
+
+#~ msgid "Получатель:"
+#~ msgstr "Recipient:"
+
+#~ msgid "Тема письма: OnTheList.ru - Восстановление пароля"
+#~ msgstr "Email subject: OnTheList - Password recovery"
+
+#~ msgid ""
+#~ "Если данного письма нет в Вашей <strong>папке Входящие</strong>, "
+#~ "проверьте <strong>папку Спам</strong>, возможно письмо попало именно "
+#~ "туда. В данном случае внесите адрес нашего почтового робота: %s в белый "
+#~ "(доверенный) список отправителей."
+#~ msgstr ""
+#~ "If you do not see our letter in your <strong>Inbox folder</strong>, "
+#~ "please, check your <strong>Spam folder</strong>, it might be there. In "
+#~ "this case, please, add our mail address %s to your approved senders list."
+
+#~ msgid ""
+#~ "К сожалению, произошла системная ошибка при попытке отправить электронное "
+#~ "письмо на Ваш адрес: %s"
+#~ msgstr ""
+#~ "Unfortunately, due to a technical problem we can not send a letter to %s "
+#~ "at this moment."
+
+#~ msgid "Приносим Вам свои извинения за доставленные неудобства."
+#~ msgstr "Please, accept our apologies for the inconvenience caused."
+
+#~ msgid "Пожалуйста, воспользуйтесь данным сервисом немного позднее."
+#~ msgstr "Please, try again later."
+
+#~ msgid ""
+#~ "Наша служба технической поддержки уже проинформирована о случившемся и "
+#~ "работает над решением данной проблемы."
+#~ msgstr ""
+#~ "Our technical service is already informed and is trying to solve this "
+#~ "problem."
+
+#~ msgid ""
+#~ "В случае, если Вам необходимо незамедлительно восстановить свой доступ и "
+#~ "сменить пароль, Вы можете написать письмо <a href=\"mailto:%s"
+#~ "\">администратории Клуба</a>."
+#~ msgstr ""
+#~ "In case, you need to recover your password immediately, please, send "
+#~ "email to <a href=\"mailto:%s\">the administration</a>."
+
+#~ msgid ""
+#~ "В письме обязательно укажите Ваш логин, номер телефона, имя и фамилию, а "
+#~ "также любую другую информацию, которая позволит нам удостовериться, что "
+#~ "аккаунт принадлежит именно Вам."
+#~ msgstr ""
+#~ "In your email, please, provide your login, phone number, your first and "
+#~ "last names and other information that might help us to verify your "
+#~ "identity."
+
+#~ msgid ""
+#~ "Если администрация Клуба посчитает предоставленную Вами информацию "
+#~ "недостаточной для идентификации, Вам придется дождаться пока мы решим "
+#~ "техническую проблему и затем восстановить пароль в автоматическом режиме."
+#~ msgstr ""
+#~ "If the administration of the club considers the information you provided "
+#~ "insufficient for your identification, you will need to wait until we "
+#~ "solve the technical problem and then recover your password automatically."
+
+#~ msgid ""
+#~ "Введите адрес Вашей электронной почты, который Вы указывали при "
+#~ "регистрации в Клубе OnTheList"
+#~ msgstr "Enter your email address that you used when registered in the Club"
+
+#~ msgid "Email"
+#~ msgstr "Email"
+
+#~ msgid ""
+#~ "На указанный адрес будет отправлена инструкция по восстановлению пароля и "
+#~ "уникальная ссылка для его восстановления, действующая 1 час."
+#~ msgstr ""
+#~ "We will send instructions and a password recovery link valid for 1 hour "
+#~ "to this email."
+
+#~ msgid "Вы создаёте новый пароль для аккаунта: %s"
+#~ msgstr "You create a new password for account: %s"
+
+#~ msgid "Пароль не может быть пустыми."
+#~ msgstr "The password can not be empty."
+
+#~ msgid "Введённые пароли не совпадают."
+#~ msgstr "The passwords you entered are not the same."
+
+#~ msgid ""
+#~ "Введенный Вами пароль слишком короткий. Количество символов в пароле "
+#~ "должно быть не менее 6-и."
+#~ msgstr ""
+#~ "The password is too weak and too short. The password should contain at "
+#~ "least 6 symbols."
+
+#~ msgid "Новый пароль"
+#~ msgstr "New password"
+
+#~ msgid "Не менее 6-ти символов"
+#~ msgstr "At least 6 symbols"
+
+#~ msgid "Повторите пароль"
+#~ msgstr "Retype your password"
+
+#~ msgid "Сохранить новый пароль"
+#~ msgstr "Save new password"
+
+#~ msgid "Восстановление пароля"
+#~ msgstr "Password restore"
+
+#~ msgid "Данная ссылка для смены пароля просрочена."
+#~ msgstr "This link to change the password is out of date."
+
+#~ msgid ""
+#~ "Пожалуйста, воспользуйтесь системой для <a href=\"%s\">восстановления "
+#~ "пароля</a> снова."
+#~ msgstr ""
+#~ "Please, use <a href=\"%s\">the password recovery function</a> again."
+
+#~ msgid "Данная ссылка для смены пароля недействительна."
+#~ msgstr "This link to change the password is out of date."
+
+#~ msgid "Вы успешно изменили пароль для своего аккаунта: %s"
+#~ msgstr "You successfully changed the password for your account: %s"
+
+#~ msgid ""
+#~ "Для входа в Клуб используйте Ваш существующий логин (%s) и пароль который "
+#~ "Вы только создали."
+#~ msgstr ""
+#~ "To enter the club, please, use your existing Login (%s) and the new "
+#~ "password you just created."
+
+#~ msgid "Создание нового пароля"
+#~ msgstr "Create new password"
+
+#~ msgid "Пользователя не существует"
+#~ msgstr "This user does not exist"
+
+#~ msgid "Ваш аккаунт заблокирован или удален"
+#~ msgstr "Your account was blocked or deleted"
+
+#~ msgid ""
+#~ "Если Вы удалили свой аккаунт по ошибке, обратитесь к <a href=\"mailto:%s"
+#~ "\">администрации Клуба</a> с просьбой о восстановлении."
+#~ msgstr ""
+#~ "If you deleted your account by mistake, please, contact <a href=\"%s"
+#~ "\">the administration of the club</a>."
+
+#~ msgid ""
+#~ "На адрес электронной почты: %s отправлено письмо с инструкцией для "
+#~ "восстановления пароля."
+#~ msgstr "We sent the password recovery instructions to your email: %s."
+
+#~ msgid ""
+#~ "Пожалуйста, обратите внимание на то, что высланная Вам ссылка "
+#~ "действительна <strong>только в течение одного часа</strong>."
+#~ msgstr ""
+#~ "Please, note that the password recovery link we just sent you is valid "
+#~ "for <strong>one hour only</strong>."
+
+#~ msgid ""
+#~ "Если Вы в течении одного часа не воспользуетесь ссылкой для "
+#~ "восстановления пароля, Вам придется заново воспользоваться системой для "
+#~ "восстановления пароля."
+#~ msgstr ""
+#~ "If you do not use a password recovery link within one hour, you will need "
+#~ "to recover the password again."
+
+#~ msgid "Активация аккаунта"
+#~ msgstr "Account activation"
+
+#~ msgid "Поздравляем!"
+#~ msgstr "Congratulations!"
+
+#~ msgid "Вы активировали свой аккаунт в Клубе OnTheList!"
+#~ msgstr "You activated your account in OnTheList private club!"
+
+#~ msgid ""
+#~ "Ваш аккаунт уже активен. Пожалуйста, воспользуйтесь Вашим логином и "
+#~ "паролем для входа на сайт."
+#~ msgstr ""
+#~ "Your account is active. Please, use your login and password to enter the "
+#~ "Club."
+
+#~ msgid "Вступить в Клуб"
+#~ msgstr "Join the club"
+
+#~ msgid "Конфиденциальность Ваших данных - это наш основной приоритет."
+#~ msgstr "Your privacy is our top priority. "
+
+#~ msgid "Приглашение"
+#~ msgstr "Invitation"
+
+#~ msgid "Персональный код доступа"
+#~ msgstr "Personal access code"
+
+#~ msgid "Промо код"
+#~ msgstr "Promo code"
+
+#~ msgid "Заполните при наличии"
+#~ msgstr "Provide if you have one"
+
+#~ msgid "Знакомства. Общение. Деловые контакты."
+#~ msgstr "Dating, Socializing. Entertainment."
+
+#~ msgid "Ваш пол"
+#~ msgstr "Sex"
+
+#~ msgid "Женский"
+#~ msgstr "Female"
+
+#~ msgid "Мужской"
+#~ msgstr "Male"
+
+#~ msgid "Сделайте выбор"
+#~ msgstr "Please select"
+
+#~ msgid "Эл. почта"
+#~ msgstr "Email"
+
+#~ msgid "Введите Ваш email"
+#~ msgstr "Enter your email"
+
+#~ msgid "Адрес эл. почты не корректен"
+#~ msgstr "Email is incorrect"
+
+#~ msgid "Придумайте пароль"
+#~ msgstr "Create your password"
+
+#~ msgid "Не менее 6-и символов"
+#~ msgstr "At least 6 symbols"
+
+#~ msgid "Пароль не должен быть меньше 6 символов"
+#~ msgstr "The password should contain at least 6 symbols"
+
+#~ msgid "Я принимаю"
+#~ msgstr "I accept"
+
+#~ msgid "Правила пользования"
+#~ msgstr "Terms of use"
+
+#~ msgid "Вы должны принять правила Клуба"
+#~ msgstr "You have to accept Club rules"
+
+#~ msgid "Заявка принята"
+#~ msgstr "You application has been received"
+
+#~ msgid "Ваш email уже есть в нашей базе данных"
+#~ msgstr "Your email is already in our database"
+
+#~ msgid "Вам отправлено письмо с подтверждением"
+#~ msgstr "We sent you a confirmation letter"
+
+#~ msgid ""
+#~ "В связи с техническими особенностями и личными настройками Вашей почты "
+#~ "наши письма могут попадать в папку Спам, поэтому просим Вас внимательно "
+#~ "проверять свою почту."
+#~ msgstr ""
+#~ "Due to personal email settings our emails sometimes can get to your Spam "
+#~ "folder. If you do not receive your email shortly, please, check this "
+#~ "folder."
+
+#~ msgid "С уважением, команда Клуба OnTheList"
+#~ msgstr "Regards, OnTheList team"
+
+#~ msgid "Для получения пароля, нажмите на кнопку:"
+#~ msgstr "To get a password, press the button:"
+
+#~ msgid "Восстановить пароль"
+#~ msgstr "Password restore"
+
+#~ msgid "Удалить из чёрного списка"
+#~ msgstr "Delete from the Blacklist"
+
+#~ msgid "Пользователь добавлен в Заблокированные"
+#~ msgstr "A user was added to the Block list"
+
+#~ msgid "Пользователь удалён из Заблокированного"
+#~ msgstr "A user was removed from the Block list"
+
+#~ msgid ""
+#~ "Вы можете искать людей только по профессиональным интересам, чтобы искать "
+#~ "по другим параметрам, приобретите <a href=\"%s\">Клубную карту</a>."
+#~ msgstr ""
+#~ "You can only search people by professional interests. If you want to "
+#~ "search by other parameters, please, purchase  <a href=\"%s\">a Membership "
+#~ "card</a>. "
+
+#~ msgid "Удалить из фаворитов"
+#~ msgstr "Delete from the Favourites"
+
+#~ msgid "Пользователь добавлен в Избранное"
+#~ msgstr "A user was added to Favourites"
+
+#~ msgid "Пользователь удалён из Избранного"
+#~ msgstr "A user was removed from Favourites"
+
+#~ msgid ""
+#~ "В Вашем профиле отмечено, что Вы не интересуетесь романтическими "
+#~ "знакомствами"
+#~ msgstr ""
+#~ "In your profile you indicated that you were NOT interested in romantic "
+#~ "relationships."
+
+#~ msgid "Поиск романтических знакомств Вам не доступен"
+#~ msgstr "You can't search people for romantic relationships "
+
+#~ msgid ""
+#~ "Для того, чтобы воспользоваться поиском людей для романтических "
+#~ "знакомств, зайдите в меню <a href=\"%s\">Настройки профиля</a> во вкладку "
+#~ "\"Романтические знакомства\", отметьте галочкой \"Мне интересны "
+#~ "романтические знакомства\" и нажмите кнопку Сохранить."
+#~ msgstr ""
+#~ "To be able to search for people for dating purposes, please go to <a href="
+#~ "\"%s\">Edit profile</a> then \"Dating\", check the option \"I am "
+#~ "interested in new romantic relationships\" and press the \"Save\" button."
+
+#~ msgid "Поиск по интересам"
+#~ msgstr "Search by interests"
+
+#~ msgid ""
+#~ "Компания и должность показываются только владельцам <a href=\"%s\" style="
+#~ "\"color: #0088cc;\">Клубных карт</a>"
+#~ msgstr ""
+#~ "Only <a href=\"%s\" style=\"color: #0088cc;\">Membership card</a> holders "
+#~ "can see company name and job title"
+
+#~ msgid "Поиск по планам и целям"
+#~ msgstr "Search by plans and goals"
+
+#~ msgid "Ваша ссылка для управления подписками не действительна"
+#~ msgstr "Your link to subscriptions is not valid"
+
+#~ msgid ""
+#~ "Вы не можете получить доступ к управлению подписками на новости и "
+#~ "предложения Клуба"
+#~ msgstr ""
+#~ "You can not get access to control your subscriptions to news and special "
+#~ "offers"
+
+#~ msgid "Отписаться от рассылок"
+#~ msgstr "Unsubscribe from the newsletter"
+
+#~ msgid ""
+#~ "Вы действительно не хотите получать новости и предложения от Клуба "
+#~ "OnTheList?"
+#~ msgstr ""
+#~ "Please, confirm that you do not want to receive news and special offers "
+#~ "from the Club?"
+
+#~ msgid "Не присылать мне писем на email"
+#~ msgstr "Do not want to receive notifications by email"
+
+#~ msgid "Нет подписки"
+#~ msgstr "No subscription"
+
+#~ msgid "Не присылать мне СМС на телефон"
+#~ msgstr "I do not want to receive text messages"
+
+#~ msgid "Отказаться от подписки"
+#~ msgstr "Unsubscribe"
+
+#~ msgid "Вы отписаны от рассылок"
+#~ msgstr "You unsubscribed from the newsletter"
+
+#~ msgid ""
+#~ "Текущее состояние Ваших подписок на новости и предложения Клуба OnTheList"
+#~ msgstr "Your current subscriptions for Club news and offers"
+
+#~ msgid "Изменить"
+#~ msgstr "Change"
+
+#~ msgid "Просмотр профиля доступен только для владельцев клубных карт."
+#~ msgstr "To view the User's profile you need to have a Membership card."
+
+#~ msgid "Только владельцы Клубных карт могут посмотреть полный список."
+#~ msgstr "Only Membership card holders can view the whole list."
+
+#~ msgid "Расширенная информация доступна только для владельцев Клубных карт."
+#~ msgstr "Extra information is available to Membership card holders only."
+
+#~ msgid "Ссылка на мероприятие доступна только членам Клуба."
+#~ msgstr "To view the event you need to be a member of the Club."
+
+#~ msgid "Фотографии дня"
+#~ msgstr "Photos of the day"
+
+#~ msgid "Вы не можете лайкнуть свой комментарий."
+#~ msgstr "You cannot like your own comment."
+
+#~ msgid "Только члены Клуба могут лайкнуть комментарий."
+#~ msgstr "Only Club members can like comments."
+
+#~ msgid "Открыть список людей которым нравится Ваш комментарий."
+#~ msgstr "View people who like your comment."
+
+#~ msgid ""
+#~ "Чтобы посмотреть, кому нравится Ваш комментарий, Вам необходима Клубная "
+#~ "карта."
+#~ msgstr "To view people who like your comment you need a Membership card."
+
+#~ msgid "Рубли"
+#~ msgstr "Rubles"
+
+#~ msgid "Создать и опубликовать"
+#~ msgstr "Save and publish"
+
+#~ msgid "Изменения сохранены"
+#~ msgstr "Changes are saved"
+
+#~ msgid "Данный функционал доступен только члена Клуба"
+#~ msgstr "This functionality is available to Club members only"
+
+#~ msgid "Мероприятий, которые Вы собираетесь посетить, не найдено."
+#~ msgstr "There are no events that you are going to attend."
+
+#~ msgid "В запрошенной категории мероприятий нет."
+#~ msgstr "There are no events in this category."
+
+#~ msgid "Вы не создавали своих мероприятий."
+#~ msgstr "You haven't created your events."
+
+#~ msgid "Мои мероприятия"
+#~ msgstr "My events"
+
+#~ msgid "Переход на профиль доступен только владельцам Клубных карт."
+#~ msgstr "To view the User's profile, please, purchase a Membership card."
+
+#~ msgid "Переход на профиль доступен только членам Клуба."
+#~ msgstr "To view the profile you need to be a member of the Club."
+
+#~ msgid "Отметиться"
+#~ msgstr "Check in"
+
+#~ msgid "Меня здесь нет"
+#~ msgstr "I am not here"
+
+#~ msgid "Вы не можете лайкнуть своё мероприятие."
+#~ msgstr "You cannot like your own event."
+
+#~ msgid "Только члены Клуба могут лайкнуть мероприятие."
+#~ msgstr "You need to be a Club member to like events."
+
+#~ msgid "Открыть список людей лайкнувших Ваше мероприятие."
+#~ msgstr "View list of people who liked your event."
+
+#~ msgid ""
+#~ "Только владельцы Клубных карт могут открыть список людей лайкнувших Ваше "
+#~ "мероприятие."
+#~ msgstr ""
+#~ "To see people who liked your event, please, purchase a Membership card."
+
+#~ msgid ""
+#~ "Чтобы посмотреть, кому нравится Ваше мероприятие, Вам необходима Клубная "
+#~ "карта."
+#~ msgstr "To view people who like your event you need a Membership card."
+
+#~ msgid "Список всех участников доступен только для владельцев Клубных карт."
+#~ msgstr "Only Membership card holders can view all participants."
+
+#~ msgid "Чтобы посмотреть профиль пользователя Вам необходима Клубная карта."
+#~ msgstr "To view the User's profile you need a Membership card."
+
+#~ msgid "Просмотрено"
+#~ msgstr "Seen"
+
+#~ msgid "Совпадения"
+#~ msgstr "Matches"
+
+#~ msgid "Я понравился"
+#~ msgstr "People liked you"
+
+#~ msgid "Я понравилась"
+#~ msgstr "People liked you"
+
+#~ msgid "Полная информация доступна только для владельцев Клубных карт"
+#~ msgstr "Full information is available to Membership card holders only."
+
+#~ msgid "Вход для пользователей"
+#~ msgstr "Member Login"
+
+#~ msgid "Ваш логин или пароль неверны."
+#~ msgstr "Your login or password is incorrect."
+
+#~ msgid "Вы вышли"
+#~ msgstr "You logged out"
+
+#~ msgid ""
+#~ "У Вас нет <a href=\"%s\">Клубной карты,</a> поэтому для Вас действуют "
+#~ "ограничения:"
+#~ msgstr ""
+#~ "Without <a href=\"%s\">a Membership card</a> you may use the website with "
+#~ "some minor restrictions:"
+
+#~ msgid ""
+#~ "Вы не можете отправить сообщение пользователю, если у Вас есть "
+#~ "непрочитанное сообщение."
+#~ msgstr ""
+#~ "You cannot send a message to a user, if you have unanswered message."
+
+#~ msgid ""
+#~ "Вы не можете отправить пользователю два сообщения подряд, если между вами "
+#~ "не было обмена минимум тремя сообщениями."
+#~ msgstr ""
+#~ "You cannot send two messages in a row to a user, if you did not exchange "
+#~ "at least three messages."
+
+#~ msgid ""
+#~ "Чтобы общаться без ограничений приобретите <a href=\"%s\">Клубную карту.</"
+#~ "a>"
+#~ msgstr ""
+#~ "To communicate without any limits, please, purchase <a href=\"%s\">a "
+#~ "Membership card.</a>"
+
+#~ msgid "Введите текст сообщения"
+#~ msgstr "Enter your message here"
+
+#~ msgid "Отправка персональных сообщений доступна только членам Клуба."
+#~ msgstr "(ЧТО ЭТО???)"
+
+#~ msgid "Поиск по имени"
+#~ msgstr "Search by name"
+
+#~ msgid "Удалить всю переписку."
+#~ msgstr "Delete all messages."
+
+#~ msgid ""
+#~ "У Вас нет Клубной карты, поэтому Вы сможете прочитать данное сообщение "
+#~ "только через 72 часа."
+#~ msgstr ""
+#~ "Without <a href=\"%s\">a Membership card</a> you would be able to read "
+#~ "this message only after %s"
+
+#~ msgid "Прочитано:"
+#~ msgstr "Read:"
+
+#~ msgid "Удалить сообщение"
+#~ msgstr "Delete the message"
+
+#~ msgid ""
+#~ "Переведено сервисом <a href=\"http://translate.yandex.ru/\" target="
+#~ "\"_blank\">«Яндекс.Перевод»</a>"
+#~ msgstr ""
+#~ "Translated by the service <a href=\"http://translate.yandex.ru/\" target="
+#~ "\"_blank\">\"Yadnex.Translate\"</a>"
+
+#~ msgid "Мероприятия"
+#~ msgstr "Events"
+
+#~ msgid "Пойти вместе"
+#~ msgstr "Invite"
+
+#~ msgid "Русский"
+#~ msgstr "Russian"
+
+#~ msgid "Английский"
+#~ msgstr "English"
+
+#~ msgid "Французский"
+#~ msgstr "French"
+
+#~ msgid "Немецкий"
+#~ msgstr "German"
+
+#~ msgid "Итальянский"
+#~ msgstr "Italian"
+
+#~ msgid "Испанский"
+#~ msgstr "Spanish"
+
+#~ msgid "Владеет Клубной картой"
+#~ msgstr "Owns a Membership card"
+
+#~ msgid "Учился в"
+#~ msgstr "Studied at"
+
+#~ msgid "Училась в"
+#~ msgstr "Studied at"
+
+#~ msgid "Вы не можете лайкнуть свой статус."
+#~ msgstr "You cannot like your own post."
+
+#~ msgid "Только члены Клуба могут поставить лайк статусу."
+#~ msgstr "Only Club members can like statuses."
+
+#~ msgid "Посмотреть кому нравится Ваш статус."
+#~ msgstr "View people who like your status."
+
+#~ msgid ""
+#~ "Чтобы посмотреть, кому нравится Ваш статус, Вам необходима Клубная карта."
+#~ msgstr "To view people who like your status you need a Membership card."
+
+#~ msgid "Предложить обменяться телефонными номерами"
+#~ msgstr "Offer to exchange phone numbers"
+
+#~ msgid "Обмен телефонными номерами выполнен"
+#~ msgstr "Phone exchange was completed"
+
+#~ msgid ""
+#~ "Обмен телефонными номерами выполнен. Только владелец Клубной карты может "
+#~ "видеть номер телефона."
+#~ msgstr ""
+#~ "Phone number exchange is completed. Only Membership card holders can view "
+#~ "phone."
+
+#~ msgid "Ваше предложение обменяться телефонными номерами было отклонено."
+#~ msgstr "Your offer to exchange phone numbers was declined."
+
+#~ msgid "Ваше предложение обменяться телефонными номерами отправлено."
+#~ msgstr "Your offer to exchange phone numbers was sent."
+
+#~ msgid "Предложение отправлено"
+#~ msgstr "Offer sent"
+
+#~ msgid "Вам предлагают обменяться телефонными номерами."
+#~ msgstr "Offer to exchange phone numbers."
+
+#~ msgid "Предлагает обменяться"
+#~ msgstr "Offers to exchange"
+
+#~ msgid "Вы отклонили предложение обменяться телефонными номерами."
+#~ msgstr "You declined the offer to exchange phone numbers."
+
+#~ msgid "Вы отклонили предложение"
+#~ msgstr "You declined the offer"
+
+#~ msgid "Обмен телефонными номерами доступен только для членов Клуба"
+#~ msgstr "To exchnage phone numbers you have to be a Club member"
+
+#~ msgid "Сообщение"
+#~ msgstr "Message"
+
+#~ msgid "В избранном"
+#~ msgstr "In Favourites"
+
+#~ msgid "Добавление в Избранное доступно только для членов Клуба"
+#~ msgstr "To add to Favourites you need to be a Club member"
+
+#~ msgid "Только члены Клуба могут оставлять отзывы."
+#~ msgstr "Only Club members can leave feedback."
+
+#~ msgid "Только члены Клуба могут заблокировать другого пользователя."
+#~ msgstr "Only Club members can block other users."
+
+#~ msgid "Фотографии"
+#~ msgstr "Photos"
+
+#~ msgid "Вы не можете лайкнуть свою фотографию."
+#~ msgstr "You cannot like your own photo."
+
+#~ msgid "Только члены Клуба могут лайкать фотографии."
+#~ msgstr "You need to become a Club member to like photos"
+
+#~ msgid "Посмотреть кому нравится Ваша фотография."
+#~ msgstr "View people who like your photo."
+
+#~ msgid ""
+#~ "Чтобы посмотреть, кому нравится Ваша фотография, Вам необходима клубная "
+#~ "карта."
+#~ msgstr "To view people who like your post you photo a Membership card."
+
+#~ msgid "<b>%s</b> из %s схожих увлечений"
+#~ msgstr "<b>%s</b> from %s same hobbies"
+
+#~ msgid "<b>%s</b> из %s схожих целей и планов"
+#~ msgstr "<b>%s</b> from %s same goals and plans"
+
+#~ msgid "<b>%s</b> из %s схожих профессиональных интересов"
+#~ msgstr "<b>%s</b> from %s same business interests"
+
+#~ msgid "Общая информация"
+#~ msgstr "General information"
+
+#~ msgid "Языки"
+#~ msgstr "Languages"
+
+#~ msgid "Повернуть на 90°"
+#~ msgstr "Rotate 90°"
+
+#~ msgid ""
+#~ "Ваш отзыв не будет передан пользователю, а будет доступен только для "
+#~ "администрации Клуба."
+#~ msgstr ""
+#~ "Your feedback will not be communicated to the member. It will be "
+#~ "available to the administration only."
+
+#~ msgid "Замечательно, что такие люди есть в Клубе!"
+#~ msgstr "It’s great that you have such people in the Club!"
+
+#~ msgid "Информация в профиле пользователя не соответствует действительности."
+#~ msgstr "The information in the profile is misleading or invalid."
+
+#~ msgid "Я хочу пожаловаться на данного пользователя."
+#~ msgstr "I would like to complain about this member."
+
+#~ msgid "Пояснение (опционально)"
+#~ msgstr "Explanation (optional)"
+
+#~ msgid "Какие у Вас планы на сегодня?"
+#~ msgstr "What is your plans for tonight?"
+
+#~ msgid ""
+#~ "<a href=\"javascript:void(0);\" onclick=\"goBuyKarat('%s')\" title=\"%s"
+#~ "\">премиум (%s карат)</a>"
+#~ msgstr ""
+#~ "<a href=\"javascript:void(0);\" onclick=\"goBuyKarat('%s')\" title=\"%s"
+#~ "\"> premium (%s carats)</a>"
+
+#~ msgid "Для публикации премиум поста не достаточно карат."
+#~ msgstr "You do not have enough carats to make a premium post."
+
+#~ msgid "Введите комментарий и нажмите Ввод"
+#~ msgstr "Enter your comment and press Enter"
+
+#~ msgid "Показать людей, которым нравится Ваш комментарий."
+#~ msgstr "Show people who like your comment."
+
+#~ msgid "Только владельцы Клубных карт могут скрывать посты."
+#~ msgstr "You need to have a Membership card to hide posts."
+
+#~ msgid "Только владельцы Клубных карт могут скрыть пост"
+#~ msgstr "Only Membership card holders can hide post."
+
+#~ msgid "Только члены Клуба могут скрывать посты."
+#~ msgstr "Only Club members can hide posts."
+
+#~ msgid "Премиум"
+#~ msgstr "Premium"
+
+#~ msgid "Вы не можете лайкнуть свой пост."
+#~ msgstr "You cannot like your own post."
+
+#~ msgid "Только члены Клуба могут лайкнуть пост."
+#~ msgstr "Only Club members can like a post."
+
+#~ msgid "Показать людей, которым нравится Ваш пост."
+#~ msgstr "Show people who like your comment."
+
+#~ msgid ""
+#~ "Чтобы посмотреть, кому нравится Ваш пост, Вам необходима Клубная карта."
+#~ msgstr "To view people who like your post you need a Membership card."
+
+#~ msgid "Просмотр комментариев доступен только членам Клуба."
+#~ msgstr "You need to be a Club member to view the comments."
+
+#~ msgid "Все привилегии"
+#~ msgstr "All privileges"
+
+#~ msgid "Клубная карта действительна до"
+#~ msgstr "Your Membership card is valid until"
+
+#~ msgid "закончилась"
+#~ msgstr "expired"
+
+#~ msgid "На счету"
+#~ msgstr "Account balance"
+
+#~ msgid "бонусы"
+#~ msgstr "bonuses"
+
+#~ msgid "Купить клубную карту"
+#~ msgstr "Purchase a Membership card"
+
+#~ msgid "мес."
+#~ msgstr "month"
+
+#~ msgid "рублей"
+#~ msgstr "rubles"
+
+#~ msgid "Автоматическое продление Клубной карты (получить бонус %s карат)."
+#~ msgstr ""
+#~ "Automatic renewal of the Membership card (get a bonus of %s carats)."
+
+#~ msgid "Автоматическое продление Клубной карты."
+#~ msgstr "Automatic renewal of my Membership card."
+
+#~ msgid "Купить карту на <b>1 мес.</b>"
+#~ msgstr "Buy Membership card <nobr>for 1 month</nobr>"
+
+#~ msgid "Транзакции"
+#~ msgstr "Transactions"
+
+#~ msgid "Новое фото"
+#~ msgstr "New photo"
+
+#~ msgid "Срок действия до"
+#~ msgstr "Valid until"
+
+#~ msgid "Телефон не подтвержден"
+#~ msgstr "The phone number is not verified"
+
+#~ msgid "Введите Ваш новый статус"
+#~ msgstr "Enter your new status"
+
+#~ msgid "Продлить клубную карту"
+#~ msgstr "Top up your Membership card"
+
+#~ msgid "Изменить общую информацию"
+#~ msgstr "Edit general information"
+
+#~ msgid "Увлечений"
+#~ msgstr "Interests"
+
+#~ msgid ""
+#~ "Пригласите трех друзей в Клуб OnTheList и получите промо-код для Uber на "
+#~ "2000р. и месяц клубной карты OnTheList в подарок!"
+#~ msgstr ""
+#~ "Invite three friends to OnTheList Club and get a 2000 rubles promo-code "
+#~ "for Uber and one month free OnTheList membership!"
+
+#~ msgid ""
+#~ "При этом все Ваши приглашенные друзья СРАЗУ после регистрации на сайте "
+#~ "получат промо-коды на 2 бесплатные поездки на Uber с лимитом 1000р. "
+#~ "каждая."
+#~ msgstr ""
+#~ "After the registration all your invited friends will get a present from "
+#~ "our partner - Uber: 2 free rides on Mercedes S-class with a limit of 1000 "
+#~ "rubles for each ride."
+
+#~ msgid ""
+#~ "Ваши друзья считаются «приглашенными» после регистрации в Клубе и "
+#~ "одобрения администратором."
+#~ msgstr ""
+#~ "Your invited friends will be counted after the administrator of the Club "
+#~ "reviews and approves their applications. "
+
+#~ msgid "Email получателя"
+#~ msgstr "Recipient's email"
+
+#~ msgid "Результаты проведения платежа."
+#~ msgstr "Payment results."
+
+#~ msgid "Результат отсутствует."
+#~ msgstr "No result."
+
+#~ msgid ""
+#~ "Параметры переданного результата не соответствуют возможно допустимым "
+#~ "значениям."
+#~ msgstr "Parameters of the transmitted result are not valid."
+
+#~ msgid "Счет не оплачен."
+#~ msgstr "Bill is not paid"
+
+#~ msgid "Вы не оплатили выставленный Вам счет."
+#~ msgstr "You did not pay the bill we prepared for you."
+
+#~ msgid ""
+#~ "Если Вы в дальнейшем примите решение купить или продлить Вашу Клубную "
+#~ "карту, а возможно и приобрести караты, мы сформируем Вам новый счет на "
+#~ "оплату."
+#~ msgstr ""
+#~ "If you decide to buy or extend your Membership card or purchase carats in "
+#~ "future, we will prepare you a new bill."
+
+#~ msgid ""
+#~ "Мы с удовольствием будем готовы увидеть Вас среди наших VIP клиентов."
+#~ msgstr "We would like to see you among our VIP clients."
+
+#~ msgid "Счет оплачен."
+#~ msgstr "Payment received."
+
+#~ msgid ""
+#~ "Как только мы получим фактическое подтверждение оплаты, мы пополним Вашу "
+#~ "клубную карту/баланс карат."
+#~ msgstr ""
+#~ "As soon as we get a payment confirmation, we will top up your membership "
+#~ "card/carat account."
+
+#~ msgid ""
+#~ "Обращаем Ваше внимание на то, что данные о прохождении фактической оплаты "
+#~ "мы получаем от Uniteller.ru в автоматическом режиме."
+#~ msgstr "НЕ НУЖНО ЭТОГО ПИСАТЬ"
+
+#~ msgid "Подтверждение платежа может достигать 1 часа."
+#~ msgstr "Payment confirmation can take up to 1 hour."
+
+#~ msgid ""
+#~ "Подавляющее большинство платежей проходят в течении от 5 до 15 минут."
+#~ msgstr ""
+#~ "Processing of the majority of online payments takes from 5 to 15 minutes."
+
+#~ msgid ""
+#~ "Срок действия Вашей Клубной карты и изменения в балансе карат Вы можете "
+#~ "посмотреть в Вашем профиле."
+#~ msgstr ""
+#~ "Membership card details and changes in your carat balance you will see in "
+#~ "your Account."
+
+#~ msgid "В телефонной книге сейчас нет записей "
+#~ msgstr "The phone book is empty."
+
+#~ msgid ""
+#~ "После успешного обмена телефонными номерами, при наличии действующей "
+#~ "Клубной карты, Вы всегда сможете найти здесь все телефонные номера."
+#~ msgstr ""
+#~ "If you have a Membership card, after exchanging phone numbers with other "
+#~ "members, you will see their phones here."
+
+#~ msgid "Описание"
+#~ msgstr "Description"
+
+#~ msgid "Начните вводить название на языке: "
+#~ msgstr "Start entering the name in:"
+
+#~ msgid "номер в международном формате"
+#~ msgstr "phone number in international format"
+
+#~ msgid "Подтвердить телефон"
+#~ msgstr "Verify mobile phone"
+
+#~ msgid "Языковые настройки"
+#~ msgstr "Language settings"
+
+#~ msgid "Интерфейс"
+#~ msgstr "Interface"
+
+#~ msgid "Автоматический перевод"
+#~ msgstr "Automatic translation"
+
+#~ msgid "Предложение по обмену телефонами"
+#~ msgstr "Offer to exchange phones"
+
+#~ msgid "Поступило новое сообщение"
+#~ msgstr "New incoming message"
+
+#~ msgid "Знакомства"
+#~ msgstr "Meeting new people"
+
+#~ msgid "Изменить пароль"
+#~ msgstr "Change password"
+
+#~ msgid "Текущий пароль"
+#~ msgstr "Current password"
+
+#~ msgid "Повторите новый пароль"
+#~ msgstr "Repeat new password"
+
+#~ msgid "Анкета пользователя"
+#~ msgstr "User profile"
+
+#~ msgid "Для отправки Вашей анкеты администратору заполните необходимые поля."
+#~ msgstr ""
+#~ "To send your application to the Administrator, please, provide required "
+#~ "information."
+
+#~ msgid "Шаг 1 из 2"
+#~ msgstr "Step 1 of 2"
+
+#~ msgid "Изменить Имя в дальнейшем будет нельзя"
+#~ msgstr "You won't be able to change your name later"
+
+#~ msgid "Ваша Фамилия не показывается другим членам Клуба"
+#~ msgstr "Your surname is not shown to other Club members"
+
+#~ msgid "Дата рождения (д.м.г)"
+#~ msgstr "Date of birth (d.m.y)"
+
+#~ msgid "Дата Вашего рождения не показывается другим членам Клуба."
+#~ msgstr "Your date of birth is not shown to other Club members"
+
+#~ msgid "Начните вводить название города"
+#~ msgstr "Enter the city name"
+
+#~ msgid "Введите название города на русском языке"
+#~ msgstr "Please enter the name of your city in English"
+
+#~ msgid "Заполните все поля"
+#~ msgstr "Complete all fields"
+
+#~ msgid "Сохранить и продолжить"
+#~ msgstr "Save and continue"
+
+#~ msgid "Шаг 2 из 2"
+#~ msgstr "Step 2 of 2"
+
+#~ msgid "Аватарка профиля"
+#~ msgstr "Profile picture"
+
+#~ msgid ""
+#~ "Согласно правилам Клуба, Вы можете использовать в качестве аватарки "
+#~ "только собственную фотографию, без солнечных очков."
+#~ msgstr ""
+#~ "Following the etiquette of the Club, as a profile photo, please, use only "
+#~ "your portrait picture without a sunglasses!"
+
+#~ msgid "Загрузить"
+#~ msgstr "Upload"
+
+#~ msgid "Повернуть"
+#~ msgstr "Turn"
+
+#~ msgid ""
+#~ "Укажите ссылку на свой профиль в одной из соц. сетей либо прикрепите "
+#~ "резюме."
+#~ msgstr ""
+#~ "Please, provide a link to your profile in one of the following social "
+#~ "networks or attach your CV."
+
+#~ msgid "Facebook"
+#~ msgstr "Facebook"
+
+#~ msgid "Полный адрес на профиль соц. сети"
+#~ msgstr "Full address to your profile "
+
+#~ msgid "вКонтакте"
+#~ msgstr "VK"
+
+#~ msgid "LinkedIn"
+#~ msgstr "LinkedIn"
+
+#~ msgid "Резюме"
+#~ msgstr "Your CV"
+
+#~ msgid "Файл с резюме был загружен Вами ранее."
+#~ msgstr "You uploaded your CV earlier."
+
+#~ msgid "Ваша анкета находится на рассмотрении у администратора Клуба."
+#~ msgstr "Your application is under review by the administration of the Club."
+
+#~ msgid ""
+#~ "Рассмотрение анкеты может занять некоторое время, так как мы её проверяем "
+#~ "вручную."
+#~ msgstr ""
+#~ "The review of your application might take some time, since we check it "
+#~ "manually."
+
+#~ msgid "После рассмотрения Вашей заявки мы вышлем Вам письмо."
+#~ msgstr "After we review your application we will send you an email."
+
+#~ msgid "Преимущества для членов Клуба"
+#~ msgstr "Advantages for the Club members"
+
+#~ msgid ""
+#~ "Знакомства и деловые связи с интересными и образованными людьми Вашего "
+#~ "круга."
+#~ msgstr ""
+#~ "Romantic and business relationships with interesting and educated people "
+#~ "from your circle."
+
+#~ msgid ""
+#~ "Вечеринки в лучших клубах и барах города, светские и деловые мероприятия."
+#~ msgstr ""
+#~ "Parties in best night clubs and bars in your city, social and business "
+#~ "events,"
+
+#~ msgid ""
+#~ "Специальные предложения и привилегии от многочисленных партнеров Клуба."
+#~ msgstr "Special offers and privileges from numerous Club members."
+
+#~ msgid ""
+#~ "Мы отправили письмо с инструкцией для восстановления пароля Вам на почту: "
+#~ "%s."
+#~ msgstr "We sent you an email with password recovery instructions to: %s."
+
+#~ msgid ""
+#~ "Пожалуйста, проверьте Вашу почту на наличие письма от Клуба OnTheList:"
+#~ msgstr ""
+#~ "Please, check your email, you should receive an email from OnTheList:"
+
+#~ msgid "Ключ активации уже был использован ранее."
+#~ msgstr "Activation key was used earlier."
+
+#~ msgid ""
+#~ "Пожалуйста, воспользуйтесь Вашим логином и паролем для входа на сайт."
+#~ msgstr "Please, use your login and password to enter the Club."
+
+#~ msgid "Электронная почта"
+#~ msgstr "Email"
+
+#~ msgid "Женщина"
+#~ msgstr "Woman"
+
+#~ msgid "Мужчина"
+#~ msgstr "Man"
+
+#~ msgid "Промо-код (при наличии)"
+#~ msgstr "Promo-code (if you have one)"
+
+#~ msgid "Я принимаю  <a href=\"%s\">правила использования</a>"
+#~ msgstr "I accept <a href=\"%s\">Terms of use</a>"
+
+#~ msgid "Успешная регистрация"
+#~ msgstr "Successful registration"
+
+#~ msgid "Поздравляем! Вы успешно зарегистрировались в Клубе OnTheList."
+#~ msgstr "Congratulations! You successfully registered in OnTheList."
+
+#~ msgid ""
+#~ "Мы отправили Вам письмо, содержащее ссылку для завершения регистрации."
+#~ msgstr "We sent you an email with the link to complete the registration."
+
+#~ msgid ""
+#~ "Вам не доступен Романтический поиск, так как в настройках Вашего профиля "
+#~ "отмечено что он Вам не интересен."
+#~ msgstr ""
+#~ "You cannot use Romantic search, because in your profile settings you "
+#~ "specified that you were not interested in dating."
+
+#~ msgid "Только для владельцев Клубных карт"
+#~ msgstr "For Membership card holders only"
+
+#~ msgid "Доступно только для владельцев Клубных карт"
+#~ msgstr "Available for Membership card holders only"
+
+#~ msgid "Загрузка результатов поиска..."
+#~ msgstr "Loading search results..."
+
+#~ msgid " из %s целей совпадает"
+#~ msgstr " from %s targets are the same"
+
+#~ msgid " из %s интересов совпадает"
+#~ msgstr " from %s interests are the same"
+
+#~ msgid "Новости на email"
+#~ msgstr "News by email"
+
+#~ msgid "СМС новости на телефон"
+#~ msgstr "SMS news on your phone"
+
+#~ msgid "Мои подписки"
+#~ msgstr "My subscriptions"
+
+#~ msgid "Отправитель отозвал запрос на обмен телефонами"
+#~ msgstr "Sender revoked a request for phone exchange"
+
+#~ msgid "У Вас не достаточно карат для обмена телефонами"
+#~ msgstr "You do not have enough carats to exchange phones"
+
+#~ msgid "за отзыв предложения обменяться телефонами"
+#~ msgstr "for that offer to exchange phones that was revoked"
+
+#~ msgid "за отклонённое предложение обменяться телефонами"
+#~ msgstr "for a declined invitation to exchange phones"
+
+#~ msgid "за непринятое приглашение на свидание"
+#~ msgstr "for the invitation, which was not accepted"
+
+#~ msgid "за отзыв приглашения на свидание"
+#~ msgstr "for the invitation, which was revoked"
+
+#~ msgid "метро"
+#~ msgstr "metro"
+
+#~ msgid "Место отмечено как любимое"
+#~ msgstr "The place is marked as favorite"
+
+#~ msgid "Запись удалена"
+#~ msgstr "Entry was deleted"
+
+#~ msgid "Вам отправлено SMS с кодом подтверждения."
+#~ msgstr "We sent you a confirmation code in a text message."
+
+#~ msgid "Настройки фильтра профиля успешно сохранены"
+#~ msgstr "Your filter settings are saved"
+
+#~ msgid "Публичная информация успешно сохранена"
+#~ msgstr "Public information is saved"
+
+#~ msgid "Skype успешно изменён"
+#~ msgstr "Skype ID was changed"
+
+#~ msgid "Skype не изменён"
+#~ msgstr "Skype ID was not changed"
+
+#~ msgid "Приватная информация успешно сохранена"
+#~ msgstr "Private information was successfully saved"
+
+#~ msgid "Настройки оповещения о событиях успешно сохранены"
+#~ msgstr "Notification settings are successfully saved"
+
+#~ msgid "Ваш профиль скрыт"
+#~ msgstr "Your profile is hidden"
+
+#~ msgid "Ваш профиль открыт"
+#~ msgstr "Your profile is visible"
+
+#~ msgid "Неверный пароль"
+#~ msgstr "The password is incorrect"
+
+#~ msgid "Не достаточно карат"
+#~ msgstr "Not enough carats"
+
+#~ msgid "Ответы на часто задаваемые вопросы"
+#~ msgstr "Frequently Asked Questions"
+
+#~ msgid "О клубе"
+#~ msgstr "About us"
+
+#~ msgid "Медиа-кит"
+#~ msgstr "Press kit"
+
+#~ msgid "Политика конфиденциальности"
+#~ msgstr "Confidentiality policy"
+
+#~ msgid "Наша команда"
+#~ msgstr "Our team"
+
+#~ msgid "Выберите место свидания"
+#~ msgstr "Please propose a place for the date"
+
+#~ msgid "Метро: %s, %s"
+#~ msgstr "Metro: %s, %s"
+
+#~ msgid "Предложение о свидании просрочено, Вы можете:"
+#~ msgstr "Invitation for a date expired. You can:"
+
+#~ msgid "Предложить своё место и время"
+#~ msgstr "Propose you time and place"
+
+#~ msgid ""
+#~ "Данная сумма спишется с Вашего счета только в том случае, если Вы примите "
+#~ "приглашение."
+#~ msgstr "Your account will be debited only if you accept the invitation."
+
+#~ msgid "Недостаточно средств - пополнить баланс."
+#~ msgstr "Not enough carats - top up balance."
+
+#~ msgid "Предложенные даты и время"
+#~ msgstr "Proposed date & time"
+
+#~ msgid "Предложенные места"
+#~ msgstr "Proposed place"
+
+#~ msgid "Отозвать приглашение"
+#~ msgstr "Revoke invitation"
+
+#~ msgid "Вы сможете отозвать приглашение через 24 часа после его создания"
+#~ msgstr "You can revoke the invitation 24 hours after you sent it"
+
+#~ msgid "Нет сообщений"
+#~ msgstr "No new messages"
+
+#~ msgid "Отправлено:"
+#~ msgstr "Sent:"
+
+#~ msgid ""
+#~ "У Вас нет <a href=\"%s\">Клубной карты</a>, поэтому Вы сможете прочитать "
+#~ "данное сообщение только после %s"
+#~ msgstr ""
+#~ "Without <a href=\"%s\">a Membership card</a> you will be able to read "
+#~ "this message only after %s"
+
+#~ msgid "Вы не можете общаться более чем с %s людьми в сутки."
+#~ msgstr "You cannot send messages to more than %s people per 24 hours."
+
+#~ msgid "Вы должны выбрать вариант отзыва!"
+#~ msgstr "You have to select the type of feedback!"
+
+#~ msgid "Спасибо за Ваш отзыв"
+#~ msgstr "Thank you for your feedback"
+
+#~ msgid "Войти"
+#~ msgstr "Enter"
+
+#~ msgid "Клуб"
+#~ msgstr "Club"
+
+#~ msgid "Ответы на вопросы"
+#~ msgstr "Answers"
+
+#~ msgid "Наши новости"
+#~ msgstr "Our news"
+
+#~ msgid "Пресс релизы"
+#~ msgstr "Press releases"
+
+#~ msgid "СМИ"
+#~ msgstr "Mass media"
+
+#~ msgid "FAQ"
+#~ msgstr "FAQ"
+
+#~ msgid "Адрес электронной почты"
+#~ msgstr "Email"
+
+#~ msgid "Игра"
+#~ msgstr "Game"
+
+#~ msgid "%s, колесо Фортуны выбрало для Вас пару:"
+#~ msgstr "%s, Wheel of Fortune chose a person for you:"
+
+#~ msgid "Нет ближайших мероприятий"
+#~ msgstr "No upcoming events"
+
+#~ msgid "Читать полностью"
+#~ msgstr "Read more"
+
+#~ msgid "Партнеры клуба"
+#~ msgstr "Club partners"
+
+#~ msgid "Рестораны на карте"
+#~ msgstr "Restaurants on the map"
+
+#~ msgid "Скрыть Пост"
+#~ msgstr "Hide the Post"
+
+#, fuzzy
+#~ msgid ""
+#~ "Наличие Клубной карты или увеличение срока её действия, а так же "
+#~ "увеличение баланса карат Вы увидите на странице Вашего профиля в разделе "
+#~ "Счёт."
+#~ msgstr ""
+#~ "Срок действия Вашей клубной карты и изменения в балансе карат Вы можете "
+#~ "посмотреть в Вашем профиле.#Membership card details and changes in your "
+#~ "carat balance you will see in your Account."
+
+#, fuzzy
+#~ msgid ""
+#~ "В следствие того, что необходимо время на обработку платежа, данные о "
+#~ "фактической оплате поступают с временной задержкой, которая по "
+#~ "независимым от нас причинам может достигать 1 часа."
+#~ msgstr ""
+#~ "Payment confirmation can take up to 1 hour. #Подтверждение платежа может "
+#~ "достигать 1 часа."
+
+#~ msgid " из %s увлечений совпадает"
+#~ msgstr " from %s interests are the same"
+
+#, fuzzy
+#~ msgid ""
+#~ "Вы пригласили трех друзей в Клуб и получаете подарок - 30 дней Клубной "
+#~ "карты"
+#~ msgstr ""
+#~ "Invite three friends to OnTheList Club and get a 2000 rubles promo-code "
+#~ "for Uber and one month free OnTheList membership!"
+
+#~ msgid "БЕСПЛАТНЫЕ ПОЕЗДКИ НА АВТО ПРЕМИУМ КЛАСА"
+#~ msgstr "FREE UBER TRIPS ON S-CLASS"
+
+#~ msgid "Регистрация через вКонтакте"
+#~ msgstr "Registration via VK "
+
+#, fuzzy
+#~ msgid "Открыть список людей которым нравится Ваша фотография."
+#~ msgstr ""
+#~ "View people who like your photo.#Посмотреть кому нравится Ваша фотография."
+
+#, fuzzy
+#~ msgid ""
+#~ "Только владельцы Клубных карт могут открыть список людей которым нравится "
+#~ "Ваш пост."
+#~ msgstr ""
+#~ "To view people who like your post you need a Membership card.#Чтобы "
+#~ "посмотреть, кому нравится Ваш пост, Вам необходима клубная карта."
+
+#, fuzzy
+#~ msgid ""
+#~ "Чтобы посмотреть, кому нравится Ваш комментарий, Вам необходима клубная "
+#~ "карта."
+#~ msgstr "To get a link to a profile you need a Membership card"
+
+#, fuzzy
+#~ msgid ""
+#~ "Только владельцы Клубных карт могут открыть список людей которым нравится "
+#~ "Ваша фотография."
+#~ msgstr ""
+#~ "To view people who like your post you photo a Membership card.#Чтобы "
+#~ "посмотреть, кому нравится Ваша фотография, Вам необходима клубная карта."
+
+#, fuzzy
+#~ msgid ""
+#~ "Только владельцы Клубных карт могут открыть список людей которым нравится "
+#~ "Ваш статус."
+#~ msgstr ""
+#~ "To view people who like your status you need a Membership card.#Чтобы "
+#~ "посмотреть, кому нравится Ваш статус, Вам необходима клубная карта."
+
+#, fuzzy
+#~ msgid "Переход на профиль только для владельцев Клубной карты."
+#~ msgstr ""
+#~ "To view the User's profile you need a Membership card.#Чтобы посмотреть "
+#~ "профиль пользователя Вам необходима клубная карта."
+
+#, fuzzy
+#~ msgid ""
+#~ "Только владельцы Клубных карт могут открыть список людей которым нравится "
+#~ "Ваш комментарий."
+#~ msgstr ""
+#~ "To view people who like your comment you need a Membership card.#Чтобы "
+#~ "посмотреть, кому нравится Ваш комментарий, Вам необходима клубная карта."
+
+#, fuzzy
+#~ msgid ""
+#~ "Ссылка на профиль пользователя доступна только для владельцев Клубных "
+#~ "карт."
+#~ msgstr ""
+#~ "To view the User's profile you need to have a Membership card.#Просмотр "
+#~ "профиля доступен только для владельцев клубных карт."
+
+#~ msgid "Выберите наиболее приемлевый с Вашей точки зрения отзыв о человеке."
+#~ msgstr "Select your comment category:#:"
+
+#, fuzzy
+#~ msgid ""
+#~ "На адрес электронной почты: %s было отправлено письмо с инструкцией для "
+#~ "восстановления пароля."
+#~ msgstr ""
+#~ "We sent you an email with password recovery instructions to %s.#Мы "
+#~ "отправили письмо с инструкцией для восстановления пароля Вам на почту: %s."
+
+#~ msgid "Открыть список людей лайкнувших Вашу фотографию."
+#~ msgstr "View people who like your photo."
+
+#, fuzzy
+#~ msgid ""
+#~ "По результатам рассмотрения анкеты Вы получите соответствующее "
+#~ "уведомление на Ваш адрес электронной почты."
+#~ msgstr ""
+#~ "After we review your application we will sent you an email.#После "
+#~ "рассмотрения Вашей заявки мы вышлем Вам письмо."
+
+#~ msgid ""
+#~ "Чтобы оставить отзыв, нужно закончить регистрацию и стать членом Клуба."
+#~ msgstr ""
+#~ "To leave a comment you need to complete the registration and become a "
+#~ "Club member."
+
+#, fuzzy
+#~ msgid ""
+#~ "Чтобы внести пользователя в список Заблокированных, нужно быть членом "
+#~ "Клуба."
+#~ msgstr ""
+#~ "To block the user you need to complete the registration and become a Club "
+#~ "member.#Чтобы заблокировать пользователя, нужно закончить регистрацию и "
+#~ "стать членом Клуба."
+
+#~ msgid "Открыть список людей лайкнувших Ваш статус."
+#~ msgstr "View people who like your status."
+
+#, fuzzy
+#~ msgid ""
+#~ "Только владельцы Клубных карт могут открыть список людей лайкнувших Ваш "
+#~ "статус."
+#~ msgstr ""
+#~ "To see people who like your status, please, purchase a Membership card."
+#~ "#Чтобы посмотреть список людей, лайкнувших Ваш статус, прирбретите "
+#~ "клубную карту."
+
+#, fuzzy
+#~ msgid ""
+#~ "Только владельцы Клубных карт могут открыть список людей лайкнувших Ваш "
+#~ "комментарий."
+#~ msgstr ""
+#~ "To see people who like your comment, please, purchase a Membership card."
+#~ "#Чтобы увидеть людей, которым нравится Ваш комментарий, пожалуйста, "
+#~ "приобретите клубную карту."
+
+#, fuzzy
+#~ msgid "Вы уже ранее отказались обменяться телефонными номерами."
+#~ msgstr ""
+#~ "You declined the request to exchange phone numbers.#Вы уже отказались "
+#~ "обменяться телефонными номерами ранее."
+
+#, fuzzy
+#~ msgid "Ошибка при проверка кода подтверждения номера телефона."
+#~ msgstr ""
+#~ "Error: phone verification code cannot be verified. Please, inform the "
+#~ "administrator. #Ошибка: невозможно проверить код для подтверждения номера "
+#~ "телефона. Обратитесь к администратору."
+
+#~ msgid "Email адрес не валиден."
+#~ msgstr "Email address is not valid."
+
+#~ msgid ""
+#~ "Для восстановления пароля необходимо ввести email адрес на который "
+#~ "зарегистрирован аккаунт."
+#~ msgstr "To recover your password, please, enter your email."
+
+#~ msgid "Произошла ошибка при обработке обмена телефонными номерами."
+#~ msgstr ""
+#~ "Error occurred during the phone number exchange. Please, inform the "
+#~ "administrator."
+
+#~ msgid ""
+#~ "Вы уже ранее приняли отрицательное решение об обмене телефонными номерами."
+#~ msgstr "You already declined the request to exchange phone numbers."
+
+#~ msgid ""
+#~ "Произошла ошибка при обработке отказа от обмена телефонными номерами."
+#~ msgstr ""
+#~ "Error occurred when you declined the request to exchange phone numbers."
+
+#~ msgid ""
+#~ "Вы уже ранее приняли положительное решение об обмене телефонными номерами."
+#~ msgstr "You already accepted the request to exchange phone numbers."
+
+#~ msgid "Ошибка удаления из избранного."
+#~ msgstr "Error occurred while deleting a user from your Favorites."
+
+#~ msgid "Ошибка при загрузке фотографии."
+#~ msgstr "Error occurred while uploading the photo."
+
+#~ msgid "КЛУБ ДЛЯ УСПЕШНЫХ ЛЮДЕЙ"
+#~ msgstr "CLUB FOR SUCCESSFUL PEOPLE"
+
+#~ msgid "Ссылка на профиль доступна только для владельцев Клубных карт."
+#~ msgstr "To view the User's profile, please, purchase a Membership card."
+
+#~ msgid "Создать событие"
+#~ msgstr "Create new event."
+
+#~ msgid "Блокировки доступны только для членов Клуба"
+#~ msgstr "To add a User to block list you need to be a Club member."
+
+#~ msgid "О чем вы сейчас думаете?"
+#~ msgstr "What are your plans for tonight?"
+
+#~ msgid "Фортуна"
+#~ msgstr "Fortune"
+
+#~ msgid "Нет новых сообщений"
+#~ msgstr "No new messages"
+
+#~ msgid "Отображается в Вашем профиле и при поиске"
+#~ msgstr "Shown in your profile and in the search results"
+
+#~ msgid "Опубликовать только в профиле"
+#~ msgstr "Publish in my profile only"
+
+#~ msgid "Опубликовать в профиле и Топ-20 (%s <a href=\"%s\">карат</a>)"
+#~ msgstr "Publish in profile & Top-20 (%s <a href=\"%s\">carats</a>)"
+
+#~ msgid "Пользователь удалил свой профиль"
+#~ msgstr "A user deleted his/her account"
+
+#~ msgid ""
+#~ "За каждого приглашенного человека, который пройдет скрининг и подтвердит "
+#~ "свои контактные данные,<br>к  Вашей Клубной Карте добавится <span class="
+#~ "\"text-error\">%s дней</span> абонентского доступа."
+#~ msgstr ""
+#~ "For every invited person, who passes screening and confirms his/her phone "
+#~ "number, you will get <span class=\"text-error\">%s extra days</span> to "
+#~ "your Membership card."
+
+#~ msgid ""
+#~ "За каждого приглашённого человека, прошедшего скрининг и подтвердившего "
+#~ "свои контактные данные, Вам добавится %s дней к Вашей Клубной карте."
+#~ msgstr ""
+#~ "For every invited person, who passes screening and confirms his/her "
+#~ "contact details, you will get %s extra days to your Membership card."
+
+#~ msgid ""
+#~ "Предоставляемая Вами информация не будет опубликована в Вашем профиле, а "
+#~ "будет использоваться исключительно для оценки Вашей заявки."
+#~ msgstr ""
+#~ "The information you have been asked to provide below will not be "
+#~ "published, and will be used solely to evaluate your application."
+
+#~ msgid ""
+#~ "Информацию о Вас, которую смогут видеть другие члены Клуба Вам будет "
+#~ "предложено предоставить позже."
+#~ msgstr ""
+#~ "After registration you will be asked to provide some public information "
+#~ "about yourself that will be shown to other club members."
+
+#~ msgid ""
+#~ "Внимание!!! Только до 31.12.2013 на Клубные карты действует Новогодняя "
+#~ "скидка 40%"
+#~ msgstr ""
+#~ "Christmas sales!!! Only before 31.12.2013 you can get the Membership card "
+#~ "with a 40% discount"
+
+#, fuzzy
+#~ msgid "Введённые пароли не равны друг другу."
+#~ msgstr ""
+#~ "The passwords you entered are not the same.#Введённые пароли не совпадают."
+
+#~ msgid "Вам отправлено электронное письмо с новым паролем."
+#~ msgstr "We sent you an email with a new password."
+
+#~ msgid "Обязательно смените пароль в Вашем профиле!"
+#~ msgstr "Please change the password on your profile page!"
+
+#~ msgid "Введите адрес"
+#~ msgstr "Enter address"
+
+#~ msgid "Новый пароль будет выслан на указанный адрес."
+#~ msgstr "New password will be sent to your email address."
+
+#~ msgid ""
+#~ "Для отправки Вашей анкеты администратору заполните нижеследующие разделы "
+#~ "профиля (обязательные разделы профиля для заполнения отмечены звездочкой) "
+#~ "и нажмите кнопку \"Отправить анкету администратору\"."
+#~ msgstr ""
+#~ "To send your profile to the administrator for approval, please, complete "
+#~ "the following sections (compulsory sections are marked with stars) and "
+#~ "hit the \"Send the profile to the administrator\" button."
+
+#~ msgid "Чтобы снять все ограничения Вы можете"
+#~ msgstr "To remove all the constraints you can"
+
+#~ msgid "Приобрести клубную карту"
+#~ msgstr "Purchase a membership card"
+
+#~ msgid ""
+#~ "Вы еще ни разу не приобретали клубную карту - попробуйте! Мы уверены, что "
+#~ "Вам понравиться пользоваться сайтом без ограничений."
+#~ msgstr ""
+#~ "You have never had a membership card - try it! We are sure that you will "
+#~ "love to use all functionality of the website without limits."
+
+#, fuzzy
+#~ msgid "Французком"
+#~ msgstr "French#Французском"
+
+#, fuzzy
+#~ msgid "Выбор рейтинга обязателен!"
+#~ msgstr ""
+#~ "You have to select the type of feedback!#Вы должны выбрать вариант отзыва."
+
+#, fuzzy
+#~ msgid "Публикация VIP статуса"
+#~ msgstr "Your status is published in Top-20#Ваш статус опубликован в Топ-20"
+
+#~ msgid "в профиле"
+#~ msgstr "in profile"
+
+#~ msgid "Город проживания"
+#~ msgstr "Your city# Ваш город"
+
+#~ msgid "Девушки"
+#~ msgstr "Ladies"
+
+#~ msgid "Чёрный список"
+#~ msgstr "Blacklist"
+
+#~ msgid ""
+#~ "Другие пользователи не могут видеть Ваш профиль. Пожалуйста, подтвердите "
+#~ "Ваш номер телефона, перейдя на <a href=\"%s\">страницу Вашего профиля</a>."
+#~ msgstr ""
+#~ "Your phone number is not confirmed. Other people can not see your "
+#~ "profile. You can confirm your phone number on your profile's page <a href="
+#~ "\"%s\"></a>."
+
+#~ msgid "История счёта"
+#~ msgstr "Account history"
+
+#~ msgid "Сумма"
+#~ msgstr "Amount"
+
+#~ msgid "Итого пополнений"
+#~ msgstr "Total payments in"
+
+#~ msgid "Баланс счёта"
+#~ msgstr "Account balance"
+
+#~ msgid "Бонусные караты"
+#~ msgstr " Bonus carats"
+
+#~ msgid "Итого"
+#~ msgstr "Total"
+
+#~ msgid "Пополнение баланса - OnTheList"
+#~ msgstr "Balance top-up - OnTheList"
+
+#~ msgid "Ваш статус"
+#~ msgstr "Your status"
+
+#~ msgid "Добавить в Ленту событий"
+#~ msgstr "Add to Headlines"
+
+#~ msgid "Фаворитам"
+#~ msgstr "to Favorites"
+
+#~ msgid "Свидание"
+#~ msgstr "Date"
+
+#~ msgid "Стоимость обмена телефонами %s карат"
+#~ msgstr "Cost of exchanging phones %s carats"
+
+#~ msgid "Пригласите Ваших друзей"
+#~ msgstr "Invite your friends"
+
+#~ msgid "Пользователь добавлен в Чёрный список"
+#~ msgstr "A user was added to the Blacklist"
+
+#~ msgid "Пользователь удалён из Чёрного списка"
+#~ msgstr "A user was deleted from the Blacklist"
+
+#~ msgid "Нравится:"
+#~ msgstr "Like:"
+
+#~ msgid "Ваша заявка в Клуб OnTheList была одобрена!"
+#~ msgstr "Your OnTheList application has been approved!"
+
+#~ msgid "Для окончательной регистрации осталось несколько шагов:"
+#~ msgstr "A few steps to complete your registration:"
+
+#~ msgid ""
+#~ "Загрузите Вашу самую удачную портретную фотографию, на которой Вы "
+#~ "изображены крупным планом без солнечных очков."
+#~ msgstr ""
+#~ "Please upload your informal portrait picture, which clearly shows your "
+#~ "face without sunglasses."
+
+#~ msgid ""
+#~ "Важно правильно рассказать о себе. Укажите информацию о Вас, которая "
+#~ "будет отображаться другим членам Клуба."
+#~ msgstr ""
+#~ "It is important to present yourself in a right way. Please provide "
+#~ "information that you would like to share with other Club members."
+
+#~ msgid "Чем Вы увлекаетесь? Ваше хобби?"
+#~ msgstr "What are your interests and hobbies?"
+
+#~ msgid "Какие места Вы любите посещать?"
+#~ msgstr "What places do you like to visit?"
+
+#~ msgid ""
+#~ "Следующая информация не будет отображаться другим пользователям, но "
+#~ "позволит находить наиболее подходящих Вам людей."
+#~ msgstr ""
+#~ "The following information will not be shown to other users - it will "
+#~ "allow us to better match your profile."
+
+#~ msgid "Есть ли у Вас дети?"
+#~ msgstr "Do you have children?"
+
+#~ msgid "Вы курите?"
+#~ msgstr "Do you smoke?"
+
+#~ msgid "На каких языках Вы свободно говорите?"
+#~ msgstr "What languages do you speak?"
+
+#~ msgid "Я подтверждаю, что предоставленные данные достоверны."
+#~ msgstr "I confirm that the information above is correct."
+
+#~ msgid "Не корректно заполненно поле"
+#~ msgstr "The value is not corrent"
+
+#~ msgid "Необходимо ввести название"
+#~ msgstr "Please enter the name of your city"
+
+#~ msgid "Информация о Вашем образовании и работе"
+#~ msgstr "Information about your education and professional acceptation"
+
+#~ msgid "Откуда Вы узнали о Клубе / Кто Вас порекомендовал"
+#~ msgstr "Where did you find out about the Club? Who recommended you?"
+
+#~ msgid "Источник"
+#~ msgstr "Source"
+
+#~ msgid ""
+#~ "Данная информация требуется только лишь для того, чтобы оценить Вашу "
+#~ "анкету."
+#~ msgstr "We require this information only to evaluate your application."
+
+#~ msgid "Уважаемый"
+#~ msgstr "Dear"
+
+#~ msgid "Уважаемая"
+#~ msgstr "Dear"
+
+#~ msgid ""
+#~ "Благодарим Вас за проявленный интерес к проекту OnTheList Private Club."
+#~ msgstr "Thank you for your interest in OnTheList Private Club."
+
+#~ msgid ""
+#~ "Ваша заявка на вступление в Клуб OnTheList принята и находится на "
+#~ "рассмотрении. Мы сообщим Вам о результатах по электронной почте."
+#~ msgstr ""
+#~ "Your application to OnTheList Private Club has been received and "
+#~ "currently is under review. We will send you an email about it status "
+#~ "shortly."
+
+#~ msgid "Пополнение баланса - Закрытый клуб знакомств OnTheList.ru"
+#~ msgstr "Balance top up - OnTheList private club"
+
+#~ msgid "Пополнение счёта покупкой каратов (RoboKassa)"
+#~ msgstr "Payment via Robokassa"
+
+#~ msgid "Бонусное пополнение счёта"
+#~ msgstr "Bonus from OnTheList Club"
+
+#~ msgid "Счёт пополнен на %s карат. Ваш баланс: %s"
+#~ msgstr "Your account was topped up by %s carats. Your balance is %s"
+
+#~ msgid "Возможность пополненения счёта будет доступна в ближайшие дни."
+#~ msgstr "You will be able to top up your account in a few days."
+
+#~ msgid "Добавление или удаление из Фаворитов"
+#~ msgstr "Add to or remove from Favorites"
+
+#~ msgid "Пресс-релизы"
+#~ msgstr "Press releases"
+
+#~ msgid "Медиа-Кит"
+#~ msgstr "Press-Kit"
+
+#, fuzzy
+#~ msgid "Где вы любите бывать больше всего?"
+#~ msgstr "What places do you like to visit? Какие места Вы любите посещать?"
+
+#~ msgid "Заявка на вступление в Клуб OnTheList"
+#~ msgstr "OnTheList application form"
+
+#~ msgid "Загрузить резюме"
+#~ msgstr "Upload a resume"
+
+#, fuzzy
+#~ msgid ""
+#~ "Возможно, Вы ошиблись при наборе адреса или перешли по неверной ссылке."
+#~ msgstr "#вообще удалить эту фразу"
+
+#, fuzzy
+#~ msgid "Владение языком"
+#~ msgstr "Speaks#Говорит на"
+
+#~ msgid "Отчёты о свидании"
+#~ msgstr "Date feedbacks"
+
+#~ msgid "Мой фотоальбом"
+#~ msgstr "My album"
+
+#~ msgid "не важно"
+#~ msgstr "Does't matter"
+
+#~ msgid "Дата отправки запроса"
+#~ msgstr "Request date"
+
+#~ msgid "Свободно говорит на"
+#~ msgstr "Speak"
+
+#~ msgid "У Вас %s карат и %s бонусных карат. Итого: %s карат."
+#~ msgstr "You have %s carats and %s bonus carats. Total is %s carats."
+
+#~ msgid "При назначении свиданий, с Вашего счета будет списано %s карат"
+#~ msgstr "Every date costs  %s carats"
+
+#~ msgid "Дата и время свидания"
+#~ msgstr "Date and time of the date"
+
+#~ msgid "Оцените место свидания от 1 до 10"
+#~ msgstr "Rate the place of the date from 1 to 10"
+
+#~ msgid "Как бы Вы оценили манеры поведения этого человека?"
+#~ msgstr "You already have a date set up with this person"
+
+#, fuzzy
+#~ msgid "У Вас сегодня свидание"
+#~ msgstr "You had a date scheduled on"
+
+#~ msgid "Ближайшие свидания"
+#~ msgstr "Comings dates"
+
+#~ msgid "Отправленные Вами приглашения на свидания"
+#~ msgstr "Invitations sent by you"
+
+#~ msgid "У Вас не достаточно карат. Пополните счёт."
+#~ msgstr ""
+#~ "You do not have enough carats to ask questions. Please top up you account."
+
+#~ msgid "Вопрос отправлен, на Вашем счёте осталось %s карат"
+#~ msgstr "Your question was sent, the balance is %s carats"
+
+#~ msgid "Ответы на Ваши вопросы"
+#~ msgstr "Answers for your questions"
+
+#~ msgid "Ваша ссылка для приглашения друзей"
+#~ msgstr "Your link to invite friends"
+
+#~ msgid ""
+#~ "Эти вопросы вы можете задать только 1 раз. Пожалуйста, выбирайте вопросы "
+#~ "внимательно."
+#~ msgstr "You can ask those questions only once. Please, choose carefully."
+
+#~ msgid "Вы уже задавали вопросы этому человеку."
+#~ msgstr "You asked this person already."
+
+#~ msgid "Календарь назначенных свиданий"
+#~ msgstr "Dates scheduled"
+
+#~ msgid "Текущее состояние счёта"
+#~ msgstr "Account balance"
+
+#, fuzzy
+#~ msgid "Контактный E-Mail"
+#~ msgstr "Email#Эл. почта"
+
+#, fuzzy
+#~ msgid "Метро:"
+#~ msgstr "Metro: %s, %s"
+
+#, fuzzy
+#~ msgid "Оцените внешние данные от 1 до 10"
+#~ msgstr ""
+#~ "How good-looking was your date?# На сколько бы Вы оценили внешние данные?"
+
+#~ msgid ""
+#~ "Если по какой-либо причине Вы не можете прийти на свидание вовремя, Вы "
+#~ "должны предупредить другого человека заранее. Пользователи, не пришедшие "
+#~ "на свидание без предупреждения, будут заблокированы."
+#~ msgstr ""
+#~ "If for any reason you can not come for the date on time, you have to "
+#~ "inform another person in advance. Users, who do not show up for the date "
+#~ "without a notification, will be blocked."
+
+#~ msgid "Я согласен"
+#~ msgstr "I agree"
+
+#~ msgid "Я согласна"
+#~ msgstr "I agree"
+
+#~ msgid "с данными условиями и хочу отправить предложение о свидании."
+#~ msgstr "with these terms and would like to send an invitation."
+
+#, fuzzy
+#~ msgid "Вуз"
+#~ msgstr "University#ВУЗ"
+
+#~ msgid "Календарь приглашений"
+#~ msgstr "Calendar of dates"
+
+#~ msgid "Условия принятия приглашения на свидание"
+#~ msgstr "Terms and conditions"
+
+#~ msgid "с данными условиями и хочу принять предложение о свидании"
+#~ msgstr ""
+#~ "with these terms and I would like to accept an invitation for a date"
+
+#~ msgid "Отклонить приглашение"
+#~ msgstr "Decline invitation"
+
+#~ msgid "Принять приглашение"
+#~ msgstr "Accept invitation"
+
+#~ msgid "Вам отправили приглашение на свидание"
+#~ msgstr "Your received an invitation for a date"
+
+#~ msgid "Календарь"
+#~ msgstr "Calender"
+
+#~ msgid "Наличие детей"
+#~ msgstr "Children"
+
+#, fuzzy
+#~ msgid "Выберите дни недели, удобные для свиданий."
+#~ msgstr ""
+#~ "Please select free days in your calender.#Выберите в календаре свободные "
+#~ "дни для свиданий."
+
+#, fuzzy
+#~ msgid "В выбранные дни и время, Вам смогут назначить свидание."
+#~ msgstr ""
+#~ "You can be invited out on selected days and time.#Вам могут назначить "
+#~ "свидание в выбранные дни и время."
+
+#~ msgid "Не смогли созвониться"
+#~ msgstr "We could not reach each other by phone"
+
+#, fuzzy
+#~ msgid "Я отказался"
+#~ msgstr "I did not come#Я не пришел"
+
+#~ msgid "Статус текущего обмена контактами с этим пользователем"
+#~ msgstr "Status of phone exchange with this person"
+
+#, fuzzy
+#~ msgid "Статус у отправителя"
+#~ msgstr "Status#ЧТО ЭТО?"
+
+#, fuzzy
+#~ msgid "Принять предложение"
+#~ msgstr "Exchange phones#Обменяться контактами"
+
+#~ msgid "Дата создания запроса"
+#~ msgstr "Request date"
+
+#~ msgid "В фавориты добавлена новая запись"
+#~ msgstr "A new entry was added to favorites"
+
+#, fuzzy
+#~ msgid "Введите новый идентификатор Skype"
+#~ msgstr "Enter your comment"
+
+#, fuzzy
+#~ msgid ""
+#~ "Для принятия решения об одобрении Вашей анкеты нам требуется как можно "
+#~ "больше информации о Вас. Чем больше информации Вы предоставите, тем проще "
+#~ "нам будет принять верное решение. Данная информация требуется только лишь "
+#~ "для того, чтобы оценить Вашу анкету."
+#~ msgstr ""
+#~ "This information is requred only for evaluation of your application."
+#~ "#Данная информация требуется только для того, чтобы оценить Вашу анкету."
+
+#~ msgid "за отмену свидания"
+#~ msgstr "for a cancelled "
+
+#, fuzzy
+#~ msgid "за отзыв свидания"
+#~ msgstr "Date and time of the date"
+
+#, fuzzy
+#~ msgid "за отзыв обмена контактами"
+#~ msgstr "History of phone exchange"
