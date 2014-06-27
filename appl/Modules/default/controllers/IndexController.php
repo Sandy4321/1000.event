@@ -24,6 +24,6 @@ class IndexController extends Sas_Controller_Action
 	 */
 	public function indexAction()
 	{
-
+		$Profile = new Models_Users(123);
 	}
 }

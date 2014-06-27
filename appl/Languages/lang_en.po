@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 1000.event\n"
-"POT-Creation-Date: 2014-06-24 21:25+0400\n"
-"PO-Revision-Date: 2014-06-27 13:43+0400\n"
+"POT-Creation-Date: 2014-06-27 14:59+0400\n"
+"PO-Revision-Date: 2014-06-27 14:59+0400\n"
 "Last-Translator: Alexander\n"
 "Language-Team: \n"
 "Language: en_EN\n"
@@ -16,6 +16,10 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 "X-Poedit-SearchPath-1: ../../lib/Sas\n"
 
+#: ../Models/Users.php:34
+msgid "Россия"
+msgstr ""
+
 #: ../../lib/Sas/View/Helper/RollerPage.php:37
 #: ../../lib/Sas/View/Helper/RollerPageButton.php:58
 msgid "Назад"
@@ -26,42 +30,26 @@ msgstr "Back"
 msgid "Далее"
 msgstr "Next"
 
-#: ../Modules/default/layouts/menu-mobile.phtml:3
-#: ../Modules/default/layouts/menu-site.phtml:11
-msgid "Главная"
-msgstr "Home"
+#~ msgid "Главная"
+#~ msgstr "Home"
 
-#: ../Modules/default/layouts/menu-mobile.phtml:4
-#: ../Modules/default/layouts/menu-site.phtml:12
-msgid "О нас"
-msgstr "About"
+#~ msgid "О нас"
+#~ msgstr "About"
 
-#: ../Modules/default/layouts/menu-mobile.phtml:5
-#: ../Modules/default/layouts/menu-site.phtml:13
-msgid "Контакты"
-msgstr "Contacts"
+#~ msgid "Контакты"
+#~ msgstr "Contacts"
 
-#: ../Modules/default/layouts/menu-mobile.phtml:7
-#: ../Modules/default/layouts/menu-site.phtml:15
-msgid "Регистрация"
-msgstr "Registration"
+#~ msgid "Регистрация"
+#~ msgstr "Registration"
 
-#: ../Modules/default/layouts/menu-mobile.phtml:8
-#: ../Modules/default/layouts/menu-site.phtml:16
-#: ../Modules/default/views/scripts/index/index.phtml:11
-#: ../Modules/user/views/scripts/login/index.phtml:12
-msgid "Вход"
-msgstr "Enter"
+#~ msgid "Вход"
+#~ msgstr "Enter"
 
-#: ../Modules/default/views/scripts/index/index.phtml:6
-#: ../Modules/user/views/scripts/login/index.phtml:7
-msgid "Логин"
-msgstr "Login"
+#~ msgid "Логин"
+#~ msgstr "Login"
 
-#: ../Modules/default/views/scripts/index/index.phtml:8
-#: ../Modules/user/views/scripts/login/index.phtml:9
-msgid "Пароль"
-msgstr "Password"
+#~ msgid "Пароль"
+#~ msgstr "Password"
 
 #~ msgid "Саша"
 #~ msgstr "Sasha"
