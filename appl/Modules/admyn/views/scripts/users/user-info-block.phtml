@@ -1,0 +1,73 @@
+<?php
+
+$item = $this->item;
+$dateReg = new DateTime($item['register_dt']);
+?>
+
+<div class="row-fluid">
+	<div class="span2">
+		<h5 class="text-center"><?= $item['cityName']?></h5>
+		<?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $item['img'].'thumbnail.jpg')) {?>
+			<img class="img-polaroid img-rounded" src="<?= $item['img']?>thumbnail.jpg">
+		<?php } else { ?>
+			<p>Нет фото</p>
+		<?php } ?>
+		<p class="text-center"><?= ($item['sex'] == 'male') ? 'Мужчина' : 'Женщина';?></p>
+	</div>
+	<div class="span7">
+		<small>Дата регистрации: <?= $dateReg->format('d.m.Y')?></small>
+		<?php
+		// Отклонённые заявки
+		if(isset($item['denied_dt'])) {
+			$dateDenied = new DateTime($item['denied_dt']);
+			echo '| <small>Дата отклонения заявки:</small> '.$dateDenied->format('d.m.Y');
+		}
+		?>
+		<h3><a href="/admyn/users/view-profile/id/<?= $item['id']?>"><?= $item['first_name']?> <?= $item['last_name']?></a> | <small>возраст: <span class="green"><?= Models_User_Model::getAge($item['birthday'])?></span> | ID: <?= $item['id']?> |  <span class="white"><?= $item['lang']?></span></small> <img src="/img/flags/<?= $item['lang']?>.png"></h3>
+		<p>Дата рождения: <?= $item['birthday']?></p>
+		<p>Email: <?= $item['email']?></p>
+		<p>Образование: <?= $item['education']?></p>
+		<p>Работа: <?= $item['company']?></p>
+
+		<!-- По рекомендации -->
+		<?php if (!empty($item['promo_key_friend'])) {?>
+			<p>По приглашению от:
+				<a href="/admyn/users/view-profile/id/<?= $item['friendId']?>">Профиль приглашающего</a>
+			</p>
+		<?php } ?>
+	</div>
+	<div class="span3">
+		<?php if (!empty($item['link_vk']) || !empty($item['link_fb']) || !empty($item['link_ln'])) {?>
+			<p>Соц. сети:</p>
+			<? if(!empty($item['link_vk'])):?>
+				<p>
+					<a href="<?= $item['link_vk']?>" target="_blank" title="Открыть в новом окне">vKontakte</a>
+					<span class="linkTextSocNet"><?= $item['link_vk']?></span>
+				</p>
+			<? endif;?>
+			<? if(!empty($item['link_fb'])):?>
+				<p>
+					<a href="<?= $item['link_fb']?>" target="_blank" title="Открыть в новом окне">FaceBook</a>
+					<span class="linkTextSocNet"><?= $item['link_fb']?></span>
+				</p>
+			<? endif;?>
+			<? if(!empty($item['link_ln'])):?>
+				<p>
+					<a href="<?= $item['link_ln']?>" target="_blank" title="Открыть в новом окне">LinkedIn</a>
+					<span class="linkTextSocNet"><?= $item['link_ln']?></span>
+				</p>
+			<? endif;?>
+		<?php } else { ?>
+			<p>Нет ссылок на соц. сети</p>
+		<?php } ?>
+		<hr>
+		<?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $item['img'].'resume.xxx')) {?>
+			<p>Резюме:
+				<small class="white"><?= file_get_contents($_SERVER['DOCUMENT_ROOT'] . $item['img'].'fileNameResume.txt')?></small>
+			</p>
+			<p><a href="<?= $this->url(array('controller'=>'users', 'action'=>'download-resume', 'id'=>$item['id']))?>">Скачать резюме</a><br><small>(<?= number_format((filesize($_SERVER['DOCUMENT_ROOT'] . $item['img'].'resume.xxx') / 1024), 2, ',', ' ')?>Kb)</small></p>
+		<?php } else { ?>
+			<p>Нет резюме</p>
+		<?php } ?>
+	</div>
+</div>

@@ -1,0 +1,64 @@
+<?
+$myId   = $this->myProfile['id'];
+$myCard = $this->myProfile['club_card_dt'];
+?>
+<!-- Мои события -->
+<div class="content-block" id="<?= $this->vBlockId;?>">
+	<div class="header">
+		<h3><?= $this->vBlockName;?></h3>
+	</div>
+	<div class="data">
+	<?
+	foreach($this->vBlockGroup as $event) {
+		$dateStart = new DateTime($event['date_start']);
+		echo '<div class="dashboard-event" id="Event_'.$event['id'].'">';
+			echo '<div class="description"><span>'.$dateStart->format('d M, H:i').'</span>';
+			echo '<h1><a href="'.$this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'view', 'id'=>$event['id']), null, true).'">'.$event['title'].'</a></h1>';
+			echo '<span class="place">'.$event['point_name'].'</span>';
+			echo '</div>';
+
+		// Вывод тех, кто пойдет со мной
+		if(!empty($event['usersGo'])) {
+			echo '<div class="users">';
+			$i = 1;
+			foreach ($event['usersGo'] as $item) {
+				// Ссылки на профиль
+				if($item['id'] == $myId) {
+					// На свой профиль
+					echo '<a class="photo" href="'.$this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'index'), null, true).'">';
+				} else { // На чужие проили
+					if($myCard >= CURRENT_DATE) {
+						// на профиль для владельцев КК
+						echo '<a class="photo" href="'.$this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$item['uid']), null, true).'">';
+					} else { // нет КК = на покупку КК
+						echo '<a class="photo" href="javascript:void(0);" onclick="goBuyCard(\''.$this->t('Просмотр профиля доступен только для владельцев клубных карт.').'\')">';
+					}
+				}
+
+				echo '<img src="'.$item['avatar'].'"> ';
+				echo '</a>';
+
+				if($i==3) break;
+				$i++;
+			}
+			$cntBlockGroup = count($event['usersGo']);
+			$cntBlockGroupView = 0;
+			if($cntBlockGroup >= 3) $cntBlockGroupView = $cntBlockGroup - 3;
+			if($cntBlockGroup == 2) $cntBlockGroupView = $cntBlockGroup - 2;
+			if($cntBlockGroup == 1) $cntBlockGroupView = $cntBlockGroup - 1;
+			if($cntBlockGroupView > 0) {
+				if($myCard >= CURRENT_DATE) {
+					echo '<a class="all" href="javascript:void(0);" onclick="popup_show(\'dashboard\', \''.$this->vBlockId.'\', '.$event['id'].')" >+'.$cntBlockGroupView.'</a>';
+				} else {
+					echo '<a class="all" href="javascript:void(0);" onclick="goBuyCard(\''.$this->t('Только владельцы Клубных карт могут посмотреть полный список.').'\')" >+ '. $cntBlockGroupView.'</a>';
+				}
+			}
+
+			echo '</div>';
+		}
+
+		echo '</div>';
+	}
+	?>
+	</div>
+</div>

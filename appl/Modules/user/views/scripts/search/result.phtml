@@ -1,0 +1,30 @@
+<? $urlProfile = $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$this->vItem['uid']), null, true);?>
+<div class="item-user">
+	<? #Sas_Debug::dump($this->vItem)?>
+	<? if($this->vItem['online'] == 'yes') echo '<div class="online-bubble"></div>';?>
+	<? if(!empty($this->vItem['status_text'])) echo '<div class="status-search-text">'.$this->vItem['status_text'].'</div>';?>
+	<a href="<?= $urlProfile;?>" class="photo"><img src="<?= $this->vItem['avatar']?>"></a>
+	<a href="<?= $urlProfile;?>" class="name"><?= $this->vItem['first_name']?></a>
+	<div class="interests">
+		<?
+		if($this->vSearchBlock == 'business') {
+			// Показываем должность и компанию
+			if(!empty($this->vItem['company']) && !empty($this->vItem['position_job'])) {
+				echo $this->vItem['company'].', '.$this->vItem['position_job'];
+			} elseif(!empty($this->vItem['company'])) {
+				echo $this->vItem['company'];
+			} elseif(!empty($this->vItem['position_job'])) {
+				echo $this->vItem['position_job'];
+			} else {
+				echo '&nbsp;';
+			}
+		} elseif($this->vSearchBlock == 'target') {
+			echo (isset($this->vItem['cntMatch'])) ? $this->vItem['cntMatch'] : 0;
+			printf($this->t(' из %s целей совпадает'), $this->vItem['cntInteres']);
+		} else {
+			echo (isset($this->vItem['cntMatch'])) ? $this->vItem['cntMatch'] : 0;
+			printf($this->t(' из %s интересов совпадает'), $this->vItem['cntInteres']);
+		}
+		?>
+	</div>
+</div>

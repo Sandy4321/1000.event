@@ -1,0 +1,46 @@
+<?php
+
+// analytics/user-action-base/
+
+//$this->headScript()->appendFile('/js/admyn/new_users.js');
+
+$log = $this->vLog;
+//Sas_Debug::dump($log);
+//$cntData = count($data);
+
+$catLogId = (empty($this->vCatLogId)) ? 2 : $this->vCatLogId;
+
+$dateOne = (empty($this->vDateOne)) ? 'date-current' : $this->vDateOne;
+
+?>
+
+<h1>Базовые действия пользователей</h1>
+<form action="<?= $this->url()?>" class="form-inline" method="get">
+	<p class="text-center">
+		<label class="radio inline"><input type="radio" id="date-current" name="date_one" value="date-current" <?= $this->IsChecked($dateOne, 'date-current')?>> Сегодня</label>
+		<label class="radio inline"><input type="radio" id="date-yesterday" name="date_one" value="date-yesterday" <?= $this->IsChecked($dateOne, 'date-yesterday')?>> Вчера</label>
+		<label class="radio inline"><input type="radio" id="date-weekly" name="date_one" value="date-weekly" <?= $this->IsChecked($dateOne, 'date-weekly')?>> За неделю</label>
+		<label class="radio inline"><input type="radio" id="date-month" name="date_one" value="date-month" <?= $this->IsChecked($dateOne, 'date-month')?>> За месяц</label>
+		<label class="radio inline"><input type="radio" id="date-all" name="date_one" value="date-all" <?= $this->IsChecked($dateOne, 'date-all')?>> Все</label>
+	</p>
+	<p class="text-center"><?= $this->HtmlFormSelect('cat_log_id', $this->vCatLog, $catLogId, 'input-xxlarge')?></p>
+	<p class="text-center"><button class="btn" type="submit">Выбрать</button></p>
+</form>
+
+<? if(!empty($log)) : ?>
+	<h2>Выборка из категории: <?= $catLogId?>, найдено записей: <?= count($log)?></h2>
+	<? foreach ($log as $key => $item) :?>
+		<h5>
+			<small><?= date_format(new DateTime($item['date_create']), 'd.m.Y H:i')?></small>
+			Пользователь1 ID: <a href="/admyn/users/view-profile/id/<?= $item['primary_user_id']?>"><?= $item['primary_user_id']?></a>
+
+			<? if(!empty($item['to_user_ud'])) : ?>
+				-> Пользователь2 ID: <a href="/admyn/users/view-profile/id/<?= $item['to_user_ud']?>"><?= $item['to_user_ud']?></a>
+			<? endif; ?>
+
+			<? if(!empty($item['service_id'])) : ?>
+				Служебный ID: <?= $item['service_id']?>
+			<? endif; ?>
+		</h5>
+	<? endforeach; ?>
+<? endif; ?>

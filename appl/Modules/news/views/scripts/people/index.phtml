@@ -1,0 +1,19 @@
+<?php
+
+$title = $this->t('Известные люди о нас');
+$this->headTitle($title);
+
+?>
+<div class="container" id="news">
+	<h1 class="page-title"><?= $title?></h1>
+	<? foreach($this->vData as $item) : ?>
+	<div class="news-item">
+		
+			<div class="textQuote"><?= $item['text']?></div>
+			<div class="author"><?= $item['author']?></div>
+			<div class="authorJob"><?= $item['authorJob']?></div>
+		
+	</div>
+	<? endforeach; ?>
+</div>
+

@@ -1,36 +1,2037 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: partner.otl.club\n"
-"POT-Creation-Date: 2014-06-24 14:53+0400\n"
-"PO-Revision-Date: 2014-06-24 14:54+0400\n"
+"Project-Id-Version: OnTheList\n"
+"POT-Creation-Date: 2013-06-26 12:11+0400\n"
+"PO-Revision-Date: 2013-06-26 12:11+0400\n"
 "Last-Translator: Alexander\n"
 "Language-Team: \n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.7\n"
-"X-Poedit-KeywordsList: t;translate\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: t\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
-"X-Poedit-SearchPath-1: ../../lib/Sas\n"
 
-#: ../../lib/Sas/View/Helper/RollerPage.php:37
-#: ../../lib/Sas/View/Helper/RollerPageButton.php:58
+#: ../Models/User/Balance.php:336
+msgid "Назначение свидания"
+msgstr ""
+
+#: ../Models/User/Balance.php:355
+#: ../Modules/user/views/scripts/dates/contact-exchange.phtml:3
+#: ../Modules/user/views/scripts/dates/history.phtml:75
+#: ../Modules/user/views/scripts/dates/index.phtml:34
+msgid "Обмен телефонами"
+msgstr ""
+
+#: ../Models/User/Balance.php:410
+msgid "Возврат бонусных карат"
+msgstr ""
+
+#: ../Models/User/Balance.php:414
+msgid "Возврат карат"
+msgstr ""
+
+#: ../Models/User/Balance.php:434
+msgid "Отправка платного вопроса"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ContactExchangeController.php:24
+msgid "Отправитель отозвал запрос на обмен телефонами"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ContactExchangeController.php:61
+#: ../Modules/user/views/scripts/dates/contact-exchange.phtml:15
+msgid "У Вас не достаточно карат для обмена телефонами"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ContactExchangeController.php:84
+msgid "за отзыв предложения обменяться телефонами"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ContactExchangeController.php:117
+msgid "за отклонённое предложение обменяться телефонами"
+msgstr ""
+
+#: ../Modules/ajax/controllers/DatesController.php:79
+msgid "за непринятое приглашение на свидание"
+msgstr ""
+
+#: ../Modules/ajax/controllers/DatesController.php:161
+msgid "за отзыв приглашения на свидание"
+msgstr ""
+
+#: ../Modules/ajax/controllers/PlacesController.php:65
+#: ../Modules/user/views/scripts/people/invite.phtml:140
+#: ../Modules/user/views/scripts/places/view.phtml:15
+msgid "Адрес"
+msgstr ""
+
+#: ../Modules/ajax/controllers/PlacesController.php:68
+msgid "метро"
+msgstr ""
+
+#: ../Modules/ajax/controllers/PlacesController.php:75
+#: ../Modules/user/views/scripts/places/view.phtml:17
+msgid "Сайт"
+msgstr ""
+
+#: ../Modules/ajax/controllers/PlacesController.php:96
+msgid "Место отмечено как любимое"
+msgstr ""
+
+#: ../Modules/ajax/controllers/PlacesController.php:98
+msgid "Запись удалена"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:28
+msgid "Код подтверждения: "
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:32
+msgid "Вам отправлено SMS с кодом подтверждения."
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:87
+msgid "Пароль успешно изменён"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:91
+msgid "Пароль не может быть пустым!"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:160
+msgid "Настройки фильтра профиля успешно сохранены"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:191
+msgid "Публичная информация успешно сохранена"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:212
+msgid "Skype успешно изменён"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:215
+msgid "Skype не изменён"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:253
+msgid "Приватная информация успешно сохранена"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:351
+msgid "Настройки оповещения о событиях успешно сохранены"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:368
+msgid "Ваш профиль скрыт"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:371
+msgid "Ваш профиль открыт"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:381
+msgid "Не верный пароль"
+msgstr ""
+
+#: ../Modules/ajax/controllers/ProfileController.php:420
+msgid "Изменения сохранены"
+msgstr ""
+
+#: ../Modules/user/controllers/BalanceController.php:37
+msgid "Пополнение счёта покупкой каратов (RoboKassa)"
+msgstr ""
+
+#: ../Modules/user/controllers/BalanceController.php:39
+msgid "Бонусное пополнение счёта"
+msgstr ""
+
+#: ../Modules/user/controllers/BalanceController.php:43
+#, php-format
+msgid "Счёт пополнен на %s карат. Ваш баланс: %s"
+msgstr ""
+
+#: ../Modules/user/controllers/DatesController.php:118
+msgid "за переназначение свидания"
+msgstr ""
+
+#: ../Modules/user/controllers/InviteController.php:25
+msgid "OnTheList.ru - приглашение в Клуб"
+msgstr ""
+
+#: ../Modules/user/controllers/InviteController.php:28
+msgid "Здравствуйте!"
+msgstr ""
+
+#: ../Modules/user/controllers/InviteController.php:29
+#, php-format
+msgid "%s приглашает Вас в Клуб OnTheList www.onthelist.ru"
+msgstr ""
+
+#: ../Modules/user/controllers/InviteController.php:30
+msgid "Чтобы зарегистрироваться в Клубе пройдите по ссылке:"
+msgstr ""
+
+#: ../Modules/user/controllers/InviteController.php:32
+msgid "Добро пожаловать в Клуб!"
+msgstr ""
+
+#: ../Modules/user/controllers/InviteController.php:33
+msgid "С уважением,"
+msgstr ""
+
+#: ../Modules/user/controllers/InviteController.php:34
+msgid "Администрация Клуба OnTheList"
+msgstr ""
+
+#: ../Modules/user/controllers/InviteController.php:35
+msgid "Внимание: Это письмо не требует ответа."
+msgstr ""
+
+#: ../Modules/user/controllers/InviteController.php:36
+msgid ""
+"Почтовый ящик, с которого вы получили это письмо, не является контактным."
+msgstr ""
+
+#: ../Modules/about/views/scripts/contact/index.phtml:2
+#: ../Modules/default/layouts/back_nav-header.phtml:31
+#: ../Modules/default/layouts/footer.phtml:13
+#: ../Modules/user/layouts/layout.phtml:71
+msgid "Контакты"
+msgstr ""
+
+#: ../Modules/about/views/scripts/index/faq.phtml:2
+msgid "Ответы на часто задаваемые вопросы"
+msgstr ""
+
+#: ../Modules/about/views/scripts/index/how-to-join.phtml:2
+#: ../Modules/default/layouts/back_nav-header.phtml:27
+#: ../Modules/default/layouts/footer.phtml:9
+#: ../Modules/default/layouts/nav-header.phtml:25
+msgid "Как вступить"
+msgstr ""
+
+#: ../Modules/about/views/scripts/index/index.phtml:3
+#: ../Modules/default/layouts/back_nav-header.phtml:26
+#: ../Modules/default/layouts/footer.phtml:8
+#: ../Modules/default/layouts/nav-header.phtml:24
+#: ../Modules/user/layouts/layout.phtml:64
+msgid "О клубе"
+msgstr ""
+
+#: ../Modules/about/views/scripts/index/media-kit.phtml:2
+#: ../Modules/default/layouts/back_nav-header.phtml:32
+msgid "Медиа-кит"
+msgstr ""
+
+#: ../Modules/about/views/scripts/index/members.phtml:2
+#: ../Modules/default/layouts/back_nav-header.phtml:28
+#: ../Modules/default/layouts/footer.phtml:11
+#: ../Modules/default/layouts/nav-header.phtml:26
+msgid "Члены клуба"
+msgstr ""
+
+#: ../Modules/about/views/scripts/index/privacy.phtml:2
+msgid "Политика конфиденциальности"
+msgstr ""
+
+#: ../Modules/about/views/scripts/index/rules.phtml:5
+#: ../Modules/default/layouts/back_nav-header.phtml:29
+#: ../Modules/default/layouts/footer.phtml:10
+#: ../Modules/user/layouts/layout.phtml:65
+msgid "Правила"
+msgstr ""
+
+#: ../Modules/about/views/scripts/index/team.phtml:2
+#: ../Modules/default/layouts/back_nav-header.phtml:34
+msgid "Наша команда"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/communication/answer-my-form.phtml:10
+#: ../Modules/user/views/scripts/communication/answer-my-form.phtml:10
+msgid "Введите ответ"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/communication/answer-my-form.phtml:12
+#: ../Modules/ajax/views/scripts/communication/get-questions-free.phtml:14
+#: ../Modules/user/views/scripts/communication/answer-my-form.phtml:12
+msgid "Ответить"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/communication/answer-my.phtml:7
+#: ../Modules/ajax/views/scripts/communication/answer-partner.phtml:11
+#: ../Modules/user/views/scripts/communication/answer-my.phtml:7
+#: ../Modules/user/views/scripts/communication/answer-partner.phtml:11
+msgid "Ответ"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/communication/question-my.phtml:9
+#: ../Modules/ajax/views/scripts/communication/question-partner-answer-no.phtml:11
+#: ../Modules/ajax/views/scripts/communication/question-partner-answer-yes.phtml:11
+#: ../Modules/user/views/scripts/communication/question-my.phtml:9
+#: ../Modules/user/views/scripts/communication/question-partner-answer-no.phtml:11
+#: ../Modules/user/views/scripts/communication/question-partner-answer-yes.phtml:11
+msgid "Вопрос"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/exchange.phtml:8
+#: ../Modules/user/views/scripts/dates/index.phtml:39
+msgid "Закрыть и убрать в архив истории"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/exchange.phtml:15
+#: ../Modules/user/views/scripts/dashboard/dates-plan.phtml:16
+#: ../Modules/user/views/scripts/dates/history.phtml:36
+#: ../Modules/user/views/scripts/dates/history.phtml:72
+#: ../Modules/user/views/scripts/dates/index.phtml:50
+#: ../Modules/user/views/scripts/places/view.phtml:16
+msgid "Телефон"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:13
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:16
+#: ../Modules/user/views/scripts/dates/calendar-yes.phtml:47
+#: ../Modules/user/views/scripts/dates/free-day.phtml:9
+msgid "Пн"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:14
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:17
+#: ../Modules/user/views/scripts/dates/calendar-yes.phtml:48
+#: ../Modules/user/views/scripts/dates/free-day.phtml:10
+msgid "Вт"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:15
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:18
+#: ../Modules/user/views/scripts/dates/calendar-yes.phtml:49
+#: ../Modules/user/views/scripts/dates/free-day.phtml:11
+msgid "Ср"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:16
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:19
+#: ../Modules/user/views/scripts/dates/calendar-yes.phtml:50
+#: ../Modules/user/views/scripts/dates/free-day.phtml:12
+msgid "Чт"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:17
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:20
+#: ../Modules/user/views/scripts/dates/calendar-yes.phtml:51
+#: ../Modules/user/views/scripts/dates/free-day.phtml:13
+msgid "Пт"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:18
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:21
+#: ../Modules/user/views/scripts/dates/calendar-yes.phtml:52
+#: ../Modules/user/views/scripts/dates/free-day.phtml:14
+msgid "Сб"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:19
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:22
+#: ../Modules/user/views/scripts/dates/calendar-yes.phtml:53
+#: ../Modules/user/views/scripts/dates/free-day.phtml:15
+msgid "Вс"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:44
+#: ../Modules/user/views/scripts/people/invite.phtml:61
+msgid "Выберите удобные дату и время"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:99
+msgid "Выберите место свидания"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:106
+#, php-format
+msgid "Метро: %s, %s"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:114
+#: ../Modules/user/views/scripts/dates/index.phtml:174
+msgid "Отклонить"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:116
+msgid "Предложить своё место и время"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:118
+#: ../Modules/user/views/scripts/dates/index.phtml:175
+msgid "Принять"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:121
+#: ../Modules/user/views/scripts/people/invite.phtml:164
+#, php-format
+msgid "Стоимость услуг OnTheList за организацию свидания %s карат"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:122
+msgid ""
+"Данная сумма спишется с Вашего счета только в том случае, если Вы примите "
+"приглашение."
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/invite.phtml:124
+msgid "Недостаточно средств - пополнить баланс."
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:33
+msgid "Предложенные даты и время"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:85
+msgid "Предложенные места"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:99
+msgid "Отозвать приглашение"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/dates/my-invitations.phtml:101
+msgid "Вы сможете отозвать приглашение через 24 часа после его создания"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/photo/upload.phtml:12
+#: ../Modules/user/views/scripts/profile/photo-album-view.phtml:38
+msgid "Введите комментарий"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/photo/upload.phtml:13
+#: ../Modules/user/views/scripts/dates/free-day.phtml:83
+#: ../Modules/user/views/scripts/profile/index.phtml:181
+#: ../Modules/user/views/scripts/profile/index.phtml:249
+#: ../Modules/user/views/scripts/profile/index.phtml:316
+#: ../Modules/user/views/scripts/profile/index.phtml:363
+#: ../Modules/user/views/scripts/profile/index.phtml:427
+#: ../Modules/user/views/scripts/profile/photo-album-view.phtml:39
+msgid "Сохранить"
+msgstr ""
+
+#: ../Modules/ajax/views/scripts/photo/upload.phtml:14
+#: ../Modules/user/views/scripts/profile/photo-album-view.phtml:40
+#: ../Modules/user/views/scripts/register/activation.phtml:68
+#: ../Modules/user/views/scripts/register/index.phtml:250
+#: ../Modules/user/views/scripts/register/index.phtml:276
+msgid "Удалить"
+msgstr ""
+
+#: ../Modules/default/layouts/auth-form.phtml:7
+msgid "Логин"
+msgstr ""
+
+#: ../Modules/default/layouts/auth-form.phtml:13
+#: ../Modules/default/layouts/back_auth-form.phtml:5
+#: ../Modules/default/views/scripts/index/index.phtml:76
+#: ../Modules/user/views/scripts/profile/index.phtml:121
+#: ../Modules/user/views/scripts/register/activation.phtml:184
+msgid "Пароль"
+msgstr ""
+
+#: ../Modules/default/layouts/auth-form.phtml:17
+#: ../Modules/default/layouts/back_auth-form.phtml:9
+#: ../Modules/default/layouts/back_nav-header.phtml:48
+#: ../Modules/default/views/scripts/index/index.phtml:89
+#: ../Modules/user/views/scripts/login/index.phtml:24
+msgid "Войти"
+msgstr ""
+
+#: ../Modules/default/layouts/auth-form.phtml:45
+#: ../Modules/default/layouts/back_auth-form.phtml:7
+#: ../Modules/default/views/scripts/index/index.phtml:84
+msgid "Запомнить меня"
+msgstr ""
+
+#: ../Modules/default/layouts/auth-form.phtml:49
+#: ../Modules/default/layouts/back_auth-form.phtml:13
+#: ../Modules/default/views/scripts/index/index.phtml:87
+msgid "Забыли пароль?"
+msgstr ""
+
+#: ../Modules/default/layouts/back_auth-form.phtml:4
+msgid "Электронная почта"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:23
+#: ../Modules/default/layouts/nav-header.phtml:23
+#: ../Modules/default/views/scripts/index/index.phtml:17
+#: ../Modules/default/views/scripts/index/menutop.phtml:16
+msgid "Главная"
+msgstr "Главная"
+
+#: ../Modules/default/layouts/back_nav-header.phtml:24
+msgid "Клуб"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:30
+#: ../Modules/default/layouts/footer.phtml:12
+#: ../Modules/user/layouts/layout.phtml:66
+msgid "Конфиденциальность"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:33
+msgid "Ответы на вопросы"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:37
+#: ../Modules/news/views/scripts/index/index.phtml:3
+#: ../Modules/news/views/scripts/index/show.phtml:15
+#: ../Modules/user/views/scripts/dashboard/news.phtml:2
+msgid "Новости"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:39
+#: ../Modules/default/layouts/footer.phtml:19
+#: ../Modules/user/layouts/layout.phtml:72
+msgid "Наши новости"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:40
+#: ../Modules/news/views/scripts/events/index.phtml:2
+#: ../Modules/news/views/scripts/events/show.phtml:15
+#: ../Modules/user/layouts/layout.phtml:73
+msgid "Мероприятия"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:41
+#: ../Modules/news/views/scripts/press-release/index.phtml:2
+msgid "Пресс релизы"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:42
+msgid "СМИ"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:43
+#: ../Modules/default/layouts/footer.phtml:22
+#: ../Modules/user/layouts/layout.phtml:82
+msgid "О нас говорят"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:46
+#: ../Modules/default/layouts/footer.phtml:23
+#: ../Modules/default/layouts/nav-header.phtml:27
+#: ../Modules/user/layouts/layout.phtml:83
+msgid "Партнёры"
+msgstr ""
+
+#: ../Modules/default/layouts/back_nav-header.phtml:47
+#: ../Modules/default/layouts/footer.phtml:18
+#: ../Modules/default/views/scripts/index/index.phtml:56
+msgid "Вступить в клуб"
+msgstr ""
+
+#: ../Modules/default/layouts/footer.phtml:21
+#: ../Modules/default/layouts/nav-header.phtml:28
+#: ../Modules/user/layouts/layout.phtml:81
+msgid "Пресса"
+msgstr ""
+
+#: ../Modules/default/layouts/nav-header.phtml:29
+msgid "FAQ"
+msgstr ""
+
+#: ../Modules/default/views/scripts/index/index.phtml:67
+msgid "Вход"
+msgstr ""
+
+#: ../Modules/default/views/scripts/index/index.phtml:70
+#: ../Modules/user/views/scripts/profile/index.phtml:195
+#: ../Modules/user/views/scripts/register/index.phtml:136
+msgid "Эл. почта"
+msgstr ""
+
+#: ../Modules/default/views/scripts/index/index.phtml:72
+msgid "Адрес электронной почты"
+msgstr ""
+
+#: ../Modules/default/views/scripts/index/index.phtml:78
+#: ../Modules/user/views/scripts/profile/index.phtml:422
+msgid "Введите пароль"
+msgstr ""
+
+#: ../Modules/news/views/scripts/events/index.phtml:6
+msgid "Нет ближайших мероприятий"
+msgstr ""
+
+#: ../Modules/news/views/scripts/events/show.phtml:37
+#: ../Modules/news/views/scripts/index/show.phtml:41
 msgid "Назад"
 msgstr ""
 
-#: ../../lib/Sas/View/Helper/RollerPage.php:85
-#: ../../lib/Sas/View/Helper/RollerPageButton.php:122
-msgid "Далее"
+#: ../Modules/news/views/scripts/mass-media/index.phtml:1
+msgid "О нас пишут"
 msgstr ""
 
-#~ msgid "Саша"
-#~ msgstr "Sasha"
+#: ../Modules/news/views/scripts/mass-media/index.phtml:10
+msgid "Читать полностью"
+msgstr ""
 
-#~ msgid "Главная"
-#~ msgstr "Главная"
+#: ../Modules/news/views/scripts/people/index.phtml:12
+msgid "Известные люди о нас"
+msgstr ""
 
-#~ msgid "Dashboard"
-#~ msgstr "Главная"
+#: ../Modules/partners/views/scripts/index/index.phtml:2
+msgid "Партнеры клуба"
+msgstr ""
+
+#: ../Modules/partners/views/scripts/index/media.phtml:13
+msgid "Информационные партнёры"
+msgstr ""
+
+#: ../Modules/partners/views/scripts/index/restaurants-map.phtml:1
+msgid "Рестораны на карте"
+msgstr ""
+
+#: ../Modules/partners/views/scripts/index/restaurants.phtml:30
+msgid "Рестораны"
+msgstr ""
+
+#: ../Modules/partners/views/scripts/index/restaurants.phtml:31
+msgid ""
+"Вы можете получить Приглашение в Клуб (пластиковая карта с Кодом Доступа) в "
+"любом из этих ресторанов, взяв их на столиках, либо получив вместе со счетом "
+"или меню."
+msgstr ""
+
+#: ../Modules/user/layouts/layout.phtml:49
+#, php-format
+msgid ""
+"Другие пользователи не могут видеть Ваш профиль. Пожалуйста, подтвердите Ваш "
+"номер телефона, перейдя на <a href=\"%s\">страницу Вашего профиля</a>."
+msgstr ""
+
+#: ../Modules/user/layouts/layout.phtml:95
+msgid "Все права защищены."
+msgstr ""
+
+#: ../Modules/user/layouts/nav-user-info.phtml:13
+msgid "Профиль"
+msgstr ""
+
+#: ../Modules/user/layouts/nav-user-info.phtml:32
+msgid "Выход"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/history.phtml:3
+msgid "История счёта"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/history.phtml:15
+msgid "Пополнения"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/history.phtml:16
+msgid "Списания"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/history.phtml:19
+#: ../Modules/user/views/scripts/balance/history.phtml:22
+msgid "Дата"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/history.phtml:20
+#: ../Modules/user/views/scripts/balance/history.phtml:23
+msgid "Наименование"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/history.phtml:21
+#: ../Modules/user/views/scripts/balance/history.phtml:24
+msgid "Сумма"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/history.phtml:47
+msgid "Итого пополнений"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/history.phtml:49
+msgid "Итого списаний"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/history.phtml:53
+msgid "Баланс счёта"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/index.phtml:2
+msgid "Счёт"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/index.phtml:10
+msgid "Караты"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/index.phtml:14
+msgid "Бонусные караты"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/index.phtml:18
+msgid "Итого"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/index.phtml:25
+msgid ""
+"Вы можете пополнить счёт с помощью телефона, банковской карты, электронного "
+"кошелька или через терминал."
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/index.phtml:26
+#: ../Modules/user/views/scripts/people/invite.phtml:34
+msgid "Пополнить счёт"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/index.phtml:29
+msgid ""
+"Вы можете получать караты бесплатно, приглашая в Клуб OnTheList своих "
+"друзей, коллег и деловых партнеров."
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/index.phtml:30
+msgid ""
+"За каждого приглашенного человека, который пройдет скрининг и подтвердит "
+"свои контактные данные, Вам начисляется 100 карат."
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/index.phtml:32
+msgid "Пригласить друзей"
+msgstr ""
+
+#: ../Modules/user/views/scripts/balance/replenishment.phtml:2
+msgid "Пополнение счёта"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:10
+#: ../Modules/user/views/scripts/people/favourites-item.phtml:41
+#: ../Modules/user/views/scripts/people/profile.phtml:28
+#: ../Modules/user/views/scripts/people/questions.phtml:7
+#: ../Modules/user/views/scripts/people/questions.phtml:73
+#: ../Modules/user/views/scripts/people/questions.phtml:205
+#: ../Modules/user/views/scripts/people/search-item.phtml:48
+msgid "Задать вопрос"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:11
+#: ../Modules/user/views/scripts/people/favourites-item.phtml:47
+#: ../Modules/user/views/scripts/people/profile.phtml:49
+#: ../Modules/user/views/scripts/people/search-item.phtml:51
+msgid "Пригласить на свидание"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:12
+#: ../Modules/user/views/scripts/people/profile.phtml:32
+#: ../Modules/user/views/scripts/people/search-item.phtml:50
+msgid "Добавить в фавориты"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:13
+msgid "В чёрный список"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:17
+#: ../Modules/user/views/scripts/people/profile.phtml:63
+msgid "Работа"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:18
+#: ../Modules/user/views/scripts/people/profile.phtml:64
+#: ../Modules/user/views/scripts/profile/index.phtml:162
+msgid "Образование"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:19
+#: ../Modules/user/views/scripts/people/maket-userinfo.phtml:11
+#: ../Modules/user/views/scripts/people/profile.phtml:65
+#: ../Modules/user/views/scripts/people/search-item.phtml:45
+#: ../Modules/user/views/scripts/profile/index.phtml:168
+#: ../Modules/user/views/scripts/register/activation.phtml:99
+msgid "Увлечения"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:20
+#: ../Modules/user/views/scripts/dates/favorite-places.phtml:5
+#: ../Modules/user/views/scripts/people/profile.phtml:66
+#: ../Modules/user/views/scripts/profile/index.phtml:174
+#: ../Modules/user/views/scripts/register/activation.phtml:106
+msgid "Любимые места"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:21
+msgid "Показать вопросы"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/communication-user.phtml:23
+msgid ""
+"Пожалуйста, не публикуйте в ответах на вопросы свои контактные данные, а "
+"также ссылки на свои страницы в социальных сетях."
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/index.phtml:9
+#: ../Modules/user/views/scripts/profile/index.phtml:351
+msgid "Общение"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/index.phtml:28
+msgid "Вопросы отправлены"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/index.phtml:33
+#: ../Modules/user/views/scripts/communication/index.phtml:56
+msgid "Ответ отправлен"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/index.phtml:38
+msgid "Ваш ответ прочитан"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/index.phtml:45
+msgid "Ваши вопросы отправлены"
+msgstr ""
+
+#: ../Modules/user/views/scripts/communication/index.phtml:50
+msgid "Ваши вопросы прочитаны"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-plan.phtml:17
+msgid "Место"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-plan.phtml:18
+msgid "Время"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:38
+msgid "У Вас было назначено свидание на"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:41
+msgid "Свидание состоялось?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:42
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:58
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:154
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:242
+#: ../Modules/user/views/scripts/register/activation.phtml:132
+#: ../Modules/user/views/scripts/register/activation.phtml:144
+msgid "Да"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:43
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:59
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:155
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:243
+#: ../Modules/user/views/scripts/people/search-form.phtml:29
+#: ../Modules/user/views/scripts/profile/index.phtml:215
+#: ../Modules/user/views/scripts/profile/index.phtml:289
+#: ../Modules/user/views/scripts/register/activation.phtml:135
+#: ../Modules/user/views/scripts/register/activation.phtml:147
+msgid "Нет"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:51
+msgid "Отлично!"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:52
+msgid ""
+"Пожалуйста ответьте на несколько вопросов, это поможет нам предоставлять Вам "
+"более качественный сервис"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:56
+msgid "Встреча прошла в назначенном месте?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:72
+msgid "Очень жаль"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:73
+msgid "Пожалуйста выберите причину по которой свидание не состоялось"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:76
+msgid "Свидание было перенесено"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:77
+msgid "Свидание было отменено"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:78
+msgid "Она не пришла"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:78
+msgid "Он не пришел"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:79
+msgid "Я не пришел"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:79
+msgid "Я не пришла"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:80
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:164
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:252
+msgid "Готово"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:99
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:187
+msgid "Оцените место свидания"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:109
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:197
+msgid "Ваше мнение о месте свидания"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:111
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:161
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:199
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:249
+msgid "(опционально)"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:115
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:203
+msgid ""
+"Ваши оценки являются конфиденциальной информацией и не буду переданы другому "
+"лицу"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:117
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:205
+msgid "На сколько бы Вы оценили внешние данные?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:127
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:215
+msgid "Насколько интересно Вам было общаться?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:130
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:142
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:218
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:230
+msgid "Выберите"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:131
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:219
+msgid "Очень интересно"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:132
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:220
+msgid "Интересно"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:133
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:145
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:221
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:233
+msgid "Средне"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:134
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:222
+msgid "Скучно"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:139
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:227
+msgid "Оцените манеры поведения"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:143
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:231
+msgid "Очень хорошо"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:144
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:232
+msgid "Хорошо"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:146
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:234
+msgid "Плохо"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:152
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:240
+msgid "Вы хотели бы встретиться с этим человеком еще раз?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:159
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:247
+msgid "Ваше мнение о свидании в целом"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:181
+msgid "Где состоялась встреча?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/dates-report.phtml:183
+msgid "Название места свидания"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/events.phtml:2
+msgid "Ближайшее мероприятие"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/events.phtml:10
+#: ../Modules/user/views/scripts/dashboard/index.phtml:61
+#: ../Modules/user/views/scripts/dashboard/item.phtml:15
+#: ../Modules/user/views/scripts/dashboard/item.phtml:18
+#: ../Modules/user/views/scripts/dashboard/news.phtml:11
+#: ../Modules/user/views/scripts/dates/calendar-yes.phtml:116
+#: ../Modules/user/views/scripts/dates/index.phtml:83
+msgid "Подробнее"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/index.phtml:5
+msgid "Dashboard"
+msgstr "Главная"
+
+#: ../Modules/user/views/scripts/dashboard/index.phtml:16
+msgid "Последние события"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dashboard/index.phtml:61
+msgid "Приглашает вас на свидание."
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/calendar-yes.phtml:70
+#: ../Modules/user/views/scripts/dates/index.phtml:26
+msgid "Назначенные свидания"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/contact-exchange.phtml:16
+msgid "Пополнить баланс"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/contact-exchange.phtml:24
+msgid "Вы не можете осуществить повторный обмен телефонами."
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/contact-exchange.phtml:26
+msgid "Подробнее смотрите на странице"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/contact-exchange.phtml:26
+#: ../Modules/user/views/scripts/dates/index.phtml:8
+#: ../Modules/user/views/scripts/profile/index.phtml:339
+msgid "Свидания"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/favorite-places.phtml:16
+msgid "Выберите Ваши любимые места, куда Вас смогут приглашать на свидания."
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/free-day.phtml:5
+msgid "Свободные дни"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/free-day.phtml:56
+msgid ""
+"Выберите в календаре удобные для свиданий дни и время, когда Вас смогут "
+"приглашать на свидания."
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/free-day.phtml:63
+msgid "Отметить весь столбец"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/free-day.phtml:70
+msgid "Отметить всю строку"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/history.phtml:2
+msgid "История"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/history.phtml:13
+msgid "История обмена телефонами"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/history.phtml:32
+msgid "Дата и время"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/history.phtml:38
+msgid "Обмен телефонами не состоялся"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/history.phtml:50
+msgid "История свиданий и приглашений"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/history.phtml:76
+msgid "Свидание"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/history.phtml:77
+msgid "Приглашение отклонено"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/history.phtml:78
+#: ../Modules/user/views/scripts/people/invite.phtml:6
+msgid "Приглашение на свидание"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:21
+msgid "Назначенные свидания, полученные и отправленные приглашения."
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:61
+msgid "Полученные приглашения"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:78
+msgid "приглашает Вас на свидание"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:80
+#: ../Modules/user/views/scripts/dates/index.phtml:169
+msgid "Ожидает Вашего ответа"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:81
+#: ../Modules/user/views/scripts/dates/index.phtml:121
+msgid "Приглашение отправлено"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:84
+msgid "Свернуть"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:102
+msgid "Отправленные приглашения"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:120
+#: ../Modules/user/views/scripts/dates/index.phtml:216
+msgid "Ожидает ответа"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:122
+msgid "Подробнее о приглашении"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:123
+msgid "Свернуть приглашение"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:140
+msgid "Входящие запросы на обмен телефонами"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:165
+msgid "Убрать в архив"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:170
+#: ../Modules/user/views/scripts/dates/index.phtml:217
+#, php-format
+msgid "Стоимость обмена телефонами %s карат"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:171
+#: ../Modules/user/views/scripts/dates/index.phtml:220
+msgid "Запрос отправлен"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:177
+#: ../Modules/user/views/scripts/dates/index.phtml:225
+msgid "Убрать в историю"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:191
+msgid "Отправленные запросы на обмен телефонами"
+msgstr ""
+
+#: ../Modules/user/views/scripts/dates/index.phtml:228
+msgid "Отозвать"
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/friend.phtml:3
+msgid "Пригласите Ваших друзей"
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/friend.phtml:30
+#, php-format
+msgid ""
+"За каждого приглащённого человека, прошедшего скрининг и подтвердившего свои "
+"контактные данные, Вам начисляется %s бонусных карат."
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/friend.phtml:36
+#: ../Modules/user/views/scripts/people/blacklist.phtml:17
+#: ../Modules/user/views/scripts/people/blacklist.phtml:25
+#: ../Modules/user/views/scripts/people/favourites.phtml:18
+#: ../Modules/user/views/scripts/people/favourites.phtml:26
+#: ../Modules/user/views/scripts/profile/index.phtml:78
+#: ../Modules/user/views/scripts/profile/index.phtml:151
+#: ../Modules/user/views/scripts/profile/index.phtml:190
+#: ../Modules/user/views/scripts/profile/index.phtml:264
+#: ../Modules/user/views/scripts/profile/index.phtml:325
+msgid "Внимание"
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/friend.phtml:37
+msgid "Письмо с приглашением успешно отправлено"
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/friend.phtml:44
+msgid "От кого"
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/friend.phtml:53
+msgid "Кому"
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/friend.phtml:55
+msgid "Введите адрес получателя"
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/friend.phtml:59
+msgid "Тема"
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/friend.phtml:71
+msgid "Отправить приглашение"
+msgstr ""
+
+#: ../Modules/user/views/scripts/invite/invited.phtml:1
+msgid "Приглашено друзей"
+msgstr ""
+
+#: ../Modules/user/views/scripts/login/index.phtml:2
+msgid "Вход для пользователей"
+msgstr ""
+
+#: ../Modules/user/views/scripts/login/quit.phtml:2
+msgid "Вы вышли"
+msgstr ""
+
+#: ../Modules/user/views/scripts/notifications/index.phtml:2
+msgid "Системные уведомления"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/blacklist-item.phtml:9
+#: ../Modules/user/views/scripts/people/favourites-item.phtml:9
+#: ../Modules/user/views/scripts/people/profile.phtml:21
+#: ../Modules/user/views/scripts/people/search-item.phtml:12
+msgid "Онлайн"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/blacklist-item.phtml:13
+#: ../Modules/user/views/scripts/people/favourites-item.phtml:13
+#: ../Modules/user/views/scripts/people/profile.phtml:24
+#: ../Modules/user/views/scripts/people/search-item.phtml:16
+msgid "Просмотр профиля"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/blacklist-item.phtml:33
+msgid "Удалить из чёрного списка"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/blacklist.phtml:6
+msgid "Чёрный список"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/blacklist.phtml:18
+msgid "Пользователь добавлен в Чёрный список"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/blacklist.phtml:26
+msgid "Пользователь удалён из Чёрного списка"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/deleted.phtml:2
+msgid "Профиль удалён"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/deleted.phtml:9
+msgid "Пользователь удалил свой профиль"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/favourites-item.phtml:33
+msgid "Удалить из фаворитов"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/favourites-item.phtml:48
+#: ../Modules/user/views/scripts/people/profile.phtml:50
+#: ../Modules/user/views/scripts/people/search-item.phtml:52
+msgid "Обменяться телефонами"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/favourites.phtml:6
+#: ../Modules/user/views/scripts/profile/index.phtml:344
+msgid "Фавориты"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/favourites.phtml:19
+msgid "Пользователь добавлен в Фавориты"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/favourites.phtml:27
+msgid "Пользователь удалён из Фаворитов"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/index.phtml:3
+msgid "Девушки"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/index.phtml:3
+msgid "Мужчины"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/index.phtml:4
+msgid "Поиск"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/index.phtml:20
+msgid "Страница"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/index.phtml:21
+msgid "Найдено анкет"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite-places.phtml:42
+msgid "г. "
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:32
+msgid "У Вас недостаточно карат чтобы пригласить на свидание"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:33
+#, php-format
+msgid "Текущее состояние счёта: %s карат"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:42
+msgid "Нельзя приглашать на свидание дважды."
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:43
+msgid "Проверить список свиданий"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:115
+msgid "На этот день у Вас уже есть назначеные свидания"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:119
+msgid "Предложите одно или несколько мест"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:142
+msgid "Метро"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:153
+msgid "Добавить место"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:163
+msgid "Пригласить"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/invite.phtml:165
+msgid ""
+"Данная сумма спишется с Вашего счета только в том случае, если приглашение "
+"будет принято."
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/profile-404.phtml:6
+msgid "Ошибка 404, страница не найдена"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/profile-404.phtml:7
+msgid "Страница, которую Вы запросили, отсутствует на сайте."
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/profile.phtml:5
+#: ../Modules/user/views/scripts/profile/view.phtml:2
+msgid "Профиль пользователя"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/profile.phtml:42
+msgid "Добавлено в Ваши фавориты"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/profile.phtml:47
+msgid "Взаимно добавить в фавориты"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/profile.phtml:78
+#: ../Modules/user/views/scripts/profile/photo-album.phtml:15
+msgid "Фотоальбом"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:27
+msgid "Задайте вопросы из предложенных категорий"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:38
+msgid "Свой вопрос"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:47
+msgid "Не выбирать вопрос из этой категории"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:61
+msgid "Вы можете задать свой вопрос"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:62
+msgid "Стоимость каждого своего вопроса составляет"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:62
+#: ../Modules/user/views/scripts/people/questions.phtml:79
+msgid "карат"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:63
+msgid "Введено"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:63
+msgid "символов из"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:67
+msgid "Сфомулируйте вопрос длинной не более 1000 символов"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:70
+msgid "Добавить свой вопрос"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:78
+msgid "У вас недостаточно карат для создания своего вопроса"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:79
+msgid "Баланс счета"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:81
+#, php-format
+msgid ""
+"%sПополните баланс%s своего счёта и вы сможете задать свой вопрос за %s "
+"карат."
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/questions.phtml:97
+#: ../Modules/user/views/scripts/register/index.phtml:299
+msgid "Отправить"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:9
+#: ../Modules/user/views/scripts/profile/index.phtml:269
+msgid "Возраст"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:10
+#: ../Modules/user/views/scripts/people/search-form.phtml:21
+#: ../Modules/user/views/scripts/profile/index.phtml:275
+#: ../Modules/user/views/scripts/profile/index.phtml:282
+msgid "от"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:11
+#: ../Modules/user/views/scripts/people/search-form.phtml:22
+#: ../Modules/user/views/scripts/profile/index.phtml:276
+#: ../Modules/user/views/scripts/profile/index.phtml:283
+msgid "до"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:20
+#: ../Modules/user/views/scripts/profile/index.phtml:207
+#: ../Modules/user/views/scripts/profile/index.phtml:280
+msgid "Рост"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:28
+#: ../Modules/user/views/scripts/profile/index.phtml:213
+#: ../Modules/user/views/scripts/profile/index.phtml:287
+msgid "Дети"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:29
+#: ../Modules/user/views/scripts/people/search-form.phtml:33
+#: ../Modules/user/views/scripts/profile/index.phtml:289
+#: ../Modules/user/views/scripts/profile/index.phtml:295
+msgid "Не важно"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:29
+#: ../Modules/user/views/scripts/profile/index.phtml:215
+#: ../Modules/user/views/scripts/profile/index.phtml:289
+msgid "Есть"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:32
+msgid "Курение"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:33
+#: ../Modules/user/views/scripts/profile/index.phtml:295
+msgid "Курит"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:33
+#: ../Modules/user/views/scripts/profile/index.phtml:295
+msgid "Не курит"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:40
+msgid "Говорит на"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:41
+msgid "и"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:42
+msgid "или"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:46
+#: ../Modules/user/views/scripts/profile/index.phtml:17
+#: ../Modules/user/views/scripts/profile/index.phtml:228
+#: ../Modules/user/views/scripts/register/activation.phtml:156
+msgid "Русском"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:47
+#: ../Modules/user/views/scripts/profile/index.phtml:18
+#: ../Modules/user/views/scripts/profile/index.phtml:231
+#: ../Modules/user/views/scripts/register/activation.phtml:159
+msgid "Английском"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:50
+#: ../Modules/user/views/scripts/profile/index.phtml:20
+#: ../Modules/user/views/scripts/profile/index.phtml:237
+#: ../Modules/user/views/scripts/register/activation.phtml:165
+msgid "Немецком"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:51
+#: ../Modules/user/views/scripts/profile/index.phtml:21
+#: ../Modules/user/views/scripts/profile/index.phtml:240
+#: ../Modules/user/views/scripts/register/activation.phtml:168
+msgid "Итальянском"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:54
+#: ../Modules/user/views/scripts/profile/index.phtml:19
+#: ../Modules/user/views/scripts/profile/index.phtml:234
+#: ../Modules/user/views/scripts/register/activation.phtml:162
+msgid "Французском"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:55
+#: ../Modules/user/views/scripts/profile/index.phtml:22
+#: ../Modules/user/views/scripts/profile/index.phtml:243
+#: ../Modules/user/views/scripts/register/activation.phtml:171
+msgid "Испанском"
+msgstr ""
+
+#: ../Modules/user/views/scripts/people/search-form.phtml:64
+msgid "Найти"
+msgstr ""
+
+#: ../Modules/user/views/scripts/places/index.phtml:6
+#: ../Modules/user/views/scripts/places/view.phtml:5
+msgid "Места для свиданий от OnTheList"
+msgstr ""
+
+#: ../Modules/user/views/scripts/places/index.phtml:15
+#: ../Modules/user/views/scripts/places/view.phtml:14
+msgid "Ближайшее метро"
+msgstr ""
+
+#: ../Modules/user/views/scripts/places/view.phtml:17
+msgid "Открыть в новом окне"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index-photo.phtml:53
+msgid "Кликните для редактирования"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index-photo.phtml:61
+#: ../Modules/user/views/scripts/register/activation.phtml:64
+#: ../Modules/user/views/scripts/register/index.phtml:246
+msgid "Загрузить фото"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index-photo.phtml:71
+msgid "Выберите область на снимке"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index-photo.phtml:86
+msgid "Закрыть"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index-photo.phtml:87
+msgid "Сохранить фотографию"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:8
+msgid "Мой профиль"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:46
+msgid "Телефонный номер"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:50
+msgid "Номер не подтвержден!"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:57
+msgid "Пример: +7 123 456 78 90"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:58
+msgid "Код подтверждения"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:63
+msgid "Получить код"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:64
+msgid "Подтвердить"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:84
+msgid "Введите Ваш Skype"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:89
+#: ../Modules/user/views/scripts/profile/index.phtml:135
+msgid "Сохранить изменения"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:130
+msgid "Введите новый пароль"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:148
+msgid "Публичная информация"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:149
+msgid ""
+"Публичная информация показывается только тем пользователям, которым Вы "
+"взаимно подходите по параметрам"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:156
+#: ../Modules/user/views/scripts/register/activation.phtml:79
+#: ../Modules/user/views/scripts/register/index.phtml:166
+msgid "Компания"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:156
+#: ../Modules/user/views/scripts/register/activation.phtml:79
+#: ../Modules/user/views/scripts/register/index.phtml:166
+msgid "Должность"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:187
+msgid "Приватная информация"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:188
+msgid ""
+"Приватная информация никому не показывается, используется для поиска взаимно "
+"соответствующих анкет"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:201
+msgid "День рождения"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:219
+#: ../Modules/user/views/scripts/profile/index.phtml:293
+msgid "Отношение к курению"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:221
+msgid "Курю"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:221
+msgid "Не курю"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:225
+msgid "Я свободно говорю на"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:260
+msgid "Настройки фильтра профиля"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:261
+#, php-format
+msgid "Количество пользователей, которым потенциально доступен Ваш профиль: %s"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:262
+msgid ""
+"Ваш профиль будет показываться только тем, кто удовлетворяет следующим "
+"критериям:"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:322
+msgid "Настройки оповещений"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:323
+msgid ""
+"Выберите удобные для Вас средства оповещения о событиях на сайте Клуба "
+"OnTheList:"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:339
+msgid ""
+"Поступило приглашение на свидание, свидание принято или отказано, истечение "
+"срока давности"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:344
+msgid "Добавление или удаление из Фаворитов"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:351
+msgid "Поступил новый вопрос, получен ответ на Ваш вопрос"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:356
+msgid "Сообщения от администрации сайта"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:356
+msgid "Важная информация"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:409
+msgid "Блокировка и удаление"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:413
+msgid "Временно скрыть профиль"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/index.phtml:416
+msgid "Удалить профиль"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/photo-album.phtml:37
+msgid "Добавить фото"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/photo-album.phtml:37
+msgid "Выбрать другое фото"
+msgstr ""
+
+#: ../Modules/user/views/scripts/profile/status.phtml:2
+msgid "Мой статус"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:9
+msgid "Активация аккаунта"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:36
+msgid "Поздравляем!"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:37
+msgid "Ваша заявка в Клуб OnTheList была одобрена!"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:42
+msgid "Для окончательной регистрации осталось несколько шагов:"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:55
+msgid ""
+"Загрузите Вашу самую удачную портретную фотографию, на которой Вы изображены "
+"крупным планом без солнечных очков."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:65
+#: ../Modules/user/views/scripts/register/index.phtml:247
+#: ../Modules/user/views/scripts/register/index.phtml:273
+msgid "Заменить"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:77
+msgid ""
+"Важно правильно рассказать о себе. Укажите информацию о Вас, которая будет "
+"отображаться другим членам Клуба."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:89
+#: ../Modules/user/views/scripts/register/index.phtml:156
+msgid "ВУЗ"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:101
+msgid "Чем Вы увлекаетесь? Ваше хобби?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:108
+msgid "Какие места Вы любите посещать?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:117
+msgid ""
+"Следующая информация не будет отображаться другим пользователям, но позволит "
+"находить наиболее подходящих Вам людей."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:120
+msgid "Какой у Вас рост?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:124
+msgid "см."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:129
+msgid "Есть ли у Вас дети?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:141
+msgid "Вы курите?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:153
+msgid "На каких языках Вы свободно говорите?"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:181
+msgid "Придумайте пароль"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:194
+msgid "Повторите пароль"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:210
+msgid "Я подтверждаю, что предоставленные данные достоверны."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/activation.phtml:214
+msgid "Зайти в Клуб"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:23
+msgid "Вступить в Клуб"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:30
+msgid "Конфиденциальность Ваших данных - это наш основной приоритет."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:31
+msgid ""
+"Предоставляемая Вами информация не будет опубликована в Вашем профиле, а "
+"будет использоваться исключительно для оценки Вашей заявки."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:32
+msgid ""
+"Информацию о Вас, которую смогут видеть другие члены Клуба Вам будет "
+"предложено предоставить позже."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:44
+msgid "Приглашение"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:45
+msgid "Персональный код доступа"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:47
+msgid "Промо код"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:47
+msgid "Заполните при наличии"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:50
+msgid "Знакомства. Общение. Деловые контакты."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:67
+msgid "Ваш пол"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:72
+msgid "Женский"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:77
+msgid "Мужской"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:80
+msgid "Сделайте выбор"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:86
+msgid "Имя"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:92
+#: ../Modules/user/views/scripts/register/index.phtml:105
+msgid "Не корректно заполненно поле"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:99
+msgid "Фамилия"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:112
+msgid "Дата рождения"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:122
+msgid "Город"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:126
+msgid "Введите название"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:129
+msgid "Необходимо ввести название"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:142
+msgid "Адрес эл. почты не верен"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:154
+msgid "Информация о Вашем образовании и работе"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:181
+msgid "Откуда Вы узнали о Клубе / Кто Вас порекомендовал"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:182
+msgid "Указание источника сможет повысить уровень доверия к Вашей анкете"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:184
+msgid "Источник"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:199
+msgid "Ссылки на Ваши профили в социальных сетях"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:200
+msgid ""
+"Данная информация является главным фактором для рассмотрении Вашей заявки. "
+"Ссылки не будут отображаться в системе и используются лишь только для "
+"скрининга Вашей анкеты. У пользователей, которые оставляют их пустыми, мы "
+"просим дополнительную информацию."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:201
+msgid ""
+"Данная информация требуется только лишь для того, чтобы оценить Вашу анкету."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:204
+msgid "вКонтакте"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:234
+msgid "Фотография для профиля"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:257
+msgid "Ваше резюме"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:272
+msgid "Выберите файл"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:291
+msgid "Я не состою в браке и принимаю"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:291
+msgid "Правила пользования"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/index.phtml:294
+msgid "Вы должны принять правила Клуба"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/register-ok.phtml:3
+msgid "Заявка на регистрацию принята"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/register-ok.phtml:6
+msgid "Уважаемый"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/register-ok.phtml:6
+msgid "Уважаемая"
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/register-ok.phtml:18
+msgid "Благодарим Вас за проявленный интерес к проекту OnTheList Private Club."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/register-ok.phtml:19
+msgid ""
+"Ваша заявка на вступление в Клуб OnTheList принята и находится на "
+"рассмотрении. Мы сообщим Вам о результатах по электронной почте."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/register-ok.phtml:20
+msgid ""
+"В связи с техническими особенностями и личными настройками Вашей почты наши "
+"письма могут попадать в папку Спам, поэтому просим Вас внимательно проверять "
+"свою почту."
+msgstr ""
+
+#: ../Modules/user/views/scripts/register/register-ok.phtml:22
+msgid "С уважением, команда Клуба OnTheList"
+msgstr ""

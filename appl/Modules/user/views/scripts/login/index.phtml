@@ -1,0 +1,49 @@
+<?php
+$title = $this->t('Вход для пользователей');
+$this->headTitle($title);
+?>
+<div class="container">
+	<div class="auth-box">
+
+		<? if($this->vAuth === false) : ?>
+		<div class="error">
+			<div class="text-error"><?= $this->t('Ваш логин или пароль неверны.')?></div>
+		</div>	
+		<? endif;?>
+
+		<script src="//ulogin.ru/js/ulogin.js"></script>
+		<?
+		$lang = $this->translate()->getLocale();
+		$socUlr = ($lang == LANG_DEFAULT) ? $_SERVER['HTTP_HOST'].'%2Fuser%2F' : $_SERVER['HTTP_HOST'].'%2F' . $lang .'%2Fuser%2F';
+		?>
+		<div class="social-auth" id="uLogin" data-ulogin="display=buttons;fields=first_name,last_name,sex,bdate,email,optional=phone;verify=1;redirect_uri=http%3A%2F%2F<?= $socUlr?>;receiver=http%3A%2F%2F<?= $_SERVER['HTTP_HOST']?>%2Fxd_custom.html">
+			<a href="javascript:void(0);">
+				<button class="btn btn-signin-fb" data-uloginbutton="facebook">
+					<div class="btn btn-ico btn-ico-vk"></div>
+					<?= $this->t('Войти через Facebook');?>
+				</button>
+			</a>
+			<div class="social-auth-more">
+				<button class="btn btn-more"></button>
+				<ul class="sub-nav">
+					<li><a href="javascript:void(0);" data-uloginbutton="linkedin">LinkedIn</a></li>
+					<li><a href="javascript:void(0);" data-uloginbutton="googleplus">Google+</a></li>
+					<li><a href="javascript:void(0);" data-uloginbutton="twitter">Twitter</a></li>
+					<!--<li><a href="javascript:void(0);" data-uloginbutton="vkontakte"><?/*= $this->t('вКонтакте');*/?></a></li>-->
+				</ul>
+			</div>
+		</div>
+
+		<form action="<?= $this->url(array('module' => 'user', 'controller' => 'login'), null, true);?>" method="post">
+			<div class="input-group">
+				<input name="email" type="email" placeholder="<?= $this->t('Логин');?>">
+				<input name="password" type="password" placeholder="<?= $this->t('Пароль');?>" >
+			</div>
+			<label><input type="checkbox" name="rememberMe" value="1" checked="checked"> <?= $this->t('Запомнить меня');?></label>
+			<button class="btn btn-dark btn-submit" type="submit">Вход</button>
+		</form>
+
+		<a class="forgot" href="<?= $this->url(array('module' => 'user', 'controller' => 'recovery', 'action'=>'index'), null, true);?>"><?= $this->t('Забыли пароль?')?></a>
+		
+	</div>
+</div>

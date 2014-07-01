@@ -1,0 +1,88 @@
+<?php
+
+// analytics/stat-users-day/
+
+//$this->headScript()->appendFile('/js/admyn/new_users.js');
+
+$data = $this->vData;
+$hour = $this->vDataHour;
+#$day = $this->vDay;
+//Sas_Debug::dump($this->vDataAction);
+
+?>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawChart);
+	google.setOnLoadCallback(drawChartHour);
+
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Дата', 'Кол-во действий'],
+			<?
+			$d = '';
+			foreach ($data as $item) {
+			$d .= '["'.$item['dt'].'", '.$item['cnt'].'],';
+			}
+			echo $d = substr($d, 0, -1);
+			?>
+		]);
+
+		var options = {
+			title: 'Дневная активность'
+		};
+
+		var chart = new google.visualization.LineChart(document.getElementById('chart_div')).
+			draw(data, {curveType: "function",
+				vAxis: {maxValue: 10}}
+		);
+		chart.draw(data, options);
+	}
+
+	function drawChartHour() {
+		var data = google.visualization.arrayToDataTable([
+			['Час', 'Действия'],
+			<?
+			$d = '';
+			foreach ($hour as $item) {
+			$d .= '["'.$item['dt'].'", '.$item['cnt'].'],';
+			}
+			echo $d = substr($d, 0, -1);
+			?>
+		]);
+
+		var options = {
+			title: 'Часовая активность'
+		};
+
+		var chart = new google.visualization.LineChart(document.getElementById('chart_div_hour')).
+			draw(data, {curveType: "function",
+				vAxis: {maxValue: 10}}
+		);
+		chart.draw(data, options);
+	}
+
+</script>
+<h1>Дневная активность</h1>
+<h3>Данные по состоянию на: <?= date('d.m.Y H:i')?></h3>
+<div id="chart_div" style="width: 100%; height: 500px; margin-bottom: 20px;"></div>
+
+<h1>Часовая активность</h1>
+<h3>Данные внутри текущих суток <?= date_format(new DateTime($this->vDataStartHour), 'd.m.Y')?></h3>
+<div id="chart_div_hour" style="width: 100%; height: 500px; margin-bottom: 20px;"></div>
+
+<h1>Список действий внутри часа</h1>
+<table class="table table-bordered">
+	<tr><th>Название действия</th><th>Кол-во</th></tr>
+	<? foreach ($this->vDataActionHour as $item) {
+		echo '<tr><td>'.$item['name'].'</td><td>'.$item['cnt'].'</td></tr>';
+	} ?>
+</table>
+
+<h1>Список действий внутри дня</h1>
+<table class="table table-bordered">
+	<tr><th>Название действия</th><th>Кол-во</th></tr>
+	<? foreach ($this->vDataActionDay as $item) {
+		echo '<tr><td>'.$item['name'].'</td><td>'.$item['cnt'].'</td></tr>';
+	} ?>
+</table>

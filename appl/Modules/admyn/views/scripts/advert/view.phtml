@@ -1,0 +1,47 @@
+<h1>Обзор кампании</h1>
+<p>
+	<span class="green">*</span> КК - текущее количество членов Клуба<br>
+	<span class="green">*</span> ALL - общее количество регистраций
+</p>
+<div class="row-fluid">
+	<div class="span6">
+		<h3>Кампании на веб сайтах</h3>
+		<? #Sas_Debug::dump($this->vWeb)?>
+		<table class="table table-bordered" style="font-size: 10px;">
+			<tr>
+				<td>Дата</td>
+				<td>Название кампании</td>
+				<td>ЧК</td>
+				<td>ALL</td>
+			</tr>
+		<? foreach($this->vWeb as $item) : ?>
+			<tr>
+				<td style="text-align: center;"><?= date_format(new DateTime($item['create_dt']), 'd.m.y');?></td>
+				<td><a href="#" style="font-size: 12px;"><?= $item['name']?></a><br><em><?= $item['about']?></em><br><span class="green">?promo-key=<?= $item['promo_key']?></span></td>
+				<td style="text-align: right;"><?= $item['cntRegClub']?></td>
+				<td style="text-align: right;"><?= $item['cntRegAll']?></td>
+			</tr>
+		<? endforeach; ?>
+		</table>
+	</div>
+	<div class="span6">
+		<h3>Кампании на моб. устройствах</h3>
+		<? #Sas_Debug::dump($this->vMob)?>
+		<table class="table table-bordered" style="font-size: 10px;">
+			<tr>
+				<td>Дата</td>
+				<td>Название кампании</td>
+				<td>ЧК</td>
+				<td>ALL</td>
+			</tr>
+			<? foreach($this->vMob as $item) : ?>
+				<tr>
+					<td style="text-align: center;"><?= date_format(new DateTime($item['create_dt']), 'd.m.y')?></td>
+					<td><a href="#" style="font-size: 12px;"><?= $item['name']?></a><br><em><?= $item['about']?></em><br><span class="green" style="font-size: 9px;">?promo-key=<?= $item['promo_key']?></span></td>
+					<td style="text-align: right;"><?= $item['cntRegClub']?></td>
+					<td style="text-align: right;"><?= $item['cntRegAll']?></td>
+				</tr>
+			<? endforeach; ?>
+		</table>
+	</div>
+</div>

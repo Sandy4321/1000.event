@@ -1,0 +1,59 @@
+<?
+$this->inlineScript()->appendFile('/js/profile.js');
+/*
+$msg => array(12) {
+    ["id"] => string(5) "94461"
+    ["msg_id"] => string(5) "54898" - Уникальный ID сообщения
+    ["user_id"] => string(4) "3040"
+    ["partner_id"] => string(3) "771"
+    ["box"] => string out|in
+    ["create_dt"] => string(19) "2014-02-25 14:41:05"
+    ["access_read"] => string(3) "yes"
+    ["del"] => string yes|no
+    ["msg_text"] => string(4) "Test"
+    ["send_dt"] => string(19) "2014-02-25 14:41:05"
+    ["read_dt"] => string(19) "2014-02-25 19:26:16"
+    ["msg_type"] => string msg|game_flirt|contact|event
+  }
+*/
+?>
+<div class="talk">
+	<div class="user-info">
+		<a href="<?= $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$this->partnerProfile['uid']), null, true);?>" class="photo"><img class="photo" src="<?= $this->partnerProfile['avatar'];?>"></a>
+		<a href="<?= $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$this->partnerProfile['uid']), null, true);?>" class="name"><?= $this->partnerProfile['first_name'];?></a>
+		<button class="btn btn-ico btn-ico-delete btn-close" onclick="close_talk();"></button>
+	</div>
+	<div class="messages-container" id="messages-talk">
+        <div class="messages">
+			<?
+			$accessRead = 'false';
+			$isTranslate = false;
+			$translateLang = null;
+			foreach($this->vTalk as $msg) {
+				if($msg['box'] == 'in') { // входящее
+					$accessRead = ($msg['access_read'] == 'yes') ? 'true' : 'false';
+				}
+				if(!$isTranslate && $msg['translate']) {
+					$isTranslate = true;
+					$translateLang = $msg['translate'];
+				}
+
+				echo $this->partial('messages/msg.phtml', array('msg'=>$msg));
+			}
+
+			?>
+        </div>
+		<? if($isTranslate) : ?>
+			<div class="translate"><small>(<?= $translateLang?>)*</small> <?= $this->t('Переведено сервисом <a href="http://translate.yandex.ru/" target="_blank">«Яндекс.Перевод»</a>');?></div>
+		<? endif; ?>
+		<script>
+			var P_ID  = <?= $this->partnerProfile['id']?>;
+			var P_UID = '<?= $this->partnerProfile['uid']?>';
+			var P_FIRST_NAME = '<?= $this->partnerProfile['first_name']?>';
+			var P_AVATAR = '<?= $this->partnerProfile['avatar']?>';
+			var P_PROFILE_URL = '<?= $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$this->partnerProfile['uid']),null, true)?>';
+			var MSG_ACCESS_READ = <?= $accessRead?>;
+		</script>
+	</div>
+	<?= $this->render('messages/form-send.phtml');?>
+</div>

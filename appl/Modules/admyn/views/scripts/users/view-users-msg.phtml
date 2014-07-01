@@ -1,0 +1,37 @@
+<?php
+
+// view-payment-msg
+
+$this->headScript()->appendFile('/js_admyn/admyn/users_msg.js');
+
+$msgMoney = $this->vMsgMoney;
+$msgFree = $this->vMsgFree;
+#Sas_Debug::dump($data);
+//$cntData = count($msgFree);
+
+?>
+<h1>Просмотр текстов сообщений</h1>
+<!-- <h2>Кол-во не просмотренных сообщений (<span id="CntNewUser">--><?//= $cntData?><!--</span>)</h2>-->
+<h2>Вопрос -> Ответ</h2>
+
+<?php
+if(is_array($msgMoney)) {
+	foreach($msgMoney as $item)
+	{
+		echo '<div  id="ItemMsg_' . $item['id'] . '"><form><input type="hidden" name="id" value="' . $item['id'] . '">';
+		echo $this->partial('users/view-users-msg-item.phtml', array('item'=>$item));
+		echo '</form><hr></div>';
+	}
+}
+?>
+<hr><hr>
+<?php
+if(is_array($msgFree)) {
+	foreach($msgFree as $item)
+	{
+		echo '<div  id="ItemMsg_' . $item['id'] . '"><form><input type="hidden" name="id" value="' . $item['id'] . '">';
+		echo $this->partial('users/view-users-msg-item.phtml', array('item'=>$item));
+		echo '</form><hr></div>';
+	}
+}
+?>

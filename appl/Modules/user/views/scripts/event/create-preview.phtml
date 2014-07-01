@@ -1,0 +1,21 @@
+<?php
+
+$this->headScript()->appendFile('/js/event.js');
+
+$title = $this->t('Вы создали новое мероприятие');
+$this->headTitle($title);
+
+$event = $this->vEvent;
+
+//echo $this->partial('event/view.phtml', array('vEvent'=>$event, 'vMyProfile'=>$profile, 'isIgoEvent'=>$isIGoEvent, 'isICheckIn'=>$isICheckIn));
+echo $this->render('event/view.phtml');//, array('vEvent'=>$event, 'vMyProfile'=>$profile, 'isIgoEvent'=>$isIGoEvent, 'isICheckIn'=>$isICheckIn));
+
+?>
+<div class="event-control" style="position: absolute;
+background-color: white;
+left: 20px;
+top: 65px;
+border: 1px solid #ccc;">
+	<button class="btn" onclick="openUrl('<?= $this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'edit', 'edit'=>'go', 'event_id'=>$event['id']), null, true)?>')"><?= $this->t('Редактировать')?></button>
+	<button class="btn" onclick="return eventDelete(this)" data-eventid="<?= $event['id']?>" data-openurl="<?= $this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'my'), null, true);?>"><?= $this->t('Удалить')?></button>
+</div>

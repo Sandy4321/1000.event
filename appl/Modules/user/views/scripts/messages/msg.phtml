@@ -1,0 +1,32 @@
+<?
+$msg = $this->msg;
+?>
+<div class="message" id="Msg<?= $msg['msg_id']?>">
+	<a href="<?= $msg['url_profile'];?>" class="photo"><img src="<?= $msg['avatar'];?>"></a>
+	<div class="msg">
+		<div class="status">
+			<span class="time">
+				<?
+				$dt = (!is_null($msg['read_dt']) && $msg['box'] == 'out') ? $msg['read_dt'] : $msg['send_dt'];
+				?>
+				<span class="timeago" title="<?= date_format(new DateTime($dt), 'c');?>"></span>
+				<? if($msg['access_read'] == 'no') : // маркер ограничения прочтения ?>
+				<div class="read-limit" onclick="goBuyCard('<?= $this->t('У Вас нет Клубной карты, поэтому Вы сможете прочитать данное сообщение только через 72 часа.')?>')"></div>
+				<? endif; ?>
+
+				<? if(!is_null($msg['read_dt']) && $msg['box'] == 'out') : // маркер прочтения (только для исходящих) ?>
+				<div class="read" title="<?= $this->t('Прочитано:');?> <?= $msg['read_dt']?>"></div>
+				<? endif; ?>
+			</span>
+			<button class="btn btn-ico btn-ico-delete btn-delete" onclick="messages_delete(<?= $msg['msg_id']?>)" title="<?= $this->t('Удалить сообщение');?>"></button>
+		</div>
+		<div class="author"><?= $msg['first_name'];?></div>
+		<div class="text"><? if($msg['translate']) echo '<small>('.$msg['translate'].')*</small> ';?><?= $msg['msg_text']?></div>
+		<? if($msg['box']=='in' && $msg['msg_type'] == 'exchange_phone') : ?>
+		<div class="controls">
+			<button class="btn btn-ok" onclick="exchangePhoneYes(<?= $msg['msg_id']?>, <?= $msg['partner_id']?>)"><?= $this->t('Да');?></button>
+			<button class="btn btn-cancel" onclick="exchangePhoneNo(<?= $msg['msg_id']?>, <?= $msg['partner_id']?>)"><?= $this->t('Нет');?></button>
+		</div>
+		<? endif; ?>
+	</div>
+</div>

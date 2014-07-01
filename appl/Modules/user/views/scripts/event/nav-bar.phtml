@@ -1,0 +1,25 @@
+<div class="sidebar">
+	<a href="<?= $this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'create'), null, true)?>" class="btn btn-dark btn-med btn-add"><?= $this->t('Создать новое мероприятие')?></a>
+
+	<div class="nav">
+		<ul>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'igo'), null, true)?>"><?= $this->t('Я иду')?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'my'), null, true)?>"><?= $this->t('Мои мероприятия')?></a></li>
+		</ul>
+	</div>
+	<div class="nav">
+		<div class="search">
+			<input type="search" placeholder="Поиск">
+		</div>
+		<ul class="hidden-mobile">
+			<li class="<? if(is_null($this->vEventCatSelect)) echo 'active';?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'event'), null, true)?>"><?= $this->t('Все')?></a></li>
+			<li class="<? if($this->vEventCatSelect == 'otl') echo 'active';?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'index','category'=>'otl'), null, true)?>">OnTheList</a></li>
+			<? foreach($this->vEventsCat as $catId => $catName) {
+				echo '<li class="';
+				if($this->vEventCatSelect == $catId) echo 'active';
+				echo '"><a href="'.$this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'index','category'=>$catId), null, true).'">'.$catName.'</a></li>';
+			}
+			?>
+		</ul>
+	</div>
+</div>

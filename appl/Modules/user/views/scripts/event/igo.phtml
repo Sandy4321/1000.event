@@ -1,0 +1,25 @@
+<?
+// js Функционал для мероприятий
+$this->inlineScript()->appendFile('/js/event.js');
+$this->inlineScript()->appendFile('/js/like.js');
+?>
+<div class="content" id="events">
+	<div class="container">
+		<?= $this->render('event/nav-bar.phtml');?>
+
+		<? if(Models_User_Model::getMyCurrentStatus() < 70) : ?>
+			<h2><?= $this->t('Данный функционал доступен только члена Клуба');?></h2>
+			<? printf($this->t('Пожалуйста, заполните <a href="%s">Ваш профиль</a> и отправьте администратору.'), $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'settings'), null, true))?>
+		<? return; endif;?>
+
+		<div id="events-container">
+			<? if(!empty($this->vEvents)) { ?>
+				<? foreach($this->vEvents as $event) : ?>
+					<?= $this->partial('event/preview.phtml', array('vEvent'=>$event, 'isIgoEvent'=>true, 'isICheckIn'=>$isICheckIn));?>
+				<? endforeach;?>
+			<? } else { ?>
+				<h1><?= $this->t('Мероприятий, которые Вы собираетесь посетить, не найдено.') ?></h1>
+			<? } ?>
+		</div>
+	</div>
+</div>

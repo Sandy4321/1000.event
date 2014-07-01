@@ -1,0 +1,332 @@
+<?php
+
+// view-profile
+
+$this->headScript()->appendFile('/js_admyn/admyn/new_users.js');
+$this->headScript()->appendFile('/js_admyn/admyn/users_profile.js');
+
+$data = $this->vData;
+$msgDash = $this->vMsgDash;
+
+#Sas_Debug::dump($data);
+?>
+
+<div id="UserId_<?= $data['id']?>">
+	<form action="<?= $this->url()?>" method="post">
+		<input type="hidden" name="id" value="<?= $data['id']?>">
+
+		<h1>
+			<span id="UserFio"><?= $data['first_name']?> <?= $data['last_name']?></span><br/>
+			<input type="text" name="first_name" value="<?= $data['first_name']?>" autocomplete="off">
+			<input type="text" name="last_name" value="<?= $data['last_name']?>" autocomplete="off"><br/>
+			<label class="radio inline">
+				<input type="radio" name="sex" value="female"<?= $this->isChecked($data['sex'], 'female')?>> Женщина
+			</label>
+			<label class="radio inline">
+				<input type="radio" name="sex" value="male"<?= $this->isChecked($data['sex'], 'male')?>> Мужчина
+			</label>
+		</h1>
+		<small class="text-center input-block-level"><?= $data['statusName']?> (статус ID: <?= $data['statusId']?>)</small>
+		<? if($data['current_status'] == 51) { ?>
+			<p class="text-center">
+				<button class="btn btn-small btn-danger" onclick="return deleteUser(<?= $data['id']?>)">Отклонить</button>
+				<button class="btn btn-small btn-success" onclick="return addUser(<?= $data['id']?>)">Принять</button>
+				<button class="btn btn-small btn-success" onclick="return setGhost(<?= $data['id']?>)">Сделать "Призраком"</button>
+			</p>
+		<? } else { ?>
+			<p class="text-center">
+				<button class="btn btn-small btn-success" onclick="return setGhost(<?= $data['id']?>)">Сделать "Призраком"</button>
+			</p>
+		<? } ?>
+
+		<? if($data['current_status'] < 50) : ?>
+			<p class="text-center">
+				<button class="btn btn-small btn-success" onclick="return recoverUser(<?= $data['id']?>)">Восстановить</button>
+			</p>
+		<? endif; ?>
+
+		<div class="row-fluid">
+
+			<div class="span2 text-center">
+				<small class="green">ID: <?= $data['id']?></small><br/>
+				<a href="http://onthelist.ru/user/people/profile/view/<?= $data['uid']?>" target="_blank">UID: <?= $data['uid']?></a><br/>
+				<img id="user-avatar" class="img-polaroid" src="<?= $data['img']?>thumbnail.jpg">
+				<br>
+				<img src="/img/flags/<?= $data['lang']?>.png" alt="<?= $data['lang']?>">
+				<?= $data['cityName']?>
+				<br/>
+				<button class="btn btn-small btn-success" onclick="return setGhostAvatarDel(<?= $data['id']?>)">Удалить аватарку и сделать "Призраком"</button>
+			</div>
+			<div class="span5">
+				<table class="table">
+					<tr>
+						<td>Караты:</td>
+						<td><input class="input-mini" name="balance" value="<?= $data['balance']?>">
+							<input class="input-mini" name="balance_bonus" value="<?= $data['balance_bonus']?>"><br>Итого: <?= $data['balance'] + $data['balance_bonus']?>
+						</td>
+					</tr>
+					<tr>
+						<td>Карта до:</td>
+						<td><input class="input-small" name="club_card_dt" value="<?= $data['club_card_dt']?>"><br>YYYY-MM-DD</td>
+					</tr>
+					<tr>
+						<td>Рек. платежи:</td>
+						<td><?
+							//Sas_Debug::dump($data);
+							if($data['recurrent_payment'] == 'yes') {
+								echo '<span class="green">вкл</span>';
+							} else {
+								echo '<span class="red-text">выкл</span>';
+							}
+							?>
+						</td>
+					</tr>
+					<tr>
+						<td>Телефон</td>
+						<td><input class="input-medium" id="UserPhone" name="phone" value="<?= $data['phone']?>" style="background-color: <?if(isset($data['phone']) && $data['phone_check'] == 'yes') echo '#42D645';elseif(isset($data['phone']) && $data['phone_check'] == 'no') echo '#DC332C';else echo '#fff';?>;"></td>
+					</tr>
+					<tr>
+						<td>Skype</td>
+						<td><input class="input-medium" name="skype" value="<?/*= $data['skype']*/?>"></td>
+					</tr>
+					<tr>
+						<td>Email</td>
+						<td><input class="input-medium" id="UserEmail" name="email" value="<?= $data['email']?>"></td>
+					</tr>
+				</table>
+			</div>
+			<div class="span5">
+				<table class="table">
+					<tr>
+						<td>Последняя активность</td>
+						<td><?= date_format(new DateTime($data['online_last_dt']), 'd.m.Y H:i')?></td>
+					</tr>
+					<tr>
+						<td>Дата регистрации</td>
+						<td><?= date_format(new DateTime($data['register_dt']), 'd.m.Y H:i')?></td>
+					</tr>
+					<tr>
+						<td>Возраст</td>
+						<td>
+							<span class="green"><?= Models_User_Model::getAge($data['birthday'])?></span>
+							<? if ($data['statusId'] <= 2) { ?>
+								<input class="input-small" type="text" name="birthday" value="<?= $data['birthday']?>">
+							<? } else { ?>
+								<small>(<?= $data['birthday']?>)</small>
+							<? } ?>
+						</td>
+					</tr>
+					<tr>
+						<td>Рост</td>
+						<td><input id="UserHeight" class="input-small" name="height" value="<?= $data['height']?>"></td>
+					</tr>
+					<tr>
+						<td>Дети</td>
+						<td>
+							<label class="radio inline">
+								<input type="radio" name="children" value="yes"<?= $this->isChecked($data['children'], 'yes')?>> Есть
+							</label>
+							<label class="radio inline">
+								<input type="radio" name="children" value="no"<?= $this->isChecked($data['children'], 'no')?>> Нет
+							</label>
+						</td>
+					</tr>
+					<tr>
+						<td>Курит</td>
+						<td>
+							<label class="radio inline">
+								<input type="radio" name="smoking" value="yes"<?= $this->isChecked($data['smoking'], 'yes')?>> Да
+							</label>
+							<label class="radio inline">
+								<input type="radio" name="smoking" value="no"<?= $this->isChecked($data['smoking'], 'no')?>> Нет
+							</label>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="row-fluid">
+			<div class="span12">
+				<table class="table table-bordered">
+					<tr>
+						<th>Подписка</th>
+						<th>Email</th>
+						<th>СМС</th>
+					</tr>
+					<tr>
+						<td>Новости и предложения от Клуба</td>
+						<td><input type="checkbox" name="msg_news_email" value="yes"<?= $this->IsChecked('yes', $data['msg_news_email'])?>></td>
+						<td><input type="checkbox" name="msg_news_sms" value="yes"<?= $this->IsChecked('yes', $data['msg_news_sms'])?>></td>
+					</tr>
+					<tr>
+						<td>Административные сообщений</td>
+						<td><input type="checkbox" name="msg_admin_email" value="yes"<?= $this->IsChecked('yes', $data['msg_admin_email'])?>></td>
+						<td><input type="checkbox" name="msg_admin_sms" value="yes"<?= $this->IsChecked('yes', $data['msg_admin_sms'])?>></td>
+					</tr>
+					<tr>
+						<td>Свидания / Обмен телефонами</td>
+						<td><input type="checkbox" name="msg_invite_email" value="yes"<?= $this->IsChecked('yes', $data['msg_invite_email'])?>></td>
+						<td><input type="checkbox" name="msg_invite_sms" value="yes"<?= $this->IsChecked('yes', $data['msg_invite_sms'])?>></td>
+					</tr>
+					<tr>
+						<td>Добавление в фавориты</td>
+						<td><input type="checkbox" name="msg_favorite_email" value="yes"<?= $this->IsChecked('yes', $data['msg_favorite_email'])?>></td>
+						<td><input type="checkbox" name="msg_favorite_sms" value="yes"<?= $this->IsChecked('yes', $data['msg_favorite_sms'])?>></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<p class="text-center">
+			<input type="submit" name="save" value="Сохранить" class="btn btn-success">
+		</p>
+
+		<div class="row-fluid">
+			<div class="span12">
+				<table style="width: 100%">
+					<tr>
+						<td style="width: 150px;">О себе:</td>
+						<td><textarea name="about" class="input-block-level"><?= $data['about']?></textarea></td>
+					</tr>
+					<tr>
+						<td>Компания:</td>
+						<td><input type="text" name="company" value="<?= $data['company']?>" class="input-block-level"/></td>
+					</tr>
+					<tr>
+						<td>Должность:</td>
+						<td><input type="text" name="position_job" value="<?= $data['position_job']?>" class="input-block-level"/></td>
+					</tr>
+					<tr>
+						<td>ВУЗ:</td>
+						<td><input type="text" name="education" value="<?= $data['education']?>" class="input-block-level"/></td>
+					</tr>
+					<tr>
+						<td>Любимые места:</td>
+						<td><textarea name="favorite_places" class="input-block-level"><?= $data['favorite_places']?></textarea></td>
+					</tr>
+					<tr>
+						<td>URL вКонтакте:</td>
+						<td><input type="text" name="link_vk" value="<?= $data['link_vk']?>" class="input-block-level"/></td>
+					</tr>
+					<tr>
+						<td>URL FaceBook:</td>
+						<td><input type="text" name="link_fb" value="<?= $data['link_fb']?>" class="input-block-level"/></td>
+					</tr>
+					<tr>
+						<td>URL LinkedIn:</td>
+						<td><input type="text" name="link_ln" value="<?= $data['link_ln']?>" class="input-block-level"/></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<p class="text-center">
+			<input type="submit" name="save" value="Сохранить" class="btn btn-success">
+		</p>
+
+	</form>
+
+	<? if(is_null($data['password'])) : ?>
+		<hr><p>Ссылка для активации профиля: http://onthelist.ru/user/register/activation/key/<?= $data['activation_key']?></p>
+	<? endif; ?>
+	<hr>
+	<div class="row-fluid">
+		<div class="span12">
+			<h2>Дополнительная информация</h2>
+			<p>Количество свиданий: <?= $this->vCntDates; ?></p>
+			<p>Количество обменов контактами: <?= $this->vCntContactExchange; ?></p>
+			<h3>Платежи:</h3>
+			<ul>
+			<? $itPlay=0; $itKar=0; foreach($this->vBalanceHistory as $hBalance) : ?>
+				<li>Счёт <? if(!is_null($hBalance['parent_id'])) echo '<sup>(R)</sup>';?> №: <?= $hBalance['id']?> от <?= $hBalance['date_create']?> на сумму: <?= $hBalance['money']?> руб. за <?= $hBalance['item_cnt']?> <?= $hBalance['item_name']?>. | Статус: <span class="<?= $hBalance['response_code']?>"><?= $hBalance['status']?><? if($hBalance['response_code'] == 'AS000') echo ' <sup>(R)</sup>';?></span></li>
+				<? if ($hBalance['status'] == 'success') {
+					$itPlay += $hBalance['money'];
+					//$itKar += $hBalance['karat'];
+				}?>
+			<? endforeach; ?>
+				<li><strong>Итого платежей на сумму: <?= $itPlay?> руб.</strong></li>
+			</ul>
+			<p><a href="/admyn/users/view-history/id/<?= $data['id']?>">Подробная история действий пользователя</a></p>
+		</div>
+	</div>
+	<hr>
+
+	<div class="row-fluid">
+		<div class="span12">
+			<h2>Отправить сообщение пользователю <img src="/img/flags/<?= $data['lang']?>.png" alt="<?= $data['lang']?>"></h2>
+			<p>Тема (только для email): <input id="ThemeMsg" type="text" name="theme_msg" value=""></p>
+			<textarea id="TextMsg" name="text_msg" class="input-block-level" rows="4"></textarea>
+			<p class="text-center">
+				<button onclick="sendMsgUser('<?= $data['id']?>', '<?= $data['lang']?>', 'email_and_lock')" class="btn btn-danger" title="Пользователь будет заблокирован и Сообщение будет отправлено ему Email"><i class="icon-remove icon-white"></i> Заблокировать + <i class="icon-envelope icon-white"></i> Email</button>
+
+				<?php if($data['msg_admin_email'] == 'yes') : ?>
+				<button onclick="sendMsgUser('<?= $data['id']?>', '<?= $data['lang']?>', 'email')" class="btn btn-inverse"><i class="icon-envelope icon-white"></i> Отправить Email</button>
+				<?php endif; ?>
+
+				<?php if($data['msg_admin_sms'] == 'yes') : ?>
+				<button onclick="sendMsgUser('<?= $data['id']?>', '<?= $data['lang']?>', 'sms')" class="btn btn-inverse"><i class="icon-comment icon-white"></i> Отправить СМС</button>
+				<?php endif; ?>
+
+				<button onclick="sendMsgUser('<?= $data['id']?>', '<?= $data['lang']?>', 'dash')" class="btn btn-inverse" title="Сообщение будет отправлено на Dashboard пользователю"><i class="icon-tasks icon-white"></i> На Dashboard</button>
+			</p>
+		</div>
+	</div>
+	<hr>
+	<div class="row-fluid">
+		<div class="span12">
+			<h2>Сообщения с Dashboard</h2>
+			<div id="DashMsg">
+				<?php foreach($msgDash as $dashItem) :
+					$clDash = '';
+					if($dashItem['hide_dash'] == 'no' && $dashItem['hide_user'] == 'no') {
+						$clDash = 'green';
+					}
+				?>
+					<div class="dashMsg">
+						<small class="<?= $clDash;?>"><?= date_format(new DateTime($dashItem['date_create']), 'd.m.Y H:i:s')?></small>
+						<blockquote>
+							<p><?= $dashItem['msg']?></p>
+						</blockquote>
+					</div>
+				<?php endforeach; ?>
+			</div>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<h2>Фотоальбом пользователя</h2>
+			<ul class="thumbnails">
+			<? foreach($this->vPhotoAlbum as $photo) : ?>
+				<li class="span4">
+					<img class="img-polaroid" src="<?= $photo['img']?><?= $photo['picture']?>" />
+					<br><?= $photo['comment']?>
+				</li>
+				<!--<p class="text-center">
+					<img class="img-polaroid" src="<?/*= $photo['img']*/?><?/*= $photo['picture']*/?>" />
+					<br><?/*= $photo['comment']*/?>
+				</p>-->
+			<? endforeach; ?>
+			</ul>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span12">
+			<h2>Статусы пользователя</h2>
+			<?
+			$i=0; foreach($this->vStatuses as $item) :
+				if($i == 0) {echo '<h4>';} else {echo '<p>';}
+
+				echo date_format(new DateTime($item['dt_create']), 'd.m.Y H:i') .' ';
+				if($item['status_vip'] == 'yes') echo '<strong>VIP:</strong> ';
+				if($item['status_hide'] == 'yes') echo '<small style="color: #999999">';
+				echo $item['status_text'];
+				if($item['status_hide'] == 'yes') echo '</small>';
+
+				if($i == 0) {echo '</h4>';} else {echo '</p>';}
+			$i++;
+			endforeach;
+			?>
+		</div>
+	</div>
+</div>

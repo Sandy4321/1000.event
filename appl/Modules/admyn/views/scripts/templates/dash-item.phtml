@@ -1,0 +1,28 @@
+<?php
+
+$item = $this->item;
+
+?>
+
+<div class="row-fluid">
+	<div class="span12">
+		<p class="text-center"><small><?= $item['tpl_key']?> (ID: <?= $item['id']?>)</small></p>
+		<h5>
+			<?= $item['action_name']?>
+		</h5>
+	</div>
+</div>
+
+<div class="row-fluid">
+	<div class="span6">
+		<img src="/img/flags/ru.png"> Текст на Dashboard
+		<textarea id="MsgRu_<?= $item['id']?>" rows="7" class="input-block-level" name="msg_ru"><?= $item['msg_ru']?></textarea>
+	</div>
+	<div class="span6">
+		<img src="/img/flags/en.png"> Текст на Dashboard
+		<textarea id="MsgEn_<?= $item['id']?>" rows="7" class="input-block-level" name="msg_en"><?= $item['msg_en']?></textarea>
+	</div>
+</div>
+<p class="text-center">
+	<button class="btn btn-success" onclick="saveTpl(<?= $item['id']?>, 'dash')"><i class="icon-ok icon-white"></i> Сохранить</button>
+</p>

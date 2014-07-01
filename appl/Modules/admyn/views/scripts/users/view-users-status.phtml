@@ -1,0 +1,31 @@
+<?php
+
+// view-payment-msg
+
+$this->headScript()->appendFile('/js_admyn/admyn/users_msg.js');
+
+#$st = $this->vMsgMoney;
+#Sas_Debug::dump($this->vUsersStatus);
+//$cntData = count($msgFree);
+
+?>
+<h1>Статусы пользователей</h1>
+<h2>Выбрано: за последний месяц и Отсортировано: 1) по видимости 2) по дате</h2>
+<?php foreach($this->vUsersStatus as $item) : ?>
+	<small><?= $item['dt_create']?></small>
+	<h4>
+		<a href="/admyn/users/view-profile/id/<?= $item['user_id']?>"><?= $item['user_id']?></a>
+		Like: <?= $item['cnt_like']?>
+	</h4>
+	<p>
+		<? if($item['status_vip'] == 'yes') echo '<strong>VIP:</strong> '?>
+		<? if($item['status_hide'] == 'yes') echo '<small style="color: #999999">'?>
+			<?= $item['status_text']?>
+		<? if($item['status_hide'] == 'yes') echo '</small>'?>
+	</p>
+	<form action="<?= $this->url() ?>" method="post">
+		<input type="hidden" name="status_id" value="<?= $item['id']?>">
+		<input type="submit" value="Удалить" class="btn btn-danger btn-small">
+	</form>
+	<hr>
+<?php endforeach; ?>

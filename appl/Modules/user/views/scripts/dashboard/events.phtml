@@ -1,0 +1,48 @@
+<!-- Афиша-->
+<div class="content-block events hidden-mobile" id="EventsNew">
+	<div class="header">
+		<h3><?= $this->t('Афиша');?></h3>
+	</div>
+	<div class="data">
+		<div id="container">
+			<div id="banner-events">
+				<ul class="bjqs">
+					<? $i=0; foreach($this->vEvents as $event) :
+						if($this->myProfile['current_status'] >= 70) {
+							$eventUrl = $this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'view', 'id'=>$event['id']), null, true);
+						} else {
+							$eventUrl = 'javascript:void(0);';
+							// ВНИМАНИЕ небольшой хак для интеграции onclick
+							$eventUrl .= '" onclick="goWizard(\''.$this->t('Ссылка на мероприятие доступна только членам Клуба.').'\', '.$this->myProfile['current_status'].')"';
+						}
+					?>
+						<li class="bjqs-slide" style="height: 108px; width: 100%;<? if($i == 0) echo 'display: list-item;';?>">
+							<a href="<?= $eventUrl;?>"><img class="photo" src="/img/user_event/<?= $event['user_id']?>/<?= $event['id']?>/intro.jpg" style="height: 108px; width: 100%;"></a>
+							<div class="article">
+								<a class="title" href="<?= $eventUrl;?>"><?= $event['title'];?></a>
+								<div class="date"><?= date_format(new DateTime($event['date_start']), 'd.m.Y');?></div>
+								<span class="anons"><?= $event['point_name'];?></span>
+							</div>
+						</li>
+						<? $i++; endforeach; ?>
+				</ul>
+				<ul class="bjqs-controls v-centered"><li class="bjqs-prev"><a href="#" data-direction="previous" style="top: 45%;">Prev</a></li><li class="bjqs-next"><a href="#" data-direction="forward" style="top: 45%;">Next</a></li></ul>
+				<ol class="bjqs-markers h-centered" style="left: 197px;"><li class="active-marker"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li></ol>
+			</div>
+			<script class="secret-source">
+				jQuery(document).ready(function($) {
+					$('#banner-events').bjqs({
+						height      : 120,
+						width       : 540,
+						responsive  : true,
+						animtype : 'fade',
+						hoverpause : true,
+						animduration : 450,
+						animspeed : 3000,
+						automatic : true
+					});
+				});
+			</script>
+		</div>
+	</div>
+</div>

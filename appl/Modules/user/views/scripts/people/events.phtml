@@ -1,0 +1,34 @@
+<?
+$this->inlineScript()->appendFile('/js/event.js');
+?>
+<div class="content-block profile-events">
+	<div class="header">
+		<h3><?= $this->t('Мероприятия');?></h3>
+	</div>
+	<div class="data">
+	<? if(!empty($this->vEvents)) : ?>
+		<? foreach($this->vEvents as $event) :
+			if($this->myProfile['current_status'] >= 70) {
+				$eventUrl = $this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'view', 'id'=>$event['event_id']), null, true);
+			} else {
+				$eventUrl = 'javascript:void(0);';
+				// ВНИМАНИЕ небольшой хак для интеграции onclick
+				$eventUrl .= '" onclick="goWizard(\''.$this->t('Ссылка на мероприятие доступна только членам Клуба.').'\', '.$this->myProfile['current_status'].')"';
+			}
+		?>
+		<div class="event">
+			<span class="name hidden-desktop"><a href="<?= $eventUrl;?>"><?= $event['title']?></a></span>
+			<div class="image"><a href="<?= $eventUrl;?>"><img src="<?= ($event['intro_img'] == 1) ? '/img/user_event/'.$event['authorId'].'/'.$event['event_id'].'/intro.jpg' : 'http://www.placehold.it/200x200/eee/aaa&text=no-image'?>"></a></div>
+			<div class="details">
+				<span class="date"><?= date_format(new DateTime($event['date_start']), 'd M H:i');?></span>
+				<span class="name hidden-mobile"><a href="<?= $eventUrl;?>"><?= $event['title']?></a></span>
+				<span class="place"><?= $event['point_name']?></span>
+			</div>
+			<? if(!array_key_exists($event['event_id'], $this->vEventsInvite)) { ?>
+			<button class="invite" onclick="eventInvite(this, <?= $event['event_id']?>, <?= $this->partnerProfile['id']?>)"><?= $this->t('Пойти вместе');?></button>
+			<? } ?>
+		</div>
+		<? endforeach; ?>
+	<? endif; ?>
+	</div>
+</div>

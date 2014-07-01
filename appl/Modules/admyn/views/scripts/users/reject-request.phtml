@@ -1,0 +1,23 @@
+<?php
+
+// reject-request
+
+$data = $this->vData;
+#Sas_Debug::dump($data);
+$cntData = count($data);
+
+?>
+
+<h1>Отклонённые заявки</h1>
+<h2>Кол-во отклонённых заявок с х по хх (<span id="CntNewUser"><?= $this->vCntData?></span>)</h2>
+
+<?php
+if(is_array($data)) {
+	foreach($data as $item)
+	{
+		echo '<div  id="ItemUser_'.  $item['id'] . '">';
+		echo $this->partial('users/user-info-block.phtml', array('item'=>$item));
+		echo '<hr></div>';
+	}
+}
+?>

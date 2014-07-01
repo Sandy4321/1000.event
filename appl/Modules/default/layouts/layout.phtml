@@ -1,45 +1,55 @@
-<?php $this->doctype(Zend_View_Helper_Doctype::HTML5);?>
-<!DOCTYPE html>
-<html lang="<?= $this->translate()->getLocale()?>" dir="ltr">
+<?php $this->doctype(Zend_View_Helper_Doctype::XHTML1_STRICT);?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?= $this->translate()->getLocale()?>" lang="<?= $this->translate()->getLocale()?>" dir="ltr">
 <head>
-	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-	<meta charset="utf-8" />
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
 	<link href="/img/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
 	<?php
-	echo $this->headTitle('1000 Events');
-
 	$this->headMeta()
-		->appendName('viewport', 'initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,width=device-width')
+		->appendName('viewport', 'initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0,width=device-width')
 		->appendName('apple-mobile-web-app-capable', 'yes')
 		->appendName('apple-mobile-web-app-status-bar-style', 'black');
 	echo $this->headMeta();
 
+	echo $this->headTitle('OnTheList');
+
 	// STYLE
 	echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon','href' => '/img/favicon.ico'))
 		->appendStylesheet('http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,cyrillic-ext,cyrillic')
-		->appendStylesheet('/css/main.css');
+		->appendStylesheet('/css/reset.css')
+		->appendStylesheet('/css/base.css')
+		->appendStylesheet('/css/bjqs.css')
+		->appendStylesheet('/css/site/main.css');
 	// END STYLE
-	?>
 
+	?>
 	<script type="text/javascript">
 		var SERVER_NAME = '<?= $_SERVER['SERVER_NAME']?>';
 		var LANG = '<?= $this->translate()->getLocale()?>';
-		function getLang() {return LANG;}
 	</script>
 	<?php
 	// JS
 	echo $this->headScript()
-		->appendFile('/js/lib/jquery.min.js')
-		->appendFile('/js/lib/html5.js', 'text/javascript', array('conditional' => 'lt IE 9'))
-		->appendFile('/js/main.js');
+		->prependFile('/js/site/main.js')
+		->prependFile('/js/libs/html5.js', 'text/javascript', array('conditional' => 'lt IE 9'))
+		->prependFile('/js/libs/bjqs-1.3.min.js')
+		->prependFile('/js/libs/jquery.min.js');
 	// END JS
 	?>
 
 </head>
 <body class="body-<?= Sas_Controller_Plugin_Start::$MODULE.'-'.Sas_Controller_Plugin_Start::$CONTROLLER?>">
-<div>
-	<?= $this->layout()->content;?>
+<div class="wrap">
+	<div class="aside-right">
+		<?= $this->render('menu-mobile.phtml');?>
+	</div>
+	<div class="contain">
+		<?= $this->render('menu-site.phtml');?>
+		<div class="content" id="content-<?= Sas_Controller_Plugin_Start::$MODULE?>">
+			<?= $this->layout()->content;?>
+		</div>
+		<?= $this->render('footer.phtml');?>
+	</div>
 </div>
-<?= $this->inlineScript();?>
 </body>
 </html>

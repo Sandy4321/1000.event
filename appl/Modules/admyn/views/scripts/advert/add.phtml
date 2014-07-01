@@ -1,0 +1,45 @@
+<h1>Создание рекламной кампании</h1>
+<? if(!empty($this->vData)) : $data = $this->vData; ?>
+	<h2>Создана кампания: <?= $data['first_name'];?></h2>
+	<p>Тип: <?= ($data['current_status'] == 1) ? 'Рекламные кампании на веб сайтах' : 'Рекламные кампании в мобильных устройствах';?></p>
+	<p><em><?= $data['about'];?></em></p>
+	<h2><small>Промо ключ кампании:</small> ?promo-key=<?= $data['promo_key'];?></h2>
+	<p>Рабочие примеры ссылок для использования:<br>
+		http://onthelist.ru/<span class="green">?promo-key=<?= $data['promo_key'];?></span><br>
+		http://onthelist.ru/user/register/<span class="green">?promo-key=<?= $data['promo_key'];?></span><br>
+	<p>Пример ссылки на новость:<br>
+			http://onthelist.ru/news/index/show/id/<span class="green">НОМЕР_НОВОСТИ</span>/<span class="green">?promo-key=<?= $data['promo_key'];?></span>
+	</p>
+<? endif; ?>
+<form class="form-horizontal" action="<?= $this->url();?>" method="post">
+	<div class="control-group">
+		<label class="control-label">Тип кампании</label>
+		<div class="controls">
+			<label class="radio">
+				<input type="radio" name="adv-type" value="1" checked>
+				Рекламные кампании на веб сайтах
+			</label>
+			<label class="radio">
+				<input type="radio" name="adv-type" value="2">
+				Рекламные кампании в мобильных устройствах
+			</label>
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="inputPassword">Название</label>
+		<div class="controls">
+			<input type="text" name="adv-name" class="span8">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="inputPassword">Описание</label>
+		<div class="controls">
+			<textarea name="adv-descr" rows="3" class="span8"></textarea>
+		</div>
+	</div>
+	<div class="control-group">
+		<div class="controls">
+			<button type="submit" class="btn">Создать кампанию</button>
+		</div>
+	</div>
+</form>

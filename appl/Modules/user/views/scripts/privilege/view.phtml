@@ -1,0 +1,21 @@
+<div class="content" id="privilege">
+	<div class="container">
+		<div class="content-blocks-container">
+			<div class="content-main-privilege">
+				<a href="<?= $this->url(array('module'=>'user', 'controller'=>'privilege'), null, true);?>" class="back">← <?= $this->t('Все привилегии');?></a>
+				<div class="content-block title-block">
+					<div class="image">
+						<img src="<?= $this->vItem['img']?>">
+					</div>
+					<h1><?= $this->vItem['title']?></h1>
+				</div>
+				<div class="content-block teaser-block">
+					<div class="data">
+						<div class="anons"><?= $this->vItem['anons']?></div>
+						<?= $this->vItem['text']?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

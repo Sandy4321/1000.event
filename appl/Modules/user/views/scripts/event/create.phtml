@@ -1,0 +1,100 @@
+<?php
+
+$this->headScript()->appendFile('/js/event.js');
+
+$title = $this->t('Создать новое мероприятие');
+$this->headTitle($title);
+
+$data = $this->vData;
+
+if(empty($data['date_start_day']))   {$data['date_start_day']   = date('d');}
+if(empty($data['date_start_month'])) {$data['date_start_month'] = date('m');}
+if(empty($data['date_close_day']))   {$data['date_close_day']   = date('d');}
+if(empty($data['date_close_month'])) {$data['date_close_month'] = date('m');}
+
+?>
+<div class="content" id="event-add">
+	<div class="container">
+		<div class="page-title">
+			<h1><?= $title?></h1>
+		</div>
+		<? if($this->vError != false) :?>
+			<div class="error-title">
+				<? if($this->vError['cntEventDay']) echo $this->t('Вы не можете создавать более одного мероприятия в день.');?>
+			</div>
+		<? endif;?>
+
+		<div class="content-blocks-container">
+			
+
+			<div class="content-block content-block-full">
+				<form action="<?= $this->url()?>" enctype="multipart/form-data" method="post" onsubmit="return eventCreate();">
+				<div class="wrapper">
+					<label><?= $this->t('Название мероприятия')?>: <span class="required">*</span></label>
+					<input type="text" name="title" value="<?= $data['title']?>" class="input-block-level" maxlength="100">
+				</div>
+
+				<div class="wrapper">
+					<label><?= $this->t('Краткий анонс')?>: <span class="required">*</span></label>
+					<textarea name="anons" rows="3" class="input-block-level"><?= $data['anons']?></textarea>
+				</div>
+
+				<div class="wrapper">
+					<label><?= $this->t('Начало')?>: <span class="required">*</span></label>
+					<span class="input-label"><?= $this->t('Время')?>:</span>
+					 <?= $this->HtmlFormSelect('date_start_hour', array('range'=>'1-24', 'step'=>'1'), $data['date_start_hour'], 'input-small', array('nullName'=>'-', 'nullValue'=>0, 'postfix'=>'-00'))?>
+					<span class="input-label"><?= $this->t('День')?>:</span>
+					 <?= $this->HtmlFormSelect('date_start_day', array('range'=>'1-31', 'step'=>'1'), $data['date_start_day'], 'input-mini')?>
+					<span class="input-label"><?= $this->t('Месяц')?>:</span>
+					 <?= $this->HtmlFormSelect('date_start_month', array('range'=>'1-12', 'step'=>'1'), $data['date_start_month'], 'input-mini')?>
+					<span class="input-label"><?= $this->t('Год')?>:</span>
+					 <?= $this->HtmlFormSelect('date_start_year', array('range'=>date('Y').'-'.(date('Y')+1), 'step'=>'1'), $data['date_start_year'], 'input-small')?>
+					<!--<input type="text" class="input-date">
+					<input type="text" class="input-time">-->
+				</div>
+
+				<div class="wrapper">
+					<label><?= $this->t('Окончание')?>:</label>
+					<span class="input-label"><?= $this->t('Время')?>: </span>
+						<?= $this->HtmlFormSelect('date_close_hour', array('range'=>'1-24', 'step'=>'1'), $data['date_close_hour'], 'input-small', array('nullName'=>'-', 'nullValue'=>0, 'postfix'=>'-00'))?>
+					<span class="input-label"><?= $this->t('День')?>: </span>
+					<?= $this->HtmlFormSelect('date_close_day', array('range'=>'1-31', 'step'=>'1'), $data['date_close_day'], 'input-mini')?>
+					<span class="input-label"><?= $this->t('Месяц')?>: </span>
+					<?= $this->HtmlFormSelect('date_close_month', array('range'=>'1-12', 'step'=>'1'), $data['date_close_month'], 'input-mini')?>
+					<span class="input-label"><?= $this->t('Год')?>: </span>
+						<?= $this->HtmlFormSelect('date_close_year', array('range'=>date('Y').'-'.(date('Y')+1), 'step'=>'1'), $data['date_close_year'], 'input-small')?>
+					<!--<input type="text" class="input-date">
+					<input type="text" class="input-time">-->
+				</div>
+
+				<div class="wrapper">
+					<label><?= $this->t('Категория мероприятия')?>: <span class="required">*</span></label>
+					<?= $this->HtmlFormSelect('cat_id', $this->vCat, $data['cat_id'])?>
+				</div>
+				<div class="wrapper">
+					<label><?= $this->t('Стоимость участия')?>:</label>
+					<span class="input-label"><?= $this->t('Цена')?>:</span>
+					<input type="text" name="price" value="<?= $data['price']?>" class="input-half">
+					<span class="input-label"><?= $this->t('Валюта')?>:</span>
+					<?= $this->HtmlFormSelect('money_type', array('0'=>$this->t('Бесплатно'),'rub'=>$this->t('Рубли'),'usd'=>'USD','karat'=>$this->t('Караты')), $data['money_type'], 'input-medium')?>
+				</div>
+				<div class="wrapper">
+					<label><?= $this->t('Место проведения')?>:</label>
+					<input type="text" name="point_name" value="<?= $data['point_name']?>" class="input-block-level" maxlength="50">
+				</div>
+				<div class="wrapper">
+					<label><?= $this->t('Полное описание')?>:</label>
+					<textarea name="full_text" rows="7" class="input-block-level"><?= $data['full_text']?></textarea>
+				</div>
+				<div class="wrapper">
+					<label><?= $this->t('Сопроводительная картинка')?>:<br><small><?= $this->t('Рекомендуемая пропорция изображений 4х3,<br>например: 640х480')?></small></label>
+					<input type="file" name="photo_event">
+				</div>
+				<div class="controls">
+					<input class="btn btn-dark btn-med" type="submit" value="<?= $this->t('Создать и опубликовать');?>">
+				</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<?php
+
+// approved-request
+
+$this->headScript()->appendFile('/js_admyn/admyn/new_users.js');
+
+$data = $this->vData;
+#Sas_Debug::dump($data);
+$cntData = count($data);
+
+?>
+
+<h1>Одобренные но не активные</h1>
+<h2>Общее кол-во с х по хх (<span id="CntNewUser"><?= $cntData?></span>)</h2>
+
+<?php
+if(is_array($data)) {
+	foreach($data as $item)
+	{
+		echo '<div  id="ItemUser_'.  $item['id'] . '">';
+		echo $this->partial('users/user-info-block.phtml', array('item'=>$item));
+		?>
+		<div class="row-fluid">
+			<div class="span10 offset2">
+				<!-- <button class="btn btn-large btn-info">Пристрелить его что ли?</button>
+				<button class="btn btn-small btn-danger" onclick="deleteUser(<?/*= $item['id']*/?>)">Отклонить</button>
+				<button class="btn btn-small btn-success" onclick="addUser(<?/*= $item['id']*/?>)">Принять</button>-->
+			</div>
+		</div>
+		<?
+		echo '<hr></div>';
+	}
+}
+?>

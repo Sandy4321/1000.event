@@ -1,0 +1,38 @@
+<?
+// Делим посты на две колонки
+$leftCol = array();
+$i = 0;
+while($i < 10) {
+	$leftCol[] = $this->vPosts[$i];
+	$i++;
+}
+
+$rightCol = array();
+$i = 10;
+while($i < 20) {
+	$rightCol[] = $this->vPosts[$i];
+	$i++;
+}
+?>
+<div class="content" id="feed">
+	<div class="container">
+		<div class="content-blocks-container">
+			<div class="content-half-col">
+				<?
+				// Поле ввода поста
+				echo $this->render('posts/add-post.phtml');
+
+				// Вывод постов
+				echo $this->partial('posts/post-list.phtml', array('vPosts'=>$leftCol, 'vILikePost'=>$this->vILikePost, 'myProfile' => $this->myProfile));
+				?>
+			</div>
+
+			<div class="content-half-col">
+				<?
+				// Вывод постов
+				echo $this->partial('posts/post-list.phtml', array('vPosts'=>$rightCol, 'vILikePost'=>$this->vILikePost, 'myProfile' => $this->myProfile));
+				?>
+			</div>
+		</div>
+	</div>
+</div>

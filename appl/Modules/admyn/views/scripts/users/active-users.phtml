@@ -1,0 +1,23 @@
+<?php
+
+// active-users
+
+$data = $this->vData;
+#Sas_Debug::dump($data);
+$cntData = count($data);
+
+?>
+
+<h1>Активные пользователи</h1>
+<h2>Кол-во активных пользователей (<span id="CntNewUser"><?= $this->vCntData?></span>)</h2>
+
+<?php
+if(is_array($data)) {
+	foreach($data as $item)
+	{
+		echo '<div  id="ItemUser_'.  $item['id'] . '">';
+		echo $this->partial('users/user-info-block.phtml', array('item'=>$item));
+		echo '<hr></div>';
+	}
+}
+?>

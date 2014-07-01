@@ -1,0 +1,23 @@
+<?
+//Sas_Debug::dump($this->vDashPhotoDay);
+?>
+<!-- Фотографии дня -->
+<div class="content-block photos">
+	<div class="header">
+		<h3><?= $this->t('Фотографии дня');?></h3>
+	</div>
+	<div class="data">
+	<? if($this->vDashPhotoDay['female'] != false) :?>
+		<a href="<?= $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$this->vDashPhotoDay['female']['uid']), null, true);?>" class="photo">
+			<img class="photo" src="<?= $this->vDashPhotoDay['female']['img']?>">
+			<span class="username"><?= $this->vDashPhotoDay['female']['first_name']?></span>
+		</a>
+	<? endif; ?>
+	<? if($this->vDashPhotoDay['male'] != false) :?>
+		<a href="<?= $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$this->vDashPhotoDay['male']['uid']), null, true);?>" class="photo">
+			<img class="photo" src="<?= $this->vDashPhotoDay['male']['img']?>">
+			<span class="username"><?= $this->vDashPhotoDay['male']['first_name']?></span>
+		</a>
+	<? endif; ?>
+	</div>
+</div>

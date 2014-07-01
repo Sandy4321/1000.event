@@ -1,0 +1,55 @@
+<?
+/*
+$this->vNews = array {
+  [0] => array(7) {
+    ["id"] => int
+    ["keywords"] => NULL | string
+    ["description"] => NULL | string
+    ["title"] =>  NULL | string
+    ["anons"] => NULL | string
+    ["text"] => NULL | string
+	["date_create"] => string(10) yyyy-mm-dd
+*/
+
+?>
+<!-- Новости-->
+<div class="content-block news hidden-mobile" id="news">
+	<div class="header">
+		<h3><?= $this->t('Новости');?></h3>
+	</div>
+	<div class="data">
+		<div id="container">
+			<div id="banner-news" >
+				<ul class="bjqs" >
+					<? $i=0; foreach($this->vNews as $item) :
+					$urlNews = $this->url(array('module'=>'news', 'controller'=>'index', 'action'=>'show', 'id'=>$item['id']), null, true);
+					?>
+					<li class="bjqs-slide" style="height: 108px; width: 100%;<? if($i == 0) echo 'display: list-item;';?>">
+						<a href="<?= $urlNews;?>"><img class="photo" src="/img/news/news-club/<?= $item['id']?>.jpg" style="height: 108px; width: 100%;"></a>
+						<div class="article">
+							<a class="title" href="<?= $urlNews;?>"><?= $item['title'];?></a>
+							<div class="date"><?= date_format(new DateTime($item['date_create']), 'd.m.Y');?></div>
+							<span class="anons"><?= $item['anons'];?></span>
+						</div>
+					</li>
+					<? $i++; endforeach; ?>
+				</ul>
+				<ul class="bjqs-controls v-centered"><li class="bjqs-prev"><a href="#" data-direction="previous" style="top: 45%;">Prev</a></li><li class="bjqs-next"><a href="#" data-direction="forward" style="top: 45%;">Next</a></li></ul>
+				<ol class="bjqs-markers h-centered" style="left: 197px;"><li class="active-marker"><a href="#">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li></ol>
+			</div>
+			<script class="secret-source">
+				jQuery(document).ready(function($) {
+					$('#banner-news').bjqs({
+						height      : 120,
+						width       : 540,
+						animduration : 450,
+						animspeed : 3100,
+						responsive  : true,
+						hoverpause : true,
+						automatic   : false
+					});
+				});
+			</script>
+		</div>
+	</div>
+</div>

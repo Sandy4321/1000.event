@@ -1,0 +1,33 @@
+<?php
+
+$item = $this->item;
+
+?>
+
+<div class="row-fluid">
+	<div class="span12">
+		<p class="text-center"><small><?= $item['tpl_key']?> (ID: <?= $item['id']?>)</small></p>
+		<h5>
+			<select name="sex" id="Sex_<?= $item['id']?>" class="input-small">
+				<option value="neutral"<?php if ($item['sex'] == 'neutral') echo ' selected="selected"'?>>neutral</option>
+				<option value="male"<?php if ($item['sex'] == 'male') echo ' selected="selected"'?>>male</option>
+				<option value="female"<?php if ($item['sex'] == 'female') echo ' selected="selected"'?>>female</option>
+			</select>
+			<?= $item['name']?>
+		</h5>
+	</div>
+</div>
+
+<div class="row-fluid">
+	<div class="span6">
+		<img src="/img/flags/ru.png"> Тема письма: <input id="SubjectRu_<?= $item['id']?>" type="text" name="subject_ru" value="<?= $item['subject_ru']?>" style="font-size: 12px;">
+		<textarea id="TextRu_<?= $item['id']?>" rows="7" class="input-block-level" name="text_ru" style="font-size: 12px;"><?= $item['text_ru']?></textarea>
+	</div>
+	<div class="span6">
+		<img src="/img/flags/en.png"> Тема письма: <input id="SubjectEn_<?= $item['id']?>" type="text" name="subject_en" value="<?= $item['subject_en']?>" style="font-size: 12px;">
+		<textarea id="TextEn_<?= $item['id']?>" rows="7" class="input-block-level" name="text_en" style="font-size: 12px;"><?= $item['text_en']?></textarea>
+	</div>
+</div>
+<p class="text-center">
+	<button class="btn btn-success" onclick="saveTpl(<?= $item['id']?>, 'email')"><i class="icon-ok icon-white"></i> Сохранить</button>
+</p>

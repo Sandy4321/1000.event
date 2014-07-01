@@ -1,0 +1,53 @@
+<?
+// stat-users-dinkar
+
+#Sas_Debug::dump($this->vMove);
+#Sas_Debug::dump($this->vRevenues);
+?>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Дата', 'Расходы', 'Доходы', 'Сумма'],
+			<?
+			foreach ($this->vMove as $item) {
+			$d .= '["'.$item['dt'].'", '.abs($item['moneyMinus']).', '.$item['moneyPlus'].', '.$item['moneySum'].'],'."\n";
+			}
+			echo $d = substr($d, 0, -1);
+			?>
+
+		]);
+
+		var options = {
+			title: 'Динамика движения карат'
+		};
+
+		var chart = new google.visualization.LineChart(document.getElementById('chart_div')).
+			draw(data, {curveType: "function",
+				vAxis: {maxValue: 10}}
+		);
+		chart.draw(data, options);
+	}
+</script>
+
+<h1>Доходы и расходы карат</h1>
+<div id="chart_div" style="width: 100%; height: 500px;"></div>
+<table class="table">
+	<tr>
+		<th>Дата</th>
+		<th>Расходы</th>
+		<th>Доходы</th>
+		<th>Сумма</th>
+	</tr>
+	<?
+	arsort($this->vMove);
+	foreach ($this->vMove as $item) {
+		echo '<tr>';
+		echo '<td>'.$item['dt'].'</td><td>'.$item['moneyMinus'].'</td><td>'.$item['moneyPlus'].'</td><td>'.$item['moneySum'].'</td>'."\n";
+		echo '<tr>';
+	}
+	?>
+</table>

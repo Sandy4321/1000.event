@@ -1,0 +1,339 @@
+<?
+$this->headScript()->appendFile('/js/libs/jquery.tipsy.js');
+$this->inlineScript()->appendFile('/js/profile.js');
+$this->inlineScript()->appendFile('/js/gallery.js');
+$this->inlineScript()->appendFile('/js/posts.js');
+$this->inlineScript()->appendFile('/js/messages.js');
+$this->inlineScript()->appendFile('/js/like.js');
+$this->inlineScript()->appendFile('/js/libs/jquery.scrollTo.min.js');
+$this->inlineScript()->appendFile('/js/libs/jquery.autocomplete.min.js');
+
+$myId     = $this->myProfile['id'];
+$myCard   = $this->myProfile['club_card_dt'];
+$myStatus = $this->myProfile['current_status'];
+
+$title = $this->t('Профиль');
+$this->headTitle($this->partnerProfile['first_name']);
+$this->headTitle($title);
+
+#Sas_Debug::dump($this->partnerProfile);
+#Sas_Debug::dump($this->vStatus);
+#Sas_Debug::dump($this->vStatusLike);
+$partnerId   = $this->partnerProfile['id'];
+$partnerCard = $this->partnerProfile['club_card_dt'];
+$this->partnerId = $partnerId;
+
+if($myCard >= CURRENT_DATETIME) {
+	$partnerPhone = $this->partnerProfile['phone'];
+} else {
+	$partnerPhone = substr($this->partnerProfile['phone'], 0, -4).'-XX-XX';
+}
+
+
+$partnerLang = array();
+if($this->partnerProfile['lang_ru'] == 'yes') $partnerLang[] = $this->t('Русский');
+if($this->partnerProfile['lang_en'] == 'yes') $partnerLang[] = $this->t('Английский');
+if($this->partnerProfile['lang_fr'] == 'yes') $partnerLang[] = $this->t('Французский');
+if($this->partnerProfile['lang_de'] == 'yes') $partnerLang[] = $this->t('Немецкий');
+if($this->partnerProfile['lang_it'] == 'yes') $partnerLang[] = $this->t('Итальянский');
+if($this->partnerProfile['lang_es'] == 'yes') $partnerLang[] = $this->t('Испанский');
+
+$hidePhoto = ($this->myProfile['current_status'] < 70) ? true: false;
+
+?>
+
+<script>
+$(function() {
+	$('.btn').tipsy({gravity: 's'});
+});
+</script>
+
+<div class="content people" id="profile">
+<div class="container">
+<div class="content-blocks-container">
+<div class="content-block content-block-full profile-info-main">
+	<div class="photo"><? if($this->partnerProfile['online'] == 'yes') echo '<div class="online-bubble"></div>';?><img src="<?= $this->partnerProfile['avatar']?>"></div>
+	<div class="info">
+		<h1><? echo $this->partnerProfile['first_name']; if($partnerCard >= CURRENT_DATE) echo ' <span class="btn premium" original-title="'.$this->t('Владеет Клубной картой').'"></span>';?></h1>
+		<h2><?
+		if(!empty($this->vCity['city_name'])) echo $this->vCity['city_name'].'. ';
+		if(!empty($this->partnerProfile['company'])) echo $this->partnerProfile['company'].'. ';
+		if(!empty($this->partnerProfile['position_job'])) echo $this->partnerProfile['position_job'].'. ';
+		if(!empty($this->partnerProfile['education'])) {
+			echo '<br>';
+			echo ($this->partnerProfile['sex'] == 'male') ? $this->t('Учился в') : $this->t('Училась в');
+			echo ' '.$this->partnerProfile['education'];
+		}
+		?></h2>
+
+	</div>
+	<? if($this->vStatus) : ?>
+	<div class="status">
+		<div class="current"><?= $this->vStatus['status_text'];?></div>
+		<?
+		# LIKE
+		# Формирование вывода лайков см. /library/Sas/View/Helper/Like.php
+		# Не забываем подключать js файл поддержки: /js/like.js
+		$likeMy = array(
+			'id'     => $myId,
+			'card'   => $myCard,
+			'status' => $myStatus,
+		);
+		$likeData = array(
+			'dataUserId' => $partnerId,
+			'dataId'     => $this->vStatus['id'],
+			'ILikeKey'   => ($this->vStatusLike) ? true : null,
+			'cntLike'    => $this->vStatus['cnt_like'],
+		);
+		$likeText = array(
+			'like'   => $this->t('Нравится'),
+			'likeMe' => $this->t('Вам нравится'),
+		);
+		$likeTitle = array(
+			'likeNo'           => $this->t('Вы не можете лайкнуть свой статус.'),
+			'likeClubOnly'     => $this->t('Только члены Клуба могут поставить лайк статусу.'),
+			'listOpen'         => $this->t('Посмотреть кому нравится Ваш статус.'),
+			'listOpenCardOnly' => $this->t('Чтобы посмотреть, кому нравится Ваш статус, Вам необходима Клубная карта.'),
+		);
+		$likeJs = array(
+			'module' => 'people', // Модуль обработчика
+			'key'    => 'status',  // Название КЛЮЧА для js функций like() и likeOpenPopupUsers()
+		);
+		echo $this->Like($likeMy, $likeData, $likeText, $likeTitle, $likeJs);
+		# END LIKE
+		?>
+	</div>
+	<? endif; ?>
+	<div class="controls">
+		<div class="btns-group">
+			<?
+			// Обмен телефонами только для ЧК
+			//Sas_Debug::dump($this->vExchangePhoneStatus, $partnerId);
+			if($myStatus >= 70) {
+				// Обмена еще не было
+				if(is_null($this->vExchangePhoneStatus)) {
+					echo '<button onclick="exchangePhone('.$partnerId.')" class="btn-full" title="'.$this->t('Предложить обменяться телефонными номерами').'"><span class="btn-ico btn-ico-switchtel"></span> '.$this->t('Обмен телефонами').'</button>';
+				} else {
+					// Обмен был инициирован смотрим стороны/направление обмена
+					if($this->vExchangePhoneBox == 'in') { // Я отправил запрос с просьбой обменяться номерами
+						// Обмен уже был или предложение на обмен уже отправлялось
+						switch($this->vExchangePhoneStatus) {
+							case 'yes': // Принято
+								// Только владельцы КК могут видеть полный номер
+								if($myCard >= CURRENT_DATETIME) {
+									echo '<button class="btn-full" title="'.$this->t('Обмен телефонными номерами выполнен').'"><span class="btn-ico btn-ico-switchtel-ok"></span> '.$partnerPhone.'</button>';
+								} else {
+									echo '<button class="btn-full" title="'.$this->t('Обмен телефонными номерами выполнен. Только владелец Клубной карты может видеть номер телефона.').'"><span class="btn-ico btn-ico-switchtel-ok"></span> '.$partnerPhone.'</button>';
+								}
+								break;
+
+							case 'reject': // Отклонено
+								echo '<button class="btn-full" title="'.$this->t('Ваше предложение обменяться телефонными номерами было отклонено.').'"><span class="btn-ico btn-ico-switchtel-cancel"></span> '.$this->t('Предложение отклонено').'</button>';
+								break;
+
+							default: // Отправлено
+								echo '<button class="btn-full" title="'.$this->t('Ваше предложение обменяться телефонными номерами отправлено.').'"><span class="btn-ico btn-ico-switchtel-send"></span> '.$this->t('Предложение отправлено').'</button>';
+						}
+					} else { // мне прислали запрос поменяться номерами тел.
+						switch($this->vExchangePhoneStatus) {
+							case 'new': // Отклонено
+								echo '<button class="btn-full" title="'.$this->t('Вам предлагают обменяться телефонными номерами.').'"><span class="btn-ico btn-ico-switchtel-send"></span> '.$this->t('Предлагает обменяться').'</button>';
+								break;
+							case 'yes': // Принято
+								// Только владельцы КК могут видеть полный номер
+								if($myCard >= CURRENT_DATETIME) {
+									echo '<button class="btn-full" title="'.$this->t('Обмен телефонными номерами выполнен').'"><span class="btn-ico btn-ico-switchtel-ok"></span> '.$partnerPhone.'</button>';
+								} else {
+									echo '<button class="btn-full" title="'.$this->t('Обмен телефонными номерами выполнен. Только владелец Клубной карты может видеть номер телефона.').'"><span class="btn-ico btn-ico-switchtel-ok"></span> '.$partnerPhone.'</button>';
+								}
+								break;
+
+							case 'reject': // Отклонено
+								echo '<button class="btn-full" title="'.$this->t('Вы отклонили предложение обменяться телефонными номерами.').'"><span class="btn-ico btn-ico-switchtel-cancel"></span> '.$this->t('Вы отклонили предложение').'</button>';
+								break;
+						}
+					}
+				}
+			} else {
+				echo '<button class="btn-full disabled" disabled="disabled" title="'.$this->t('Обмен телефонными номерами доступен только для членов Клуба').'"><span class="btn-ico btn-ico-switchtel"></span> '.$this->t('Только для членов Клуба').'</button>';
+			}
+			?>
+			<button onclick="javascript:$('html,body').animate({scrollTop: $('#msg_text').focus().offset().top}, 1);" class="btn-half hidden-desktop hidden-tablet"><span class="btn-ico btn-ico-msg"></span> <?= $this->t('Сообщение');?></button>
+
+			<? if($myStatus >= 70) { ?>
+			<button class="btn btn-favorite btn-half" data-user-id="<?= $partnerId?>" data-action="<? if($this->vFavoritesStatus[0]['favorite_user_id']){ echo 'del'; }else{ echo 'add'; } ?>" data-page="profile" data-text-add="<?= $this->t('В избранное')?>" data-text-del="<?= $this->t('В избранном')?>">
+				<span class="btn-ico btn-ico-fav <? if($this->vFavoritesStatus[0]['favorite_user_id']) { echo 'btn-ico-fav-no'; } ?>"></span>
+				<span class="text">
+					<? if($this->vFavoritesStatus[0]['favorite_user_id']) { 
+						echo $this->t('В избранном'); 
+					}else{ 
+						echo $this->t('В избранное');
+					} ?>
+				</span>
+			</button>
+			<? } else { ?>
+			<button title="<?= $this->t('Только для членов Клуба')?>" onclick="goWizard('<?= $this->t('Добавление в Избранное доступно только для членов Клуба')?>', <?= $myStatus?>)"><span class="btn-ico btn-ico-fav-no"></span> <?= $this->t('В избранное')?></button>
+			<? } ?>
+
+		</div>
+
+		<div class="btns-group sub-controls hidden-mobile">
+			<? if($myStatus >= 70) { ?>
+			<button onclick="popup_show('people', 'review', '<?= $partnerId?>')" class="btn btn-review" title="<?= $this->t('Отзыв');?>"><span class="btn-ico btn-ico-report"></span></button>
+			<? } else { ?>
+			<button class="btn" title="<?= $this->t('Отзыв')?>" onclick="goWizard('<?= $this->t('Только члены Клуба могут оставлять отзывы.')?>', <?= $myStatus?>)"><span class="btn-ico btn-ico-report"></span></button>
+			<? } ?>
+
+			<? if($myStatus >= 70) { ?>
+			<button class="btn btn-blacklist" data-user-id="<?= $partnerId?>" data-action="<? if($this->vBlackList) { echo 'del'; } else { echo 'add'; } ?>" data-page="profile" data-title-add="<?= $this->t('Заблокировать')?>" data-title-del="<?= $this->t('Разблокировать')?>" title="<? if($this->vBlackList) { echo $this->t('Разблокировать'); } else { echo $this->t('Заблокировать'); } ?>">
+				<span class="btn-ico btn-ico-block <? if($this->vBlackList) { echo 'btn-ico-block-no'; } ?>"></span>
+			</button>
+			<? } else { ?>
+			<button class="btn btn-blacklist" title="<?= $this->t('Заблокировать')?>" onclick="goWizard('<?= $this->t('Только члены Клуба могут заблокировать другого пользователя.')?>', <?= $myStatus?>)"><span class="btn-ico btn-ico-block-no"></span></button>
+			<? } ?>
+		</div>
+	</div>
+</div>
+<div class="content-left-col">
+	<div class="content-block profile-photos">
+		<div class="header">
+			<h3><?= $this->t('Фотографии');?></h3>
+		</div>
+		<? if($this->vImgAlbum) : ?>
+			<div class="data" id="profile-photos">
+				<div class="photo-line">
+					<? $i=0; foreach($this->vImgAlbum as $photo):
+						$photo['like_cnt'] = ($photo['like_cnt'] <= 0) ? 0 : $photo['like_cnt'];
+						?>
+						<div class="photo">
+							<a href="javascript:void(0);" class="item-photo" data-id="<?= $photo['id']?>" data-name="<?= htmlspecialchars($photo['comment'], ENT_QUOTES, 'UTF-8')?>" data-thumbnailbig="<?= $this->vImgPatch.$photo['picture']?>"><img src="<?= $this->vImgPatch.$photo['picture']?>"></a>
+							<? if(!empty($photo['comment'])) echo '<p class="people-photo-comment hidden-mobile">'.$photo['comment'].'</p>'; // Вывод комментария (подписи) к фотографии ?>
+							<?
+							# LIKE
+							# Формирование вывода лайков см. /library/Sas/View/Helper/Like.php
+							# Не забываем подключать js файл поддержки: /js/like.js
+							$likeMy = array(
+								'id'     => $myId,
+								'card'   => $myCard,
+								'status' => $myStatus,
+							);
+							$likeData = array(
+								'dataUserId' => $photo['user_id'],
+								'dataId'     => $photo['id'],
+								'ILikeKey'   => (array_key_exists($photo['id'], $this->vImgLike)) ? 1 : null,
+								'cntLike'    => $photo['like_cnt'],
+							);
+							$likeText = array(
+								#'like'   => $this->t('Нравится'),
+								#'likeMe' => $this->t('Вам нравится'),
+							);
+							$likeTitle = array(
+								'likeNo'           => $this->t('Вы не можете лайкнуть свою фотографию.'),
+								'likeClubOnly'     => $this->t('Только члены Клуба могут лайкать фотографии.'),
+								'listOpen'         => $this->t('Посмотреть кому нравится Ваша фотография.'),
+								'listOpenCardOnly' => $this->t('Чтобы посмотреть, кому нравится Ваша фотография, Вам необходима клубная карта.'),
+							);
+							$likeJs = array(
+								'module' => 'people', // Модуль обработчика
+								'key'    => 'photo-album',  // Название КЛЮЧА для js функций like() и likeOpenPopupUsers()
+							);
+							echo $this->Like($likeMy, $likeData, $likeText, $likeTitle, $likeJs);
+							# END LIKE
+							?>
+						</div>
+						<? if(($i % 3) == 2) echo '</div><div class="photo-line">' ?>
+						<? $i++; endforeach; ?>
+				</div>
+			</div>
+		<? endif; ?>
+	</div>
+	<div class="content-block  profile-interests">
+		<div class="header">
+			<h3><?= $this->t('Интересы');?></h3>
+		</div>
+		<div class="data">
+			<div class="title"><? printf($this->t('<b>%s</b> из %s схожих увлечений'), count($this->vHobbyEqual), count($this->vHobby));?></div>
+			<div class="wrapper">
+				<? foreach($this->vHobby as $id => $hobby) : ?>
+					<a href="<?= $this->url(array('module'=>'user', 'controller'=>'search', 'action'=>'index', 'search_block'=>'hobby'), null, true);?>?hobby[]=<?= $id?>" class="item-interest basic<? if(array_key_exists($id, $this->vHobbyEqual)) echo ' common'?>"><?= $hobby?></a>
+				<? endforeach; ?>
+			</div>
+			<div class="title"><? printf($this->t('<b>%s</b> из %s схожих целей и планов'), count($this->vTargetEqual), count($this->vTarget));?></div>
+			<div class="wrapper">
+				<? foreach($this->vTarget as $id => $target) : ?>
+					<a href="<?= $this->url(array('module'=>'user', 'controller'=>'search', 'action'=>'index', 'search_block'=>'target'), null, true);?>?target[]=<?= $id?>" class="item-interest target<? if(array_key_exists($id, $this->vTargetEqual)) echo ' common'?>"><?= $target?></a>
+				<? endforeach; ?>
+			</div>
+			<div class="title"><? printf($this->t('<b>%s</b> из %s схожих профессиональных интересов'), count($this->vProfEqual), count($this->vProf));?></div>
+			<div class="wrapper">
+				<? foreach($this->vProf as $id => $prof) : ?>
+					<a href="<?= $this->url(array('module'=>'user', 'controller'=>'search', 'action'=>'index', 'search_block'=>'business'), null, true);?>?prof[]=<?= $id?>" class="item-interest professional<? if(array_key_exists($id, $this->vProfEqual)) echo ' common'?>"><?= $prof;?></a>
+				<? endforeach; ?>
+			</div>
+		</div>
+	</div>
+	<div class="content-block profile-info-additional">
+		<div class="header">
+			<h3><?= $this->t('Общая информация');?></h3>
+		</div>
+		<div class="data">
+			<div class="about"><?= $this->partnerProfile['about'];?></div>
+			<div class="wrapper">
+				<label><?= $this->t('Любимые места');?>:</label>
+				<span><?= ($this->partnerProfile['favorite_places']) ? $this->partnerProfile['favorite_places'] : $this->t('Нет');?></span>
+			</div>
+			<div class="wrapper">
+				<label><?= $this->t('Языки');?></label>
+				<span><?= implode(', ', $partnerLang);?></span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="content-right-col">
+	<?
+	echo $this->render('people/message.phtml'); // Переписка с пользователем
+	//echo $this->render('messages/talk.phtml'); // Переписка с пользователем
+	if(!empty($this->vEvents)) echo $this->render('people/events.phtml'); // Мероприятия на которые идет пользователь
+	?>
+
+	<!--
+	<div class="content-block  profile-places">
+	  <div class="header">
+			<h3>Любимые места</h3>
+		</div>
+		<div class="data">
+			<div class="place">
+				<div class="image"><img src="#"></div>
+				<div class="name">Солянка</div>
+				<div class="address">м. Лужники</div>
+				<button class="invite">Пригласить</button>
+			</div>
+			<div class="place">
+				<div class="image"><img src="#"></div>
+				<div class="name">Солянка</div>
+				<div class="address">м. Лужники</div>
+				<button class="invite">Пригласить</button>
+			</div>
+			<div class="place">
+				<div class="image"><img src="#"></div>
+				<div class="name">Солянка</div>
+				<div class="address">м. Лужники</div>
+				<button class="invite">Пригласить</button>
+			</div>
+		</div>
+	</div>
+	-->
+	<?php
+	// Посты пользователя
+	if(!empty($this->vPosts)) {
+		echo $this->partial('posts/post-list.phtml', array('vPosts'=>$this->vPosts, 'vILikePost'=>$this->vILikePost, 'myProfile' => $this->myProfile));
+	}
+	?>
+</div>
+
+</div>
+</div>
+</div>
+<?= $this->render('popup/image-gallery.phtml')?>
+

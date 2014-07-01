@@ -1,0 +1,7 @@
+<button onclick="aside_left()" class="mobile-nav-main hidden-desktop"><em></em></button>
+<ul class="mobile-nav hidden-desktop">
+	<li class="<?= $this->checkActive('user/dashboard', 'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'dashboard', 'action'=>'index'), null, true);?>"><span class="ico ico-home"></span></a></li>
+	<li class="<?= $this->checkActive('user/search',    'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'search',    'action'=>'index'), null, true);?>"><span class="ico ico-search"></span></a></li>
+	<li class="<?= $this->checkActive('user/messages',  'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'messages',  'action'=>'index'), null, true);?>"><span class="ico ico-messages"></span><div id="BubbleCountMessagesMobile" class="hide"></div></a></li>
+	<li class="<?= $this->checkActive('user/event',     'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'event',     'action'=>'index'), null, true);?>"><span class="ico ico-events"></span><div id="BubbleCountEventsMobile" class="hide"></div></a></li>
+</ul>

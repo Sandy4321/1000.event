@@ -1,1 +1,1880 @@
-/*main.css*/
+.text-center {
+	text-align: center;
+}
+
+/* Buttons
+------------------------------ */
+
+.btn{ font-weight: 700; border-radius: 2px;  font-style: normal; text-align: center;}
+    .btn-like{ color: #666; font-size: 12px; font-weight: normal; padding: 0;}
+    .btn-comments{ color: #666; font-size: 12px;}
+
+    .btn-min{ height: 24px; font-size: 11px !important; padding: 0 10px !important;}
+    .btn-med{ height: 32px; font-size: 12px !important; padding: 0 15px !important;}
+
+    .btn-dark{ background-color: #CD0001; border: 1px solid #B80000;  color: #fff !important;}
+    .btn-light{ background-color: #fafafa; border: 1px solid #eee;  color: #54697D !important;}
+
+    .btn-disabled{ cursor: default; background-color: #fafafa; border: 1px solid #eee;  color: #ccc !important;}
+
+/* Content elements
+------------------------------ */
+
+.item-intr{}
+
+    .item-intr.basic{}
+
+
+.btn-ico{ width: 20px; height: 20px;  vertical-align: middle; display: inline-block; margin: -3px 5px 0 5px; background-image: url(img/btn-icons.png);}
+    .btn-ico-switchtel{ background-position: 0 0;}
+        .btn-ico-switchtel-send{ background-position: 0 -80px;}
+        .btn-ico-switchtel-cancel{ background-position: 0 -100px;}
+        .btn-ico-switchtel-ok{ background-position: 0 -120px;}
+
+    .btn-ico-msg{ background-position: -20px 0;}
+    .btn-ico-fav{ background-position: -40px 0;}
+    .btn-ico-fav-no{ background-position: -40px -60px;}
+    .btn-ico-report{ background-position: -60px 0;}
+    .btn-ico-block{ background-position: -80px 0;}
+    .btn-ico-block-no{ background-position: -80px -60px;}
+    .btn-ico-like{ background-position: -100px 0; margin-bottom: 3px;}
+    .btn-ico-like-no{ background-position: -100px -60px;}
+    .btn-ico-edit{background-position: -120px 0;}
+    .btn-ico-edit-na{background-position: -120px -20px;}
+    .btn-ico-edit-w{background-position: -120px -40px;}
+    .btn-ico-rotate-w{background-position: -160px -40px;}
+    .btn-ico-rotate-g{background-position: -160px -20px;}
+    .btn-ico-attach{background-position: -180px -20px;}
+    .btn-ico-comments{background-position: -200px 0;}
+    .btn-ico-photo-g{background-position:-300px -20px; }
+    .btn-ico-photo-w{background-position:-300px -40px; }
+    .btn-ico-romantic{background-position: -220px 0;}
+    .btn-ico-business{background-position: -240px 0;}
+    .btn-ico-interests{background-position: -260px 0;}
+    .btn-ico-targets{background-position: -280px 0;}
+
+    .btn-ico-delete{ background-position: -140px -20px;}
+        .btn-ico-delete:hover{ background-position: -140px 0;}
+    .icon-check-phone {
+	    width: 20px; height: 20px;
+	    background: url(img/btn-icons.png) 0 79px;
+	    position: absolute;
+	    top: 7px;
+	    right: -16px;
+    }
+    .profile-phone-plus {
+	    width: 10px; height: 10px;
+	    position: absolute;
+	    top: 9px;
+	    left: 8px;
+	    font-size: 12px;
+    }
+
+.item-user{ width: 24%; position: relative; margin: 0 1% 20px 0; padding: 0 0 10px 0; float: left; background-color: #fff; box-shadow: 0 0 0 1px #ddd;}
+    .item-user .photo img{ width: 100%;}
+    .item-user .name,  #search .item-user .interests{  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+    .item-user .name{ line-height: 20px; color: #181F25; font-weight: 700; font-size: 14px;  width: 90%; margin: 5px 0 0 0; float: left; padding: 0 5%;}
+    .item-user .interests{ font-size: 12px; width: 90%; padding: 0 5%; color: #666; margin: 0 0 5px 0; float: left;}
+
+    .item-user .btn-delete{ position: absolute; top: 0; right: 0; margin: 0; background-color: #fff;}
+    .item-user.deleted .btn-delete{ background-position: -160px -20px;}
+    .item-user.deleted .photo{ opacity: 0.2;}
+
+.item-event{ width: 93%; margin: 0 0 20px 0; position: relative; padding: 15px 2%; float: left; background-color: #fff; box-shadow: 0 0 0 1px #ddd;}
+    .item-event .date{ overflow: hidden; border-radius: 2px; position: absolute; text-align: center; top: 20px; left: 20px; background-color:rgba(0,0,0,0.5); height: 50px; width: 40px; color: #fff;  border:2px solid #fff;}
+        .item-event .date .month{ width: 100%; float: left; line-height: 15px; margin: 5px 0 0 0; font-size: 11px;}
+        .item-event .date .num{ font-size: 22px; width: 100%; float: left; line-height: 25px; margin:  0 0 5px 0;}
+
+    .item-event .photo{ width: 30%; float: left; overflow: hidden;}
+    .item-event .photo img{ width: 100%;}
+    .item-event .info{ float: left; width: 70%;}
+    .item-event .type,  .item-event .place-time, .item-event .price{ color: #666; width: 90%; margin: 5px 0 0 0; float: left; padding: 0 5%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+    .item-event .name{ max-height: 60px; color: #222222; overflow: hidden; line-height: 20px;  font-weight: 700; font-size: 14px;  width: 90%; margin: 5px 0 0 0; float: left; padding: 0 5%;}
+    .item-event .type{ font-size: 11px; color: #CED6DE; margin: 0;}
+    .item-event .place-time{ font-size: 12px;}
+    .item-event .price{ font-size: 12px;}
+    .item-event .participants{ width: 35%; float: right; padding: 10px 5% 0;}
+        .item-event .participants a { width: 20%; float: left; overflow: hidden;}
+        .item-event .participants a img{ width: 90%;}
+    .item-event .btn-respond{  float: left;}
+    .item-event .controls{ width: 47%; float: left; padding: 5px 0 5px 5%;}
+        .item-event .controls .btn{ float: left; margin-bottom: 5px;}
+
+
+.online-bubble{border-radius: 50%; border:2px solid #fff; width: 8px; height: 8px; position: absolute; top: 5px; left: 5px; background-color: #008024; }
+
+.popover {
+	display: none;
+	z-index: 100;
+	min-width: 200px;
+	position: absolute;
+	padding: 10px 0;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 0 0 #000;
+	text-align: center;
+}
+.popover-container {
+	position: relative;
+}
+.popover-content {
+	width: 100%;
+	float: left;
+	max-height: 400px;
+	overflow: scroll;
+	text-align: left;
+}
+.popover .btn-close {
+	/*color: #CD0001;
+	font-size: 13px;*/
+	color: #fff;
+	font-size: 13px;
+	line-height: 13px;
+	background: #CD0001;
+}
+    .popover label{ font-size: 12px; width: 90%; padding: 2px 5%; float: left;}
+
+
+
+.feed-post{}
+    .feed-post textarea{ width: 92%; padding: 20px 4%; float: left; border: none; height: 60px;}
+    .feed-post .attaches{ width: 92%; float: left; margin: 0 4% 10px;}
+        .feed-post .attaches .photo{ width: 100%; max-height: 300px; overflow: hidden; position: relative; float: left; margin: 0 10px 0 0;}
+        .feed-post .attaches .photo img{ width: 100%; }
+
+        .feed-post .attaches .photo .btn-delete{ position: absolute; top: 0; right: 0; margin: 0; background-color: #fff;}
+    .feed-post .controls{ width: 100%; float: left; padding: 5px 0; background-color: #fafafa; border-top: 1px solid #ddd;}
+    .feed-post .controls .btn-send{ float: right; margin-right: 4%;}
+    .feed-post .controls .btn-attach, .feed-post .controls  .btn-photo{ float: left; margin: 7px 0 7px 4%; cursor: pointer;}
+    .feed-post .btn-send{background-color:#CD0001; color: #fff; }
+    .feed-post .premium-ckeck{ float: right; font-size: 12px; color: #666666; margin-top: 1.5%; margin-right: 4%;}
+    .feed-post .premium-ckeck input, #dashboard  .feed-post .premium-ckeck span{vertical-align: middle; margin-right: 5px;}
+
+
+.feed{}
+    .feed .content-block{ margin-bottom: 20px; margin-top: 0; width: 100%; float: left;}
+    .feed .post{}
+        .feed .post .author{ width: 75%; float: left; font-size: 13px;}
+        .feed .post .author .photo{ width: 40px; float: left; margin-right: 10px;}
+            .feed .post .author .photo img{ width: 100%;}
+        .feed .post .author .name{ font-weight: bold; color: #181F25; display: inline-block; float: left; width: 60%;}
+        .feed .post .author .time{ display: inline-block;  color: #666;  float: left; width: 60%;}
+        .feed .post .post-vip{ color: #CD0001; }
+        .feed .post .text{ width: 100%; float: left; margin: 5px 0 0; font-size: 14px; line-height: 150%;word-wrap: break-word;}
+        .feed .post  .post-photo{  float: left; margin: 10px 0 0 0; width: 100%; overflow: hidden; max-height: 300px;}
+            .feed .post  .post-photo img{ width: 100%;}
+
+        .feed .post .btn-delete{ float: right; margin: 0; visibility: hidden;}
+        .feed .post:hover .btn-delete{ visibility: visible;}
+
+        .feed .post-bottom{width: 90%; padding: 10px 5%; float: left; background-color: #fafafa;}
+            .feed .post-bottom .controls{width: 100%;}
+                .feed .post-bottom .btn-like{ font-size: 12px; color: #666;}
+                .feed .post-bottom .comments-show{ font-size: 12px; color: #666; float: right; line-height: 24px;}
+            .feed .post-bottom .comments{ width: 100%; padding: 0 0 10px 0; float: left;}
+            .feed .post-bottom .comments .send-form{ position: relative; width: 100%; margin-top: 5px; float: left;}
+                .feed .post-bottom .comments .send-form input[type=text]{ width: 96%; border:1px solid #ddd; padding: 8px 2%;}
+                .feed .post-bottom .comments  .send-form input[type=submit]{ border:none; position: relative; margin: 2px 0 0 0; width: 24%; padding: 0; background: transparent; color: #CD0001; float: right; border: 1px solid #ddd; height: 36px;}
+
+        .feed .post-bottom .comments .comment{ width: 100%; margin: 15px 0 0 0; float: left;}
+            .feed .post-bottom .comments .comment .btn-delete{ float: right; margin: 0; visibility: hidden;}
+            .feed .post-bottom .comments .comment:hover .btn-delete{ visibility: visible;}
+            .feed .post-bottom .comments .comment .photo{ width: 32px; float: left; margin-right: 10px; margin-top: 2px;}
+                .feed .post-bottom .comments .comment .photo img{ width: 100%;}
+            .feed .post-bottom .comments .msg{ width: 75%; float: left;}
+            .feed .post-bottom .comments .userName{  font-size: 13px;  float: left; color: #333; margin-right: 5px; width: auto; font-weight: bold; display: inline-block; }
+
+.feed .post-bottom .comments .text {
+/*	width: auto;*/
+	margin: 0;
+	font-size: 13px;
+	color: #181F25;
+	word-wrap: break-word;
+}
+            .feed .post-bottom .comments .comment-bar{ width: 100%; float: left; font-size: 12px; color: #999;}
+                .feed .post-bottom .comments .comment-bar .time{ color: #999;}
+                .feed .post-bottom .comments .comment-bar .btn-like{ padding: 0; font-size: 12px; font-weight: normal;}
+
+    .message{ width: 90%; float: left; padding: 10px 5%; }
+        .message .photo{width: 36px; height: 36px; float: left; margin-right: 2%; overflow: hidden;}
+        .message .photo img{width: 100%;}
+        .message .msg{font-size: 13px; width: 90%; float: left;}
+        .message .msg .status{ width: 50%; height: 14px; float: right; text-align: right; margin: 0; }
+        .message .msg .btn-delete{float: right; visibility: hidden; margin:1px 0 0 5px;}
+        .message .msg .time{ font-size: 11px; color: #999;}
+        .message .msg .author{display: inline-block; line-height: 100%; margin: 0 0 0 0; font-weight: bold; color: #666; float: left;}
+
+.msg .status .read,
+.msg .status .read-limit {
+	background: url("img/msg_bg-marker.png") no-repeat;
+	background-size: 28px;
+	width: 14px;
+	height: 14px;
+	display: inline-block;
+	margin-left: 5px;
+}
+.msg .status .read {
+	background-position: 0 0;
+}
+.msg .status .read-limit {
+	background-position: 0 -14px;
+	cursor: pointer;
+	margin-bottom: -4px;
+}
+.message .msg .text {
+	width: 70%;
+	clear: left;
+	float: left;
+	overflow: hidden;
+	line-height: 150%;
+	margin: 5px 0 0 0;
+	word-wrap: break-word;
+}
+#msg-record-no {
+	font-size: 12px;
+}
+.profile-messages #msg-record-no {
+	margin: 15px;
+}
+#msg-record-no ol {
+	margin: 5px 0 5px 20px;
+}
+
+        .message:hover > .msg .btn-delete{ visibility: visible;}
+
+    .message .msg-sys{}
+        .message .msg-sys .text{ font-weight: bold;}
+        .message .controls{ width: 100%; float: left; margin: 10px 0 0 0;}
+        .message .controls .btn{ height: 30px; padding: 0 15px; font-size: 11px;}
+        .message .controls .btn-ok{ background-color:#CD0001; color: #fff; }
+        .message .controls .btn-cancel{ background-color: #f5f5f5; color: #666; border: 1px solid #ddd;}
+
+
+    .acResults {padding: 0; border: 1px solid #ddd; background-color: #fff; overflow: hidden; z-index: 1000;}
+
+        .acResults ul {margin: 0; padding: 0; list-style-position: outside; list-style: none;  }
+        .acResults ul li { margin: 0; padding: 4px 5px; cursor: pointer; display: block; font-size: 12px; overflow: hidden;}
+        .acLoading {}
+        .acSelect {background-color:#CD0001; color:#fff;}
+
+
+/* Layout Boxs
+------------------------------ */
+
+.wrap{  width: 100%; position: absolute; top:0; left:0; }
+.contain{ float: left; width: 100%; position: absolute; z-index: 2;  min-height: 100%; }
+
+.show-left{}
+    .show-left .wrap{ overflow: hidden !important; width: 100%; z-index: 0;}
+    .show-left .contain{ left: 260px; height: 100%; position: absolute;  }
+    .show-left .aside-left{ display: block; z-index: 2 !important;}
+
+.container{ width: 940px; float: left; position: relative; margin-left: -470px; left: 50%;}
+.content{  margin-top: 50px;}
+
+.content-blocks-container{ width: 960px; float: left; position: relative; margin-left: -10px;}
+
+.content-left-col{width: 380px; float: left; }
+.content-right-col{ width: 540px; float: right; margin: 0 20px 0 0;}
+
+.content-half-col{ width: 460px; margin: 16px 20px 0 0; float: left; }
+    .content-half-col .feed-post{ margin-top: 0;}
+
+.content-main-col{ width: 540px; float: left; }
+.content-sub-col{  width: 380px;float: right; margin: 0 20px 0 0;}
+
+.content-block{ float: left; width: 100%;  background-color: #fff; border:1px solid #ddd; margin: 16px 8px 8px; border-radius: 2px;}
+.content-block-full{ float: left; width: 940px;}
+.content-block-half{ width: 460px;}
+
+    .content-block .header{ width: 100%; height: 40px; float: left; border-bottom: 1px solid #ddd; background-color: #fafafa;}
+        .content-block .header h3{ float: left; font-size: 13px; color: #666; line-height: 40px; display: inline-block; margin: 0 0 0 4%;}
+        .content-block .header .all{ margin: 0 4% 0 0; text-align: right; font-size: 12px;  float: right; width: 20%; line-height: 40px;}
+        .content-block .data, .content-block .data-edit{ width: 90%; padding: 20px 5%; float: left;}
+        .content-block .btn-edit{ float: right; margin: 10px;}
+
+.hidden-desktop{ display: none;}
+
+
+#header{ width: 100%; height: 50px; background-color: #262626; float: left; position: fixed; z-index: 1000;}
+    .header-logo{ width: 190px; height: 50px; background-image: url(img/header-logo.png); float: left;}
+
+
+#header .bubble-count,
+.aside-left .bubble-count {
+	color: #fff;
+	background-color: #D82E2E;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-radius: 50%;
+	padding: 0 3px;
+	margin: 10px 0 0 32px !important;
+	height: 16px;
+	width: 11px;
+	line-height: 16px;
+	text-align: center;
+	font-size: 9px;
+	font-weight: bold;
+}
+
+#BubbleCountFlirtMobileLeft.bubble-count,
+#BubbleCountFlirt.bubble-count {
+	background: url("img/badge-flirt-heart.png") no-repeat transparent;
+}
+
+    #header .active a, .aside-left .active a{ background-color: #1F1F1F;}
+    .header-nav{}
+    .header-nav li{display: inline-block;}
+    .header-nav a{display: inline-block; position: relative; line-height: 50px; font-weight: 400;  padding: 0 20px; font-size: 13px; color: #fff;}
+     .header-nav a:hover{ text-decoration: none; background-color: #1F1F1F;}
+
+    .header-main-nav{ float: left; margin: 0 20px;}
+        .header-main-nav li{ }
+        .header-main-nav li a{  }
+
+    #header .sub-nav{ width: 160px; padding: 10px 0; visibility: hidden; position: absolute; right: 0; margin: 50px 0 0 0; float: right; background-color: #333333; }
+        #header .sub-nav a{ width: 120px; line-height: 32px;}
+        #header .sub-nav a:hover{}
+
+    .header-auth-nav{ float: right; width: 50px;}
+        .header-user{ float: right; display: inline-block; padding: 0 10px;}
+            .header-user .photo{ width: 30px; height: 30px; padding: 0; overflow: hidden;  float: left; margin: 10px 0 10px 0;}
+            .header-user .photo img{ width: 30px;}
+            .header-user .name{}
+        .header-auth-nav:hover > .sub-nav{ visibility: visible !important;}
+
+
+
+    #header .mobile-nav-main{ float: left; margin: 15px 0; position: absolute; width: 20%; text-align: center; padding: 0; height: 20px;}
+    #header .mobile-nav-main em{background-image: url(img/h-nav.png); display: inline-block;  background-position: 0 0; width: 20px; height: 20px;   }
+
+
+     #header .mobile-nav{ width: 80%; position: relative; float: right; }
+        #header .mobile-nav li{}
+        #header .mobile-nav a{ position: relative; width: 25%; float: left; padding:13px 0 14px; margin: 0;}
+        #header .mobile-nav a .ico{ width: 20px; height: 20px; overflow: hidden; padding: 0; margin: 0;}
+
+    #alerts{ width: 100%; float: left; text-align: center; height: 0; position: fixed; top: 60px}
+        #alerts .alert{ padding: 5px 15px; background-color: #CD0001; font-size: 12px; border-radius: 2px; color: #fff; font-weight: bold; display: none;} 
+
+.aside-left{ width: 260px; float: left; position:absolute; z-index: 1; overflow: hidden;  min-height: 100%; background-color: #262626; display: none;}
+    .aside-left .user{ width: 220px; line-height: 50px; float: left; height: 50px; padding: 0 20px; background-color: #000;}
+        .aside-left .user .photo{ width: 30px; height: 30px; padding: 0; overflow: hidden; float: left; margin: 10px 10px 10px 0;}
+        .aside-left .user .photo img{ width: 30px;}
+        .aside-left .user .name{ float: left; display: inline-block; color: #fff; font-size: 12px; font-weight: bold;}
+
+    .aside-left ul{ width: 100%; float: left; }
+        .aside-left li{ display: inline-block; float: left;}
+        .aside-left li a{ display: inline-block;  font-weight: 400;  float: left; line-height: 50px; width: 220px; padding: 0 20px;  color: #fff; font-size: 15px;position: relative;}
+
+    .aside-left ul.additional{margin: 15px 0 0 0; }
+        .aside-left ul.additional li a{ line-height: 40px; font-size: 14px;}
+
+    .header-nav .ico, .aside-left .ico, .mobile-nav .ico, .controls .ico{ display: inline-block; width: 20px; height: 20px; margin: -2px 10px 0 0; vertical-align: middle;  background-image: url(img/h-nav.png);}
+         .header-nav .ico-search, .aside-left .ico-search, .mobile-nav .ico-search{ background-position: -20px 0;}
+         .header-nav .ico-messages, .aside-left .ico-messages, .mobile-nav .ico-messages{background-position: -40px 0;}
+         .header-nav .ico-events, .aside-left .ico-events, .mobile-nav .ico-events{background-position: -60px 0;}
+         .header-nav .ico-home, .aside-left .ico-home, .mobile-nav .ico-home{background-position: -80px 0;}
+         .header-nav .ico-home, .aside-left .ico-invite{background-position: -100px 0;}
+         .header-nav .ico-home, .aside-left .ico-balance{background-position: -120px 0;}
+         .header-nav .ico-home, .aside-left .ico-settings{background-position: -140px 0;}
+         .header-nav .ico-flirt, .aside-left .ico-flirt , .controls .ico{background-position: -200px 0;}
+         .header-nav .ico-posts, .aside-left .ico-posts{background-position: -220px 0;}
+         .aside-left .ico-favorites{background-position: -160px 0;}
+         .aside-left .ico-blocked{background-position: -180px 0;}
+         .aside-left .ico-privilege{background-position: -240px 0;}
+         .aside-left .ico-phone-book{background-position: -262px 0;}
+         .ico-arr{display: inline-block;background-image: url(img/select-arr.png);margin: -2px 10px 0 0; vertical-align: middle; width: 11px;height: 10px ;background-position: 0 10px; }
+.aside-left .quit {
+	margin-bottom: 20px;
+}
+
+    .page-title{ width: 100%; float: left; height: 50px; background-color: #fafafa; border:1px solid #ddd; margin-top: 20px;}
+        .page-title h1{ font-size: 14px; line-height: 50px; margin: 0 20px; color: #444;}
+
+    .error-title{ width: 96%; float: left; padding: 10px 2%; border:1px solid #CD0001; background-color: #F50000; color: #fff; margin-top: 10px; font-size: 14px;}    
+
+/* Popups
+------------------------------ */
+
+
+#popup{ position: fixed; width: 100%; height: 100%; top: 0; left: 0;  z-index: 5000;}
+  #popup .cover{ position: fixed; background-color:rgba(0,0,0,0.65); width: 100%; height: 100%; top: 0; left: 0;}
+  #popup .popup-body{  border-radius: 2px; overflow: hidden; float: left; position: relative;  background-color: #fff; left: 50%; top:100px;}
+  #popup .title{ width:100%; height: 50px; border-bottom: 1px solid #D2D2D2; background-color: #fff; float: left;}
+    #popup .title h2{ font-size: 14px; float: left; font-weight: bold; color: #000; line-height: 50px; width: 70%; margin: 0 4%;}
+    #popup .title .btn-close{ float: right; margin: 14px 4% 0;}
+  #popup .controls{ width: 92%; float: left; padding: 10px 4%; border-top:1px solid #ddd;}
+    #popup .controls .btn{ float: right;}
+
+
+  #popup-people{margin: 0 0 0 -250px; height: 400px; width: 500px;}
+    #popup-people .data{width: 100%; height: 350px; float: left; overflow: scroll;}
+    #popup-people .data .user{ width: 30%; float: left; margin: 0 1% 5px 1%; padding-top: 1%; padding-left: 1%;}
+    #popup-people .data .user:hover{ background-color: #fafafa;}
+    #popup-people .data .user img{ width: 100%; float: left;}
+
+   #popup-avatar-edit{margin: 0 0 0 -150px;  width: 300px;}
+    #popup-avatar-edit .editing-image{ width: 100%; float: left;}
+    #popup-avatar-edit .editing-image img{ width: 100%;}
+    #popup-avatar-edit .btn-rotate{ width: 200px; margin: 10px 50px; float: left;}
+
+   #popup-review{margin: 0 0 0 -200px;  width: 400px;}
+    #popup-review .data{ width: 92%; margin: 20px 4%; float: left;}
+    #popup-review p{font-size: 12px; color: #666; }
+    #popup-review label{ width: 100%; float: left; margin: 10px 0 0; font-size: 12px;}
+    #popup-review  textarea{ width: 90%; float: left; margin: 20px 0 10px 0;}
+
+
+/* Pop-up Boxs
+------------------------------ */
+
+
+#gallery{ display: none; position: fixed; height: 100%; width: 100%; background-color:rgba(0,0,0,0.9); top: 0; left: 0; z-index: 2000; margin-left: auto; margin-right: auto; overflow: hidden; text-align: center; vertical-align: middle;}
+    #gallery .info{ width: 100%; float: left; position: absolute; height: 20px; padding: 20px 0; top: 0; z-index: 3000;}
+    #gallery .info .paginator{ display: inline-block; float: left; color: #666; font-size: 14px;  margin: 0 0 0 20px;}
+    #gallery .info .caption{ width: 60%; float: left; color: #fff; font-size: 14px; margin: 0 0 0 20px; text-align: left;}
+    #gallery .info .btn-like{ color:#fff; font-size: 13px; float: right; margin: 0 20px 0 0;}
+
+    #gallery img{max-width: 80%; max-height: 80%; position: absolute; margin: auto; top: 0;  left: 0; right: 0; bottom: 0; z-index: 2500;}
+
+    #gallery .gallery-control-close{ float: right;}
+    #gallery .gallery-control{  float: left; height: 100%;  position: fixed; top: 0; z-index: 2800;}
+    #gallery .Prev{ float: left; width: 30%; left: 0; }
+    #gallery .Next{ float: right; width: 70%; right: 0;}
+
+    #gallery .arr{ width: 50px; height: 50px; position: absolute; margin-top: -25px; background-image: url(img/gallery-arr.png);}
+        #gallery .arr-r{  background-position: -50px 0; right: 0;}
+        #gallery .arr-l{ background-position: 0 0; left: 0;}
+
+/* Pages
+------------------------------ */
+#home{}
+
+
+#dashboard{}
+    #dashboard .content-sub-col .data{ width: 98%; float: left; margin-left: -3%; padding-left: 4%; padding-right: 0; margin-bottom: 0; padding-bottom: 0; padding-top: 5px;}
+
+
+    .dashboard-user-box{}
+        .dashboard-user-box .data a{width: 31.3%; float: left; margin: 0 1% 5px 1%;box-shadow: 0 0 0 1px #ddd;}
+
+.dashboard-user-box .username,
+#dashboard .username {
+	font-size: 12px;
+	color: #222;
+	display: inline-block;
+	margin: 5px 6% 5px 6%;
+}
+        .dashboard-user-box .photo { width: 100%; float: left; }
+
+    .dashboard-event{width: 98%; float: left; margin: 0 1% 5px 1%; box-shadow: 0 0 0 1px #ddd;  text-decoration: none;}
+        .dashboard-event .description{width: 65%; float: left; padding: 5px 4%;  line-height: 20px;}
+        .dashboard-event .description span{ font-size: 12px; font-weight: bold;}
+        .dashboard-event .description h1 a{ font-size: 14px; font-weight: normal; overflow: hidden;}
+        .dashboard-event .event_time {height: 20%;}
+        .dashboard-event .users{  float: right; width: 26%; padding: 2px 0; }
+        .dashboard-event .users .photo {width: 47%; padding: 1px 2% 1px 0; float: left;}
+        .dashboard-event .users .photo img{ width: 100%; float: left;}
+        .dashboard-event .users .all {float: right; width: 47%; line-height: 46px;  padding: 0; text-align: center; font-size: 14px;}
+
+
+
+    #dashboard .photos .photo{width: 47.3%; float: left; margin: 0 1% 5px 1%; }
+    #dashboard .photos .photo img{ width: 100%;}
+
+    #dashboard .main-list .data{padding-top: 5%; padding-bottom: 3%;}
+    #dashboard .main-list .dates, .main-list .goals, .main-list .business {width: -webkit-calc(33.3% - 1px);float:left; border-right: 1px solid #ddd;}
+    #dashboard .main-list .goals{border: none;}
+    #dashboard .main-list .header h3{width: 70%;white-space: nowrap; overflow: hidden; text-overflow:ellipsis;}
+    #dashboard .main-list .btn-ico-rotate-g{float: right; margin-top: 5%}
+    #dashboard .main-list .data .photo{width: 100%;}
+    #dashboard .main-list .data .username{font-weight: bold;margin: 0; padding-left: 3px !important;}
+
+
+   #dashboard .news{}
+    #dashboard .news .data .bjqs .photo{width: 30% !important; float: left;}
+    #dashboard .news .article{width: 68%; float: left;padding-left: 2%;}
+    #dashboard .news .title{ font-size: 14px; color: #262626; font-weight: bold;}
+    #dashboard .news .date{ font-size: 12px; color: #999;}
+
+   #dashboard .events{}
+    #dashboard .events .data .bjqs .photo{width: 30% !important; float: left;}
+    #dashboard .events .article{width: 68%; float: left;padding-left: 2%;}
+    #dashboard .events .title{ font-size: 14px; color: #262626; font-weight: bold;}
+    #dashboard .events .date{ font-size: 12px; color: #999;}
+    #dashboard .events .anons{ width: 100%; margin: 10px 0 0 0; font-size: 12px; color: #666; width: 100%; float: left;}
+
+#feed{}
+
+    #feed .content-main-col{width: 47%;}
+      #feed .content-sub-col{width: 47%;}
+#flirt{}
+    #flirt a{color: #000000; }
+    #flirt .nav-box a{font-size: 18px; font-weight: bold;}
+    #flirt .nav-box h3{font-size: 13px; font-weight: normal; color: #000000;}
+    #flirt p{font-size: 12px;}
+    #flirt .match .data{padding: 0; margin-top: 6px; width: 100%;}
+        .flirt-user-box{height: 60px;font-size: 14px; margin: 0 6px 6px 6px; box-shadow: 0 0 0 1px #ddd; }
+        .flirt-user-box img{height: 60px;float: left;}
+        .flirt-user-box .username {line-height: 25px; width: 75%; float: left; font-weight: bold; padding-left: 5px; padding-top: 5px;}
+        .flirt-user-box .telephone {float: left; padding-left: 5px; color: #666666; font-weight: normal;}
+    .flirt-main-nav{}
+        .flirt-main-nav .photo img{width: 100%;}
+        .flirt-main-nav .photo .info{ height: 70px; opacity: 0.65; background-color: #000000; margin-top: -75px;}
+        .flirt-main-nav .photo .info .username, .flirt-main-nav .photo .info .telephone{padding-left: 5%; opacity: 1; color: #FFFFFF; line-height: 70px; font-size: 18px;}
+        .flirt-main-nav .photo .info .telephone{padding-right: 5%; float: right;}
+        .flirt-main-nav .controls{padding-top: 20px;}
+        .flirt-main-nav .controls .btn-next,.flirt-main-nav .controls .btn-flirt { font-size: 17px; height: 60px; width: 48%; border-radius: 4px;}
+        .flirt-main-nav .controls .btn-next{float: right;background-color:#F5F5F5; border: 1px solid #DDDDDD; color: #666666;}
+
+    .flirt-main-nav .controls .btn-flirt { background-color: #CD0001; color: #FFFFFF;}
+
+/* =wizard */
+#wizard{}
+#wizard .content-main-col{width: 100%;}
+
+/*noinspection CssInvalidPseudoSelector*/
+#wizard *::-webkit-inputme-placeholder { text-indent: -9999px;}
+.wizard-main-nav{}
+
+.wizard-main-nav .header {
+	height: 20%;
+	padding-top: 27px;
+	padding-bottom: 18px;
+}
+.wizard-main-nav .step {
+	font-size: 26px;
+	font-weight: normal;
+	text-align: center;
+	margin-left: -10%;
+	margin-bottom: 15px;
+}
+.wizard-main-nav dl.controls {
+	margin-left: 10%;
+}
+.wizard-main-nav .controls dt {
+	text-align: right;
+	float: left;
+	width: 160px;
+	margin-right: 10px;
+	font-size: 13px;
+	font-weight: bold;
+	color: rgb(102, 102, 102);
+	line-height: 30px;
+}
+.wizard-main-nav .controls dd {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.wizard-main-nav .controls input[type=text] {
+	width: 300px;
+}
+.wizard-main-nav .controls .helper-field,
+.filter .helper-field {
+	display: block;
+	font-size: 10px;
+	color: #777;
+}
+.wizard-main-nav .controls .helper-field-error {
+	display: block;
+	font-size: 10px;
+	color: #cc0000;
+}
+.wizard-main-nav .btn-ico-photo-g, .wizard-main-nav .btn-ico-rotate-g {
+	cursor: pointer;
+}
+.wizard-save-ok {border: 1px solid #008024 !important;}
+.wizard-save-error {border: 1px solid #cc0000 !important;}
+
+.wizard-main-nav .photo-bar img.photo {
+	width: 200px;
+	height: 200px;
+}
+        .wizard-main-nav .header h3, .wizard-main-nav .header p {margin: 0;margin-left: 9%;}
+        /*. SAS wizard-main-nav .header h3 {color: #000000; font-size: 24px; padding-top: 27px; padding-bottom: 18px;width: 91%;}*/
+        .wizard-main-nav .header h3 {color: #000000; font-size: 21px; width: 91%;}
+        .wizard-main-nav .header p{color: #666666; font-size: 12px;margin-bottom: 6px;}
+        .wizard-main-nav .inputs-desc{float: left; text-align: right; color: #666666; line-height: 30px; font-size: 13px; width: 25%; padding-right: 20px; font-weight: bold;}
+
+/* =/wizard-mobile */
+
+/* =popup-otl */
+.otl-popup {
+
+}
+.otl-popup .cover {
+	background-color: rgba(0,0,0,0.1) !important;
+}
+.otl-popup .title {
+	float: none !important;
+	height: 38px !important;
+	background-color: #F7F7F7 !important;
+}
+.otl-popup .title h2 {
+	line-height: 40px !important;
+}
+.otl-popup .popup-body {
+	width: 400px;
+	height: 160px;
+	-webkit-box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
+	-o-box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 0 50px 20px rgba(0, 0, 0, 0.3);
+}
+.otl-popup .data {
+	font-size: 13px;
+	padding: 10px 20px;
+	height: 50px;
+}
+.otl-popup .footer {
+	text-align: right;
+	padding-right: 20px;
+}
+.otl-popup .footer .btn {
+	width: 80px;
+	margin-left: 20px;
+	border: 1px solid #ccc;
+	background-color: #f2f2f2;
+}
+/* =/popup-otl */
+@media (max-width: 767px) {
+	.wizard-main-nav dl.controls {margin-left: auto;}
+	.wizard-main-nav .controls dt {text-align: inherit; float: none; width: inherit; box-sizing: border-box;}
+	.wizard-main-nav .controls input[type=text] {width: 90%;}
+	.wizard-main-nav .controls .birthday {width: 45px;}
+	.wizard-main-nav .controls .birthday_year {width: 65px;}
+	.wizard-main-nav .controls .photo-bar .photo,
+	.wizard-main-nav .controls .photo-bar .controls {text-align: center;}
+}
+/* =/wizard */
+
+/* =profile */
+#profile{}
+    .profile-info-main{}
+        .profile-info-main .photo{ width: 18%; overflow: hidden;  margin: 20px 2%; float: left; border:1px solid #ddd; position: relative;}
+            .profile-info-main .photo img{ width: 100%; float: left;}
+            .profile-info-main  .photo-edit{ width: 100%; float: left; position: absolute; bottom: 0; background-color:rgba(0,0,0,0.65); }
+            .profile-info-main  .photo-edit button{ height: 40px; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+
+        .profile-info-main .info{ width: 40%; float: left; margin: 20px 0; height: 110px; }
+            .premium{ width: 20px; height: 20px; display: inline-block; background-image: url(img/premium.png);}
+            .profile-info-main .info .notel{ width: 20px; height: 20px; display: inline-block; background-image: url(img/notel.png);}
+            .profile-info-main h1{ font-size: 32px; font-weight: 500;}
+            .profile-info-main h2{ font-size: 14px; color: #666; font-weight: 500; max-height: 60px; overflow: hidden; }
+
+        .profile-info-main .status{ position: relative; width: 30%; margin: 20px 20px 0 0; float: right;  border:1px solid #eee; font-size: 13px;}
+            .profile-info-main .status .current{ width: 70%; float: left; padding: 10px 5px 10px 15px;}
+            .profile-info-main .status .btn-edit{ float: right;  position: absolute; top: 0; right:0;}
+             .profile-info-main .status .edit{ display: none;  overflow: hidden;  position: relative; top:0; background-color: #fff; width: 100%; left: 0;}
+                .profile-info-main .status textarea{ width: 100%; border: none; margin: 10px 0; padding: 0 5%; width: 90%; resize:none; height: 60px;}
+                .profile-info-main .status .controls{ width: 100% !important; padding: 5px 0 !important; margin: 0 !important; background-color: #fafafa; border-top: 1px solid #eee;}
+                .profile-info-main .status input[type=submit]{ height: 26px; background-color: #CD0001; color: #fff; margin: 0 5px; }
+                .profile-info-main .status .btn-like{ clear: left; display: inline-block; margin: 0 5px 10px 5px;}
+
+
+        .profile-info-main .controls{ float: left; width: 76%;}
+            .profile-info-main .btns-group{ float: left; height: 40px; border-radius: 2px; padding: 1px 0 0 1px;  }
+            .profile-info-main .btns-group button:last-child{ }
+            .profile-info-main .sub-controls{ float: right;}
+            .profile-info-main .controls button{ background: none; margin:-1px 0 0 -1px; position: relative; border:1px solid #eee;  padding: 10px; height: 40px; line-height: 20px; float: left; color: #CD0001; font-size: 12px; }
+            .profile-info-main .controls button:hover{ border-color:#ddd; z-index: 100; }
+
+    .profile-interests{}
+        .profile-interests .wrapper{ float: left; margin: 5px 0 10px 0; width: 100%;}
+        .profile-interests .title{ font-size: 12px; color: #666; width: 100%; float: left;}
+
+        .profile-interests .btn-add{color: #CD0001; border-radius: 22px; font-size: 18px; border:1px solid #CD0001; float: left; margin: 0 10px 0 0;  font-weight: bold; line-height: 20px; padding: 0 10px;}
+
+         .item-interest{ padding: 0 12px 2px 12px; border-radius: 22px; height: 20px; line-height: 22px; border: 1px solid #eee; float: left; font-size: 12px; color: #181F25; margin: 0 3px 3px 0;}
+         .item-interest.common{color: #CD0001; border-color: #CD0001;}
+         .item-interest.basic{}
+         .item-interest.basic.common{  }
+         .item-interest.target{}
+         .item-interest.target.common{}
+         .item-interest.professional{}
+         .item-interest.professional.common{}
+
+         .item-interest span{ display: inline-block; float: left;  }
+         .item-interest .btn-delete{ float: right; display: inline-block; margin: 1px -5px 1px 0; height: 20px; width: 20px;}
+
+         .profile-interests .add-interest{ width: 95%; padding: 5px 2%; margin: 20px 0 0 0; float: left;}
+
+    .profile-photos{}
+        .profile-photos .data{ width: 96%; float: left; position: relative; margin-left: -3%; margin-bottom: 0; padding-bottom: 0;}
+        .profile-photos .add-photo{ width: 30%; padding: 0; border: 1px dashed #ddd; float: left; margin: 0 1.6% 10px 1.6%; }
+            .profile-photos .add-photo img{ width: 100%;}
+        .profile-photos .photo{ width: 30%;  float: left; margin: 0 1.6% 10px 1.6%; position: relative;}
+            .profile-photos .photo .item-photo{ cursor: pointer; width: 100%; float: left;}
+            .profile-photos .photo img, .profile-photos .item-photo img{ width: 100%; }
+            .profile-photos .photo .btn-delete{ position: absolute; top: 0; right: 0; margin: 0; background-color:#fff; }
+            /* SAS .profile-photos .photo .btn-like{ position: absolute; bottom:37px; left: 0;}*/
+
+.photo-line {
+	overflow: hidden;
+}
+.profile-photos .photo .btn-like {
+	position: absolute;
+	bottom: 26px;
+	/*top: -2px;*/
+	left: -5px;
+	background-color: white;
+	padding: 3px 5px 0 0;
+}
+/* фотоальбом в профиле партнера */
+.people .profile-photos .photo .btn-like {
+	top: -3px;
+	bottom: inherit;
+}
+
+.people-photo-comment {
+	font-size: 12px;
+}
+            .profile-photos .photo input{ width: 93%; padding: 1px 2%;}
+
+    .profile-info-additional{}
+        .profile-info-additional .data-edit{ display: none;}
+        .profile-info-additional .about{ font-size: 13px; line-height: 150%; float: left; width: 100%; margin-bottom: 10px;}
+
+        .profile-info-additional .wrapper{ width: 100%; margin: 5px 0; float: left;}
+            .profile-info-additional .wrapper label{ width: 100%; float: left; font-size: 13px; color: #666;}
+            .profile-info-additional .data-edit .wrapper label{ width: 30%;}
+            .profile-info-additional .data-edit .wrapper label.lbl-checkbox{ width: 100%;}
+            /*.profile-info-additional .wrapper span{ width: 70%; float: left; font-size: 13px;}*/
+            .profile-info-additional .wrapper span{ font-size: 13px;}
+
+        .profile-info-additional input[type=text]{ width: 62%; float: right; margin: 0;}
+        .profile-info-additional textarea{ height: 100px; width: 95% !important; padding: 10px 2%;}
+        .profile-info-additional .checkbox-group { width: 70%; float: left;}
+            .profile-info-additional .checkbox-group label{ width: 100%; float: left; color: #181F25;}
+            .profile-info-additional .btn-save{ float: right; margin: 10px 0 0 0;}
+
+
+    .profile-messages{}
+        .profile-messages #messages-talk{ overflow-y: scroll; max-height: 200px;  }
+            .profile-messages .message{ width: 100%; float: left; padding: 10px 0; }
+            .profile-messages .messages{ padding: 0; float: left; width: 100%;}
+            .profile-messages .message .msg{font-size: 13px; width: 90%; float: left;}
+    
+            .profile-messages #msg-form-send{ width: 90%; padding: 10px 5%; border-top: 1px solid #ddd; background-color: #fafafa; float: left; position: relative;}
+            .profile-messages #msg-form-send textarea{ width: 96%; border:1px solid #ddd; padding: 8px 2%;}
+            .profile-messages #msg-form-send input[type=submit]{ }
+
+
+/* Мероприятия в профиле партнера */
+.profile-events{}
+.profile-events .data {
+	width: 100%;
+	box-sizing: border-box;
+}
+.profile-events .event {
+	width: 100%;
+	margin: 0 0 10px 0;
+	border: 1px solid #eee;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+.profile-events .event .image {
+	width: 30%;
+	float: left;
+	margin-bottom: -5px;
+}
+.profile-events .event .image img {
+	width: 100%;
+	height: 98px;
+}
+.profile-events .event span {
+	width: 100%;
+	margin: 0 0;
+	font-size: 12px;
+	float: left;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.profile-events .event .date {
+	color: #181F25;
+}
+.profile-events .event .name {
+	color: #666;
+	font-weight: bold;
+}
+.profile-events .event .place {
+	color: #999;
+	width: 100%;
+}
+.profile-events .event .details {
+	padding: 5px 5px 0 10px;
+	float: left;
+	width: 65%;
+}
+.profile-events .event .invite {
+	float: right;
+	background: #CD0001;
+	height: 24px;
+	margin: 5px 15px 10px 0;
+	font-size: 10px;
+	color: #fff;
+	padding: 0 7px;
+}
+/* /Мероприятия в профиле партнера */
+
+    .profile-places{}
+        .profile-places .place{width: 30%; height: 200px; border: 1px solid #eee; float: left; margin-right: 2.5%;}
+        .profile-places .place .image{width: 100%; height: 100px; float: left;}
+        .profile-places .place .name{font-size: 13px; color: #181F25; width: 100%; float: left; font-weight: bold;}
+        .profile-places .place .address{font-size: 13px; color: #666; width: 100%; float: left;}
+        .profile-places .place .invite{width: 100%; text-align: center; float: left;}
+
+/* =/profile */
+
+/* =phone-book */
+.phone-book {
+	box-sizing: border-box;
+	padding: 15px;
+	width: 540px;
+	margin: 15px auto;
+	overflow: hidden;
+	float: none;
+}
+.phone-book .user-avatar {
+	margin-right: 15px;
+	float: left;
+}
+.phone-book .user-avatar .photo {
+	width: 70px;
+}
+.phone-book .user-info .user-name,
+.phone-book .user-info .phone-number {
+	display: block;
+}
+.phone-book .user-info .user-name {
+	font-size: 14px;
+	margin: 0.5em 0;
+}
+.phone-book .user-info .user-name a {
+	color: #181F25;
+}
+.phone-book .user-info .phone-number {
+	font-size: 20px;
+}
+.phone-book h1 {
+	font-size: 20px;
+	font-weight: 500;
+	margin-bottom: 1em;
+}
+.phone-book p {
+
+}
+/* =/phone-book */
+
+#user-deleted{ width: 200px; float: left; margin: 50px 370px; padding: 220px 0 0; height: 100px; background-position: 0 0; background-repeat: no-repeat; background-image: url(img/profile-blocked.png);}
+    #user-deleted h1{ font-size: 24px; text-align: center; color: #999;}
+
+#search-upload {
+	text-align: center;
+}
+
+/* =search */
+#search{}
+
+    #search .filters-bar{ width: 98%; float: right; margin: 20px 1% 0; background-color: #fff; box-shadow: 0 0 0 1px #ddd;}
+        #search .filters-bar .filters{ display: none;}
+        #search .filters-bar .filters-active{ display: block;}
+        #search .filters-bar select{font-size: 14px; text-transform: capitalize;  border-radius: 0; background-color: transparent; background-image: url(img/select-arr.png); background-position: right; background-repeat: no-repeat; height: 20px;   -webkit-appearance: none; -moz-appearance: none; border:none; appearance: none;}
+
+        #search .tabs-select{width: 90%; background-color: #fafafa; padding: 0 5%;  border-bottom: 1px solid #ddd; float: left; }
+            #search .tabs-select select{ width: 100%; height: 50px;}
+            #search .tabs-select ul{width: 100%; float: left;}
+            #search .tabs-select li{ width: 25%; cursor: pointer; float: left; height: 40px; padding: 10px 0 5px; text-align: center;}
+            #search .tabs-select li label{ width: 100%; float: left; font-size: 12px; font-weight: bold;}
+
+    #search .filters-bar .filter {
+    	/*width: 90%;
+    	float: left;
+    	padding: 20px 5%;
+    	border-bottom: 1px solid #eee;*/
+    	width: 96%;
+    	float: left;
+    	padding: 10px 2%;
+    }
+
+    #search .filters-bar .popover label{ width: 27%; float: left; padding: 2px 3%;}
+
+    #search .filters-bar .amount{ width: 100%; float: left; font-size: 13px; color: #666; font-weight: bold; line-height: 20px;}
+    #search .filters-bar .input-wrapper{ width: 100%; float: left; margin: 5px 0 5px 0;}
+    #search .filters-bar .input-wrapper-half{width: 50%; }
+    #search .filters-bar .input-wrapper select{ padding: 0 20px 0 0; margin: 0;}
+    #search .filters-bar .input-wrapper label{ font-size: 14px; display: inline-block; margin: 0 10px 0 0;}
+    #search .filters-bar .filter input[type=text]{ width: 88%; padding: 5px 5%; border: 1px solid #ccc; margin: 5px 0;}
+
+#search .filters-bar .text-input {
+	/*font-size: 13px;
+	border-radius: 2px;
+	border: 1px solid #ddd;
+	padding: 10px;
+	cursor: pointer;*/
+	font-size: 13px;
+	border-radius: 2px;
+	border: 1px solid #ddd;
+	padding: 5px 9px;
+	cursor: pointer;
+}
+
+#search .filters-bar .text-input .item {
+	display: inline-block;
+	/*padding: 3px 10px;
+	margin: 5px 5px 0 0;*/
+	padding: 1px 0 1px 10px;
+	margin: 3px 5px 0 0;
+	border-radius: 15px;
+	border: 1px solid #eee;
+}
+
+#search .filters-bar .btn-search {
+	text-align: center;
+	color: #fff;
+	padding: 0;
+	font-size: 13px;
+	font-weight: bold;
+	background-color: #CD0001;
+	/*width: 100%;
+	height: 40px;
+	margin: 0;*/
+	width: 200px;
+	height: 30px;
+	margin: 0 auto 10px auto;
+	display: block;
+}
+
+#search .filters-bar .popover {
+}
+
+#search #filters-date .filter {
+	width: 21%;
+	padding: 20px 2%;
+	border-bottom: none;
+}
+
+#search #filters-business .filter {
+	/*width: 21%;*/
+	width: 29%;
+	padding: 20px 2%;
+	border-bottom: none;
+}
+
+    #search #users{ width: 100%; float: left; margin: 20px 0 0 0;}
+        #search .item-user{ width: 23%; margin: 0 1% 20px}
+.status-search-text {
+	background: rgba(255, 255, 255, 0.7);
+	color: #333;
+	position: absolute;
+	bottom: 64px;
+	left: 10px;
+	padding: 3px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius:    5px;
+	border-radius:         5px;
+	margin-right: 10px;
+	font-size: 12px;
+}
+/* =/search */
+
+#blacklist #users, #favorites #users{ margin-top: 20px;}
+
+#events{}
+    #events .sidebar{ width: 24%; float: right; margin: 20px 0 0;}
+        #events .sidebar .btn-add{ width: 99%; float: left; padding: 0 !important; margin: 0 0 20px 0; line-height: 40px; height: auto;}
+
+        #events .sidebar .nav{background-color: #fafafa; margin-bottom: 20px; box-shadow: 0 0 0 1px #ddd; width: 100%; float: left;}
+        #events .sidebar .search{ width: 100%; float: left; border-bottom: 1px solid #ddd;}
+            #events .sidebar .search input{ width: 90%; margin: 10px 5%; float: left; padding: 5px 0 !important}
+                #events .sidebar .nav ul{}
+                     #events .sidebar .nav ul li{float: left; display: inline-block; width: 100%;}
+                      #events .sidebar .nav ul .active a{ background-color: #fff;}
+                       #events .sidebar .nav ul a{ width: 80%; padding: 0 10%; font-size: 13px; font-weight: bold; float: left; line-height: 40px; border-bottom: 1px solid #E7EBEF; color: #666;}
+                       #events .sidebar .nav ul a:hover{ background-color: #fff;}
+
+    #events-container {width: 76%; float: left; margin: 20px 0 0 0;}
+        #events-container .item-event{ }
+
+#event{}
+    #event .title-block{}
+        #event .title-block .image{ width: 100%; float: left; overflow: hidden;}
+        #event .title-block .image img{ width: 100%;}
+        #event .title-block h1{ width: 90%; float: left; font-size: 16px; margin: 10px 5%;}
+        #event .title-block .controls{ width: 90%; float: left; padding: 10px 5%; border-top:1px solid #ddd;}
+        #event .title-block .controls .btn-like{float: right; margin: 7px 0;}
+
+    #event .info-block{}
+        #event .info-block .wrapper{ font-size: 13px; width: 90%; padding: 12px 5%; float: left; border-bottom: 1px solid #E7EBEF;}
+        #event .info-block .wrapper label{ width: 40%; float: left; color: #666;}
+        #event .info-block .wrapper span{ width: 60%; float: left; text-align: right; }
+
+    #event .teaser-block{}
+    #event .teaser-block .data {width: 90%; float: left; margin: 20px 5%; font-size: 14px; line-height: 160%; }
+    #event .about-block  {}
+
+#event .about-block .data {
+	box-sizing: border-box;
+	width: 100%;
+	float: left;
+	margin: 20px 0;
+	font-size: 12px;
+	line-height: 160%;
+	text-align: justify;
+}
+#event .about-block .data p {
+	margin: 1em 0;
+}
+    #event .map-block{}
+        #event .map-block img{ width: 100%; float: left;}
+
+#event .participants-block {
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+        #event .participants-block .user{ width: 25%; float: left;}
+        #event .participants-block .user img{ width: 80%; margin: 10px 10% 0 10%;}
+
+
+
+#event-add{}
+    #event-add .content-block{ padding: 20px 0 0 0;}
+    #event-add .wrapper { width: 100%; float: left; padding: 5px 0;}
+        #event-add .wrapper label{ width: 23%; color: #666; font-weight: bold; margin-top: 5px; margin-right: 2%; float: left; text-align: right; font-size: 13px;}
+        #event-add .wrapper input[type=text], #event-add textarea{ float: left; width: 50%;}
+        #event-add .wrapper .input-half{ width: 27% !important; margin-right: 10px;}
+        #event-add .wrapper .input-date{ width: 16% !important; margin-right: 1%; padding: 5px 1%;}
+        #event-add .wrapper .input-time{ width: 8% !important; padding: 5px 1%;}
+        #event-add .wrapper .input-label{ display: inline-block; font-size: 13px; line-height: 32px; float: left; margin-right: 5px;}
+        #event-add .wrapper select{  float: left; margin-right: 10px;}
+
+        #event-add .wrapper .inwrapper{ width: 50%; float: left; margin-bottom: 20px;}
+            #event-add .wrapper .inwrapper .input-label{ width: 100%;}
+
+         #event-add .event-photo{ width: 100%; float: left;}
+            #event-add .event-photo img{width: 100%; float: left;}
+
+         #event-add .controls{ padding: 20px 0; margin: 20px 0 0 0; float: left; border-top:1px solid #ddd; width: 100%;}
+            #event-add .controls .btn{ float: left; margin-left: 25%;}
+
+#messages{}
+    #messages .container{ height: 600px; background-color: #fff; border: 1px solid #ddd; position: relative; margin-top: -1px;}
+
+    #messages .list{ width: 30%; height: 100%; float: left; position: relative; margin: 0 0 0 -2px; border-right: 1px solid #ddd; /*SAS border-left: 1px solid #ddd;*/ }
+        #messages .list .search{  height: 34px; width: 90%; padding: 8px 5%; float: left;  border-bottom: 1px solid #ddd; /*SAS background-color: #fff;*/}
+        #messages .list .search input{ width: 100%; border-radius: 0; border: 1px solid #ccc; padding: 4px 1%; }
+        #messages .list #list{overflow: scroll;  float: left; width: 100%;}
+        #messages #list .item-talk{ overflow: hidden; position: relative; width: 90%; padding: 10px 5%; border-bottom: 1px solid #eee; height: 50px; float: left;}
+        #messages #list .item-talk:hover{ background-color: #fafafa; cursor: pointer;}
+        #messages #list .item-talk:hover .btn-delete{ visibility: visible !important;}
+            #messages #list .item-talk .photo { width: 50px; height: 50px; overflow: hidden; float: left;}
+            #messages #list .item-talk .photo img { width: 100%;}
+            #messages #list .item-talk .info{ width: 70%;  float: left; margin: 0 0 0 10px;}
+            #messages #list .item-talk .btn-delete{ visibility: hidden; position: absolute; float: right; right: 10px; top: 10px;}
+            #messages #list .item-talk .info span{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; clear: left; display: inline-block; float: left;}
+            #messages #list .item-talk .name{font-size: 14px; font-weight: bold; color: #181F25; }
+            #messages #list .item-talk .last-msg{font-size: 12px; color: #666; }
+            #messages #list .item-talk .status{ color: #999; font-size: 10px; margin: 2px 0 0 0;}
+            #messages #list .item-talk .bubble-count {color: #fff; background-color: #D82E2E; position: absolute; top: 0; left: 0; border-radius: 50%; padding: 0 3px; margin: 5px 0 0 55px !important; height: 16px; width: 11px; line-height: 16px; text-align: center; font-size: 9px; font-weight: bold;}
+
+
+
+    #messages .talks{ width: 70%; float: right; position: relative; height: 100%;}
+        #messages .talks .talk{}
+             #messages .talk .user-info{ width: 90%; padding: 0 5%; float: left; height: 50px; border-bottom: 1px solid #ddd;}
+
+				#messages .talk .user-info .photo{ width: 30px; height: 30px; overflow: visible; float: left; margin: 5px 10px 10px 0;}
+                 #messages .talk .user-info .name{ font-size: 14px; color:  #181F25; font-weight: 700; display: inline-block; line-height: 20px; margin: 15px 0;  float: left;}
+                 #messages .talk .user-info .btn-close{ display: none; float: right; margin: 15px 0;}
+            #messages .talk .messages-container{ width: 100%; height: 100px; position: relative;  overflow: scroll; float: left;}
+                #messages .talk .messages{ width: 100%; float: left; margin: 20px 0;  }
+
+
+                #messages .item-talk-active{ }
+
+            #messages .talk .form{ width: 90%;  padding: 15px 5% 30px 5%; float: left; position: absolute; bottom: 0;  background-color: #fafafa; border-top: 1px solid #ddd;}
+                 #messages .talk form{ width: 100%; border: 1px solid #ccc; float: left;}
+
+#messages .talk form textarea {
+	width: 98%;
+	background-repeat: no-repeat;
+	background-position: right 0;
+	border: none;
+	float: left;
+	/*height: 50px;*/
+	padding: 5px 1%;
+}
+                #messages .talk form .controls{ width: 100%; height: 24px; border-top: 1px solid #ccc; padding: 5px 0; float: left; background-color: #fff;  margin: -1px 0 0 0;}
+                #messages .talk form input[type=submit]{ float: left; margin: 0 1%;}
+.msg .partner-writes {
+	font-style: italic;
+	color: #999;
+}
+.talks .translate {
+	margin: 0 5%;
+	font-size: 12px;
+}
+.translate small,
+.message small {
+	font-size: 10px;
+	color: #999;
+}
+
+
+#settings{}
+    .main-settings{ width: 540px; float: left;}
+    .minor-settings{ width: 380px; float: right; margin: 0 20px 0 0;}
+
+    #settings .wrapper{ width: 100%; float: left; padding: 2px 0;}
+    #settings .wrapper label{ width: 25%; font-weight: bold; padding: 9px 0 8px; font-size: 12px; color: #666;  float: left; text-align: right; margin:0 2% 0 0;}
+    #settings .wrapper input[type=text],
+    #settings .wrapper input[type=tel],
+    #settings .wrapper input[type=password]{ width: 60%; float: left;}
+    #settings .wrapper select{ margin: 2px 5px; float: left;}
+    #settings .wrapper .var{ float: left; font-size: 14px; line-height: 20px; margin: 7px 0 0;}
+    #settings .wrapper .checkbox{ font-size: 12px; width: 70%; text-align: left; color: #000;}
+        #settings .wrapper .checkbox input[type="checkbox"]{ float: left;}
+        #settings .wrapper .checkbox-double{ width: 10%;}
+
+    #settings .sub-wrapper{ width: 60%; float: left;position: relative;}
+        #settings .sub-wrapper input{ width: 100% !important;}
+
+    #settings .wrapper-extended{ border-bottom: 1px solid #ddd; padding: 5px 0;}
+        #settings .data .about{ font-size: 13px; width: 100%; float: left; margin: 0 0 10px 0;}
+        #settings .wrapper-extended label{ text-align: left; color: #000; width: 50%;}
+        #settings .wrapper-extended .checkbox-double{  float: right;}
+
+
+    #settings .settings-block .controls{ width: 90%; display: none; float: left; padding: 15px 5%; border-top: 1px solid #ddd;}
+        #settings .settings-block .controls input[type=submit]{ margin-left: 27%;}
+
+    #settings .settings-block .controls-extended input[type=submit]{ float: right;}
+
+    #settings #settings-tel .btn{ float: left; margin: 5px 0 10px 0; display: none;}
+    #profile-settings-tel-confim{ display: none;}
+#settings #profile-settings-password label {
+	width: 50%;
+}
+
+#settings .wrapper input[type=password] {
+	width: 40%;
+}
+
+
+
+#balance{}
+    #balance .features-block{}
+    #balance .features-block .card{ background-color: #fafafa; width: 100%; float: left;}
+    #balance .features-block .card img{ width: 80%; margin: 20px 10%; float: left;}
+    #balance .features-block .about{width: 80%; margin: 40px 10%; float: left; font-size: 14px; line-height: 150%; }
+        #balance .features-block .about ul{ margin-left: 20px;}
+
+     #balance .info-block{}
+        #balance .info-block .wrapper{ font-size: 13px; width: 90%; padding: 12px 5%; float: left; border-bottom: 1px solid #E7EBEF;}
+        #balance .info-block .wrapper label{ width: 40%; float: left; color: #666;}
+        #balance .info-block .wrapper span{ width: 60%; float: left; text-align: right; font-weight: bold; }
+
+    #balance .purchase-block{}
+        #balance .plans{ width: 100%; float:  left; border:1px solid #E7EBEF;}
+            #balance .plans .list{ width: 50%; float: left;}
+                #balance .plans .list label{ width: 90%;border-bottom:1px solid #E7EBEF; font-size: 12px; font-weight: bold; line-height: 20px; padding: 10px 5%; float: left; border-right: 1px solid #E7EBEF;}
+                    #balance .plans .list label:hover{ cursor: pointer; background-color: #fafafa;}
+                #balance .plans .list input[type="radio"] {}
+            #balance .plans .selected{ width: 50%; float: left; position: relative; margin-right: -1px; }
+                #balance .plans .selected .amount, #balance .plans .selected .pp{ text-align: right; width: 80%; margin: 0 10%; float: left; }
+                #balance .plans .selected .amount{ font-weight: bold; font-size: 36px; margin-top: 20px;}
+                #balance .plans .selected .pp{ color: #666; font-size: 12px;}
+            #balance .btn{ width: 100%; padding: 10px 0; margin: 20px 0 0 0;}
+        #balance .purchase-block .info{ width: 100%; float: left; margin: 10px 0 0; font-size: 11px;}
+
+    #balance .trans-block{}
+        #balance .item-trans{ width: 100%; font-size: 13px; line-height: 20px; float: left; padding: 15px 0; border-bottom:1px solid #eee;}
+        #balance .item-trans span{ float: left;}
+        #balance .item-trans .date{ width: 30%}
+        #balance .item-trans .name{ width: 50%;}
+        #balance .item-trans .amount{ width: 20%; text-align: right;}
+
+#balance .about p {
+	margin-bottom: 10px;
+}
+#balance .about ul {
+	list-style: disc;
+}
+
+#invite{}
+    #invite .invite-block{}
+    #invite .invite-block .about{ width: 90%; float: left; margin: 20px 5%; line-height: 150%; font-size: 14px;}
+    #invite .invite-block form{width: 90%; float: left; margin: 20px 5%; }
+        #invite .invite-block form input[type=text]{ width: 95%;}
+        #invite .invite-block form textarea{ width: 95%;}
+         #invite .invite-block form .btn{ float: left;}
+
+         #invite .inputStyle{ overflow: scroll; width: 89%; padding: 20px 5%; background-color: #eee; float: left; margin: 5px 0 10px; font-size: 13px; height: 200px; border: 1px solid #ddd;}
+
+    #invite .invided-block{}
+        #invite .invided-block .user{ width: 25%; float: left;}
+        #invite .invided-block .user img{ width: 80%; margin: 10px 10% 0 10%;}
+
+#notfound{}
+    #notfound h1, #notfound h2{ width: 100%; font-weight: 300; float: left; text-align: center; color: #666;}
+    #notfound h1{ font-size: 160px; margin-top: 100px; }
+    #notfound h2{ font-size: 24px;}
+
+#error{}
+    #error h1, #error h2{ width: 100%; font-weight: 300; float: left; text-align: center; color: #666;}
+    #error h1{ font-size: 64px; margin-top: 100px; }
+    #error h2{ font-size: 18px;}
+
+/* =privilege */
+#privilege {}
+.privilege-container {
+	/*width: 76%;
+	float: left;*/
+	margin: 20px 0 0 0;
+}
+.item-privilege {
+	width: 93%;
+	margin: 0 0 20px 0;
+	position: relative;
+	padding: 15px 2%;
+	float: left;
+	background-color: #fff;
+	box-shadow: 0 0 0 1px #ddd;
+}
+.item-privilege h1 {
+	font-size: 22px;
+	font-weight: 400;
+	margin-bottom: 0.5em;
+}
+.item-privilege p,
+.content-main-privilege p {
+	font-size: 14px;
+	margin-bottom: 1em;
+}
+.item-privilege p a {
+	text-decoration: underline;
+}
+.item-privilege .photo {
+	width: 30%;
+	float: left;
+	overflow: hidden;
+}
+.item-privilege .photo img {
+	width: 100%;
+}
+.item-privilege .info {
+	float: left;
+	width: 67%;
+	padding: 0 0 0 3%;
+}
+.item-privilege .type {
+	display: block;
+	font-size: 11px;
+	color: #CED6DE;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	margin-bottom: 1%;
+	/*
+	width: 90%;
+	float: left;
+	*/
+}
+.content-main-privilege {
+	width: 540px;
+	margin: 0 auto;
+}
+.content-main-privilege ul {
+	list-style: disc;
+}
+.content-main-privilege ul,
+.content-main-privilege ol {
+	margin: 10px 0 20px 20px;
+}
+.content-main-privilege .back {
+	display: block;
+	margin-top: 10px;
+	font-size: 14px;
+}
+.content-main-privilege .title-block .image {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+}
+.content-main-privilege .title-block .image img {
+	width: 100%;
+}
+.content-main-privilege .title-block h1 {
+	width: 90%;
+	float: left;
+	font-size: 16px;
+	margin: 10px 5%;
+}
+.content-main-privilege .teaser-block .data {
+	float: left;
+	font-size: 14px;
+	line-height: 160%;
+}
+/* =/privilege */
+
+/* Responsive
+------------------------------ */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+
+}
+
+/* =mobile and =tablet */
+@media (max-width: 979px) {
+
+    .hidden-mobile-tablet{ display: none !important;}
+    .hidden-desktop{ display: block;}
+
+    .content{ margin-top: 50px; float: none;}
+    .content-blocks-container{ width: 100% !important; margin: 0;}
+
+    .content-block{ margin: 16px 0 0 0;}
+    .content-block-full{ width:100%;}
+
+    #header{ text-align: center; position: relative; }
+    #header .mobile-nav{ display: inline-block !important;}
+
+    #messages .talk .messages{  position: relative;  }
+    #messages .talk .message:hover > .msg .btn-delete{ visibility:hidden;}
+
+    .btn-delete{ visibility: visible !important;}
+
+}
+
+/* =mobile Landscape =phones and down */
+@media (max-width: 767px) {
+	.hidden-mobile {
+		display: none;
+	}
+
+	.container {
+		width: 92%;
+		left: 0;
+		float: none;
+		margin: 0 4%;
+	}
+
+	.content-blocks-container {
+		width: 100%;
+		margin: 0;
+	}
+
+	.content-left-col {
+		width: auto;
+		float: none;
+	}
+
+	.content-right-col {
+		width: auto;
+		float: none;
+		margin: 0;
+	}
+
+	.content-main-col {
+		width: auto !important;
+		float: none;
+	}
+
+	.content-sub-col {
+		width: auto !important;
+		float: none;
+		margin: 0;
+	}
+
+	.content-block-half {
+		width: 100%;
+	}
+
+	.text-center-mobile {
+		text-align: center;
+	}
+
+	.item-event .photo {
+		width: 100%;
+	}
+
+	.item-event .info {
+		float: left;
+		width: 100%;
+	}
+
+	#popup .popup-body {
+		top: 20px;
+	}
+	#popup #popup-otlAlert.popup-body {
+		top: 70px;
+		left: 20px;
+		width: 280px;
+		height: 180px;
+		box-shadow: 0 0 30px 10px rgba(0, 0, 0, 0.4);
+	}
+	#popup #popup-otlAlert .data {
+		height: 75px;
+		font-size: 12px;
+	}
+	#popup #popup-otlAlert .footer {
+		text-align: center;
+	}
+
+	#popup-people {
+		margin: 0 0 0 -150px;
+		height: 400px;
+		width: 300px;
+	}
+
+	#users, #search #users {
+		width: 104%;
+		margin: 20px 0 0 -2%;
+		float: left;
+	}
+	.status-search-text {
+		display: none;
+	}
+
+	#users .item-user {
+		width: 46%;
+		margin: 0 2% 20px;
+	}
+
+	#events-container {
+		width: 100%;
+		margin: 0
+	}
+
+	#events-container .item-event {
+		width: 96%;
+	}
+
+	#header .container {
+		width: 100%;
+		margin: 0;
+	}
+
+	.profile-info-main .photo {
+		width: 35%;
+		margin: 10px 3%;
+		height: auto;
+	}
+
+	.profile-info-main .photo img {
+		width: 100%;
+	}
+
+	.profile-info-main .info {
+		width: 50%;
+		float: left;
+		margin: 10px 0;
+	}
+
+	.profile-info-main h1 {
+		font-size: 24px;
+	}
+
+	.profile-info-main .status {
+		width: 94%;
+		margin: 0 3%;
+		float: left;
+	}
+
+	.profile-info-main .controls {
+		width: 94%;
+		margin: 10px 3%;
+	}
+
+	.profile-info-main .btns-group {
+		height: auto;
+		width: auto;
+		width: 100%;
+	}
+
+	.profile-info-main .controls button {}
+	.profile-info-main .btn-full {
+		width: 100%;
+		border-bottom: 1px solid #ddd !important;
+		border-right: none !important;
+	}
+	.profile-info-main .btn-half {
+		width: 50%;
+	}
+
+	/* /Мероприятия в профиле партнера */
+	.profile-events .data {
+		width: 100%;
+		padding: 0;
+		margin-top: 0;
+	}
+	.profile-events .event {
+		width: 100%;
+		padding: 10px;
+		float: left;
+		border: none;
+		border-bottom: 1px solid #eee;
+	}
+	.profile-events .event .name {
+		margin-bottom: 5px;
+	}
+	.profile-events .event .image {
+		width: 20%;
+		margin: 0;
+	}
+	.profile-events .event .image img {
+		width: 100%;
+		height: auto;
+	}
+	.profile-events .event .details {
+		width: 53%;
+		float: left;
+		margin: 0 0 10px 2%;
+		padding-top: 0;
+	}
+	.profile-events .event .invite {
+		border: none;
+		width: 50px;
+		height: 36px;
+		margin: 0;
+		padding: 0;
+	}
+	/* /Мероприятия в профиле партнера */
+
+	.phone-book {
+		width: auto;
+	}
+
+	#settings #profile-settings-lang .wrapper select{
+		margin-top: 10px;
+	}
+
+	#search {
+	}
+
+	#search .filters-bar {
+		width: 100%;
+		float: left;
+	}
+
+	#search .filter {
+		width: 90% !important;
+		padding: 10px 5% !important;
+		border-bottom: 1px solid #ddd !important
+	}
+	#search .filters-bar .btn-search {
+		width: 100%;
+		height: 40px;
+		margin: 0;
+	}
+
+	#flirt {}
+
+	#flirt .flirt-main-nav .controls {
+		padding-top: 0;
+	}
+
+	#flirt .flirt-main-nav .controls .btn-next, .flirt-main-nav .controls .btn-flirt {
+		font-size: 17px;
+		height: 60px;
+		width: 50%;
+		border-radius: 0;
+	}
+
+	/*noinspection CssInvalidPseudoSelector*/
+	#wizard *::-webkit-input-placeholder {
+		text-indent: 0;
+	}
+	#wizard h2 {
+		margin-bottom: 1.5em;
+		font-size: 1.3em;
+		font-weight: 500;
+		text-align: center;
+		text-decoration: underline;
+		text-transform: uppercase;
+	}
+
+	#messages {
+	}
+
+	#messages .container {
+		width: 100%;
+		margin: 0;
+		border: none;
+	}
+
+	#messages .talks, #messages .list {
+		width: 100%;
+		border: none;
+		margin: 0;
+	}
+
+	#messages .list {
+	}
+
+	#messages .talks {
+		display: none;
+	}
+
+	.message {
+		width: 90%;
+		margin: 0;
+		padding: 10px 5%;
+	}
+
+	.message .msg {
+		width: 100%;
+		float: none;
+	}
+	.message .msg .text {
+		clear: none;
+		margin: 0;
+		width: 70%;
+	}
+
+	.message .photo {
+		/*display: none;*/
+		display: block;
+	}
+
+	.message .msg .status {
+		width: 42px;
+	}
+	.message .msg .author {
+		display: none;
+	}
+
+	.message .time {
+		/*display: none;*/
+	}
+	.message .time .timeago {
+		display: none;
+	}
+	.message .msg .btn-delete {
+		padding-left: 0;
+		width: 14px;
+		height: 14px;
+		display: block;
+	}
+
+	.btn-close {
+		display: block !important;
+	}
+
+	.profile-messages .message .msg {
+		/*width: 100%;*/
+		width: 84%;
+	}
+	.profile-messages .message .msg .text {
+		/*width: 100%;*/
+		width: 80%;
+	}
+
+	#messages .talk .form {
+		padding: 8px 5%;
+		margin: 0;
+		overflow: hidden;
+	}
+
+	#messages .talk form textarea {
+		height: 20px;
+		width: 91%;
+		padding: 4px 6% 4px 2%;
+	}
+
+	#messages .talk form .controls {
+		/*display: none;*/
+		width: auto;
+		height: 18px;
+	}
+
+	/*#messages .talk .btn-enter { top: 10px; right: 20px;}*/
+	#messages .talk .btn-enter {
+		background: url(img/textarea-enter-bg.png);
+		width: 30px;
+		height: 30px;
+		position: absolute;
+		top:   8px;
+		right: 8px;
+	}
+
+	#settings {
+	}
+	#settings #profile-settings-notification .wrapper label {
+		margin-right: 4%;
+	}
+
+	.main-settings {
+		width: 100%;
+		margin: 0;
+	}
+
+	.minor-settings {
+		width: 100%;
+		margin: 0;
+	}
+
+	#events .sidebar {
+		width: 100%;
+	}
+
+	#popup .popup {
+		width: 90%;
+		margin-left: 5%;
+		left: 0;
+	}
+
+	#balance {
+	}
+
+	#balance .content-main-col {
+		float: right;
+	}
+
+	#balance .content-sub-col {
+		float: left;
+	}
+
+	/* Галерея */
+	#gallery {
+	}
+	#gallery .info {
+		z-index: 5000;
+	}
+	#gallery .info .btn-like {
+		margin: 0 0 0 0;
+		position: fixed;
+		bottom: 20px;
+		right: 20px;
+	}
+	#gallery img {
+		max-width: 100%;
+		max-height: 100%;
+		z-index: 3000;
+	}
+	#gallery .gallery-control {
+		z-index: 4000;
+		position: fixed;
+	}
+	#gallery .gallery-control:hover {
+		background: transparent;
+	}
+	#gallery .Prev {
+		width: 30%;
+	}
+	#gallery .Next {
+		width: 70%;
+	}
+	#gallery .info .paginator,
+	#gallery .info .caption {
+		font-size: 12px;
+	}
+	#gallery .gallery-control-close {
+		margin-right: 15px;
+		width: 23px;
+		height: 27px;
+	}
+
+	/* Контент на странице с постами */
+	#feed .content-half-col {
+		width: 100%;
+	}
+	.feed-post .premium-ckeck {
+		font-size: 10px;
+		margin-top: 2.5%;
+		margin-right: 0;
+	}
+
+	/* =privilege */
+	.item-privilege .photo {
+		width: 100%;
+	}
+	.item-privilege .type {
+		text-align: center;
+	}
+	.item-privilege .info {
+		float: none;
+		width: 95%;
+	}
+	.content-main-privilege {
+		 width: auto;
+		margin: 0 auto;
+	}
+	/* =/privilege */
+
+	/* =settings */
+	#settings #profile-settings-dating .prop-checkbox {
+		margin-bottom: 30px;
+	}
+	#settings #profile-settings-password label {
+		width: 100%;
+		text-align: left;
+	}
+	#settings #profile-settings-password .wrapper input[type=password] {
+		width: 90%;
+	}
+	/* =/settings */
+}
+
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+
+    .hidden-tablet{ display: none;}
+
+    .container{ width: 96%; left: 0; margin: 0 2%;}
+
+    .content-left-col{width: 40%; float: left; }
+    .content-right-col{ width: 58%; float: right; margin: 0;}
+
+    .content-main-col{width: 58%; float: left; }
+    .content-sub-col{ width: 40%; float: right; margin: 0;}
+
+    .content-block-half{ width: 50%;}
+
+    .profile-info-main .info{ height: auto; }
+
+    #search{}
+
+
+    #messages{}
+        #messages .container{ height: 100%; width: 100%; margin: 0;}
+
+
+    #settings{}
+    .main-settings{ width: 58%; margin: 0; }
+    .minor-settings{ width: 40%; margin: 0;}
+
+}
+
+/* =tipsy */
+.tipsy { font-size: 10px; position: absolute; padding: 5px; z-index: 100000; }
+  .tipsy-inner { background-color: #181F25; color: #FFF; max-width: 200px; padding: 5px 8px 4px 8px; text-align: center; }
+
+  /* Rounded corners */
+  .tipsy-inner { border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+
+  /* Uncomment for shadow */
+  /*.tipsy-inner { box-shadow: 0 0 5px #181F25000; -webkit-box-shadow: 0 0 5px #181F25000; -moz-box-shadow: 0 0 5px #181F25000; }*/
+
+  .tipsy-arrow { position: absolute; width: 0; height: 0; line-height: 0; border: 5px dashed #181F25; }
+
+  /* Rules to colour arrows */
+  .tipsy-arrow-n { border-bottom-color: #181F25; }
+  .tipsy-arrow-s { border-top-color: #181F25; }
+  .tipsy-arrow-e { border-left-color: #181F25; }
+  .tipsy-arrow-w { border-right-color: #181F25; }
+
+        .tipsy-n .tipsy-arrow { top: 0; left: 50%; margin-left: -5px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent; }
+    .tipsy-nw .tipsy-arrow { top: 0; left: 10px; border-bottom-style: solid; border-top: none; border-left-color: transparent; border-right-color: transparent;}
+    .tipsy-ne .tipsy-arrow { top: 0; right: 10px; border-bottom-style: solid; border-top: none;  border-left-color: transparent; border-right-color: transparent;}
+  .tipsy-s .tipsy-arrow { bottom: 0; left: 50%; margin-left: -5px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+    .tipsy-sw .tipsy-arrow { bottom: 0; left: 10px; border-top-style: solid; border-bottom: none;  border-left-color: transparent; border-right-color: transparent; }
+    .tipsy-se .tipsy-arrow { bottom: 0; right: 10px; border-top-style: solid; border-bottom: none; border-left-color: transparent; border-right-color: transparent; }
+  .tipsy-e .tipsy-arrow { right: 0; top: 50%; margin-top: -5px; border-left-style: solid; border-right: none; border-top-color: transparent; border-bottom-color: transparent; }
+  .tipsy-w .tipsy-arrow { left: 0; top: 50%; margin-top: -5px; border-right-style: solid; border-left: none; border-top-color: transparent; border-bottom-color: transparent; }
+/* =/tipsy */

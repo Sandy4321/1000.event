@@ -1,0 +1,24 @@
+<?php
+
+// sms
+
+$this->headScript()->appendFile('/js_admyn/admyn/templates_msg.js');
+
+$data = $this->vData;
+#Sas_Debug::dump($data);
+
+?>
+
+<h1>Шаблоны SMS</h1>
+<!--<h2>Кол-во активных пользователей (<span id="CntNewUser">--><?//= $this->vCntData?><!--</span>)</h2>-->
+
+<?php
+if(is_array($data)) {
+	foreach($data as $item)
+	{
+		echo '<div  id="ItemTpl_'.  $item['id'] . '">';
+		echo $this->partial('templates/sms-item.phtml', array('item'=>$item));
+		echo '<hr></div>';
+	}
+}
+?>

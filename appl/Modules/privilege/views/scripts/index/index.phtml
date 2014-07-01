@@ -1,0 +1,58 @@
+<?
+$myStatus = Models_User_Model::getMyCurrentStatus();
+$myCard = Models_User_Model::getMyClubCard();
+?>
+<div class="container" id="privilege">
+    <h1 class="page-title">Привилегии</h1>
+	<div class="container">
+		<div class="privilege-container">
+			<? if(!empty($this->vItems)) { ?>
+				<? foreach ($this->vItems as $item) :
+					// Стандартная ссылка = доступ = all
+					$link = $this->url(array('module'=>'user', 'controller'=>'privilege', 'action'=>'view', 'id'=>$item['id']), null, true);
+					$access = true; // Всегда разрешаем
+					$accessMsg = $this->t('Подробнее о привилегии');
+
+					// смотрим права доступа
+					if(!$myStatus || is_null($myStatus) || $myStatus == false) {
+						$access = false;
+						$accessMsg = $this->t('Привилегия доступна только Членам клуба.');
+						$link = $this->url(array('module'=>'user', 'controller'=>'register', 'action'=>'index'), null, true);
+					} else {
+						if($item['access_level'] == 'club') {
+							// проверяем что пользователь член клуба
+							if($myStatus < 70) {
+								$access = false;
+								$accessMsg = $this->t('Привилегия доступна только Членам клуба.');
+								$link = $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'index'), null, true);
+							}
+						} elseif ($item['access_level'] == 'card') {
+							// Проверяем КК
+							if($myCard < CURRENT_DATE) {
+								$access = false;
+								$accessMsg = $this->t('Привилегия доступна только владельцам Клубных карт.');
+								$link = $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true);
+							}
+						}
+					}
+					?>
+					<div class="item-privilege" id="privilege<?=$item['id']?>">
+						<a href="<?= $link;?>" class="photo">
+							<img src="<?= $item['img'];?>">
+						</a>
+						<div class="info">
+							<span class="type"><?= $item['cat_name'];?></span>
+							<h1><a href="<?= $link;?>" class="name"><?= $item['title'];?></a></h1>
+							<div class="anons"><?= $item['anons'];?></div>
+							<p>
+								<a href="<?= $link?>"><?= ($access) ? $accessMsg : $accessMsg;?></a>
+							</p>
+						</div>
+					</div>
+				<? endforeach; ?>
+			<? } else { ?>
+				<h1><?= $this->t('Нет привилегий');?></h1>
+			<? } ?>
+		</div>
+	</div>
+</div>

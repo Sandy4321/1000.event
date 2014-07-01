@@ -1,0 +1,76 @@
+<?
+/*
+$comment = array(9) {
+  ["id"] => string(2) "55"
+  ["event_id"] => string(2) "25"
+  ["user_id"] => string(4) "5385"
+  ["comment_text"] => string(36) "А где купить билеты?"
+  ["date_create"] => string(19) "2014-04-09 12:49:15"
+  ["first_name"] => string(14) "Олег(Oleg)"
+  ["uid"] => string(8) "H5J3WS8f"
+  ["avatar"] => string(40) "/img/people/male/1980/5385/thumbnail.jpg"
+  ["cnt_like"] => string(1) "0"
+}
+*/
+?>
+<div class="feed">
+	<div class="content-block" id="event-comment-list">
+		<? foreach($this->vEventComment as $comment) :
+		if($this->myProfile['id'] == $comment['user_id']) {
+			$url_profile = $this->url(array('module'=>'user', 'controller'=>'profile'), null, true);
+		} else {
+			$url_profile = ($this->myProfile['club_card_dt'] >= CURRENT_DATE) ? $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$comment['uid']), null, true) : $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true);
+		}
+		$url_title = ($this->myProfile['club_card_dt'] >= CURRENT_DATE) ? $comment['first_name'] : $this->t('Просмотр профиля доступен только для владельцев клубных карт.');
+		?>
+		<div class="post">
+			<div class="data">
+				<div class="author">
+					<a href="<?= $url_profile?>" class="photo" title="<?= $url_title?>"><img src="<?= $comment['avatar']?>"></a>
+					<a href="<?= $url_profile?>" class="name" title="<?= $url_title?>"><?= $comment['first_name']?></a>
+					<span class="time">
+						<span class="timeago" title="<?= date_format(new DateTime($comment['date_create']), 'c');?>"></span>
+					</span>
+				</div>
+				<div class="text"><?= $comment['comment_text']?></div>
+			</div>
+			<div class="post-bottom">
+				<div class="controls">
+					<?
+					# LIKE
+					# Формирование вывода лайков см. /library/Sas/View/Helper/Like.php
+					# Не забываем подключать js файл поддержки: /js/like.js
+					$likeMy = array(
+						'id'     => $this->myProfile['id'],
+						'card'   => $this->myProfile['club_card_dt'],
+						'status' => $this->myProfile['current_status'],
+					);
+					$likeData = array(
+						'dataUserId' => $comment['user_id'],
+						'dataId'     => $comment['id'],
+						'ILikeKey'   => (isset($this->vILikeComment[$comment['id']])) ? 1 : null,
+						'cntLike'    => $comment['cnt_like'],
+					);
+					$likeText = array(
+						'like'   => $this->t('Нравится'),
+						'likeMe' => $this->t('Вам нравится'),
+					);
+					$likeTitle = array(
+						'likeNo'           => $this->t('Вы не можете лайкнуть свой комментарий.'),
+						'likeClubOnly'     => $this->t('Только члены Клуба могут лайкнуть комментарий.'),
+						'listOpen'         => $this->t('Открыть список людей которым нравится Ваш комментарий.'),
+						'listOpenCardOnly' => $this->t('Чтобы посмотреть, кому нравится Ваш комментарий, Вам необходима Клубная карта.'),
+					);
+					$likeJs = array(
+						'module' => 'event', // Модуль обработчика
+						'key'    => 'comment',  // Название КЛЮЧА для js функций like() и likeOpenPopupUsers()
+					);
+					echo $this->Like($likeMy, $likeData, $likeText, $likeTitle, $likeJs);
+					# END LIKE
+					?>
+				</div>
+			</div>
+		</div>
+		<? endforeach; ?>
+	</div>
+</div>

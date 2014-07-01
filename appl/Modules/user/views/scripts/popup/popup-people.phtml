@@ -1,0 +1,15 @@
+<div id="popup" class="popup" onclick="popup_close()">
+	<div class="cover"></div>
+	<div class="popup-body" id="popup-people">
+		<div class="title">
+			<h2><?= $this->vTitle;?> (<? if(!empty($this->vTitleCnt)) echo $this->vTitleCnt; ?>)</h2>
+			<button class="btn btn-ico btn-ico-delete btn-close" title="<?= $this->t('Закрыть');?>"></button>
+		</div>
+		<div class="data">
+		<? foreach($this->vData as $item) {
+			echo '<a href="'.$item['url'].'" class="user" title="'.$item['title'].'"><img src="'.$item['avatar'].'"></a>';
+		}
+		?>
+		</div>
+	</div>
+</div>

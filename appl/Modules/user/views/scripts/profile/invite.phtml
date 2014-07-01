@@ -1,0 +1,46 @@
+<?
+$this->headTitle($this->t('Пригласить друзей'));
+$this->headTitle($this->t('Мой профиль'));
+?>
+<div class="content" id="invite">
+	<div class="container">
+		<div class="content-blocks-container" >
+			<div class="content-main-col">
+				<div class="content-block invite-block">
+					<?php if($this->vSendOk == true) :?>
+					<script>
+						$(document).ready(function() {
+							otlAlert('<?= $this->t('Письмо с приглашением успешно отправлено')?>');
+						});
+					</script>
+					<?php endif;?>
+					<div class="about">
+						<p><?= $this->t('Пригласите трех друзей в Клуб OnTheList и получите промо-код для Uber на 1000р. и месяц клубной карты OnTheList в подарок!');?></p>
+						<p><?= $this->t('При этом все Ваши приглашенные друзья СРАЗУ после регистрации на сайте получат промо-код на бесплатную поездку на Uber с лимитом 1000р.');?></p>
+						<p><?= $this->t('Ваши друзья считаются «приглашенными» после регистрации в Клубе и одобрения администратором.');?></p>
+					</div>
+					<form class="form-horizontal" action="<?= $this->url()?>">
+						<select name="email" class="input-block-level">
+							<option value="1"><?= $this->myProfile['email']?></option>
+							<option value="2">welcome@onthelist.ru</option>
+						</select>
+						<input name="emailTo" type="text" placeholder="<?= $this->t('Email получателя');?>" value="">
+						<div class="inputStyle"><?=  $this->vTextMail?></div>
+						
+						<input type="submit" class="btn btn-dark btn-med" value="<?= $this->t('Отправить');?>">
+					</form>
+				</div>
+			</div>
+			<div class="content-sub-col">
+				<div class="content-block invided-block">
+					<div class="header">
+						<h3><?= $this->t('Приглашено друзей');?>: <?= count($this->vFriend)?></h3>
+					</div>
+					<?php foreach($this->vFriend as $user) : ?>
+						<a href="<?= $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$user['uid']), null, true);?>" class="user"><img src="<?= $user['img']?>thumbnail.jpg" alt="<?= $user['first_name']?>" title="<?= $user['first_name']?>"></a>
+					<?php endforeach; ?>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

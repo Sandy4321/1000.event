@@ -1,0 +1,37 @@
+<div id="header">
+	<div class="container">
+		<a href="<?= $this->url(array(), null, true); ?>" class="header-logo"></a>
+		<div id="langSelect" class="hidden-mobile-tablet">
+			<img class="lang-flags" src="/img/flags/<?= $this->t()->getLocale()?>.png">
+			<select id="language" onchange="location.href=this.value">
+				<option <?php if ($this->t()->getLocale() == 'ru') echo 'selected'; ?> value="<?= $this->url(array('lang' => 'ru')) ?>">РУССКИЙ</option>
+				<option <?php if ($this->t()->getLocale() == 'en') echo 'selected'; ?> value="<?= $this->url(array('lang' => 'en')) ?>">ENGLISH</option>
+			</select>
+		</div>
+		<ul class="header-nav header-main-nav hidden-mobile-tablet">
+			<li><a href="<?= $this->url(array(), null, true); ?>"><?= $this->t('Главная'); ?></a></li>
+			<li><a href="<?= $this->url(array('module' => 'news',      'controller' => 'index',   'action' => 'index'), null, true); ?>"><?= $this->t('Новости'); ?></a></li>
+			<li><a href="<?= $this->url(array('module' => 'privilege', 'controller'=>'index',     'action'=>'index'),   null, true); ?>"><?= $this->t('Привилегии');?></a></li>
+			<li><a href="<?= $this->url(array('module' => 'about',     'controller' => 'contact', 'action' => 'index'), null, true); ?>"><?= $this->t('Контакты'); ?></a></li>
+			<li><a href="<?= $this->url(array('module' => 'about',     'controller' => 'index',   'action' => 'faq'),   null, true); ?>">FAQ</a></li>
+			<li>
+				<? if (!Models_User_Model::getMyId()) { ?>
+				<a href="<?= $this->url(array('module' => 'user',  'controller' => 'register', 'action' => 'index'), null, true); ?>"><?= $this->t('Регистрация'); ?></a></li>
+				<? } ?>
+			<li>
+				<? if (!Models_User_Model::getMyId()) { ?>
+				<a href="<?= $this->url(array('module' => 'user',  'controller' => 'login',    'action' => 'index'), null, true); ?>"><?= $this->t('Вход'); ?></a>
+				<? } else { ?>
+				<a href="<?= $this->url(array('module' => 'user', 'controller' => 'dashboard'), null, true); ?>">
+					<img class="profile-avatar" src="<?= Models_User_Model::getAvatarUser(); ?>">
+				</a>
+				<? } ?>
+			</li>
+		</ul>
+		<div class="header-nav header-auth-nav hidden-desktop">
+			<a href="#" class="header-user">
+				<button class="mobile-nav-main hidden-desktop"></button>
+			</a>
+		</div>
+	</div>
+</div>

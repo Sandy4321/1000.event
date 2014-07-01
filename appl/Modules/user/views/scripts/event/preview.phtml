@@ -1,0 +1,134 @@
+<?
+$myID = Models_User_Model::getMyId();
+$myStatus = Models_User_Model::getMyCurrentStatus();
+$myCard = $this->vMyProfile['club_card_dt'];
+
+$event = $this->vEvent;
+$dateStart = new DateTime($event['date_start']);
+#Sas_Debug::dump($event);
+
+$eventLink = ($myStatus >= 70) ? $this->url(array('module'=>'user', 'controller'=>'event', 'action'=>'view', 'id'=>$event['id']), null, true) : $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'settings'), null, true);
+?>
+
+<div class="item-event">
+	<div class="date">
+		<span class="month"><?= $dateStart->format('M')?></span>
+		<span class="num"><?= $dateStart->format('d')?></span>
+	</div>
+	<a href="<?= $eventLink;?>" class="photo">
+		<img src="<?= (!is_null($event['intro_img'])) ? $event['intro'] : 'http://www.placehold.it/400x300/eee/aaa&text=no-image';?>">
+	</a>
+	<div class="info">
+		<div class="type"><?= $event['cat_name']?></div>
+		<a href="<?= $eventLink;?>" class="name"><?= $event['title']?><? if($event['otl'] == 'yes') echo ' <div class="btn premium"></div>';?></a>
+		<div class="place-time"><?= $event['point_name']?></div>
+		<div class="price"><?= $this->t('Начало');?>: <b><?= $dateStart->format('H:i')?></b> <?= $this->t('Вход');?>: <? if ($event['price'] == 0 || is_null($event['price'])) {
+				echo $this->t('Бесплатно');
+			} else {
+				echo number_format($event['price'], 0, ',', ' ').' ';
+				switch($event['money_type']) {
+					case 'rub': echo $this->t('руб.');break;
+					case 'usd': echo 'USD';break;
+					case 'karat': echo $this->t('карат');break;
+				}
+			} ?></div>
+		<div id="EventsUsers_<?= $event['id']?>" class="participants hidden-mobile"><? if(time() >= strtotime($event['date_start']) - (60 * 30)) {
+				if(!empty($event['checkin_users'])) {
+					$i=1;
+					foreach($event['checkin_users'] as $user) {
+						if($myID != $user['id']) {
+							if($myCard >= CURRENT_DATE) {
+								echo '<a href="'. $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$user['uid']),null, true). '">';
+							} else {
+								echo '<a href="javascript:void(0);" onclick="goBuyCard(\''.$this->t('Переход на профиль доступен только владельцам Клубных карт.').'\')">';
+							}
+						}
+						if($myID == $user['id']) echo '<a href="'. $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'index'),null, true). '">';
+
+						echo '<img ';
+						if($myID == $user['id']) echo 'id="MyICheckInAvatar'.$event['id'].'"';
+						echo ' class="userAvatarSmall';
+						if($i==5) echo ' endAvatar'; // Отмечаем последнюю 5-ую аватарку для удаления если понадобится
+						if($myStatus < 70) echo ' hidePhoto';
+						echo '" src="'.$user['avatar'].'" title="'.$user['first_name'].'">';
+
+						echo '</a>';
+						//if($myID != $user['id'] && $myCard >= CURRENT_DATE) echo '</a>';
+						$i++;
+					}
+				}
+			} else {
+				if(!empty($event['events_users'])) {
+					$i=1;
+					foreach($event['events_users'] as $user) {
+						if($myID != $user['id']) {
+							if($myCard >= CURRENT_DATE) {
+								echo '<a href="'. $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$user['uid']),null, true). '">';
+							} else {
+								if($myStatus >= 70) {
+									echo '<a href="javascript:void(0);" onclick="goBuyCard(\''.$this->t('Переход на профиль доступен только владельцам Клубных карт.').'\')">';
+								} else {
+									echo '<a href="javascript:void(0);" onclick="goWizard(\''.$this->t('Переход на профиль доступен только членам Клуба.').'\', '.$myStatus.')">';
+								}
+							}
+						}
+						if($myID == $user['id']) echo '<a id="MyIGoAvatar'.$event['id'].'" href="'. $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'index'),null, true). '">';
+
+						echo '<img ';
+						//if($myID == $user['id']) echo 'id="MyIGoAvatar'.$event['id'].'"';
+						echo ' class="userAvatarSmall';
+						if($i==5) echo ' endAvatar'; // Отмечаем последнюю 5-ую аватарку для удаления если понадобится
+						if($myStatus < 70) echo ' hidePhoto';
+						echo '" src="'.$user['avatar'].'" title="'.$user['first_name'].'">';
+
+						//if($myID != $user['id']) echo '</a>';
+						echo '</a>';
+						$i++;
+					}
+				}
+			}?>
+		</div>
+		<div class="controls hidden-mobile">
+			<? if(time() >= strtotime($event['date_start']) - (60 * 30)) { ?>
+				<button id="iCheckInYes<?= $event['id']?>" class="btn btn-dark btn-medium btn-respond btnGo btnGoYes <? if($this->isICheckIn) echo 'hide'?>" <? if($myStatus >= 70) echo 'onclick="eventCheckInYes(this)"';?> data-myId="<?= $myID?>" data-eventId="<?= $event['id']?>"><?= $this->t('Отметиться');?></button>
+				<button id="iCheckInNo<?= $event['id']?>" class="btn btn-light btn-medium btn-respond btnGo btnGoNo <? if(!$this->isICheckIn) echo 'hide'?>" <? if($myStatus >= 70) echo 'onclick="eventCheckInNo(this)"';?> data-myId="<?= $myID?>" data-eventId="<?= $event['id']?>"><?=  $this->t('Меня здесь нет');?></button>
+			<? } else { ?>
+				<button id="iGoYes<?= $event['id']?>" class="btn btn-dark btn-medium btn-respond btnGo btnGoYes <? if($this->isIgoEvent) echo 'hide'?>" <? if($myStatus >= 70) echo 'onclick="eventIGoYes(this)"';?> data-myId="<?= $myID?>" data-eventId="<?= $event['id']?>"><?= $this->t('Пойти');?></button>
+				<button id="iGoNo<?= $event['id']?>" class="btn btn-light btn-medium btn-respond btnGo btnGoNo <? if(!$this->isIgoEvent) echo 'hide'?>" <? if($myStatus >= 70) echo 'onclick="eventIGoNo(this)"';?> data-myId="<?= $myID?>" data-eventId="<?= $event['id']?>"><?= $this->t('Я иду');?></button>
+			<? } ?>
+			<a href="<?= $eventLink;?>/#event-comment-list" class="btn-comments"><span class="btn-ico btn-ico-comments"></span><b><?= $event['cnt_comment']?></b></a>
+			<?
+			# LIKE
+			# Формирование вывода лайков см. /library/Sas/View/Helper/Like.php
+			# Не забываем подключать js файл поддержки: /js/like.js
+			$likeMy = array(
+				'id'     => $myID,
+				'card'   => $myCard,
+				'status' => $myStatus,
+			);
+			$likeData = array(
+				'dataUserId' => $event['user_id'],
+				'dataId'     => $event['id'],
+				'ILikeKey'   => (!is_null($event['myLikeYes'])) ? 1 : null,
+				'cntLike'    => $event['cnt_like'],
+			);
+			$likeText = array(
+				#'like'   => $this->t('Нравится'),
+				#'likeMe' => $this->t('Вам нравится'),
+			);
+			$likeTitle = array(
+				'likeNo'           => $this->t('Вы не можете лайкнуть своё мероприятие.'),
+				'likeClubOnly'     => $this->t('Только члены Клуба могут лайкнуть мероприятие.'),
+				'listOpen'         => $this->t('Открыть список людей лайкнувших Ваше мероприятие.'),
+				'listOpenCardOnly' => $this->t('Только владельцы Клубных карт могут открыть список людей лайкнувших Ваше мероприятие.'),
+			);
+			$likeJs = array(
+				'module' => 'event', // Модуль обработчика
+				'key'    => 'event',  // Название КЛЮЧА для js функций like() и likeOpenPopupUsers()
+			);
+			echo $this->Like($likeMy, $likeData, $likeText, $likeTitle, $likeJs);
+			# END LIKE
+			?>
+		</div>
+	</div>
+</div>

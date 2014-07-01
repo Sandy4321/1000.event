@@ -1,0 +1,54 @@
+<?php $this->doctype(Zend_View_Helper_Doctype::XHTML1_STRICT);?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?= $this->translate()->getLocale()?>" lang="<?= $this->translate()->getLocale()?>" dir="ltr">
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<?php
+	$this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0');
+	echo $this->headMeta();
+	?>
+
+	<?= $this->headTitle('OnTheList');?>
+
+	<!-- Styles -->
+	<?php
+	echo $this->headLink(
+		array(
+			'rel' => 'shortcut icon',
+			'type' => 'image/vnd.microsoft.icon',
+			'href' => '/img/favicon.ico')
+		)
+		->prependStylesheet('/css_admyn/admyn/style.css')
+		->prependStylesheet('/css_admyn/bootstrap/bootstrap-responsive.css')
+		->prependStylesheet('/css_admyn/bootstrap/bootstrap.css');
+	?>
+
+	<!-- Script -->
+	<?php
+	echo $this->headScript()->prependFile('/js/html5.js', 'text/javascript', array('conditional' => 'lt IE 9',))
+		->prependFile('/js_admyn/admyn/all.js')
+		//->prependFile('/js/bootstrap-typeahead.js')
+		->prependFile('/js_admyn/typeahead.js')
+		->prependFile('/js_admyn/hogan-2.0.0.js')
+		->prependFile('/js_admyn/bootstrap/bootstrap-collapse.js')
+		->prependFile('/js_admyn/bootstrap/bootstrap.min.js')
+		->prependFile('/js_admyn/jquery-1.9.1.js')
+		//->prependFile('/js/jquery-1.7.2.min.js')
+		->appendFile('/js_admyn/jquery.form.js');
+	?>
+</head>
+<body id="Body">
+<?= $this->render('navbar.phtml')?>
+<div class="container">
+	<div class="row-fluid">
+		<div class="content offset2 span8<?if (isset($_SESSION['admin']['aut']) && $_SESSION['admin']['aut'] === true) echo ' shadowBoxSmall borderRadiusSmall" style="background-color: #666666"'?>">
+			<!--Body content-->
+			<?= $this->layout()->content;?>
+		</div>
+	</div>
+</div>
+<?if (isset($_SESSION['admin']['aut']) && $_SESSION['admin']['aut'] === true) : ?>
+	<div id="MsgStack"></div>
+<? endif; ?>
+</body>
+</html>

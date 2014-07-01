@@ -1,0 +1,31 @@
+<?
+$profile = $this->myProfile;
+?>
+<div class="content" id="phone-book">
+	<div class="container">
+		<div class="content-blocks-container">
+		<?
+		if(!empty($this->vData)) {
+			foreach($this->vData as $user) :
+				?>
+				<div class="content-block phone-book">
+					<div class="user-avatar">
+						<a href="<?= $user['url_profile']?>"><img class="photo" src="<?= $user['avatar']?>"></a>
+					</div>
+					<div class="user-info">
+						<span class="user-name"><a href="<?= $user['url_profile']?>"><?= $user['first_name']?></a></span>
+						<span class="phone-number"><?= $user['phone']?></span>
+					</div>
+				</div>
+			<?
+			endforeach;
+		} else {
+			?>
+			<div class="content-block phone-book">
+				<h1><?= $this->t('В телефонной книге сейчас нет записей ');?></h1>
+				<p><?= $this->t('После успешного обмена телефонными номерами, при наличии действующей Клубной карты, Вы всегда сможете найти здесь все телефонные номера.');?></p>
+			</div>
+		<? } ?>
+		</div>
+	</div>
+</div>

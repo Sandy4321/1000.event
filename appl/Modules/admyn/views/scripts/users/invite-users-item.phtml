@@ -1,0 +1,33 @@
+<?php
+
+$item = $this->item;
+
+$dateSelect = new DateTime($item['selected_datetime']);
+
+?>
+<div class="row-fluid">
+	<div class="span4 text-center">
+		<h3><a href="/admyn/users/view-profile/id/<?= $item['id1']?>"><?= $item['firstName1']?> <?= $item['lastName1']?></a></h3>
+		<h4><?= $item['userPhone1']?></h4>
+		<small><?= $item['userEmail1']?></small>
+	</div>
+	<div class="span4 text-center">
+		<?php
+		if(date_format($dateSelect, 'Y-m-d') == date('Y-m-d')) $cl = 'red';
+		if(date_format($dateSelect, 'Y-m-d') >= date('Y-m-d')) $cl = 'green';
+		?>
+		<h3 class="<?= $cl?>"><?= date_format($dateSelect, 'd.m.Y H:i')?></h3>
+		<h5><?= $item['placeName']?></h5>
+		<p>
+			м. <?= $item['placeMetro']?><br>
+			<?= $item['placeAddress']?>
+		</p>
+		<small><?= $item['placePhone']?></small><br>
+		<small><a href="<?= $item['placeSite']?>"><?= $item['placeSite']?></a></small>
+	</div>
+	<div class="span4 text-center">
+		<h3><a href="/admyn/users/view-profile/id/<?= $item['id2']?>"><?= $item['firstName2']?> <?= $item['lastName2']?></a></h3>
+		<h4><?= $item['userPhone2']?></h4>
+		<small><?= $item['userEmail2']?></small>
+	</div>
+</div>

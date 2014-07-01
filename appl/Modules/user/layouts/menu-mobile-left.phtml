@@ -1,0 +1,22 @@
+<a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'index'), null, true);?>" class="user">
+	<div class="photo"><img src="<? echo Models_User_Model::getAvatarUser(); if($this->startController == 'profile' && $this->startAction == 'settings') {echo '?'.time();}?>"></div>
+	<span class="name"><?= Models_User_Model::getMyFirstName();?></span>
+</a>
+<ul>
+	<li class="<?= $this->checkActive('user/dashboard', 'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'dashboard', 'action'=>'index'), null, true);?>"><span class="ico ico-home"></span> <?= $this->t('Главная');?></a></li>
+	<li class="<?= $this->checkActive('user/search',    'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'search',    'action'=>'index'), null, true);?>"><span class="ico ico-search"></span> <?= $this->t('Поиск');?></a></li>
+	<li class="<?= $this->checkActive('user/messages',  'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'messages',  'action'=>'index'), null, true);?>"><span class="ico ico-messages"></span><div id="BubbleCountMessagesMobileLeft" class="hide"></div> <?= $this->t('Общение');?></a></li>
+	<li class="<?= $this->checkActive('user/event',     'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'event',     'action'=>'index'), null, true);?>"><span class="ico ico-events"></span><div id="BubbleCountEventsMobileLeft" class="hide"></div> <?= $this->t('Афиша');?></a></li>
+	<li class="<?= $this->checkActive('user/flirt',     'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'flirt',     'action'=>'index'), null, true);?>"><span class="ico ico-flirt"></span><div id="BubbleCountFlirtMobileLeft" class="bubble-count<? if(!$this->vCheckBadgeFlirt) echo ' hide';?>""></div> <?= $this->t('Флирт');?></a></li>
+	<li class="<?= $this->checkActive('user/posts',     'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'posts',     'action'=>'index'), null, true);?>"><span class="ico ico-posts"></span><div id="BubbleCountPostsMobileLeft" class="hide"></div> <?= $this->t('Лента');?></a></li>
+</ul>
+<ul class="additional">
+	<li class="<?= $this->checkActive('user/profile/privilege',  'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'privilege', 'action'=>'index'),      null, true);?>"><span class="ico ico-privilege"></span> <?= $this->t('Привилегии');?></a></li>
+	<li class="<?= $this->checkActive('user/profile/favorites',  'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'favorites'),  null, true);?>"><span class="ico ico-favorites"></span> <?= $this->t('Избранное');?></a></li>
+	<li class="<?= $this->checkActive('user/profile/blacklist',  'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'blacklist'),  null, true);?>"><span class="ico ico-blocked"></span> <?= $this->t('Заблокированные');?></a></li>
+	<li class="<?= $this->checkActive('user/profile/phone-book', 'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'phone-book'), null, true);?>"><span class="ico ico-phone-book"></span> <?= $this->t('Телефонная книга');?></a></li>
+	<li class="<?= $this->checkActive('user/profile/invite',    'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',    'action'=>'invite'),     null, true);?>"><span class="ico ico-invite"></span> <?= $this->t('Пригласить');?></a></li>
+	<li class="<?= $this->checkActive('user/profile/balance',   'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',    'action'=>'balance'),    null, true);?>"><span class="ico ico-balance"></span> <?= $this->t('Счет');?></a></li>
+	<li class="<?= $this->checkActive('user/profile/settings',  'active');?>"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',    'action'=>'settings'),   null, true);?>"><span class="ico ico-settings"></span> <?= $this->t('Настройки');?></a></li>
+	<li class="quit"><a href="<?= $this->url(array('module'=>'user', 'controller'=>'login', 'action'=>'quit'), null, true);?>"><?= $this->t('Выход');?></a></li>
+</ul>

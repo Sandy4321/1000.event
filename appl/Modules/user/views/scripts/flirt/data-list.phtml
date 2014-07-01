@@ -1,0 +1,20 @@
+<?
+$cnt = 0;
+foreach($this->vData as $partner) {
+	echo '<div class="photo flirtBlock" data-id="'.$partner['id'].'" id="flirt-block-'.$partner['id'].'"';
+	if($cnt != 0) echo ' style="display: none;"';
+	echo '>';
+	echo '<img class="flirtBigAvatar" src="'.$partner['avatar'].'">';
+	echo '<div class="info hide"><span class="username"></span><span class="telephone"></span></div>';
+	echo '</div>';
+
+	// Вывод управления
+	echo '<div class="controls" id="flirt-controls-'.$partner['id'].'"';
+	if($cnt != 0) echo ' style="display: none;"';
+	echo '>'.
+		'<button class="btn btn-next" onclick="flirt(this, \'no\')">'.$this->t('Далее').'</button>'.
+		'<button class="btn btn-flirt" onclick="flirt(this, \'yes\')"><span class="ico ico-flirt"></span>'.$this->t('Флирт').'</button>'.
+		'</div>';
+
+	$cnt ++;
+} // end foreach

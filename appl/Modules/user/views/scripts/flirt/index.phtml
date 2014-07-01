@@ -1,0 +1,68 @@
+<?php
+#$this->headLink()->appendStylesheet('/css/games-flirt.css');
+$this->inlineScript()->appendFile('/js/games-flirt.js');
+
+$title = $this->t('Игра Флирт');
+$this->headTitle($title);
+
+$myId = $this->myProfile;
+$data = $this->vData;
+#Sas_Debug::dump($data);
+
+?>
+<div class="content" id="flirt">
+	<div class="container">
+		<div class="content-blocks-container">
+			<!-- Левая-->
+			<div class="content-main-col">
+				<!--Фото+навигация-->
+				<div class="content-block flirt-main-nav">
+					<div class="data" id="FlirtData">
+						<?= $this->render('flirt/data-list.phtml');?>
+					</div>
+				</div>
+			</div>
+			<!-- Правая колонка-->
+			<div class="content-sub-col">
+				<!--Просмотрено-флирт-я-понравился -->
+				<div class="content-block nav-box" style="border-bottom:0px">
+					<div class="header">
+						<h3><?= $this->t('Просмотрено');?>:</h3>
+						<a href="javascript:void(0);" class="all flirt-cnt-all"><?= ($this->vCntYes + $this->vCntNo);?></a>
+					</div>
+					<div class="header">
+						<h3><?= $this->t('Флирт');?>:</h3>
+						<a href="javascript:void(0);" class="all flirt-cnt-yes"><?= $this->vCntYes;?></a>
+					</div>
+					<div class="header">
+						<h3><?= $this->t('Совпадения');?>:</h3>
+						<a href="javascript:void(0);" class="all flirt-cnt-match"><?= $this->vCntMatch;?></a>
+					</div>
+					<div class="header hidden-mobile">
+						<h3><?= ($this->myProfile['sex'] == 'male') ? $this->t('Я понравился') : $this->t('Я понравилась');?>:</h3>
+						<a href="javascript:void(0);" class="all"><?= $this->vCntILiked;?></a>
+					</div>
+				</div>
+				<?
+				// Совпадения
+				if(!is_null($this->vSympathyAll)) {
+					echo $this->render('flirt/sympathy-list.phtml');
+				}
+				?>
+				<!--Правила-->
+				<div class="content-block ">
+					<div class="header">
+						<h3><?= $this->t('Правила игры');?></h3>
+					</div>
+					<div class="data">
+						<p><?= $this->t('Если Вы ставите отметку «Флирт», то система запоминает Ваш выбор, но не показывает его другому игроку.');?></p>
+						<br>
+						<p><?= $this->t('При совпадении симпатий система автоматически обменивает вас телефонными номерами (поэтому играть могут только участники с подтвержденными номерами).');?></p>
+						<br>
+						<p><?= $this->t('Значок красного сердца возле меню «Флирт» появляется тогда, когда кто-то из игроков, чью фотографию Вы еще не видели, поставил Вам отметку «Флирт».');?></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

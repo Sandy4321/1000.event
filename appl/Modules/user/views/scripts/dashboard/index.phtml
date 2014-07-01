@@ -1,0 +1,110 @@
+<?
+$this->headLink()->appendStylesheet('/css/bjqs.css');
+$this->headScript()->appendFile('/js/libs/jquery.tmpl.min.js');
+$this->headScript()->appendFile('/js/libs/bjqs-1.3.min.js');
+//$this->inlineScript()->appendFile('/js/dash.js');
+?>
+<div class="content" id="dashboard">
+	<div class="container">
+		<div class="content-blocks-container">
+			<!-- Правая колонка-->
+			<div class="content-sub-col"<? if($this->myProfile['current_status'] < 70) echo ' style="display: none;"'?>>
+				<?
+				// Мои гости
+				if(!empty($this->vDashMyGuests)) {
+					echo $this->partial('dashboard/block-group.phtml',
+						array(
+							'myProfile'   => $this->myProfile,
+							'vBlockGroup' => $this->vDashMyGuests,
+							'vBlockId'    => 'my-guests',
+							'vBlockName'  => $this->t('Ваши гости')
+						));
+				}
+
+				// Новые члены клуба
+				if(!empty($this->vDashNewUsers)) {
+					echo $this->partial('dashboard/block-group.phtml',
+						array(
+							'myProfile'   => $this->myProfile,
+							'vBlockGroup' => $this->vDashNewUsers,
+							'vBlockId'    => 'new-users',
+							'vBlockName'  => $this->t('Новые члены Клуба:')
+						));
+				}
+
+				// Мои события
+				if(!is_null($this->vDashEvents)) {
+					echo $this->partial('dashboard/block-event.phtml',
+						array(
+							'myProfile'   => $this->myProfile,
+							'vBlockGroup' => $this->vDashEvents,
+							'vBlockId'    => 'i-go-events',
+							'vBlockName'  => $this->t('Мои события')
+						));
+				}
+
+				// Нравятся мои фото
+				if(!empty($this->vDashLoveMyPhoto)) {
+					echo $this->partial('dashboard/block-group.phtml',
+						array(
+							'myProfile'   => $this->myProfile,
+							'vBlockGroup' => $this->vDashLoveMyPhoto,
+							'vBlockId'    => 'love-my-photo',
+							'vBlockName'  => $this->t('Нравятся Ваши фотографии')
+						));
+				}
+
+				// Добавили меня в фавориты
+				if(!empty($this->vDashAddFavorites)) {
+					echo $this->partial('dashboard/block-group.phtml',
+						array(
+							'myProfile'   => $this->myProfile,
+							'vBlockGroup' => $this->vDashAddFavorites,
+							'vBlockId'    => 'add-favorites',
+							'vBlockName'  => $this->t('Добавили Вас в избранное')
+						));
+				}
+
+				// Именинники сегодня
+				if(!empty($this->vDashBirthday)) {
+					echo $this->partial('dashboard/block-group.phtml',
+						array(
+							'myProfile'   => $this->myProfile,
+							'vBlockGroup' => $this->vDashBirthday,
+							'vBlockId'    => 'birthday',
+							'vBlockName'  => $this->t('Именинники сегодня')
+						));
+				}
+
+				// Лучщие фото дня
+				if($this->vDashPhotoDay['male'] != false || $this->vDashPhotoDay['female'] != false) {
+					echo $this->render('dashboard/photos-day.phtml');
+				}
+
+				?>
+			</div>
+			<!-- Левая колонка -->
+			<div class="content-main-col"<? if($this->myProfile['current_status'] < 70) echo ' style="float: none; margin: auto;"'?>>
+				<?
+				// Свидания+Бизнес+Интересы
+				//echo $this->render('dashboard/match-block.phtml');
+
+				// Новости
+				echo $this->render('dashboard/news.phtml');
+
+				// Афиша
+				echo $this->render('dashboard/events.phtml');
+
+				// Поле ввода поста
+				echo $this->render('posts/add-post.phtml');
+
+				// Вывод постов
+				if(!empty($this->vPostsFavorite)) {
+					echo $this->partial('posts/post-list.phtml', array('vPosts'=>$this->vPostsFavorite, 'vILikePost'=>$this->vILikePostFavorite, 'myProfile' => $this->myProfile));
+				}
+				?>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<?php
+
+$title = $this->t('Новости');
+$this->headTitle($title);
+
+?>
+<div class="container" id="news">
+	<h1 class="page-title"><?= $title?></h1>
+	<? foreach($this->vData as $item) : ?>
+		<div class="news-item">
+			<a class="photo" href="<?= $this->url(array('module'=>'news', 'controller'=>'index', 'action'=>'show', 'id'=>$item['id']), null, true);?>"><img  src="/img/news/news-club/<?= $item['id']?>.jpg"></a>
+			<div class="article">
+				<h2><a href="<?= $this->url(array('module'=>'news', 'controller'=>'index', 'action'=>'show', 'id'=>$item['id']), null, true);?>"><?= $item['title']?></a></h2>
+
+				<div class="date"><?
+					$date = new Sas_Date($item['date_create']);
+					echo $date->getDateString();
+					?></div>
+				<span class="hidden-mobile"><?= $item['anons']?></span>
+			</div>
+		</div>		
+	<? endforeach; ?>
+</div>

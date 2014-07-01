@@ -1,0 +1,132 @@
+<?
+$this->inlineScript()->appendFile('/js/libs/jquery.autocomplete.min.js');
+$this->inlineScript()->appendFile('/js/profile.js');
+$this->inlineScript()->appendFile('/js/profile-wizard.js');
+
+$profile = $this->myProfile;
+
+// Определяем необходимость показывать блок со ссылками на соц. сети и загрузку резюме.
+$isHideSocBlock = false;
+if($profile['link_fb'] || $profile['link_vk'] || $profile['link_ln'] || file_exists($_SERVER['DOCUMENT_ROOT'].$profile['img_path'].'fileNameResume.txt')) {
+	$isHideSocBlock = true;
+}
+
+//Sas_Debug::dump($isHideSocBlock);
+
+?>
+<div class="content" id="wizard">
+	<div class="container">
+		<div class="content-blocks-container">
+			<div class="content-main-col">
+				<div class="content-block wizard-main-nav">
+					<div class="header">
+						<?
+						if($profile['current_status'] == 51) {
+							echo '<h3>'.$this->t('Ваша анкета находится на рассмотрении администратора Клуба.').'</h3>';
+						} else {
+							echo '<h3>'.$this->t('Анкета пользователя').'</h3>';
+						}
+						?>
+						<p><?= $this->t('Вы сможете общаться с другими членами Клуба после того, как Ваш профиль будет одобрен администратором.');?></p>
+						<p><?= $this->t('Пожалуйста, заполните Ваш профиль и отправьте администратору.');?></p>
+						<p><?= $this->t('Для отправки Вашей анкеты администратору заполните необходимые поля.');?></p>
+					</div>
+					<div class="data">
+						<? if(!$profile['birthday'] || !$profile['first_name'] || !$profile['last_name'] || !$profile['city_id']) : ?>
+						<dl class="controls" id="wizard-step1">
+							<h1 class="step"><?= $this->t('Шаг 1 из 2');?></h1>
+							<dt><?= $this->t('Имя')?>:</dt>
+							<dd><input id="first_name" name="first_name" value="<?= $profile['first_name']?>" type="text" placeholder="Обязательное поле"<? if($profile['first_name']) echo ' disabled="disabled"';?>>
+								<span class="helper-field"><?= $this->t('Изменить Имя в дальнейшем будет нельзя')?></span>
+							</dd>
+							<dt><?= $this->t('Фамилия')?>:</dt>
+							<dd><input id="last_name" name="last_name" value="<?= $profile['last_name']?>" type="text" placeholder="Обязательное поле"<? if($profile['last_name']) echo ' disabled="disabled"';?>>
+								<span class="helper-field"><?= $this->t('Ваша Фамилия не показывается другим членам Клуба')?></span>
+							</dd>
+							<dt><?= $this->t('Дата рождения (д.м.г)')?>:</dt>
+							<dd><? if(is_null($profile['birthday'])) { ?>
+									<?= $this->htmlFormSelect('birthday_day', array('range'=>'1-31', 'step'=>'1'), $profile['birthday_day'], 'birthday');?>
+									<?= $this->htmlFormSelect('birthday_month', array('range'=>'1-12', 'step'=>'1'), $profile['birthday_month'], 'birthday');?>
+									<?= $this->htmlFormSelect('birthday_year', array('range'=>(date('Y')-60).'-'.(date('Y')-18), 'step'=>'1'), $profile['birthday_year'], 'birthday_year');?>
+									<span class="helper-field"><?= $this->t('Дата Вашего рождения не показывается другим членам Клуба.')?></span>
+								<? } else {
+									$Date = new Sas_Date($profile['birthday']);
+									echo '<input id="birthday" type="text" class="disabled" disabled="disabled" value="'.$Date->getDay().'.'.$Date->getMonth().'.'.$Date->getYear().'">';
+								} ?>
+							</dd>
+							<dt><?= $this->t('Город')?>:</dt>
+							<dd><input data-id="<?= $profile['city_id']?>" value="<?= $profile['city_name']?>" type="text" id="profile-settings-city" placeholder="<?= $this->t('Начните вводить название города');?>" autocomplete="off" class="acInput" onkeyup="wizardCitySelect(this)">
+								<span class="helper-field"><?= $this->t('Введите название города на русском языке')?></span>
+							</dd>
+							<dt>&nbsp;</dt>
+							<dd class="text-center-mobile"><button id="wizardBtnStep" class="btn btn-dark" onclick="return wizardStep1('<?= $this->t('Заполните все поля');?>')"><?= $this->t('Сохранить и продолжить')?></button></dd>
+						</dl>
+						<? endif; // Конец первого шага ?>
+						<dl class="controls" id="wizard-step2" <? if(is_null($profile['birthday']) || is_null($profile['first_name']) || is_null($profile['last_name']) || is_null($profile['city_id'])) echo 'style="display: none;"';?>>
+							<h1 class="step"><?= $this->t('Шаг 2 из 2');?></h1>
+							<dt><?= $this->t('Аватарка профиля')?>:</dt>
+							<dd>
+							<form action="<?= $this->url(array('module'=>'api', 'controller'=>'user', 'action'=>'avatar-upload'), null, true);?>" id="wizard-form-photo-avatar" method="post" enctype="multipart/form-data">
+								<div class="photo-bar">
+									<div class="photo">
+										<img id="photo-avatar" class="photo" <? if(!$profile['avatar'] || !file_exists($_SERVER['DOCUMENT_ROOT'].$profile['avatar'])) { echo 'style="display: none;"';} else { echo 'src="'. $profile['avatar'].'"';} ?>>
+									</div>
+									<span class="helper-field"><?= $this->t('Согласно правилам Клуба, Вы можете использовать в качестве аватарки только собственную фотографию, без солнечных очков.')?></span>
+									<div class="controls">
+										<label>
+											<div class="btn btn-ico btn-ico-photo-g btn-photo btn-attach"></div>
+											<?= $this->t('Загрузить')?>
+											<input type="file" name="userNewPhoto" style="display:none" id="photo-input">
+										</label>
+										<div class="btn btn-ico btn-ico-rotate-g" onclick="wizard_avatar_rotate()"></div>
+										<label class="btn-ico-rotate-g" onclick="wizard_avatar_rotate()"><?= $this->t('Повернуть');?></label>
+									</div>
+								</div>
+							</form>
+							</dd>
+							<dt><?= $this->t('Компания')?>:</dt>
+							<dd><input id="company" value="<?= $profile['company']?>" type="text"></dd>
+							<dt><?= $this->t('Должность')?>:</dt>
+							<dd><input id="position_job" value="<?= $profile['position_job']?>" type="text"></dd>
+							<dt><?= $this->t('ВУЗ')?>:</dt>
+							<dd><input id="education" value="<?= $profile['education']?>" type="text"></dd>
+
+							<dt><?= $this->t('Рост')?>:</dt>
+							<dd><?= $this->htmlFormSelect('height', array('range'=>'150-220', 'step'=>'1'), $profile['height'], 'prop');?></dd>
+							<dt><?= $this->t('Дети')?>:</dt>
+							<dd><?= $this->htmlFormSelect('children', array('yes'=>$this->t('Есть'), 'no'=>$this->t('Нет')), $profile['children'], 'prop');?></dd>
+							<dt><?= $this->t('Курение')?>:</dt>
+							<dd><?= $this->htmlFormSelect('smoking', array('yes'=>$this->t('Курю'), 'no'=>$this->t('Не курю')), $profile['smoking'], 'prop');?></dd>
+
+							<? if($isHideSocBlock) echo '<div id="wizardSocBlock" style="display: none;">';?>
+							<dt>&nbsp;</dt>
+							<dd>&nbsp;
+								<span class="helper-field"><?= $this->t('Укажите ссылку на свой профиль в одной из соц. сетей либо прикрепите резюме.');?></span>
+							</dd>
+
+							<dt><?= $this->t('Facebook')?>:</dt>
+							<dd><input id="link_fb" value="<?= $profile['link_fb']?>" type="text" placeholder="<?= $this->t('Полный адрес на профиль соц. сети')?>"></dd>
+							<dt><?= $this->t('вКонтакте')?>:</dt>
+							<dd><input id="link_vk" value="<?= $profile['link_vk']?>" type="text" placeholder="<?= $this->t('Полный адрес на профиль соц. сети')?>"></dd>
+							<dt><?= $this->t('LinkedIn')?>:</dt>
+							<dd><input id="link_ln" value="<?= $profile['link_ln']?>" type="text" placeholder="<?= $this->t('Полный адрес на профиль соц. сети')?>"></dd>
+							<form action="<?= $this->url(array('module'=>'api', 'controller'=>'user', 'action'=>'resume-upload'), null, true);?>" id="wizard-form-resume" method="post" enctype="multipart/form-data">
+							<dt><?= $this->t('Резюме')?>:</dt>
+							<dd><? if(file_exists($_SERVER['DOCUMENT_ROOT'].$profile['img_path'].'fileNameResume.txt')) { ?>
+								<input id="resume-input" name="file_resume" type="file" data-file="fileNameResume.txt">
+								<span class="helper-field"><?= $this->t('Файл с резюме был загружен Вами ранее.');?></span>
+								<? } else { ?>
+								<input id="resume-input" name="file_resume" type="file">
+								<? } ?>
+							</dd>
+							</form>
+							<? if($isHideSocBlock) echo '</div>'; ?>
+							<dt>&nbsp;</dt>
+							<dd class="text-center-mobile"><button id="wizardCheckData" class="btn btn-dark" onclick="return wizardStep2()"><?= $this->t('Отправить анкету администратору')?></button></dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

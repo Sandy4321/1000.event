@@ -1,0 +1,74 @@
+<?php
+
+$title = $this->t('Отписаться от рассылок');
+$this->headTitle($title);
+
+?>
+<style>
+.auth-box .forms-data {
+	border: 1px solid #DDDDDD;
+	border-radius: 3px;
+	margin-top: 15px;
+	display: inline-block;
+	width: 100%;
+}
+.auth-box .checkbox-group {
+	height: 50px;
+	background-color: #FFFFFF;
+	border-bottom: 1px solid #DDDDDD;
+	font-size: 12px;
+	float: left;
+	width: 100%;
+}
+.auth-box .checkbox-group input[type=checkbox] {
+	width: 16px;
+	margin: 5%;
+	float: left;
+}
+.auth-box .checkbox-group .desc {
+	color: #000000;
+	padding-top: 7px;
+	font-weight: bold;
+	float: left;
+}
+.auth-box .checkbox-group span {
+	line-height: 20px;
+}
+.auth-box .checkbox-group .data {
+	width: 80%;
+	display: block;
+	float: left;
+	color: #666666;
+}
+</style>
+<div class="container">
+	<div class="auth-box">
+		<h1 style="font-size: 23px;color: #fff;font-weight: 600;text-align: center;"><?= $title?></h1>
+		<p class="auth-box forgot"><?= $this->t('Вы действительно не хотите получать новости и предложения от Клуба OnTheList?')?></p>
+		<form action="<?= $this->url(array('module'=>'user', 'controller'=>'unsubscribe'), null, true)?>">
+			<input type="hidden" name="key" value="<?= $this->key?>">
+			<input type="hidden" name="save" value="1">
+			<div class="forms-data">
+				<div class="checkbox-group">
+					<? if($this->profile['msg_news_email'] == 'yes') { ?>
+						<input type="checkbox" name="un_email" value="yes" checked="checked">
+					<? } else { ?>
+						<input type="checkbox" name="un_email" value="yes">
+					<? } ?>
+					<span class="desc"><?= $this->t('Новости на email')?>:</span>
+					<span class="data"><?= $this->profile['email']?></span>
+				</div>
+				<div class="checkbox-group">
+					<? if($this->profile['msg_news_sms'] == 'yes') { ?>
+						<input type="checkbox" name="un_phone" value="yes" checked="checked">
+					<? } else { ?>
+						<input type="checkbox" name="un_phone" value="yes">
+					<? } ?>
+					<span class="desc"><?= $this->t('СМС новости на телефон')?>:</span>
+					<span class="data"><?= $this->profile['phone']?></span>
+				</div>
+			</div>
+			<button class="btn btn-dark btn-submit" type="submit"><?= $this->t('Сохранить')?></button>
+		</form>
+	</div>
+</div>

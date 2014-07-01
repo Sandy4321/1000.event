@@ -1,21 +1,176 @@
-<?
-
-// Подключаем css в head
-#$this->headLink()->appendStylesheet('/css/bootstrap-editable.css');
-
-// Подключаем js в конец body
-#$this->inlineScript()->appendFile('/js/index.js');
-
-// Подключаем js в head
-#$this->headScript()->appendFile('/js/jquery.form.js');
-
+<?php
+$this->headTitle($this->t('Главная'));
 ?>
 
-<p>Перевод строки: <?= $this->t('Россия')?></p>
-<p>Вывод переменной из контроллера: <?= $this->vData;?></p>
-<p><a href="<?= $this->url(array(), null, true);?>">Ссылка на главную</a></p>
-<p><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile'), null, true);?>">Ссылка на Модуль: user / Контроллер: profile / Действие: index</a></p>
-<p><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'view'), null, true);?>">Ссылка на Модуль: user / Контроллер: profile / Действие: view</a></p>
+<div id="home">
+	<div class="container container-full block-intro">
+		<div class="container">
+			<div class="main-logo">
+				<span><?= $this->t('Клуб для успешных людей'); ?></span>
+			</div>
 
-<p>Ниже дамп переменной:</p>
-<? Sas_Debug::dump($this->vData);?>
+			<div class="auth-box">
+				<script src="//ulogin.ru/js/ulogin.js"></script>
+				<?
+				$lang = $this->translate()->getLocale();
+				$socUlr = ($lang == LANG_DEFAULT) ? $_SERVER['HTTP_HOST'].'%2Fuser%2F' : $_SERVER['HTTP_HOST'].'%2F' . $lang .'%2Fuser%2F';
+				?>
+				<div class="social-auth" id="uLogin" data-ulogin="display=buttons;fields=first_name,last_name,sex,bdate,email,optional=phone;verify=1;redirect_uri=http%3A%2F%2F<?= $socUlr?>;receiver=http%3A%2F%2F<?= $_SERVER['HTTP_HOST']?>%2Fxd_custom.html">
+					<a href="javascript:void(0);">
+						<button class="btn btn-signin-fb" data-uloginbutton="facebook">
+							<div class="btn btn-ico btn-ico-vk"></div>
+							<?= $this->t('Войти через Facebook');?>
+						</button>
+					</a>
+					<div class="social-auth-more">
+						<button class="btn btn-more"></button>
+						<ul class="sub-nav">
+							<li><a href="javascript:void(0);" data-uloginbutton="linkedin">LinkedIn</a></li>
+							<li><a href="javascript:void(0);" data-uloginbutton="googleplus">Google+</a></li>
+							<li><a href="javascript:void(0);" data-uloginbutton="twitter">Twitter</a></li>
+							<!--<li><a href="javascript:void(0);" data-uloginbutton="vkontakte"><?/*= $this->t('вКонтакте');*/?></a></li>-->
+						</ul>
+					</div>
+				</div>
+
+				<form action="<?= $this->url(array('module' => 'user', 'controller' => 'login'), null, true);?>" method="post">
+                    <div class="input-group">
+                        <input name="email" type="email" placeholder="<?= $this->t('Логин');?>">
+                        <input name="password" type="password" placeholder="<?= $this->t('Пароль');?>" >
+                    </div>
+                    <label class="remember"><input type="checkbox" name="rememberMe" value="1" checked="checked"> <?= $this->t('Запомнить меня');?></label>
+                    <a class="forgot" href="<?= $this->url(array('module' => 'user', 'controller' => 'recovery', 'action'=>'index'), null, true);?>"><?= $this->t('Забыли пароль?')?></a>
+                    <button class="btn btn-dark btn-submit" type="submit"><?= $this->t('Вход');?></button>
+                </form>
+                <a href="/user/register" class="asignup btn"><?= $this->t('Регистрация');?></a>
+			</div>
+       </div>
+    </div>
+
+    <div class="container block-people">
+        <div class="image-people"></div>
+		<div class="text">
+			<h2><?= $this->t('СВОИ ЛЮДИ');?></h2>
+            <span><?= $this->t('Попасть в Клуб можно только после прохождения скрининга администрацией Клуба. Решение принимается на основании предоставляемых кандидатом профилей социальных сетей: вКонтакте, Facebook, LinkedIn. В некоторых случаях администрация клуба просит предоставить резюме кандидата.');?></span>
+			<span><?= $this->t('Приглашение, полученное от текущего члена Клуба или организации-партнера, значительно упрощает процедуру скрининга.');?></span>
+		</div>
+    </div>
+
+    <div class="container block-features">
+        <div class="feature">
+            <div class="feature-ico feature-ico1"></div>
+            <span><?= $this->t('Романтические знакомства');?></span>
+        </div>
+        <div class="feature">
+            <div class="feature-ico feature-ico2"></div>
+            <span><?= $this->t('Бизнес контакты');?></span>
+        </div>
+        <div class="feature">
+            <div class="feature-ico feature-ico3"></div>
+            <span><?= $this->t('Общение по интересам');?></span>
+        </div>
+        <div class="feature">
+            <div class="feature-ico feature-ico4"></div>
+            <span><?= $this->t('Новые друзья');?></span>
+        </div>
+    </div>
+
+    <div class="container block-events ">
+        <div class="text">
+            <h2><?= $this->t('МЕРОПРИЯТИЯ');?></h2>
+            <span><?= $this->t('Назначить деловую встречу, пригласить на романтическое свидание или присоединиться к участию в клубном мероприятии можно всего за несколько кликов без предварительной переписки. Для этого достаточно лишь выбрать нужного Вам человека или мероприятие, и все остальное за Вас сделает система.');?></span>
+            <div class="events-features">
+                <div class="ef"><span class="ico ico1"></span> <?= $this->t('ВЕЧЕРИНКИ');?></div>
+                <div class="ef"><span class="ico ico2"></span> <?= $this->t('СВИДАНИЯ');?></div>
+                <div class="ef"><span class="ico ico3"></span> <?= $this->t('АФИША');?></div>
+            </div>
+        </div>
+
+        <div class="events">
+            <div id="events-slider">
+                <ul class="bjqs">
+					<? foreach($this->vEvents as $event) : $dateStart = new DateTime($event['date_start']);?>
+                    <li>
+                        <div class="event" >
+                            <div class="date">
+                                <div class="month"><?= $dateStart->format('M')?></div>
+                                <div class="day"><?= $dateStart->format('d')?></div>
+                            </div>
+                            <div class="photo">
+								<img src="<?= (!is_null($event['intro_img'])) ? $event['intro'] : 'http://www.placehold.it/400x300/eee/aaa&text=no-image';?>">
+							</div>
+                            <div class="type"><?= $event['cat_name']?></div>
+                            <h3><?= $event['title']?></h3>
+                            <div class="about"><?= $event['anons']?></div>
+                        </div>
+                    </li>
+					<? endforeach; ?>
+                </ul>
+            </div>
+			<script>
+				jQuery(document).ready(function($) {
+					$('#events-slider').bjqs({
+						'height':     480,
+						'width':      400,
+						'responsive': true
+					});
+				});
+			</script>
+        </div>
+    </div>
+
+	<div class="container container-full block-privileges hidden-mobile">
+		<h2><?= $this->t('ПРИВИЛЕГИИ');?></h2>
+		<? $link = $this->url(array('module'=>'privilege', 'controller'=>'index', 'action'=>'index'), null, true);?>
+		<div id="privileges-slider">
+			<ul class="bjqs">
+				<li>
+					<div class="container container-full privilege-uber">
+						<h3><a href="<?= $link?>#privilege1" style="color: #fff;">UBER</a></h3>
+						<h4><a href="<?= $link?>#privilege1" style="color: #fff;"><?= $this->t('Бесплатные поездки на <nobr>мерседесах S-класса</nobr> и Майбах');?></a></h4>
+						<span><a href="<?= $link?>#privilege1" style="color: #fff;"><?= $this->t('Партнер Клуба, компания Uber, дарит каждому члену клуба 2 бесплатные поездки с персональным водителем  на мерседесе S-класса и Майбах. Передвигайтесь по миру с удовольствием и роскошью!');?></a></span>
+					</div>
+				</li>
+				<li>
+					<div class="container container-full privilege-megafon">
+						<h3><a href="<?= $link?>#privilege2" style="color: #fff;"><?= $this->t('МЕГАФОН');?></a></h3>
+						<h4><a href="<?= $link?>#privilege2" style="color: #fff;"><?= $this->t('Безлимитный тариф от Мегафон по специальной цене');?></a></h4>
+						<span><a href="<?= $link?>#privilege2" style="color: #fff;"><?= $this->t('Оператор Мегафон открыл для членов клуба специальный тариф за 850 рублей в месяц, который включает 4000 минут, 200 смс и безлимитный интернет, а также скидку 50% на международный роуминг. Общайтесь больше, платите меньше!');?></a></span>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<script>
+			jQuery(document).ready(function($) {
+				$('#privileges-slider').bjqs({
+					'height':     700,
+					'width':      $(document).width(),
+					'responsive': true,
+					'animtype':   'slide'
+				});
+			});
+		</script>
+    </div>
+
+    <div class="container block-reviews">
+        <div class="review">Когда авторы проекта рассказали мне свою концепцию, я был заинтригован. OnTheList - это знакомства в стиле фильма “Игра” с Майклом Дугласом: интересно, интеллектуально, амбициозно.
+			<br><br>
+			<b>Штеффен Лайстнер</b>
+		</div>
+        <div class="review review-partner"><a href="http://www.insead.edu/home/" target="_blank"><img src="img/partner/home/insead.png"></a></div>
+        <div class="review">Мне в принципе нравится все новое, я лично знаю организаторов этого проекта, надеюсь, что они придумали что-то приличное. Я сам пока не пробовал, но обязательно попробую, потому что я отвечаю требованиям этого проекта: я все еще холост.
+			<br><br>
+			<b>Руслан Раджапов</b>
+        </div>
+        <div class="review review-partner"><a href="http://uber.com" target="_blank"><img src="img/partner/home/uber.png"></a></div>
+        <div class="review">Несмотря на обилие клубов знакомств, найти качественную возможность познакомиться достаточно сложно. On The List – это больше, чем клуб и социальная сеть, это социальный эксперимент в элите нашего общества.
+			<br><br>
+			<b>Сергей Суверов</b>
+		</div>
+        <div class="review review-partner"><a href="http://megafon.ru" target="_blank"><img src="img/partner/home/mf.png"></a></div>
+    </div>
+</div>
+	
+
+
+

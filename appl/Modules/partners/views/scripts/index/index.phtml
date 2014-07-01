@@ -1,0 +1,30 @@
+<div class="container" id="partners">
+    <h1 class="page-title"><?= $this->t('Партнёры');?></h1>
+    <h2><?= $this->t('Рестораны')?></h2>
+    <ul class="thumbnails">
+    	<?php
+    	foreach($this->vRestaurants as $item)
+    	{
+    		echo '<li class="span3">
+        <a href="'.$item[1].'" target="_blank">
+          <img class="img-polaroid" src="/img/partner/logo/'.$item[2].'" alt="'.$item[0].'">
+        </a>
+      </li>';
+    	}
+    	?>
+    </ul>
+    
+    <h2><?= $this->t('Информационные партнёры')?></h2>
+    <ul class="thumbnails">
+    	<?php
+    	foreach($this->vInfoPartner as $item)
+    	{
+    		echo '<li class="span3">
+        <a href="'.$item[0].'" target="_blank">
+          <img class="img-polaroid" src="/img/partner/logo/'.$item[1].'" alt="'.$item[2].'">
+        </a>
+      </li>';
+    	}
+    	?>
+    </ul>
+</div>

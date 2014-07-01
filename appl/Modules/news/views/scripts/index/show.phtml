@@ -1,0 +1,18 @@
+<?php
+
+$news = $this->vData;
+
+$this->headTitle($news['title']);
+$this->headTitle($this->t('Новости'));
+
+$date = new Sas_Date($news['date_create']);
+
+?>
+<div class="container" id="news-article">
+    <a href="/news" class="back">← Все новости</a>
+	<h1 class="page-title"><?= $news['title']?></h1>
+	<h2 class="desc"><?= $news['anons']?></h2>
+	<span class="date"><?= $date->getDateString()?></span>
+	<div class="main-photo"><img src="/img/news/news-club/<?= $news['id']?>.jpg"></div>
+	<div class="text"><?= $news['text']?></div>
+</div>

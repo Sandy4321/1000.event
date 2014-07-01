@@ -1,0 +1,53 @@
+<?
+//$this->headLink()->appendStylesheet('/css/privilege.css');
+
+$myStatus = $this->myProfile['current_status'];
+$myCard   = $this->myProfile['club_card_dt'];
+?>
+<div class="content" id="privilege">
+	<div class="container">
+		<div class="privilege-container">
+			<? if(!empty($this->vItems)) { ?>
+				<? foreach ($this->vItems as $item) :
+					// Стандартная ссылка = доступ = all
+					$link = $this->url(array('module'=>'user', 'controller'=>'privilege', 'action'=>'view', 'id'=>$item['id']), null, true);
+					$access = true; // Всегда разрешаем
+					$accessMsg = $this->t('Подробнее о привилегии');
+
+					// смотрим права доступа
+					if($item['access_level'] == 'club') {
+						// проверяем что пользователь член клуба
+						if($myStatus < 70) {
+							$access = false;
+							$accessMsg = $this->t('Привилегия доступна только Членам клуба.');
+							$link = 'javascript: void(0)" onclick="goWizard(\''.$accessMsg.'\')';
+						}
+					} elseif ($item['access_level'] == 'card') {
+						// Проверяем КК
+						if($myCard < CURRENT_DATE) {
+							$access = false;
+							$accessMsg = $this->t('Привилегия доступна только владельцам Клубных карт.');
+							$link = 'javascript: void(0)" onclick="goBuyCard(\''.$accessMsg.'\')';
+						}
+					}
+				?>
+					<div class="item-privilege">
+						<a href="<?= $link;?>" class="photo">
+							<img src="<?= $item['img'];?>">
+						</a>
+						<div class="info">
+							<span class="type"><?= $item['cat_name'];?></span>
+							<h1><a href="<?= $link;?>" class="name"><?= $item['title'];?></a></h1>
+							<div class="anons"><?= $item['anons'];?></div>
+							<p>
+								<a href="<?= $link?>"><?= ($access) ? $accessMsg : $accessMsg;?></a>
+							</p>
+						</div>
+					</div>
+				<? endforeach; ?>
+			<? } else { ?>
+				<h1><?= $this->t('Нет привилегий');?></h1>
+			<? } ?>
+		</div>
+	</div>
+</div>

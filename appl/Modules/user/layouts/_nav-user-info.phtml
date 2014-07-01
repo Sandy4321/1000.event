@@ -1,0 +1,51 @@
+<?php
+// создание пути к аватару пользователя
+function getPatchAvatarUser(){
+	return '/img/people/'.Models_User_Model::getMySex() . '/' . Models_User_Model::getMyYear(Models_User_Model::getMyBirthday()).
+	'/' . Models_User_Model::getMyId() . '/';
+}
+function getAvatarUser() {
+	$img = '/img/people/'.Models_User_Model::getMySex() . '/' . Models_User_Model::getMyYear(Models_User_Model::getMyBirthday()). '/' . Models_User_Model::getMyId() . '/thumbnail.jpg';
+	return (file_exists($_SERVER['DOCUMENT_ROOT'].$img)) ? $img : '/img/people/thumbnail.jpg';
+}
+?>
+<div class="container-fluid shadow hidden-phone" id="UserTopNav">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="span4">
+				<a class="userQuit" href="<?= $this->url(array('module' => 'user', 'controller' => 'profile', 'action' => 'settings'), null, true);?>">
+					<img class="imgProfile" src="/img/user/icon-profile.png" alt="<?= $this->t('Профиль')?>" title="<?= $this->t('Профиль')?>"/>
+				</a>
+				<a class="userQuit" href="<?= $this->url(array('module' => 'user', 'controller' => 'profile', 'action' => 'index'), null, true);?>">
+					<img id="MyAvatar" class="imgUserAvatar" src="<?echo getAvatarUser(); if($this->startController == 'profile' && $this->startAction == 'settings') {echo '?'.time();}?>">
+					<span id="MyFirstName"><?= Models_User_Model::getMyFirstName(). '</span> <span id="MyLastName">' . Models_User_Model::getMyLastName()?></span> <span id="MyUid" class="hide"><?= Models_User_Model::getMyUid() ?></span><span id="MyId" class="hide"><?= Models_User_Model::getMyId() ?></span>
+				</a>
+			</div>
+			<div class="span3 offset1 text-center">
+				<!--				<h5>Ваш город Москва</h5>-->
+			</div>
+			<div class="span4 lang_quit">
+
+				<table class="pull-right">
+					<tr>
+						<td>
+							<div class="btn-group">
+								<a href="#" class="btn btn-inverse btn-link dropdown-toggle langSelect" data-toggle="dropdown"><img src="/img/flags/<?= $this->t()->getLocale();?>.png"> <?= $this->t()->getLocale();?> <b class="caret"></b></a>
+								<ul class="dropdown-menu">
+									<li><a href="<?= $this->url(array('lang' => 'ru'))?>"<?php if ($this->t()->getLocale() == 'ru') echo ' class="active"'?>><img src="/img/flags/ru.png"> Русский</a></li>
+									<li><a href="<?= $this->url(array('lang' => 'en'))?>"<?php if ($this->t()->getLocale() == 'en') echo ' class="active"'?>><img src="/img/flags/en.png"> English</a></li>
+								</ul>
+							</div>
+						</td>
+						<td style="word-wrap: normal; white-space: nowrap;">
+							<a class="userQuit" href="<?= $this->url(array('module' => 'user', 'controller' => 'login', 'action' => 'quit'),     null, true);?>">
+								<img src="/img/user/quit.png"> <?= $this->t('Выход')?>
+							</a>
+						</td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</div>

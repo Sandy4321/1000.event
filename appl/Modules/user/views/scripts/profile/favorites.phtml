@@ -1,0 +1,19 @@
+<?
+$this->headTitle($this->t('Избранное'));
+$this->headTitle($this->t('Мой профиль'));
+$this->inlineScript()->appendFile('/js/profile.js');
+?>
+<div class="content" id="favorites">
+	<div class="container">
+		<div id="users">
+		<? foreach($this->vData as $user) : ?>
+			<div class="item-user">
+				<? if($user['online'] == 'yes') echo '<div class="online-bubble"></div>';?>
+				<a href="<?= $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$user['uid']), null, true)?>" class="photo"><img src="<?= $user['avatar']?>"></a>
+				<a href="<?= $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$user['uid']), null, true)?>" class="name"><?= $user['first_name']?></a>
+				<button class="btn btn-ico btn-ico-delete btn-delete btn-favorite" data-action="del" data-user-id="<?= $user['id']?>" data-page="favorites"></button>
+			</div>
+		<? endforeach; ?>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,52 @@
+/* Main styles
+------------------------------ */
+
+html { display: block; }
+body { font-family: "Open Sans", Arial, sans-serif;  color:#262626; background-color:#F5F5F5; overflow-x:hidden; display: block;  min-height: 100%;  }
+.hide {display: none;}
+.show {display: block;}
+
+
+/* Links
+------------------------------ */
+a { color: #CD0001; text-decoration: none; }
+a:visited {  }
+a:hover { text-decoration: none;  }
+a:active {  }
+
+
+/* Controls
+------------------------------ */
+
+input[type=text],
+input[type=email], 
+input[type=password], 
+input[type=search], 
+input[type=button],
+input[type=submit],
+input[type=tel],
+input[type=url],
+select,
+textarea,
+button{font-family: "Open Sans", Arial, sans-serif; outline: none; border: 1px solid #CED6DE; border-radius: 2px; padding: 5px 10px; color:#181F25; font-size: 13px;  -moz-appearance: none; -webkit-appearance: none;}
+
+input[type=text]{}
+input[type=password]{}
+input[type=checkbox]{}
+input[type=radio]{}
+input[type=file]{}
+
+input[type=button]{outline: none; border: none;  cursor: pointer; font-weight: 700;}
+input[type=submit]{outline: none; border: none;  cursor: pointer; font-weight: 700;}
+
+input[disabled] {
+	background-color: #c7c7c7;
+}
+
+label{}
+
+textarea{resize:none;}
+
+button{ border: none; background: transparent; cursor: pointer; font-weight: 700;}
+
+select{ background-image: url(img/select-arr.png);     -moz-appearance: none;  text-indent: 0.01px;  text-overflow: ''; background-repeat: no-repeat; background-position: right 4px; padding: 5px 25px 5px 10px;}

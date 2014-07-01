@@ -1,0 +1,169 @@
+<?
+
+$this->inlineScript()->appendFile('/js/payuniteller.js');
+
+$this->headTitle($this->t('Счёт'));
+$this->headTitle($this->t('Мой профиль'));
+
+$myCard    = $this->myProfile['club_card_dt'];
+$myStatus  = $this->myProfile['current_status'];
+$myBalance = $this->myProfile['balance'];
+$myBalanceBonus = $this->myProfile['balance_bonus'];
+$myBalanceAll = $myBalance + $myBalanceBonus;
+$myRecurrent = $this->myProfile['recurrent_payment'];
+$myRecurrentDt = $this->myProfile['recurrent_dt'];
+$myRecurrentBonus = ($this->myProfile['recurrent_bonus'] == 'yes') ? true : false;
+
+$this->inlineScript()->appendFile('/js/profile.js');
+?>
+<div class="content" id="balance">
+	<div class="container">
+		<div class="content-blocks-container" >
+
+			<div class="content-sub-col">
+				<div class="content-block info-block">
+					<div class="wrapper">
+						<?
+						if(!is_null($myCard)) {
+							if($myCard >= CURRENT_DATE) {
+								echo '<label>'. $this->t('Клубная карта действительна до').':</label>';
+								echo '<span>'. date_format(new DateTime($myCard), 'd.m.Y').'</span>';
+							} else {
+								echo '<label>'. $this->t('Клубная карта').':</label>';
+								echo '<span>'.$this->t('закончилась').'</span>';
+							}
+						} else {
+							echo '<label>'. $this->t('Клубная карта').':</label>';
+							echo '<span>'. $this->t('Нет').'</span>';
+						}
+						?>
+					</div>
+					<div class="wrapper">
+						<label><?= $this->t('На счету');?>:</label>
+						<span id="MyBalance" data-karat="<?= $myBalance;?>" data-karat-bonus="<?= $myBalanceBonus;?>"><?= $myBalance;?> + <?= $myBalanceBonus;?> (<?= $this->t('бонусы');?> = <?= $myBalanceAll;?> <?= $this->t('карат');?>)</span>
+					</div>
+				</div>
+
+				<div class="content-block purchase-block" id="buy-card">
+					<div class="header">
+						<h3><?= $this->t('Купить клубную карту');?></h3>
+					</div>
+					<div class="data">
+						<div class="plans">
+							<div class="list">
+								<? $i=0; foreach($this->vPriceCard as $item) : ?>
+								<label data-amount="<?= $item[0]?>" data-price="<?= $item[1]?>"><input type="radio" name="card" <? if($i==0) echo 'checked'?> value="<?= $item[0]?>"> <?= $item[0]?> <?= $this->t('мес.');?></label>
+								<? $i++; endforeach; ?>
+							</div>
+							<div class="selected">
+								<div class="amount" id="buy-card-price"><?= $this->vPriceCard[0][1]?></div>
+								<div class="pp"><?= $this->t('рублей');?></div>
+							</div>
+						</div>
+						<div class="info">
+							<?
+							// Рекуррентные платежи выключены
+							if($myRecurrent == 'no') {
+								// Выключены
+								// Разрешаем вкл|выкл
+								echo '<label id="recurrent"><input onclick="recurrentPayment(this)" type="checkbox" name="recurrent" value="yes"';
+								if($myRecurrent == 'yes') echo ' checked="checked"';
+								echo '> '.sprintf($this->t('Автоматическое продление Клубной карты (получить бонус %s карат).'), 200).'</label>';
+							} else {
+								// Включены
+								// Бонус получал пипл?
+								if($myRecurrentBonus) {
+									// Да получал
+									// Проверяем может ли делать вкл|выкл (общий балан должен быть больше 200)
+									if($myBalanceAll >= 200) {
+										// Разрешаем вкл|выкл
+										echo '<label id="recurrent"><input onclick="recurrentPayment(this)" type="checkbox" name="recurrent" value="yes"';
+										if($myRecurrent == 'yes') echo ' checked="checked"';
+										echo '> '.sprintf($this->t('Автоматическое продление Клубной карты (получить бонус %s карат).'), 200).'</label>';
+									} else {
+										// ЗАПРЕЩАЕМ вкл|выкл
+										echo '<label id="recurrent"><input type="checkbox" name="recurrent" value="yes" checked="checked" disabled="disabled"> ';
+										echo $this->t('Автоматическое продление Клубной карты.').'</label>';
+										echo '<p><small>';
+										echo $this->t('Для отключения автоматического продления Клубной карты Ваш баланс должен быть не менее 200 карат.').'<br>';
+										echo $this->t('Вы обязаны вернуть 200 карат, которые Вы получили в качестве бонуса за выбор опции "Автоматическое продление Клубной карты" (см. ниже условиями оплаты).');
+										echo '</small></p>';
+									}
+								} else {
+									// Нет не получал
+									// Разрешаем вкл|выкл
+									echo '<label id="recurrent"><input onclick="recurrentPayment(this)" type="checkbox" name="recurrent" value="yes"';
+									if($myRecurrent == 'yes') echo ' checked="checked"';
+									echo '> '.sprintf($this->t('Автоматическое продление Клубной карты (получить бонус %s карат).'), 200).'</label>';
+								}
+							}
+							?>
+							<p><small><? printf($this->t('Приобретая Клубную карту, я согласен с <a href="%s" target="_blank">условиями оплаты</a>.'), 'http://onthelist.ru/downloads/PaymentTermsAndConditions.pdf');?></small></p>
+						</div>
+						<button id="btn-pay-card" data-pay="card" data-amount="<?= $this->vPriceCard[0][0]?>" onclick="pay(this)" class="btn btn-dark brn-med btn-buy-card"><?= $this->t('Купить карту на <b>1 мес.</b>');?></button>
+					</div>
+				</div>
+
+				<div class="content-block purchase-block" id="buy-karat">
+					<div class="header">
+						<h3><?= $this->t('Купить караты');?></h3>
+					</div>
+					<div class="data">
+						<div class="plans">
+							<div class="list">
+								<? $i=0; foreach($this->vPriceKarat as $item) : ?>
+									<label data-amount="<?= $item[0]?>" data-price="<?= $item[1]?>"><input type="radio" name="karat" <? if($i == 0) echo 'checked'?> value="<?= $item[0];?>"> <?= $item[0];?> <?= $this->t('карат');?></label>
+								<? $i++; endforeach; ?>
+							</div>
+							
+							<div class="selected">
+								<div class="amount" id="buy-karat-price"><?= $this->vPriceKarat[0][1];?></div>
+								<div class="pp"><?= $this->t('руб.');?></div>
+							</div>
+							
+						</div>
+						<button id="btn-pay-karat" data-pay="karat" data-amount="<?= $this->vPriceKarat[0][0]?>" onclick="pay(this)" class="btn btn-dark brn-med btn-buy-karat"><?= $this->t('Купить');?> <b><?= $this->vPriceKarat[0][0];?> <?= $this->t('карат');?></b></button>
+					</div>
+				</div>
+			</div>
+
+			<div class="content-main-col">
+				<div class="content-block features-block">
+					<? if($myCard >= CURRENT_DATE) { ?>
+					<div class="card"><img src="/css/img/balance-card.png"></div>
+					<? } else { ?>
+					<div class="about">
+						<? if(is_null($myCard)) { ?>
+						<p><?= $this->t('Вы еще ни разу не приобретали клубную карту - попробуйте! Мы уверены, что Вам понравится пользоваться сайтом без ограничений.');?></p>
+						<p><?= $this->t('Для пользователей без Клубной карты на сайте действуют некоторые ограничения.');?></p>
+						<? } ?>
+						<p><?= $this->t('Клубная карта позволяет полноценно пользоваться сайтом Клуба:');?></p>
+						<ul>
+							<li><?= $this->t('Искать людей для деловых знакомств');?></li>
+							<li><?= $this->t('Вести переписку без ограничений');?></li>
+							<li><?= $this->t('Приглашать на встречи, свидания и обмениваться телефонами без переписки');?></li>
+							<li><?= $this->t('Получать уведомления о том, кто Вами интересуется');?></li>
+							<li><?= $this->t('Значок члена Клуба в профиле, который увеличивает интерес к Вашей анкете');?></li>
+						</ul>
+					</div>
+					<? } ?>
+				</div>
+
+				<div class="content-block trans-block">
+					<div class="header">
+						<h3><?= $this->t('Транзакции');?></h3>
+					</div>
+					<div class="data">
+						<? foreach($this->vPayHistory as $item) : ?>
+						<div class="item-trans">
+							<span class="date"><?= date_format(new DateTime($item['date_create']), 'd.m.Y H:i:s');?></span>
+							<span class="name"><?= $item['transaction_name'];?></span>
+							<span class="amount"><?= $item['amount'];?></span>
+						</div>
+						<? endforeach; ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

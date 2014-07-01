@@ -1,0 +1,265 @@
+<?
+$this->inlineScript()->appendFile('/js/profile.js');
+$this->inlineScript()->appendFile('/js/gallery.js');
+$this->inlineScript()->appendFile('/js/posts.js');
+$this->inlineScript()->appendFile('/js/like.js');
+
+$this->headLink()->appendStylesheet('/css/jquery.Jcrop.css');
+$this->inlineScript()->appendFile('/js/libs/jquery.autocomplete.min.js');
+
+
+$title = $this->t('Мой профиль');
+$this->headTitle($title);
+
+$profile = $this->vProfile;
+//Sas_Debug::dump($profile);
+
+//$myLang = array();
+/*if($profile['lang_ru'] == 'yes') $myLang['ru'] = $this->t('Русский');
+if($profile['lang_en'] == 'yes') $myLang['en'] = $this->t('Английский');
+if($profile['lang_fr'] == 'yes') $myLang['fr'] = $this->t('Французский');
+if($profile['lang_de'] == 'yes') $myLang['de'] = $this->t('Немецкий');
+if($profile['lang_it'] == 'yes') $myLang['it'] = $this->t('Итальянский');
+if($profile['lang_es'] == 'yes') $myLang['es'] = $this->t('Испанский');*/
+$myLang['ru'] = $this->t('Русский');
+$myLang['en'] = $this->t('Английский');
+$myLang['fr'] = $this->t('Французский');
+$myLang['de'] = $this->t('Немецкий');
+$myLang['it'] = $this->t('Итальянский');
+$myLang['es'] = $this->t('Испанский');
+
+#$this->vStatus['id'] int
+#$this->vStatus['status_text'] string
+#$this->vStatus['status_vip'] yes|no
+#$this->vStatus['cnt_like'] int
+
+?>
+<div class="content" id="profile">
+<div class="container">
+<div class="content-blocks-container" >
+<div class="content-block content-block-full profile-info-main">
+	<div class="photo"><img class="profile-avatar" src="<?= $profile['avatar']?>">
+		<div class="photo-edit hidden-mobile-tablet">
+			<button class="profile-new-avatar"><span class="btn-ico btn-ico-photo-w"></span> <?= $this->t('Новое фото');?></button>
+			<form id="new-profile-avatar-form" method="post" enctype="multipart/form-data" action="<?= $this->url(array('module'=>'api', 'controller'=>'user', 'action'=>'avatar-upload'), null, true);?>">
+				<input type="file" style="display:none" id="new-profile-avatar" name="userNewPhoto">
+			</form>
+			<button class="profile-edit-avatar"><span class="btn-ico btn-ico-edit-w"></span> <?= $this->t('Изменить');?></button>
+		</div>
+	</div>
+	<div class="info">
+		<h1><?
+			echo $profile['first_name'];
+
+			// Значек Клубной карты
+			if($profile['club_card_dt'] >= CURRENT_DATE) {
+				echo ' <a href="'. $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true).'" class="btn premium" original-title="'.$this->t('Срок действия до').': '.$profile['club_card_dt'].'"></a>';
+			}
+
+			// Значек подтверждения телефона
+			if($profile['phone_check'] != 'yes') {
+				echo ' <a href="'.$this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'settings'), null, true).'" class="btn notel" original-title="'.$this->t('Телефон не подтвержден').'"></a>';
+			}
+			?></h1>
+		<h2><?
+			if(!empty($profile['city_name'])) echo $profile['city_name'].'. ';
+			if(!empty($profile['company'])) echo $profile['company'].'. ';
+			if(!empty($profile['position_job'])) echo $profile['position_job'].'. ';
+			if(!empty($profile['education'])) {
+				echo '<br>';
+				echo ($profile['sex'] == 'male') ? $this->t('Учился в') : $this->t('Училась в');
+				echo ' '.$profile['education'];
+			}
+			?></h2>
+	</div>
+	<div class="status">
+		<span class="current"<? if(!$this->vStatus) echo ' style="display: none;"';?>><? if($this->vStatus) echo $this->vStatus['status_text'];?></span>
+		<button class="btn btn-edit btn-ico-edit btn-ico"></button>
+		<div class="edit"<? if(!$this->vStatus) echo ' style="display: block;"';?>>
+			<button class="btn btn-ico btn-ico-delete btn-delete" style="position: absolute;top: 8px;right: 0;<? if(!$this->vStatus) echo 'display: none;"';?>"></button>
+			<textarea name="status_text" placeholder="<?= $this->t('Введите Ваш новый статус');?>" id="profile-status-text"></textarea>
+			<div class="controls">
+				<input type="submit" class="btn btn-save" value="<?= $this->t('Сохранить');?>">
+			</div>
+		</div>
+	</div>
+	<div class="controls">
+		<div class="btns-group">
+			<? if($profile['club_card_dt'] >= CURRENT_DATE) { ?>
+			<button class="btn-full" onclick="openUrl('<?= $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true);?>')"><?= $this->t('Продлить клубную карту');?></button>
+			<? } else { ?>
+			<button class="btn-full" onclick="openUrl('<?= $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true);?>')"><?= $this->t('Купить клубную карту');?></button>
+			<? } ?>
+			<button class="btn-full btn-edit-additional-info"><span class="btn-ico btn-ico-edit"></span> <?= $this->t('Изменить общую информацию');?></button>
+		</div>
+	</div>
+</div>
+
+<div class="content-left-col">
+	<div class="content-block profile-interests">
+		<div class="header">
+			<h3><?= $this->t('Интересы');?></h3>
+		</div>
+		<div class="data">
+			<div class="title"><?= $this->t('Увлечений');?>: <b id="cnt-hobby"><?= count($this->vHobbyUser)?></b></div>
+			<div class="wrapper">
+				<div class="popover-container">
+					<button onclick="popover_show('hobby')" class="btn btn-add">+</button>
+					<div class="popover" id="popover-hobby">
+						<div class="popover-content">
+						<? foreach($this->vHobbyList as $itemId => $itemName) {
+							echo '<label><input class="edit-interest" type="checkbox" data-value="'.$itemName.'" data-type="hobby" data-id="'. $itemId.'"';
+							if(array_key_exists($itemId, $this->vHobbyUser)) { echo ' data-action="delete"'; } else { echo ' data-action="add"'; }
+							echo 'name="hobby[]" value="'. $itemId.'"';
+							if(array_key_exists($itemId, $this->vHobbyUser)) { echo ' checked="checked"';} 
+							echo '> '.$itemName.'</label>';
+						} ?>
+						</div>
+						<button class="btn-close"><?= $this->t('Готово');?></button>
+					</div>
+				</div>
+				<div id="hobby-container">
+					<? foreach($this->vHobbyUser as $itemId => $itemName) {
+					echo '<a id="hobby'.$itemId.'" class="item-interest"><span>'.$itemName.'</span>';
+					echo '<button data-action="delete" data-type="hobby" name="hobby[]" data-id="'. $itemId.'" class="edit-interest btn btn-ico btn-ico-delete btn-delete" title="'.$this->t('Удалить').'"></button>';
+					echo '</a>';
+					} ?>
+				</div>
+
+			</div>
+
+			<div class="title"><?= $this->t('Цели и планы');?>: <b id="cnt-target"><?= count($this->vTargetUser)?></b></div>
+			<div class="wrapper">
+				<div class="popover-container">
+					<button onclick="popover_show('target')" class="btn btn-add">+</button>
+					<div class="popover" id="popover-target">
+						<div class="popover-content">
+						<? foreach($this->vTargetList as $itemId => $itemName) {
+							echo '<label><input class="edit-interest" type="checkbox" data-value="'.$itemName.'" data-type="target" data-id="'. $itemId.'"';
+							if(array_key_exists($itemId, $this->vTargetUser)) { echo ' data-action="delete"'; } else{ echo ' data-action="add"'; } 
+							echo 'name="target[]" value="'. $itemId.'"';
+							if(array_key_exists($itemId, $this->vTargetUser)) echo ' checked="checked"';
+							echo '> '.$itemName.'</label>';
+						} ?>
+						</div>
+						<button class="btn-close"><?= $this->t('Готово');?></button>
+					</div>
+				</div>
+				<div id="target-container">
+					<? foreach($this->vTargetUser as $itemId => $itemName) {
+						echo '<a id="target'.$itemId.'" class="item-interest target"><span>'.$itemName.'</span>';
+						echo '<button data-action="delete" data-type="target" name="target[]" data-id="'. $itemId.'" class="edit-interest btn btn-ico btn-ico-delete btn-delete" title="'.$this->t('Удалить').'"></button>';
+						echo '</a>';
+					} ?>
+				</div>
+			</div>
+
+			<div class="title"><?= $this->t('Профессиональные интересы');?>: <b id="cnt-prof-interest"><?= count($this->vProfUser)?></b></div>
+			<div class="wrapper">
+				<div class="popover-container">
+					<button onclick="popover_show('prof-interest')" class="btn btn-add">+</button>
+					<div class="popover" id="popover-prof-interest">
+						<div class="popover-content">
+						<? foreach($this->vProfList as $itemId => $itemName) {
+							echo '<label><input class="edit-interest" type="checkbox" data-value="'.$itemName.'" data-type="prof-interest" data-id="'. $itemId.'"';
+							if(array_key_exists($itemId, $this->vProfUser)) { echo ' data-action="delete"'; } else{ echo ' data-action="add"'; } 
+							echo ' name="prof_interest[]" value="'. $itemId.'"';
+							if(array_key_exists($itemId, $this->vProfUser)) echo ' checked="checked"';
+							echo '> '.$itemName.'</label>';
+						} ?>
+						</div>
+						<button class="btn-close">Готово</button>
+					</div>
+				</div>
+				<div id="prof-interest-container">
+					<? foreach($this->vProfUser as $itemId => $itemName) {
+						echo '<a id="prof-interest'.$itemId.'"  class="item-interest professional"><span>'.$itemName.'</span>';
+						echo '<button data-action="delete" data-type="prof-interest" name="prof_interest[]" data-id="'. $itemId.'" class="edit-interest btn btn-ico btn-ico-delete btn-delete" title="'.$this->t('Удалить').'"></button>';
+						echo '</a>';
+					} ?>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?= $this->render('profile/photo-album.phtml'); // Фотоальбом пользователя ?>
+	<div class="content-block profile-info-additional" id="profile-info-additional">
+		<div class="header">
+			<h3><?= $this->t('Общая информация');?></h3>
+			<button class="btn-ico btn-ico-edit-na btn-edit"></button>
+		</div>
+		<div class="data">
+			<div class="wrapper">
+				<label><?= $this->t('О себе');?>:</label>
+				<div class="about"><?= $profile['about']?></div>
+			</div>
+			<div class="wrapper">
+				<label><?= $this->t('Любимые места');?>:</label>
+				<span id="favorite_places"><?= ($profile['favorite_places']) ? $profile['favorite_places'] : $this->t('Нет');?></span>
+			</div>
+			<div class="wrapper">
+				<label><?= $this->t('Языки');?>:</label>
+				<? foreach($myLang as $langKey => $langVal) {
+					echo '<span id="lang_'.$langKey.'"';
+					if($profile['lang_'.$langKey] == 'no') echo 'style="display: none;"';
+					echo '>'. $langVal.'</span> ';
+				}
+				?>
+			</div>
+		</div>
+		<div class="data-edit">
+			<form id="profile-info-additional-form">
+			<div class="wrapper">
+				<label><?= $this->t('О себе');?></label>
+				<textarea class="about" name="about" ><?= $profile['about']?></textarea>
+			</div>
+			<div class="wrapper">
+				<label><?= $this->t('Компания');?></label>
+				<input type="text" name="company" value="<?= $profile['company']?>">
+			</div>
+			<div class="wrapper">
+				<label><?= $this->t('Должность');?></label>
+				<input type="text" name="position_job" value="<?= $profile['position_job']?>">
+			</div>
+			<div class="wrapper">
+				<label><?= $this->t('ВУЗ');?></label>
+				<input type="text" name="education" value="<?= $profile['education']?>">
+			</div>
+			<div class="wrapper">
+				<label><?= $this->t('Любимые места');?></label>
+				<input type="text" name="favorite_places" value="<?= $profile['favorite_places']?>">
+			</div>
+			<div class="wrapper">
+				<label><?= $this->t('Языки');?></label>
+				<div class="checkbox-group">
+					<label class="lbl-checkbox"><input class="checkbox-lang" type="checkbox" name="lang_ru" value="yes"<?= $this->isChecked($profile['lang_ru'], 'yes');?>>  <?= $this->t('Русский')?></label>
+					<label class="lbl-checkbox"><input class="checkbox-lang" type="checkbox" name="lang_en" value="yes"<?= $this->isChecked($profile['lang_en'], 'yes');?>>  <?= $this->t('Английский')?></label>
+					<label class="lbl-checkbox"><input class="checkbox-lang" type="checkbox" name="lang_fr" value="yes"<?= $this->isChecked($profile['lang_fr'], 'yes');?>>  <?= $this->t('Французский')?></label>
+					<label class="lbl-checkbox"><input class="checkbox-lang" type="checkbox" name="lang_de" value="yes"<?= $this->isChecked($profile['lang_de'], 'yes');?>>  <?= $this->t('Немецкий')?></label>
+					<label class="lbl-checkbox"><input class="checkbox-lang" type="checkbox" name="lang_it" value="yes"<?= $this->isChecked($profile['lang_it'], 'yes');?>>  <?= $this->t('Итальянский')?></label>
+					<label class="lbl-checkbox"><input class="checkbox-lang" type="checkbox" name="lang_es" value="yes"<?= $this->isChecked($profile['lang_es'], 'yes');?>>  <?= $this->t('Испанский')?></label>
+				</div>
+			</div>
+			</form>
+			<div class="wrapper">
+				<input type="submit" value="<?= $this->t('Сохранить');?>" class="btn btn-dark btn-med btn-save">
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+<div class="content-right-col">
+	<?php
+	// Поле ввода поста
+	echo $this->render('posts/add-post.phtml');
+
+	if(!empty($this->vPosts)) {
+		echo $this->partial('posts/post-list.phtml', array('vPosts'=>$this->vPosts, 'vILikePost'=>$this->vILikePost, 'myProfile' => $this->myProfile));
+	}
+	?>
+</div>
+
+</div>
+</div>
+</div>
+<?= $this->render('popup/image-gallery.phtml')?>

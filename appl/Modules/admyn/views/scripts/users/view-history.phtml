@@ -1,0 +1,17 @@
+<?php
+
+// view-history
+
+$history = $this->vHistory;
+#Sas_Debug::dump($data);
+$cntHistory = count($history);
+
+?>
+
+	<h1>История действий</h1>
+	<h2><?= $this->vProfile['first_name']?> <?= $this->vProfile['last_name']?> ID: <a href="/admyn/users/view-profile/id/<?= $this->vProfile['id']?>"><?= $this->vProfile['id']?></a></h2>
+	<h3>Кол-во действий (<span id="CntNewUser"><?= $cntHistory?></span>)</h3>
+
+<?php foreach($history as $item) :?>
+	<p><?= $item['date_create']?>: <?= $item['catName']?> <a href="/admyn/users/view-profile/id/<?= $item['to_user_ud'] ?>"><?= $item['to_user_ud']?></a></p>
+<?php endforeach; ?>

@@ -1,0 +1,105 @@
+<?
+
+$myID        = $this->myProfile['id'];
+$myStatus    = $this->myProfile['current_status'];
+$myCard      = $this->myProfile['club_card_dt'];
+$myUrlByCard = $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true);
+
+/*
+
+$this->vComments[] содержит
+	["post_id"] => int ID поста
+	["user_id"] => int ID пользователя создавшего комментарий
+	["comment_text"] => string Текст комментария
+	["date_create"] => string дата в формате "ггггг-мм-вв чч:мм:сс"
+	["master_user_id"] => int ID пользователя создавшего сам ПОСТ
+	["first_name"] => string Имя пользователя создавшего комментарий
+	["uid"] => string uid Пользователя создавшего комментарий
+	["avatar"] => string Путь к файлу аватарки, пример:  "/img/people/male/1974/3040/thumbnail.jpg"
+	["cnt_like"] => int Кол-во лайков на комментарии
+
+*/
+?>
+<form class="send-form" onsubmit="return postCommentAdd(this)" action="<?= $this->url(array('module'=>'user', 'controller'=>'posts', 'action'=>'add-comment', 'post_id'=>$this->vPostId), null, true)?>" data-post_id="<?= $this->vPostId?>">
+	<input type="text" name="comment_text" placeholder="<?= $this->t('Введите комментарий и нажмите Ввод');?>">
+</form>
+<?
+if(!empty($this->vComments)) {
+	foreach($this->vComments as $com) {
+		echo '<div id="PostComment'.$com['id'].'" class="comment" data-post_id="'.$com['post_id'].'">';
+
+		// Определяем возможность удаления
+		if($this->vMyID == $com['user_id'] || $this->vMyID == $com['master_user_id'] || $myID == 4000) {echo '<button class="btn btn-ico btn-ico-delete btn-delete" onclick="postCommentDelete('.$com['post_id'].', '.$com['id'].')" title="'.$this->t('Удалить комментарий').'"></button>';}
+
+		# Ссылка на аватарку профиля
+		if($myID != $com['user_id'] && $myCard >= CURRENT_DATE) {
+			echo '<a class="photo" href="'.$this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$com['uid']), null, true).'">';
+		}
+		if($myID != $com['user_id'] && $myCard < CURRENT_DATE) {
+			echo '<a class="photo" href="'.$myUrlByCard.'" title="'.$this->t('Переход на профиль только для владельцев Клубной карты').'">';
+		}
+		if($myID == $com['user_id']) {echo '<div class="photo">';}
+		echo '<img src="'.$com['avatar'].'">';
+		if($myID == $com['user_id']) {echo '</div>';}
+		else {echo '</a>';}
+		# END Ссылка на аватарку профиля
+
+		// Блок с именем автора и текстом комментария
+		echo '<div class="msg">';
+
+			# Имя пользователя и ссылка на его профиль
+			if($myID != $com['user_id'] && $myCard >= CURRENT_DATE) echo '<a class="userName" href="'.$this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$com['uid']), null, true).'">';
+			if($myID != $com['user_id'] && $myCard < CURRENT_DATE) echo '<a class="userName" href="'.$this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true).'" title="'.$this->t('Переход на профиль только для владельцев Клубной карты').'">';
+			if($myID == $com['user_id']) {echo '<div class="userName">';}
+			echo $com['first_name'];
+			if($myID == $com['user_id']) {echo '</div>';}
+			else {echo '</a>';}
+			# END Имя пользователя и ссылка на его профиль
+
+			# Текст комментария
+			echo '<div class="text">'.$com['comment_text'].'</div>';
+			# END Текст комментария
+		
+			echo '<div class="comment-bar">';
+				// Дата комментария
+				echo '<span class="time timeago" title="'.date_format(new DateTime($com['date_create']), 'c').'"></span> ·';
+
+				# LIKE
+				# Формирование вывода лайков см. /library/Sas/View/Helper/Like.php
+				# Не забываем подключать js файл поддержки: /js/like.js
+				$likeMy = array(
+					'id'     => $myID,
+					'card'   => $myCard,
+					'status' => $myStatus,
+				);
+				$likeData = array(
+					'dataUserId' => $com['user_id'],
+					'dataId'     => $com['id'],
+					'ILikeKey'   => $this->vILikeComment[$com['id']],
+					'cntLike'    => $com['cnt_like'],
+				);
+				$likeText = array(
+					'like'   => $this->t('Нравится'),
+					'likeMe' => $this->t('Вам нравится'),
+				);
+				$likeTitle = array(
+					'likeNo'           => $this->t('Вы не можете лайкнуть свой комментарий.'),
+					'likeClubOnly'     => $this->t('Только члены Клуба могут лайкнуть комментарий.'),
+					'listOpen'         => $this->t('Показать людей, которым нравится Ваш комментарий.'),
+					'listOpenCardOnly' => $this->t('Чтобы посмотреть, кому нравится Ваш комментарий, Вам необходима Клубная карта.'),
+				);
+				$likeJs = array(
+					'module' => 'posts',     // Модуль обработчика
+					'key' => 'post-comment', // Название КЛЮЧА для js функций like() и likeOpenPopupUsers()
+				);
+				echo $this->Like($likeMy, $likeData, $likeText, $likeTitle, $likeJs);
+				# END LIKE
+
+			echo '</div>';
+		echo '</div>';
+		echo '</div>';
+	}
+}
+// else {
+	//echo '<h5>'.$this->t('Комментариев еще нет, Ваш будет первый!').'</h5>';
+//}

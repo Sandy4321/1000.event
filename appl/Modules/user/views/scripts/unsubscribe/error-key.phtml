@@ -1,0 +1,12 @@
+<?php
+
+$title = $this->t('Ваша ссылка для управления подписками не действительна');
+$this->headTitle($title);
+
+?>
+<div class="container">
+	<div class="auth-box">
+		<h1 style="font-size: 20px;color: #fff;font-weight: 400;text-align: center;"><?= $title?></h1>
+		<p class="auth-box forgot"><?= $this->t('Вы не можете получить доступ к управлению подписками на новости и предложения Клуба')?></p>
+	</div>
+</div>

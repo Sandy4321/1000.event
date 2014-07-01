@@ -1,0 +1,93 @@
+<?php
+if (!isset($_SESSION['admin']['aut']) && $_SESSION['admin']['aut'] !== true) {
+	return;
+}
+?>
+
+<div class="navbar navbar-inverse navbar-fixed-top shadowBoxSmall">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</a>
+			<div class="pull-right">
+				<a class="btn btn-danger btn-small" href="/admyn/index/quit"><i class="icon-lock icon-white"></i> Выход</a>
+			</div>
+
+			<a class="brand" href="/admyn/dashboard">OnTheList</a>
+
+			<div class="nav-collapse">
+
+				<ul class="nav">
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i> Пользователи <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a tabindex="-1" href="/admyn/dashboard">Новые заявки</a></li>
+							<!--<li><a tabindex="-1" href="/admyn/users/approved-request">Одобренные но не активные</a></li>
+							<li><a tabindex="-1" href="/admyn/users/reject-request">Отклонённые заявки</a></li>
+							<li><a tabindex="-1" href="/admyn/users/waiting-request">Ожидающие доп. информации</a></li>
+							<li class="divider"></li>
+							<li><a tabindex="-1" href="/admyn/users/active-users">Активные пользователи</a></li>
+							<li><a tabindex="-1" href="/admyn/users/hidden-users">Пользователи со скрытыми профилями</a></li>
+							<li><a tabindex="-1" href="/admyn/users/blocked-users">Заблокированные администрацией</a></li>
+							<li><a tabindex="-1" href="/admyn/users/delete-users">Профили удалённые пользователем</a></li>
+							<li class="divider"></li>
+							<li><a tabindex="-1" href="/admyn/users/view-users-msg">Просмотр текстов сообщений</a></li>-->
+							<li><a tabindex="-1" href="/admyn/users/view-users-status">Просмотр статусов</a></li>
+							<li><a tabindex="-1" href="/admyn/users/report-dates">Отчёты о свиданиях</a></li>
+							<li class="divider"></li>
+							<li><a tabindex="-1" href="/admyn/users/invite-users"><i class="icon-heart"></i> Ближайшие свидания</a></li>
+						</ul>
+					</li>
+					<!--<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-book icon-white"></i> Страницы <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a tabindex="-1" href="#">Наши новости</a></li>
+							<li><a tabindex="-1" href="#">Мероприятия</a></li>
+							<li><a tabindex="-1" href="#">Пресс релизы</a></li>
+							<li><a tabindex="-1" href="#">СМИ</a></li>
+							<li><a tabindex="-1" href="#">О нас говорят</a></li>
+							<li class="divider"></li>
+							<li><a tabindex="-1" href="#">Главная</a></li>
+							<li><a tabindex="-1" href="#">Партнёры</a></li>
+							<li><a tabindex="-1" href="#">Контакты</a></li>
+							<li><a tabindex="-1" href="#">О клубе</a></li>
+						</ul>
+					</li>-->
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-eye-open icon-white"></i> Аналитика <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a tabindex="-1" href="/admyn/analytics/balance-systems/">Основной фин. баланс системы</a></li>
+							<li><a tabindex="-1" href="/admyn/analytics/stat-users-day/">Дневная активность</a></li>
+							<li><a tabindex="-1" href="/admyn/analytics/user-action-base/">Базовые действия пользователей</a></li>
+							<!--<li><a tabindex="-1" href="/admyn/analytics/stat-users-dinkar/">Динамика движения карат</a></li>-->
+							<!--<li><a tabindex="-1" href="/admyn/analytics/stat-gifts/">Подарки</a></li>-->
+						</ul>
+					</li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-wrench icon-white"></i> Настройки <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<!--<li><a tabindex="-1" href="/admyn/templates/email">Шаблоны писем</a></li>-->
+							<li><a tabindex="-1" href="/admyn/templates/sms">Шаблоны SMS</a></li>
+							<li><a tabindex="-1" href="/admyn/templates/dash">Шаблоны Dashboard</a></li>
+							<li class="divider"></li>
+							<li class="dropdown-submenu"><a tabindex="-1" href="#">Рекламные кампании</a>
+								<ul class="dropdown-menu">
+									<li><a tabindex="-1" href="/admyn/advert/add">Создать новую</a></li>
+									<li><a tabindex="-1" href="/admyn/advert/view">Просмотр текущих</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<!--<li><a href="#"><i class="icon-search icon-white"></i> Расширенный поиск</a></li>-->
+				</ul>
+
+				<form class="navbar-search" action="/admyn/users/view-profile/" method="get">
+					<input id="SearchUserId" type="hidden" name="id" value="0">
+					<input data-provide="typeahead" id="SearchUsersList" type="text" class="search" placeholder="Введите ID, Имя или Фамилию" autocomplete="off">
+					<input type="submit" class="btn btn-info" value="Ok">
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+</div>

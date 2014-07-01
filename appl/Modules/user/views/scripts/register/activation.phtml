@@ -1,0 +1,26 @@
+<?php
+
+$title = $this->t('Активация аккаунта');
+$profile  = $this->vProfile;
+
+?>
+
+<div class="contain" style="color: #ffffff;">
+	<div class="centerBlock">
+		<h1><?= $title?></h1>
+		<? if($profile):?>
+			<form action="<?= $this->url(array('module'=>'user', 'controller'=>'login'), null, true)?>" method="post">
+				<input type="hidden" name="email" value="<?= $profile['email']?>">
+				<input type="hidden" name="key" value="<?= $profile['activation_key']?>">
+				<h2><?= $this->t('Поздравляем!') ?></h2>
+				<h3 style="font-size: 0.9em;"><?= $this->t('Вы активировали свой аккаунт в Клубе OnTheList!') ?></h3>
+				<div style="font-size: 1.4em;"><?= $profile['email'];?></div>
+				<h4>www.onthelist.ru</h4>
+				<h5><button class="btn btn-success">Войти в клуб</button></h5>
+			</form>
+		<? else: ?>
+			<p><?= $this->t('Ключ активации уже был использован ранее.') ?></p>
+			<p><?= $this->t('Пожалуйста, воспользуйтесь Вашим логином и паролем для входа на сайт.') ?></p>
+		<? endif; ?>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<?php
+$title = $this->t('Контакты');
+$this->headTitle($title);
+?>
+<script type="text/javascript">
+/**
+ * Отправка письма из формы
+ */
+function contactSendEmail() {
+	var email     = $('#email');
+	var user_name = $('#user_name');
+	var msg_text  = $('#msg_text');
+
+	$.ajax({
+		type:     'post',
+		dataType: 'json',
+		url:      '/' + LANG + '/api/site/send-mail-support',
+		data:     'email=' + email.val() + '&user_name=' + user_name.val() + '&msg_text=' + msg_text.val(),
+		success:  function(json) {
+			if(!json.error) {
+				alert(json.msg);
+				email.val('');
+				user_name.val('');
+				msg_text.val('');
+			} else {
+				alert(json.error);
+			}
+		}
+	});
+
+	return false;
+}
+</script>
+<div class="container info-page" id="contact">
+	<h1 class="page-title"><?= $title?></h1>
+	<div class="text">
+		<?= $this->vPage['content']?>
+	</div>
+</div>

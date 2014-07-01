@@ -1,0 +1,79 @@
+<?php
+
+// report-dates
+
+function getNoDatesText($textId)
+{
+	$ret = null;
+
+	switch($textId) {
+		case 'revers': $ret = 'Было перенесено'; break;
+		case 'cancel': $ret = 'Отменено'; break;
+		case 'my_not_come': $ret = 'Я не пришел на свидание'; break;
+		case 'partner_not_come': $ret = 'Партнер не пришел на свидание'; break;
+	}
+
+	return $ret;
+}
+
+$data = $this->vData;
+#Sas_Debug::dump($data);
+#$cntData = count($data);
+
+$dateOne = (empty($this->vDateOne)) ? 'date-current' : $this->vDateOne;
+
+?>
+
+<style type="text/css">
+.no-dates {
+	background-color: #cc0000;
+}
+</style>
+
+<h1>Отчёты о свиданиях</h1>
+<form action="<?= $this->url()?>" class="form-inline" method="get">
+	<p class="text-center">
+		<label class="radio inline"><input type="radio" id="date-current" name="date_one" value="date-current" <?= $this->IsChecked($dateOne, 'date-current')?>> Сегодня</label>
+		<label class="radio inline"><input type="radio" id="date-yesterday" name="date_one" value="date-yesterday" <?= $this->IsChecked($dateOne, 'date-yesterday')?>> Вчера</label>
+		<label class="radio inline"><input type="radio" id="date-weekly" name="date_one" value="date-weekly" <?= $this->IsChecked($dateOne, 'date-weekly')?>> За неделю</label>
+		<label class="radio inline"><input type="radio" id="date-month" name="date_one" value="date-month" <?= $this->IsChecked($dateOne, 'date-month')?>> За месяц</label>
+	</p>
+	<p class="text-center"><button class="btn" type="submit">Выбрать</button></p>
+</form>
+
+<?php
+
+if(is_array($data)) {
+	foreach($data as $item) :
+		if(!is_null($item['no_dates'])) {
+			$class = 'no-dates';
+		} else {
+			$class = '';
+		}
+?>
+
+<div id="ItemReport_<?= $item['id']; ?>">
+	<p>ID свидания: <?= $item['dates_id']?></p>
+	<p>ID пользователя составившего отчёт: <a href="/admyn/users/view-profile/id/<?= $item['user_id']?>"><?= $item['user_id']?></a></p>
+	<p class="<?= $class?>">Причина отказа от свидания: <?= getNoDatesText($item['no_dates'])?></p>
+	<p>Дата и время свидания: <?= $item['date_time_real']?></p>
+	<p>Комментарий у свиданию в целом: <?= $item['comment_dates']?></p>
+
+	<p>ID места свидания: <?= $item['rating_place_id']?></p>
+	<p>Рейтинг места свидания: <?= $item['rating_place']?></p>
+	<p>Комментарий о месте свидания: <?= $item['comment_place']?></p>
+
+	<p>Интересность собеседника: <?= $item['conversationalist']?></p>
+	<p>ID партнёра с которым ходил на свидание: <a href="/admyn/users/view-profile/id/<?= $item['rating_face_id']?>"><?= $item['rating_face_id']?></a></p>
+	<p>Рейтинг партнёра: <?= $item['rating_face']?></p>
+	<p>Поведение партнёра: <?= $item['demeanor']?></p>
+
+	<p>Свидание было перенесено: <?= $item['new_dates']?></p>
+	<p>Выбрано другое место для свидания: <?= $item['where_place']?></p>
+	<p>Дата и время отчёта: <?= $item['date_time_create']?></p>
+</div>
+<hr>
+<?
+endforeach;
+}
+?>

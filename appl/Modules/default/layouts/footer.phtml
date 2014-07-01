@@ -1,0 +1,17 @@
+<footer id="footer">
+	<div class="container">
+		<ul class="footer-nav">
+			<li><a href="<?= $this->url(array('module'=>'about', 'controller'=>'index',   'action'=>'rules'),       null, true);?>"><?= $this->t('Правила');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'about', 'controller'=>'index',   'action'=>'members'),     null, true);?>"><?= $this->t('Члены клуба');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'about', 'controller'=>'index',   'action'=>'privacy'),     null, true);?>"><?= $this->t('Конфиденциальность');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'about', 'controller'=>'contact', 'action'=>'index'),       null, true);?>"><?= $this->t('Контакты');?></a></li>
+		</ul>
+		<ul class="footer-nav" >
+			<li><a href="<?= $this->url(array('module'=>'user',     'controller'=>'register',   'action'=>'index'), null, true);?>"><?= $this->t('Вступить в клуб');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'news',     'controller'=>'mass-media', 'action'=>'index'), null, true);?>"><?= $this->t('Пресса');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'news',     'controller'=>'people',     'action'=>'index'), null, true);?>"><?= $this->t('О нас говорят');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'partners', 'controller'=>'index',     'action'=>'index'), null, true);?>"><?= $this->t('Партнеры');?></a></li>
+		</ul>
+		<a href="<?= $this->url(array(), null, true);?>" class="footer-logo"></a>
+	</div>
+</footer>

@@ -1,0 +1,14 @@
+<div class="row-fluid">
+	<div class="span4 offset4">
+		<form method="post" action="<?= $this->url()?>">
+			<fieldset>
+				<label><?= $this->t('Введите адрес Вашей электронной почты, который Вы указывали при регистрации в Клубе OnTheList')?></label>
+				<input type="email" name="email" placeholder="<?= $this->t('Email')?>">
+				<span class="help-block"><?= $this->t('На указанный адрес будет отправлена инструкция по восстановлению пароля и уникальная ссылка для его восстановления, действующая 1 час.')?></span>
+				<p class="text-center">
+					<button type="submit" class="btn btn-dark btn-submit"><?= $this->t('Отправить')?></button>
+				</p>
+			</fieldset>
+		</form>
+	</div>
+</div>

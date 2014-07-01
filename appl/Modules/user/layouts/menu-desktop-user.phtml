@@ -1,0 +1,17 @@
+<div class="header-nav header-auth-nav hidden-mobile-tablet">
+	<!--<a href="<?/*= $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'index'), null, true);*/?>" class="header-user">-->
+	<a href="javascript:void(0)" class="header-user">
+		<div class="photo"><img class="profile-avatar" src="<? echo Models_User_Model::getAvatarUser(); if($this->startController == 'profile' && $this->startAction == 'settings') {echo '?'.time();}?>"></div>
+		<ul class="sub-nav">
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'index'),     null, true);?>"><?= $this->t('Профиль');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'privilege', 'action'=>'index'),     null, true);?>"><?= $this->t('Привилегии');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'favorites'), null, true);?>"><?= $this->t('Избранное');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'blacklist'), null, true);?>"><?= $this->t('Заблокированные');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'phone-book'), null, true);?>"><?= $this->t('Телефонная книга');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'invite'),    null, true);?>"><?= $this->t('Пригласить');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'balance'),   null, true);?>"><?= $this->t('Счет');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'profile',   'action'=>'settings'),  null, true);?>"><?= $this->t('Настройки');?></a></li>
+			<li><a href="<?= $this->url(array('module'=>'user', 'controller'=>'login',     'action'=>'quit'),      null, true);?>"><?= $this->t('Выход');?></a></li>
+		</ul>
+	</a>
+</div>

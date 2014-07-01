@@ -1,0 +1,27 @@
+<div class="content-block profile-messages" id="messages-talk-block">
+	<div class="header">
+		<h3><?= $this->t('Сообщения'); ?></h3>
+	</div>
+	<div class="data" id="messages-talk">
+		<div class="messages">
+			<?
+			$accessRead = 'false';
+			foreach($this->vTalk as $msg) {
+				if($msg['box'] == 'in') { // входящее
+					$accessRead = ($msg['access_read'] == 'yes') ? 'true' : 'false';
+				}
+				echo $this->partial('messages/msg.phtml', array('msg'=>$msg));
+			}
+			?>
+		</div>
+		<script>
+			var P_ID  = <?= $this->partnerProfile['id']?>;
+			var P_UID = '<?= $this->partnerProfile['uid']?>';
+			var P_FIRST_NAME = '<?= $this->partnerProfile['first_name']?>';
+			var P_AVATAR = '<?= $this->partnerProfile['avatar']?>';
+			var P_PROFILE_URL = '<?= $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$this->partnerProfile['uid']),null, true)?>';
+			var MSG_ACCESS_READ = <?= $accessRead?>;
+		</script>
+	</div>
+	<?= $this->render('messages/form-send.phtml'); ?>
+</div>

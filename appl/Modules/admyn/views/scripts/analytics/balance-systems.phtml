@@ -1,0 +1,140 @@
+<?php
+
+// analytics/balance-systems/
+
+//$this->headScript()->appendFile('/js/admyn/new_users.js');
+
+$data = $this->vData;
+$paymentSuccess = $this->vPaymentSuccess;
+
+$moneyMonth = 0;
+foreach($paymentSuccess as $pay) {
+	$moneyMonth += $pay['money'];
+}
+//Sas_Debug::dump($moneyMonth);
+?>
+
+<h1>Основной фин. баланс системы</h1>
+<h3>Данные по состоянию на: <?= date('d.m.Y H:i')?></h3>
+<table class="table table-bordered">
+	<tr>
+		<td>Реальные караты</td>
+		<td style="text-align: right"><?= number_format($data['real'], 0, ',', ' ')?></td>
+	</tr>
+	<tr>
+		<td>Бонусные караты</td>
+		<td style="text-align: right"><?= number_format($data['bonus'], 0, ',', ' ')?></td>
+	</tr>
+	<tr>
+		<th>Итого</th>
+		<td style="text-align: right"><?= number_format($data['summa'], 0, ',', ' ')?></td>
+	</tr>
+</table>
+
+<hr/>
+
+<h2>План платежей</h2>
+<p>Список платежей которые технически можно выполнить и на текущий момент опция автоматического продления у пользователя включена</p>
+<p><small>
+<? $sumPlan = 0; foreach($this->vExpectedPayments as $plan ):?>
+	<?= $plan['dc']?> на сумму <?= number_format($plan['money'], 0, ',', ' ')?><br>
+	<? $sumPlan += $plan['money'];?>
+<? endforeach; ?>
+</small></p>
+<p>Итого по плану на текущий месяц: <?= number_format($sumPlan, 0, ',', ' ')?></p>
+
+<hr/>
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Дата', 'Сумма в день'],
+			<?
+			foreach ($paymentSuccess as $item) {
+			$d .= '["'.$item['dc'].'", '.$item['money'].'],';
+			}
+			echo $d = substr($d, 0, -1);
+			?>
+		]);
+
+		var options = {
+			title: 'Динамика оплаты в руб.'
+		};
+
+		//var chart = new google.visualization.LineChart(document.getElementById('chart_div')).
+		var chart = new google.visualization.ColumnChart(document.getElementById('chart_div')).
+			draw(data, {curveType: "function",
+				vAxis: {maxValue: 10}
+			}
+		);
+		chart.draw(data, options);
+	}
+</script>
+
+<h2>Успешно завершенные платежи</h2>
+<h3>Данные по состоянию на: <?= date('d.m.Y H:i')?></h3>
+<h4 style="color: #A0FF98; text-align: center;">Итого за текущий месяц: <?= number_format($moneyMonth, 0, ',', ' ')?> руб.</h4>
+<div id="chart_div" style="width: 100%; height: 500px;"></div>
+
+
+<style type="text/css">
+.success {
+	color: #88FF9B;
+}
+.created {
+	color: #999;
+	font-size: 0.8em;
+}
+.error, .canceled, .waiting {
+	text-decoration: line-through;
+}
+</style>
+<h2>Все платежи детально</h2>
+<div class="row-fluid">
+	<div class="span12">
+		<?
+		foreach($this->vHistoryPayment as $pay) {
+			$tmpDt = substr($pay['date_create'], 0, 10);
+			if($dt != $tmpDt) {
+				echo '<hr>';
+			}
+			echo '<p class="'.$pay['status'].'"';
+			if(!is_null($pay['parent_id'])) echo ' style="background-color: #525252; padding-left: 5px;"';
+			echo '>';
+			if($pay['recurrent_payment'] == 'yes') { // Включены рек платежи
+				echo '<small class="green">®</small> ';
+			} else {
+				echo '<small class="red-text">®</small> ';
+			}
+			echo '<a href="/admyn/users/view-profile/id/'.$pay['user_id'].'">' .$pay['user_id'] . '</a>';
+			if(!is_null($pay['parent_id'])) {
+				echo ' <sup style="color: #FF425F;">(R)</sup>';
+			}
+			echo ' счет № ' . $pay['id'] . ' от ' . $pay['date_create'] .' сумма: ';
+			if ($pay['money'] >= 1000) {
+				echo '<strong style="color: #CC847E">';
+			}
+			echo $pay['money'];
+			if ($pay['money'] >= 1000) {
+				echo '</strong>';
+			}
+			echo ' = ';
+			if($pay['item_name'] == 'card') {
+				echo ' <span style="color: #C3A0CC">Клубная карта: ' . $pay['item_cnt'] .' мес.</span>';
+			} else {
+				echo ' Караты: ' . $pay['item_cnt'];
+			}
+
+			if(!is_null($pay['response_code'])) { // Была оплата картой
+				echo ' | paid card';
+			}
+
+			echo '</p>';
+			$dt = $tmpDt;
+		}
+		?>
+	</div>
+</div>

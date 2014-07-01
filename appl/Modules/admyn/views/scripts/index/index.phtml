@@ -1,0 +1,17 @@
+<?php
+//$this->headScript()->appendFile('/js/admin/login.js');
+?>
+<div class="centerPages loginBlock">
+	<p id="LogoImg" class="text-center">
+		<img src="/img/admin/logo-tr.png">
+	</p>
+	<form id="FormLogin" class="form-inline" action="/admyn" method="post">
+		<div class="shadowBox borderRadius span6">
+			<input type="text"class="span12" name="login">
+		</div>
+		<div class="shadowBox borderRadius span6">
+			<input type="password" class="span12" name="password">
+		</div>
+		<button type="submit" style="visibility: hidden">Ok</button>
+	</form>
+</div>

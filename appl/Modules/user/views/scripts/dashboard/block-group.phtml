@@ -1,0 +1,41 @@
+<?
+$myCard = $this->myProfile['club_card_dt'];
+
+$cntBlockGroup = count($this->vBlockGroup);
+$cntBlockGroupView = 0;
+if($cntBlockGroup >= 3) $cntBlockGroupView = $cntBlockGroup - 3;
+if($cntBlockGroup == 2) $cntBlockGroupView = $cntBlockGroup - 2;
+if($cntBlockGroup == 1) $cntBlockGroupView = $cntBlockGroup - 1;
+?>
+<!-- Стандартный групповой инфо-блок -->
+<div class="content-block dashboard-user-box" id="<?= $this->vBlockId?>">
+	<div class="header">
+		<h3><?= $this->vBlockName;?></h3>
+		<? if($cntBlockGroupView > 0) {
+			if($myCard >= CURRENT_DATE) {
+				echo '<a class="all" href="javascript:void(0);" onclick="popup_show(\'dashboard\', \''.$this->vBlockId.'\')" >+ '.$cntBlockGroupView.'</a>';
+			} else {
+				echo '<a class="all" href="javascript:void(0);" onclick="goBuyCard(\''.$this->t('Расширенная информация доступна только для владельцев Клубных карт.').'\')">+ '. $cntBlockGroupView.'</a>';
+			}
+		}
+		?>
+	</div>
+	<div class="data">
+	<?
+	$i = 1;
+	foreach ($this->vBlockGroup as $item) {
+		if($myCard >= CURRENT_DATE) {
+			echo '<a href="'.$this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$item['uid']), null, true).'" title="'.$item['first_name'].'">';
+		} else {
+			echo '<a href="'.$this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true).'" title="'.$this->t('Просмотр профиля доступен только для владельцев клубных карт.').'">';
+		}
+		echo '<img class="photo" src="'.$item['img'].'thumbnail.jpg">';
+		echo '<span class="username">'.$item['first_name'].'</span>';
+		echo '</a>';
+
+		if($i==3) break;
+		$i++;
+	}
+	?>
+	</div>
+</div>

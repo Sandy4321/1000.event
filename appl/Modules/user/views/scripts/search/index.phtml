@@ -1,0 +1,210 @@
+<?
+$this->headLink()->appendStylesheet('/css/smoothness/jquery-ui-1.10.4.custom.min.css');
+$this->headScript()->appendFile('/js/libs/jquery.cookie.js');
+$this->inlineScript()->appendFile('/js/search.js');
+
+$myStatus = $this->myProfile['current_status'];
+$myCard   = $this->myProfile['club_card_dt'];
+$myIsCard = ($myCard >= CURRENT_DATE) ? true : false;
+
+$searchBlock = $this->paramSearch['search_block'];
+$paramProf   = (is_array($this->paramSearch['prof']))   ? $this->paramSearch['prof']   : array();
+$paramHobby  = (is_array($this->paramSearch['hobby']))  ? $this->paramSearch['hobby']  : array();
+$paramTarget = (is_array($this->paramSearch['target'])) ? $this->paramSearch['target'] : array();
+?>
+<div class="content" id="search">
+	<div class="container">
+		<div class="filters-bar">
+			<div  class="tabs-select">
+				<ul >
+					<li data-value="filters-date"><span class="btn-ico btn-ico-romantic"></span><label><?= $this->t('Романтика');?></label></li>
+					<li data-value="filters-business"><span class="btn-ico btn-ico-business"></span><label><?= $this->t('Бизнес');?></label></li>
+					<li data-value="filters-interests"><span class="btn-ico btn-ico-interests"></span><label><?= $this->t('Интересы');?></label></li>
+					<li data-value="filters-targets"><span class="btn-ico btn-ico-targets"></span><label><?= $this->t('Цели');?></label></li>
+				</ul>
+			</div>
+			<!-- Романтика -->
+			<? if($this->myProfile['romantic'] == 'yes') { ?>
+			<div class="filters<? if($searchBlock == 'romantic') echo ' filters-active';?>" id="filters-date">
+				<form action="<?= $this->url(array('module'=>'user', 'controller'=>'search', 'action'=>'index'), null, true);?>">
+				<input type="hidden" name="search_block" value="romantic">
+				<div class="filter filter-age">
+					<div class="amount">
+						<label><?= $this->t('Возраст');?>:</label>
+					</div>
+					<div class="select input-wrapper input-wrapper-half">
+						<? $options['prefix'] = $this->t('от').' '; echo $this->htmlFormSelect('age_from', array('range'=>'20-60', 'step'=>'2'), (is_null($this->paramSearch['age_from'])) ? 24 : $this->paramSearch['age_from'], null, $options);?>
+					</div>
+
+					<div class="select input-wrapper input-wrapper-half">
+						<? $options['prefix'] = $this->t('до').' '; echo $this->htmlFormSelect('age_to', array('range'=>'20-60', 'step'=>'2'), (is_null($this->paramSearch['age_to'])) ? 40 : $this->paramSearch['age_to'], null, $options);?>
+					</div>
+				</div>
+
+				<div class="filter filter-height">
+					<div class="amount">
+						<label><?= $this->t('Рост');?></label>
+					</div>
+					<div class="select input-wrapper input-wrapper-half">
+						<? $options['prefix'] = $this->t('от').' '; echo $this->htmlFormSelect('height_from', array('range'=>'150-220', 'step'=>'5'), (is_null($this->paramSearch['height_from'])) ? 160 : $this->paramSearch['height_from'], null, $options);?>
+					</div>
+					<div class="select input-wrapper input-wrapper-half">
+						<? $options['prefix'] = $this->t('до').' '; echo $this->htmlFormSelect('height_to', array('range'=>'150-220', 'step'=>'5'), (is_null($this->paramSearch['height_to'])) ? 190 : $this->paramSearch['height_to'], null, $options);?>
+					</div>
+				</div>
+
+				<div class="filter filter-children">
+					<div class="amount">
+						<label><?= $this->t('Дети');?></label>
+					</div>
+					<div class="input-wrapper">
+						<label><input type="radio" name="children" value="yes"<?= $this->isChecked($this->paramSearch['children'], 'yes');?>> <?= $this->t('Да');?></label>
+						<label><input type="radio" name="children" value="no"<?= $this->isChecked($this->paramSearch['children'], 'no');?>> <?= $this->t('Нет');?></label>
+					</div>
+				</div>
+
+				<div class="filter filter-smoking">
+					<div class="amount">
+						<label><?= $this->t('Курение');?>:</label>
+					</div>
+					<div class="input-wrapper">
+						<label><input type="radio" name="smoking" value="yes"<?= $this->isChecked($this->paramSearch['smoking'], 'yes');?>> <?= $this->t('Да');?></label>
+						<label><input type="radio" name="smoking" value="no"<?= $this->isChecked($this->paramSearch['smoking'], 'no');?>> <?= $this->t('Нет');?></label>
+					</div>
+				</div>
+
+				<button class="btn-search"><?= $this->t('Поиск');?></button>
+				</form>
+			</div>
+			<? } else { ?>
+			<div class="filters<? if($searchBlock == 'romantic') echo ' filters-active';?>" id="filters-date">
+				<p style="margin: 10px;line-height: 35px;font-size: 14px;">
+					<?= $this->t('Вам не доступен Романтический поиск, так как в настройках Вашего профиля отмечено что он Вам не интересен.');?>
+				</p>
+			</div>
+			<? } ?>
+			<!-- /Романтика -->
+
+			<!-- Бизнес -->
+			<div class="filters<? if($searchBlock == 'business') echo ' filters-active';?>" id="filters-business">
+				<form action="<?= $this->url(array('module'=>'user', 'controller'=>'search', 'action'=>'index'), null, true);?>">
+				<input type="hidden" name="search_block" value="business">
+				<div class="filter">
+					<input type="text" placeholder="<?= $this->t('Компания');?>" name="company" value="<?= $this->paramSearch['company']?>"<? if(!$myIsCard) echo ' disabled="disabled"'?>>
+					<? if(!$myIsCard) { echo '<span class="helper-field">'.$this->t('Только для владельцев Клубных карт').'</span>';}?>
+				</div>	
+				<div class="filter">	
+					<input type="text" placeholder="<?= $this->t('Должность');?>" name="position_job" value="<?= $this->paramSearch['position_job']?>"<? if(!$myIsCard) echo ' disabled="disabled"'?>>
+					<? if(!$myIsCard) { echo '<span class="helper-field">'.$this->t('Только для владельцев Клубных карт').'</span>';}?>
+				</div>	
+				<div class="filter">	
+					<input type="text" placeholder="<?= $this->t('ВУЗ');?>" name="education" value="<?= $this->paramSearch['education']?>"<? if(!$myIsCard) echo ' disabled="disabled"'?>>
+					<? if(!$myIsCard) { echo '<span class="helper-field">'.$this->t('Только для владельцев Клубных карт').'</span>';}?>
+				</div>
+
+				<button class="btn-search"><?= $this->t('Поиск');?></button>
+				</form>
+			</div>
+			<!-- /Бизнес -->
+			<!-- Интересы -->
+			<div class="filters<? if($searchBlock == 'hobby') echo ' filters-active';?>" id="filters-interests">
+				<form action="<?= $this->url(array('module'=>'user', 'controller'=>'search', 'action'=>'index'), null, true);?>">
+				<input type="hidden" name="search_block" value="hobby">
+				<div class="filter" style="padding-bottom: 0;">
+					<div class="popover-container">
+						<div class="text-input" id="hobby" onclick="popover_show('hobby')"><?= $this->t('Интересы');?>:
+							<span>
+								<? foreach ($this->vHobbyList  as $id => $name) {
+									if(in_array($id, $paramHobby)) {
+										//echo '<span class="item item'.$id.'">'.$name.'</span>';
+										echo '<span class="item item'.$id.'">'.$name;
+										echo '<button data-id="'.$id.'" data-name="hobby" class="btn btn-ico btn-ico-delete btn-delete" title="'.$this->t('Удалить').'"></button>';
+										echo '</span>';
+									}
+								} ?>
+							</span>
+						</div>
+						<div class="popover" id="popover-hobby">
+							<div class="popover-content">
+								<?
+								foreach ($this->vHobbyList  as $id => $name) : ?>
+									<label><input type="checkbox" name="hobby[]" value="<?= $id;?>"<? if(in_array($id, $paramHobby)) echo ' checked="checked"';?>> <?= $name;?></label>
+								<? endforeach; ?>
+							</div>
+							<p style="text-align: center;"><button class="btn-close"><?= $this->t('Готово');?></button></p>
+						</div>
+					</div>
+				</div>
+				<div class="filter">
+					<div class="popover-container">
+						<div class="text-input" id="business-interests" <? if($myIsCard) : ?>onclick="popover_show('business-interests')"<? endif;?>><?= $this->t('Профессиональные интересы');?>: <? if(!$myIsCard) echo $this->t('Доступно только для владельцев Клубных карт'); ?>
+						<span>
+							<? foreach ($this->vProfList  as $id => $name) {
+								if(in_array($id, $paramProf)) {
+									echo '<span class="item item'.$id.'">'.$name;
+									echo '<button data-id="'.$id.'" data-name="business-interests" class="btn btn-ico btn-ico-delete btn-delete" title="'.$this->t('Удалить').'"></button>';
+									echo '</span>';
+								}
+							} ?>
+						</span>
+						</div>
+						<div class="popover" id="popover-business-interests">
+							<div class="popover-content">
+								<?
+								foreach ($this->vProfList  as $id => $name) : ?>
+									<label><input type="checkbox" name="prof[]" value="<?= $id;?>"<? if(in_array($id, $paramProf)) echo ' checked="checked"';?>> <?= $name;?></label>
+								<? endforeach; ?>
+							</div>
+							<p style="text-align: center;"><button class="btn-close"><?= $this->t('Готово');?></button></p>
+						</div>
+					</div>
+				</div>
+				<button class="btn-search"><?= $this->t('Поиск');?></button>
+				</form>
+			</div>
+			<!-- /Интересы -->
+			<!-- Цели -->
+			<div class="filters<? if($searchBlock == 'target') echo ' filters-active';?>" id="filters-targets">
+				<form action="<?= $this->url(array('module'=>'user', 'controller'=>'search', 'action'=>'index'), null, true);?>">
+				<input type="hidden" name="search_block" value="target">
+				<div class="filter">
+					<div class="popover-container">
+						<div class="text-input" id="target" onclick="popover_show('target')"><?= $this->t('Цели');?>:
+							<span>
+							<? foreach ($this->vTargetList  as $id => $name) {
+								if(in_array($id, $paramTarget)) {
+									echo '<span class="item item'.$id.'">'.$name;
+									echo '<button data-id="'.$id.'" data-name="target" class="btn btn-ico btn-ico-delete btn-delete" title="'.$this->t('Удалить').'"></button>';
+									echo '</span>';
+								}
+							} ?>
+						</span>
+						</div>
+						<div class="popover" id="popover-target">
+							<div class="popover-content">
+								<?
+								foreach ($this->vTargetList  as $id => $name) : ?>
+									<label><input type="checkbox" name="target[]" value="<?= $id;?>"<? if(in_array($id, $paramTarget)) echo ' checked="checked"';?>> <?= $name;?></label>
+								<? endforeach; ?>
+							</div>
+							<p style="text-align: center;"><button class="btn-close"><?= $this->t('Готово');?></button></p>
+						</div>
+					</div>
+				</div>
+				<button class="btn-search"><?= $this->t('Поиск');?></button>
+				</form>
+			</div>
+			<!-- /Цели -->
+		</div>
+		<div id="users">
+			<?php
+			if(!empty($this->vSearchResult)) {
+				foreach($this->vSearchResult as $data) {
+					echo $this->partial('search/result.phtml', array('vItem'=>$data, 'vSearchBlock'=>$searchBlock));
+				}
+			}
+			?>
+		</div>
+		<div id="search-upload" style="display: none;"><?= $this->t('Загрузка результатов поиска...')?></div>
+	</div>
+</div>

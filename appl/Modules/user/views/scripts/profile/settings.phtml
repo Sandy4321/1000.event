@@ -1,0 +1,174 @@
+<?
+$this->headTitle($this->t('Настройки'));
+$this->headTitle($this->t('Мой профиль'));
+
+$this->inlineScript()->appendFile('/js/profile.js');
+$this->inlineScript()->appendFile('/js/libs/jquery.autocomplete.min.js');
+
+?>
+<div class="content" id="settings">
+	<div class="container">
+		<div class="content-blocks-container">
+			<div class="main-settings">
+				<div class="content-block settings-block">
+					<div class="header">
+						<h3><?= $this->t('Контактная информация');?></h3>
+					</div>
+					<div class="data">
+						<div class="wrapper">
+							<label><?= $this->t('Город');?>:</label>
+							<input value="<?= $this->myProfile['city_name']?>" type="text" id="profile-settings-city" placeholder="<?= $this->t('Начните вводить название на языке: ').$this->translate()->getLocale();?>">
+						</div>
+						<div class="wrapper">
+							<label>Email:</label>
+							<input type="text" value="<?= $this->myProfile['email'];?>" disabled>
+						</div>
+						<div class="wrapper" id="settings-tel">
+							<label><?= $this->t('Телефон');?>:</label>
+							<div class="sub-wrapper">
+								<div id="profile-phone-check" class="icon-check-phone<?if($this->myProfile['phone_check'] == 'no') echo ' hide';?>"></div>
+								<div class="profile-phone-plus">+</div>
+								<input type="tel" id="profile-settings-tel" maxlength="13" placeholder="<?= $this->t('номер в международном формате');?>" value="<?= substr($this->myProfile['phone'], 1);?>" style="padding-left: 15px;padding-right: 5px;">
+								<button class="btn btn-dark btn-min btn-save-tel"><?= $this->t('Сохранить');?></button>
+								<input type="tel" id="profile-settings-tel-confim" maxlength="6" <? if ($this->myProfile['phone_verify_code']){ echo 'style="display:block;"'; }?>  placeholder="<?= $this->t('Код подтверждения');?>">
+								<button class="btn btn-dark btn-min btn-tel-confim"><?= $this->t('Подтвердить телефон');?></button>
+							</div>
+						</div>
+					</div>
+					<div class="controls">
+						<input class="btn btn-dark btn-med" type="submit" value="<?= $this->t('Сохранить');?>">
+					</div>
+				</div>
+				<div class="content-block settings-block">
+					<div class="header">
+						<h3><?= $this->t('Языковые настройки');?></h3>
+					</div>
+					<div class="data" id="profile-settings-lang">
+						<div class="wrapper">
+							<label style="width: 50%;"><?= $this->t('Интерфейс');?>:</label>
+							<label class="checkbox checkbox-double"><input onclick="profileLang(this)" class="ci" type="radio" name="lang" value="ru"<?= $this->isChecked($this->myProfile['lang'], 'ru');?>> ru</label>
+							<label class="checkbox checkbox-double"><input onclick="profileLang(this)" class="ci" type="radio" name="lang" value="en"<?= $this->isChecked($this->myProfile['lang'], 'en');?>> en</label>
+						</div>
+						<div class="wrapper">
+							<label style="width: 50%;"><?= $this->t('Автоматический перевод');?>:</label>
+							<?= $this->htmlFormSelect('automatic_translation', array('yes'=>$this->t('Да'), 'no'=>$this->t('Нет')), $this->myProfile['automatic_translation'], 'prop');?>
+						</div>
+					</div>
+				</div>
+				<div class="content-block settings-block">
+					<div class="header">
+						<h3><?= $this->t('Уведомления');?></h3>
+					</div>
+					<div class="data" id="profile-settings-notification">
+						<div class="wrapper wrapper-extended">
+							<label class="checkbox checkbox-double">SMS</label>
+							<label class="checkbox checkbox-double">Email</label>
+						</div>
+						<div class="wrapper wrapper-extended">
+							<label><?= $this->t('Предложение по обмену телефонами');?>:</label>
+							<label class="checkbox checkbox-double"><input class="ci" type="checkbox" name="msg_invite_sms"
+								<?= $this->IsChecked($this->myProfile['msg_invite_sms'], 'yes')?>></label>
+							<label class="checkbox checkbox-double"><input class="ci" type="checkbox" name="msg_invite_email" <?= $this->IsChecked($this->myProfile['msg_invite_email'], 'yes')?>></label>
+						</div>
+						<div class="wrapper wrapper-extended">
+							<label><?= $this->t('Вас добавили в Избранное');?>:</label>
+							<label class="checkbox checkbox-double"><!-- <input class="ci" type="checkbox" name="msg_favorite_sms" <?//= $this->IsChecked($this->myProfile['msg_favorite_sms'], 'yes')?>> --></label>
+							<label class="checkbox checkbox-double"><input class="ci" type="checkbox" name="msg_favorite_email" <?= $this->IsChecked($this->myProfile['msg_favorite_email'], 'yes')?>></label>
+						</div>
+						<div class="wrapper wrapper-extended">
+							<label><?= $this->t('Поступило новое сообщение');?>:</label>
+							<label class="checkbox checkbox-double"></label>
+							<label class="checkbox checkbox-double"><input class="ci" type="checkbox" name="msg_communication_email" <?= $this->IsChecked($this->myProfile['msg_communication_email'], 'yes')?>></label>
+						</div>
+						<div class="wrapper wrapper-extended">
+							<label><?= $this->t('Новости Клуба');?>:</label>
+							<label class="checkbox checkbox-double">
+								<? if($this->myProfile['phone_check'] == 'yes') { ?>
+									<input id="MsgNewsSms" type="checkbox" class="ci" name="msg_news_sms"<?= $this->IsChecked($this->myProfile['msg_news_sms'], 'yes');?> />
+								<? } else {echo $this->t('Нет');} ?></label>
+							<label class="checkbox checkbox-double">
+								<input id="MsgNewsEmail" type="checkbox" class="ci" name="msg_news_email"<?= $this->IsChecked($this->myProfile['msg_news_email'], 'yes');?> />
+							</label>
+						</div>
+						<div class="wrapper wrapper-extended">
+							<label><?= $this->t('Сообщения от администрации сайта');?>:</label>
+							<label class="checkbox checkbox-double"><input class="ci" type="checkbox" name="msg_admin_sms"<?= $this->IsChecked($this->myProfile['msg_admin_sms'], 'yes')?>></label>
+							<label class="checkbox checkbox-double"><input class="ci" type="checkbox" name="msg_admin_email"<?= $this->IsChecked($this->myProfile['msg_admin_email'], 'yes')?>></label>
+						</div>
+					</div>
+					<div class="controls controls-extended">
+						<input class="btn btn-dark btn-med" type="submit" value="<?= $this->t('Сохранить');?>">
+					</div>
+				</div>
+			</div>
+			<div class="minor-settings">
+				<div class="content-block settings-block" id="profile-settings-dating">
+					<div class="header">
+						<h3><?= $this->t('Знакомства');?></h3>
+					</div>
+					<div class="data">
+						<div class="wrapper">
+							<label></label>
+							<label class="checkbox"><input type="checkbox" name="romantic" class="prop prop-checkbox" value="yes"<?= $this->IsChecked($this->myProfile['romantic'], 'yes')?>> <?= $this->t('Мне интересны романтические знакомства.')?></label>
+						</div>
+						<div class="wrapper">
+							<label><?= $this->t('Рост');?>:</label>
+							<? if(is_null($this->myProfile['height'])) { ?>
+								<?= $this->htmlFormSelect('height', array('range'=>'150-220', 'step'=>'1'), $this->myProfile['height'], 'prop');?>
+							<? } else { ?>
+								<span class="var"><?= $this->myProfile['height'];?></span>
+							<? } ?>
+						</div>
+						<div class="wrapper">
+							<label><?= $this->t('Дети');?>:</label>
+							<?= $this->htmlFormSelect('children', array('yes'=>$this->t('Есть'), 'no'=>$this->t('Нет')), $this->myProfile['children'], 'prop');?>
+						</div>
+						<div class="wrapper">
+							<label><?= $this->t('Курение');?>:</label>
+							<?= $this->htmlFormSelect('smoking', array('yes'=>$this->t('Курю'), 'no'=>$this->t('Не курю')), $this->myProfile['smoking'], 'prop');?>
+						</div>
+					</div>
+					<div class="controls">
+						<input class="btn btn-dark btn-med" type="submit" value="<?= $this->t('Сохранить');?>">
+					</div>
+				</div>
+				<div class="content-block settings-block" id="profile-settings-password">
+					<div class="header">
+						<h3><?= $this->t('Изменить пароль');?></h3>
+					</div>
+					<div class="data">
+						<div class="wrapper">
+							<label><?= $this->t('Текущий пароль');?>:</label>
+							<input type="password" id="old-password">
+						</div>
+						<div class="wrapper">
+							<label><?= $this->t('Новый пароль');?>:</label>
+							<input type="password" class="password" id="new-password">
+						</div>
+						<div class="wrapper">
+							<label><?= $this->t('Повторите новый пароль');?>:</label>
+							<input type="password" class="password" id="new-password2">
+						</div>
+					</div>
+					<div class="controls">
+						<input class="btn btn-dark btn-med btn-change-password" type="submit" value="<?= $this->t('Изменить');?>">
+					</div>
+				</div>
+				<div class="content-block settings-block" id="profile-settings-delete-account">
+					<div class="header">
+						<h3><?= $this->t('Удалить профиль');?></h3>
+					</div>
+					<div class="data">
+						<div class="wrapper">
+							<label><?= $this->t('Пароль');?>:</label>
+							<input type="password" id="da-password">
+						</div>
+					</div>
+					<div class="controls">
+						<input class="btn btn-dark btn-med btn-delete-account" type="submit" value="<?= $this->t('Удалить профиль');?>">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

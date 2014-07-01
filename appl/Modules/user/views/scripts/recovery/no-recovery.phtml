@@ -1,0 +1,13 @@
+<?php
+
+$title = $this->t('Ваш аккаунт заблокирован или удален');
+$this->headTitle($title);
+
+?>
+
+<div class="auth-msg">
+
+		<h2 ><?= $title?></h2>
+		<p><? printf($this->t('Если Вы удалили свой аккаунт по ошибке, обратитесь к <a href="mailto:%s">администрации Клуба</a> с просьбой о восстановлении.'), 'info@onthelist.ru')?></p>
+
+</div>

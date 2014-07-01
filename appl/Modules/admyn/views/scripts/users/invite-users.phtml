@@ -1,0 +1,23 @@
+<?php
+
+// invite-users
+
+$data = $this->vData;
+#Sas_Debug::dump($data);
+$cntData = count($data);
+
+?>
+
+<h1>Ближайшие свидания</h1>
+<h2>Количество свиданий (<span id="CntInvite"><?= $cntData?></span>)</h2>
+
+<?php
+if(is_array($data)) {
+	foreach($data as $item)
+	{
+		echo '<div  id="ItemInvite_'.  $item['id'] . '">';
+		echo $this->partial('users/invite-users-item.phtml', array('item'=>$item));
+		echo '<hr></div>';
+	}
+}
+?>

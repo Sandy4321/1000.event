@@ -1,0 +1,102 @@
+<?
+// js Функционал для обеспечения лайков
+$this->inlineScript()->appendFile('/js/like.js');
+
+$myID        = $this->myProfile['id'];
+$myStatus    = $this->myProfile['current_status'];
+$myCard      = $this->myProfile['club_card_dt'];
+$myUrlByCard = $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true);
+
+?>
+<!-- Посты -->
+<div class="feed">
+	<? foreach($this->vPosts as $post) :
+	if($post['user_id'] == $myID) {
+		$urlProfile = $this->url(array('module'=>'user', 'controller'=>'profile'), null, true);
+	} else {
+		$urlProfile = $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$post['uid']), null, true);
+	}
+	?>
+	<div class="content-block">
+		<div class="post" id="Post_<?= $post['id']?>">
+			<div class="data">
+				<?
+				// Удаление или скрытие поста
+				if($post['user_id'] == $myID || $myID == 4000) {
+					// Владелец или админ могут удалить пост
+					echo '<button class="btn btn-ico btn-ico-delete btn-delete" onclick="postDelete('. $post['id'].')" title="'. $this->t('Удалить пост').'"></button>';
+				} else {
+					// Скрытие поста
+					if($myCard >= CURRENT_DATE) {
+						// Владельцы КК могут только скрыть пост
+						echo '<button class="btn btn-ico btn-ico-delete btn-delete" onclick="postHide('. $post['id'].')" title="'. $this->t('Скрыть пост').'"></button>';
+					} else {
+						// Остальным выдаем окно с предложением купить КК
+						if($myStatus >= 70) {
+							echo '<button class="btn btn-ico btn-ico-delete btn-delete" onclick="goBuyCard(\''.$this->t('Только владельцы Клубных карт могут скрывать посты.').'.\')" title="'. $this->t('Только владельцы Клубных карт могут скрыть пост').'"></button>';
+						} else {
+							echo '<button class="btn btn-ico btn-ico-delete btn-delete" onclick="goWizard(\''.$this->t('Только члены Клуба могут скрывать посты.').'\', '.$myStatus.')" title="'. $this->t('Только владельцы Клубных карт могут скрыть пост').'"></button>';
+						}
+
+					}
+				}
+				?>
+				<div class="author">
+					<a href="<?= $urlProfile;?>" class="photo"><img src="<?= $post['avatar']?>"></a>
+					<a href="<?= $urlProfile;?>" class="name"><?= $post['first_name']?></a>
+					<span class="time">
+						<span class="timeago" title="<?= date_format(new DateTime($post['date_create']), 'c');?>"></span>
+						<? if($post['money'] == 'yes') { echo '· <span class="post-vip">'.$this->t('Премиум').'</span>';}?>
+					</span>
+				</div>
+				<div class="text"><?= $post['post_text']?></div>
+				<? if($post['img'] == 'yes') : ?>
+					<a href="javascript:void(0);" class="post-photo"><img src="/img/user_post/<?= $post['user_id'].'/'.$post['id'];?>.jpg"></a>
+					<? endif; ?>
+			</div>
+			<div class="post-bottom">
+				<div class="controls">
+					<?
+					# LIKE
+					# Формирование вывода лайков см. /library/Sas/View/Helper/Like.php
+					# Не забываем подключать js файл поддержки: /js/like.js
+					$likeMy = array(
+						'id'     => $myID,
+						'card'   => $myCard,
+						'status' => $myStatus,
+					);
+					$likeData = array(
+						'dataUserId' => $post['user_id'],
+						'dataId'     => $post['id'],
+						'ILikeKey'   => (array_key_exists($post['id'], $this->vILikePost)) ? 1 : null,
+						'cntLike'    => $post['cnt_like'],
+					);
+					$likeText = array(
+						'like'   => $this->t('Нравится'),
+						'likeMe' => $this->t('Вам нравится'),
+					);
+					$likeTitle = array(
+						'likeNo'           => $this->t('Вы не можете лайкнуть свой пост.'),
+						'likeClubOnly'     => $this->t('Только члены Клуба могут лайкнуть пост.'),
+						'listOpen'         => $this->t('Показать людей, которым нравится Ваш пост.'),
+						'listOpenCardOnly' => $this->t('Чтобы посмотреть, кому нравится Ваш пост, Вам необходима Клубная карта.'),
+					);
+					$likeJs = array(
+						'module' => 'posts', // Модуль обработчика
+						'key'    => 'post',  // Название КЛЮЧА для js функций like() и likeOpenPopupUsers()
+					);
+					echo $this->Like($likeMy, $likeData, $likeText, $likeTitle, $likeJs);
+					# END LIKE
+					?>
+					<? if($myStatus >= 70) { ?>
+					<a href="javascript:void(0);" onclick="postComment(<?= $post['id']?>)" class="comments-show"><span class="ico-arr" id="#post-arr-<?= $post['id']?>"></span><?= $this->t('Комментарии');?> <b id="PostCommentCnt<?= $post['id']?>"><?= $post['cnt_comment'];?></b></a>
+					<? } else { ?>
+					<a href="javascript:void(0);" onclick="goWizard('<?= $this->t('Просмотр комментариев доступен только членам Клуба.')?>', <?= $myStatus?>)" class="comments-show"><span class="ico-arr"></span><?= $this->t('Комментарии');?> <b><?= $post['cnt_comment'];?></b></a>
+					<? } ?>
+				</div>
+				<div class="comments" style="display:none" id="PostCommentsList<?= $post['id']?>"></div>
+			</div>
+		</div>
+	</div>
+	<? endforeach; ?>
+</div>

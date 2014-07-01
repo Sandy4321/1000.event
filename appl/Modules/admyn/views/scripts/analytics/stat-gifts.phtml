@@ -1,0 +1,39 @@
+<?php
+
+// analytics/stat-gifts/
+
+
+$data = $this->vData;
+#Sas_Debug::dump($data);
+
+?>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawChart);
+
+	function drawChart() {
+		var data = google.visualization.arrayToDataTable([
+			['Подарок', 'Кол-во'],
+			<?
+			$d = '';
+			foreach ($data as $item) {
+			$d .= '["'.$item['name'].'", '.$item['cnt'].'],';
+			}
+			echo $d = substr($d, 0, -1);
+			?>
+		]);
+
+		var options = {
+			title: 'Подарки',
+			is3D: true
+		};
+
+		var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+		chart.draw(data, options);
+	}
+
+</script>
+<h1>Проданные подарки</h1>
+<h3>Данные по состоянию на: <?= date('d.m.Y H:i')?></h3>
+<div id="chart_div" style="width: 100%; height: 500px; margin-bottom: 20px;"></div>

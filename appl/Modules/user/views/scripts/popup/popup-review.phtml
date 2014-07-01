@@ -1,0 +1,20 @@
+<div id="popup" class="popup">
+	<div class="cover" onclick="popup_close()"></div>
+	<div class="popup-body" id="popup-review">
+		<div class="title">
+			<h2><?= $this->t('Отзыв'); ?></h2>
+			<button onclick="popup_close()" class="btn btn-ico btn-ico-delete btn-close" title="<?= $this->t('Закрыть'); ?>"></button>
+		</div>
+		<div class="data">
+			<form id="people-form-review" action="<?= $this->url(array('module'=>'api', 'controller'=>'user', 'action'=>'review'), null, true);?>" method="post">
+				<input type="hidden" name="partner_id" value="<?= $this->vPartnerId?>">
+				<p><?= $this->t('Ваш отзыв не будет передан пользователю, а будет доступен только для администрации Клуба.'); ?></p>
+				<label class="radio"><input type="radio" name="rating" value="1"> <?= $this->t('Замечательно, что такие люди есть в Клубе!'); ?></label>
+				<label class="radio"><input type="radio" name="rating" value="2"> <?= $this->t('Информация в профиле пользователя не соответствует действительности.'); ?></label>
+				<label class="radio"><input type="radio" name="rating" value="3"> <?= $this->t('Я хочу пожаловаться на данного пользователя.'); ?></label>
+				<textarea rows="5" id="ReportText" name="report_text" placeholder="<?= $this->t('Пояснение (опционально)'); ?>"></textarea>
+				<button onclick="return peopleSendReview()" class="btn btn-med btn-dark"><?= $this->t('Отправить'); ?></button>
+			</form>
+		</div>
+	</div>
+</div>

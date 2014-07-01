@@ -1,0 +1,106 @@
+<?
+/*
+
+Загрузку снимков обеспечивает: /user/profile/upload-photo-album
+Ожидает userPhoto
+
+Удаление снимков обеспечивает: /user/profile/del-photo-album
+Ожидает picture - имя фотографии (см. $photo['picture'])
+
+Добавление и удаление комментария к фотографии в галерее пользователя: /user/profile/add-photo-album-comment
+Ожидает:
+comment - текст комментария (для его удаления - пустое поле)
+picture - имя фотографии (см. $photo['picture'])
+
+
+$this->vImgAlbumPatch - содержит путь относительно DOCUMENT_ROOT к фотографии
+
+$photo = array(7) {
+  ["id"] => string(5) "12051"
+  ["user_id"] => string(4) "3040"
+  ["picture"] => string(36) "506acc4bb0b6270c010a702c4e618002.jpg"
+  ["comment"] => NULL
+  ["sort"] => string(3) "100"
+  ["datetime_create"] => string(19) "2013-07-09 21:42:43"
+  ["like_cnt"] => string(2) "25"
+
+*/
+
+$myID = $this->vProfile['id'];
+$myCard = $this->vProfile['club_card_dt'];
+$myStatus = $this->vProfile['current_status'];
+
+?>
+<div class="content-block profile-photos">
+	<div class="header">
+		<h3><?= $this->t('Фотографии');?></h3>
+	</div>
+	<div class="data" id="profile-photos">
+		<div class="photo-line">
+			<div class="photo" style="width: 100%;margin: 0;float: none;">
+				<button class="add-photo profile-add-photo-album"<? if(count($this->vImgAlbum) >= 9 ) echo ' style="display: none;"';?>><img src="/css/img/add-new-photo.png"/></button>
+				<form id="new-profile-photos-form" method="post" enctype="multipart/form-data" action="/user/profile/upload-photo-album">
+					<input type="file" style="display:none" id="new-profile-photos" name="userPhoto">
+				</form>
+			</div>
+			<?
+			if(!empty($this->vImgAlbum)) :
+				$i = 0;
+				foreach($this->vImgAlbum as $photo):
+					$photoTitle = '';
+					$cntPhotoLike = (is_null($photo['like_cnt'])) ? 0 : $photo['like_cnt'];
+					if(!empty($photo['comment'])) {
+						$photoTitle = htmlspecialchars($photo['comment']);
+					}
+
+					// начинаем крутить фотки
+			?>
+			<div class="photo">
+				<button class="btn btn-ico btn-ico-delete btn-delete" data-name="<?= $photo['picture'];?>"></button>
+				<a class="item-photo" data-name="<?= $photoTitle; ?>" data-thumbnailbig="<?= $this->vImgAlbumPatch.$photo['picture'];?>"></a>
+				<img src="<?= $this->vImgAlbumPatch.$photo['picture'];?>" title="<?= $photoTitle; ?>"/>
+				<input type="text" class="comment" data-picture="<?= $photo['picture'];?>" placeholder="<?= $this->t('Описание');?>" value="<?= $photoTitle?>">
+				<?
+				# LIKE
+				# Формирование вывода лайков см. /library/Sas/View/Helper/Like.php
+				# Не забываем подключать js файл поддержки: /js/like.js
+				$likeMy = array(
+					'id'     => $myID,
+					'card'   => $myCard,
+					'status' => $myStatus,
+				);
+				$likeData = array(
+					'dataUserId' => $photo['user_id'],
+					'dataId'     => $photo['id'],
+					'ILikeKey'   => null,
+					'cntLike'    => $cntPhotoLike,
+				);
+				$likeText = array(
+					#'like'   => $this->t('Нравится'),
+					#'likeMe' => $this->t('Вам нравится'),
+				);
+				$likeTitle = array(
+					'likeNo'           => $this->t('Вы не можете лайкнуть свою фотографию.'),
+					'likeClubOnly'     => $this->t('Только члены Клуба могут лайкать фотографии.'),
+					'listOpen'         => $this->t('Посмотреть кому нравится Ваша фотография.'),
+					'listOpenCardOnly' => $this->t('Чтобы посмотреть, кому нравится Ваша фотография, Вам необходима клубная карта.'),
+				);
+				$likeJs = array(
+					'module' => 'profile', // Модуль обработчика
+					'key'    => 'photo-album',  // Название КЛЮЧА для js функций like() и likeOpenPopupUsers()
+				);
+				echo $this->Like($likeMy, $likeData, $likeText, $likeTitle, $likeJs);
+				# END LIKE
+				?>
+			</div>
+			<?
+			if(($i % 3) == 1) echo '</div><div class="photo-line">';
+
+			// заканчиваем крутить фотки
+			$i++; endforeach; // end цикл фоток
+
+			endif; // end если есть фотки
+			?>
+		</div>
+	</div>
+</div>

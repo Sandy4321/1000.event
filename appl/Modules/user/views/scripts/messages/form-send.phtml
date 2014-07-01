@@ -1,0 +1,45 @@
+<?
+
+$myStatus = $this->myProfile['current_status'];
+
+/**
+$this->isRecordNewMsg true|false ключ разрешающий писать новые сообщения данному пользователю
+*/
+//Sas_Debug::dump($this->isRecordNewMsg);
+?>
+<div class="form">
+	<div id="msg-record-no" class="<?= (!$this->isRecordNewMsg) ? 'show' : 'hide' ?>">
+		<p><? printf($this->t('У Вас нет <a href="%s">Клубной карты,</a> поэтому для Вас действуют ограничения:'), $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true));?></p>
+		<ol>
+			<li><?= $this->t('Вы не можете отправить сообщение пользователю, если у Вас есть непрочитанное сообщение.')?></li>
+			<li><?= $this->t('Вы не можете отправить пользователю два сообщения подряд, если между вами не было обмена минимум тремя сообщениями.')?></li>
+		</ol>
+		<p><? printf($this->t('Чтобы общаться без ограничений приобретите <a href="%s">Клубную карту.</a>'), $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true));?></p>
+	</div>
+
+	<? if($myStatus >= 70) { ?>
+	<form id="msg-form-send"
+		  action="<?= $this->url(array('module'=>'user', 'controller'=>'messages', 'action'=>'send'), null, true)?>"
+		  method="post"
+		  enctype="multipart/form-data"
+		  onsubmit="return message_send(this);"
+		  class="<?= ($this->isRecordNewMsg) ? 'show' : 'hide';?>"
+	>
+	<? } else { ?>
+	<form id="msg-form-send" onsubmit="return false">
+	<? } ?>
+	<input type="hidden" name="partner_id" value="<?= $this->partnerId?>">
+		<? if($this->vTalkFormScrollNo == true) { ?>
+		<textarea id="msg_text" rows="2" onkeyup="messagesLockSend(this)" placeholder="<?= $this->t('Введите текст сообщения');?>" name="msg_text" autofocus="true" maxlength="200"></textarea>
+		<? } else { ?>
+		<textarea id="msg_text" onkeyup="textAreaAdjust(this)" rows="1" style="overflow:hidden" placeholder="<?= $this->t('Введите текст сообщения');?>" name="msg_text" autofocus="true" maxlength="200"></textarea>
+		<? } ?>
+		<div class="controls">
+			<? if($myStatus >= 70) { ?>
+			<input id="messages-btn-submit" type="submit" class="btn btn-dark btn-min<? if($this->vTalkFormScrollNo != true) echo ' btn-enter';?>" value="<?= $this->t('Отправить');?>" disabled="disabled">
+			<? } else { ?>
+			<button id="messages-btn-submit" class="btn btn-dark btn-min<? if($this->vTalkFormScrollNo != true) echo ' btn-enter';?>" title="<?= $this->t('Только для членов Клуба')?>" onclick="goWizard('<?= $this->t('Отправка персональных сообщений доступна только членам Клуба.')?>', <?= $myStatus?>)"><?= $this->t('Отправить')?></button>
+			<? } ?>
+		</div>
+	</form>
+</div>

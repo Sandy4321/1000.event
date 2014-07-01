@@ -1,0 +1,68 @@
+<?
+$title = $this->t('Общение');
+$this->headTitle($title);
+
+$this->inlineScript()->appendFile('/js/messages.js');
+$this->inlineScript()->appendFile('/js/libs/jquery.scrollTo.min.js');
+
+
+$msgNoReadCnt = $this->vMsgNoRead;
+/*
+$msg = array(16) {
+    ["id"] => string(6) "154156"
+    ["msg_id"] => string(5) "84745"
+    ["user_id"] => string(4) "3040"
+    ["partner_id"] => string(3) "542"
+    ["box"] => string(2) "in"
+    ["create_dt"] => string(19) "2014-05-04 21:46:33"
+    ["access_read"] => string(3) "yes"
+    ["del"] => string(2) "no"
+    ["msg_text"] => string(26) "Приветствую! :)"
+    ["send_dt"] => string(19) "2014-05-04 21:46:33"
+    ["read_dt"] => NULL
+    ["uid"] => string(8) "ScETxtqQ"
+    ["first_name"] => string(16) "Виктория"
+    ["sex"] => string(6) "female"
+    ["club_card_dt"] => NULL
+    ["avatar"] => string(41) "/img/people/female/1981/542/thumbnail.jpg"
+  }
+
+$msgNoReadCnt[542] = array(2) {
+    ["partner_id"] => int 542
+    ["cnt"] => int 1
+  }
+*/
+
+?>
+<div class="content" id="messages">
+	<div class="container">
+		<div class="list">
+			<div class="search">
+				<input type="search" placeholder="<?= $this->t('Поиск по имени');?>" id="messages-list-search">
+			</div>
+			<div id="list">
+			<? foreach($this->vMsgAll as $msg) : // Список последних сообщений ?>
+				<div class="item-talk" id="talk<?= $msg['partner_id'];?>" onclick="show_talk(<?= $msg['partner_id']?>);">
+					<? if(!empty($msgNoReadCnt[$msg['partner_id']])) : // кол-во непрочитанных сообщений  ?>
+					<div class="bubble-count"><?= $msgNoReadCnt[$msg['partner_id']]['cnt'];?></div>
+					<? endif; ?>
+					<div class="photo"><img src="<?= $msg['avatar'];?>"></div>
+					<div class="info">
+						<button class="btn btn-ico btn-ico-delete btn-delete" onclick="messages_delete_talk(<?= $msg['partner_id']?>)" title="<?= $this->t('Удалить всю переписку.');?>"></button>
+						<span class="name"><?= $msg['first_name'];?></span>
+						<span class="last-msg"><?= $msg['msg_text'];?></span>
+						<span class="time status">
+							<span class="timeago" title="<?= date_format(new DateTime($msg['send_dt']), 'c');?>"></span>
+						</span>
+					</div>
+				</div>
+			<? endforeach; // END Список последних сообщений ?>
+			</div>
+		</div>
+
+		<div class="talks" id="talks-list">
+			<? if(!empty($this->vTalk)) echo $this->partial('messages/talk.phtml', array('vTalk'=>$this->vTalk,'isRecordNewMsg'=>$this->isRecordNewMsg, 'myProfile'=>$this->myProfile, 'partnerId'=>$this->partnerId, 'partnerProfile'=>$this->partnerProfile));?>
+		</div>
+
+	</div>
+</div>

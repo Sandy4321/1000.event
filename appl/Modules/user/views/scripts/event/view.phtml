@@ -1,0 +1,219 @@
+<?
+// js Функционал для мероприятий
+$this->inlineScript()->appendFile('/js/event.js');
+
+// js Функционал для обеспечения лайков
+$this->inlineScript()->appendFile('/js/like.js');
+
+$title = $this->t('Афиша');
+$this->headTitle($this->vEvent['title']);
+$this->headTitle($title);
+$event = $this->vEvent;
+#Sas_Debug::dump($event);
+
+$isIGoEvent = (!empty($this->vIgoEvent[$event['id']])) ? true : false; // Иду ли я на это мероприятие?
+$isICheckIn = (!empty($this->vICheckIn[$event['id']])) ? true : false; // Я уже на мероприятии?
+
+$myID = Models_User_Model::getMyId();
+$myStatus = $this->vMyProfile['current_status'];
+$myCard = $this->vMyProfile['club_card_dt'];
+
+if($myID == $event['user_id']) {
+	$linkProfileAuthor = $this->url(array('module'=>'user', 'controller'=>'profile'), null, true);
+} else {
+	$linkProfileAuthor = ($myCard >= CURRENT_DATE) ? $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$event['uid']), null, true) : $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'balance'), null, true);
+}
+
+$dateStart = new DateTime($event['date_start']);
+$dateStop = new DateTime($event['date_close']);
+
+?>
+<div class="content" id="event">
+	<div class="container">
+		<div class="content-blocks-container">
+			<div class="content-main-col">
+				<div class="content-block title-block">
+					<div class="image">
+						<img src="<?= (!is_null($event['intro_img'])) ? $event['intro'] : 'http://www.placehold.it/540x300/eee/aaa&text=no-image';?>">
+					</div>
+					<h1><?= $event['title']?></h1>
+					<div class="controls">
+						<? if(time() >= strtotime($event['date_start']) - (60 * 30)) { ?>
+							<button id="iCheckInYes<?= $event['id']?>" class="btn btn-dark btn-medium btn-respond btnGo btnGoYes <? if($isICheckIn) echo 'hide'?>" <? if($myStatus >= 70) echo 'onclick="eventCheckInYes(this)"';?> data-myId="<?= $myID?>" data-eventId="<?= $event['id']?>"><?= $this->t('Отметиться');?></button>
+							<button id="iCheckInNo<?= $event['id']?>" class="btn btn-light btn-medium btn-respond btnGo btnGoNo <? if(!$isICheckIn) echo 'hide'?>" <? if($myStatus >= 70) echo 'onclick="eventCheckInNo(this)"';?> data-myId="<?= $myID?>" data-eventId="<?= $event['id']?>"><?= $this->t('Меня здесь нет');?></button>
+						<? } else { ?>
+							<button id="iGoYes<?= $event['id']?>" class="btn btn-dark btn-medium btn-respond btnGo btnGoYes <? if($isIGoEvent) echo 'hide'?>" <? if($myStatus >= 70) echo 'onclick="eventIGoYes(this)"';?> data-myId="<?= $myID?>" data-eventId="<?= $event['id']?>"><?= $this->t('Пойти');?></button>
+							<button id="iGoNo<?= $event['id']?>" class="btn btn-light btn-medium btn-respond btnGo btnGoNo <? if(!$isIGoEvent) echo 'hide'?>" <? if($myStatus >= 70) echo 'onclick="eventIGoNo(this)"';?> data-myId="<?= $myID?>" data-eventId="<?= $event['id']?>"><?= $this->t('Я иду');?></button>
+						<? } ?>
+						<?
+						# LIKE
+						# Формирование вывода лайков см. /library/Sas/View/Helper/Like.php
+						# Не забываем подключать js файл поддержки: /js/like.js
+						$likeMy = array(
+							'id'     => $myID,
+							'card'   => $myCard,
+							'status' => $myStatus,
+						);
+						$likeData = array(
+							'dataUserId' => $event['user_id'],
+							'dataId'     => $event['id'],
+							'ILikeKey'   => (isset($this->vILikeEvent[$event['id']])) ? 1 : null,
+							'cntLike'    => $event['cnt_like'],
+						);
+						$likeText = array(
+							'like'   => $this->t('Нравится'),
+							'likeMe' => $this->t('Вам нравится'),
+						);
+						$likeTitle = array(
+							'likeNo'           => $this->t('Вы не можете лайкнуть своё мероприятие.'),
+							'likeClubOnly'     => $this->t('Только члены Клуба могут лайкнуть мероприятие.'),
+							'listOpen'         => $this->t('Открыть список людей лайкнувших Ваше мероприятие.'),
+							'listOpenCardOnly' => $this->t('Чтобы посмотреть, кому нравится Ваше мероприятие, Вам необходима Клубная карта.'),
+						);
+						$likeJs = array(
+							'module' => 'event', // Модуль обработчика
+							'key'    => 'event',  // Название КЛЮЧА для js функций like() и likeOpenPopupUsers()
+						);
+						echo $this->Like($likeMy, $likeData, $likeText, $likeTitle, $likeJs);
+						# END LIKE
+						?>
+					</div>
+				</div>
+			</div>
+			<div class="content-sub-col">
+				<div class="content-block info-block">
+					<div class="wrapper">
+						<label><?= $this->t('Начало');?>:</label>
+						<span><?= $dateStart->format('d.m.Y H:i');?></span>
+					</div>
+					<div class="wrapper">
+						<label><?= $this->t('Окончание');?>:</label>
+						<span><?= $dateStop->format('d.m.Y H:i');?></span>
+					</div>
+					<div class="wrapper">
+						<label><?= $this->t('Место');?>:</label>
+						<span><?= $event['point_name']?></span>
+					</div>
+					<div class="wrapper">
+						<label><?= $this->t('Стоимость участия');?>:</label>
+						<span><? if ($event['price'] == 0 || is_null($event['price'])) {
+								echo $this->t('Бесплатно');
+							} else {
+								echo number_format($event['price'], 0, ',', ' ').' ';
+								switch($event['money_type']) {
+									case 'rub': echo $this->t('руб.');break;
+									case 'usd': echo 'USD';break;
+									case 'karat': echo $this->t('карат');break;
+								}
+							} ?></span>
+					</div>
+					<?
+					// Для мероприятий OTL которые продаются за караты выводим кнопку - Купить
+					if($event['otl'] == 'yes' && $event['price'] > 0 && $event['money_type'] == 'karat') {
+					?>
+					<div class="wrapper">
+						<button onclick="eventBuyTicket(<?= $event['id']?>)" id="event-buy-ticket-<?= $event['id']?>" data-trans-ok="<?= $this->t('Билет куплен');?>" class="btn btn-dark"><?= $this->t('Купить билет');?></button>
+					</div>
+					<? } ?>
+				</div>
+				<div class="content-block teaser-block">
+					<div class="data">
+						<div class="user">
+							<a href="<?= $linkProfileAuthor;?>" class="photo"><img src="<?= $event['avatar']?>" style="width: 50px;float: left;margin-right: 10px;"></a>
+							<a href="<?= $linkProfileAuthor;?>" class="photo"><b><?= $event['first_name']?></b></a>
+						</div>
+						<?= $event['anons']?>
+					</div>
+				</div>
+			</div>
+			<div class="content-main-col">
+				<? if(!empty($event['full_text'])) : ?>
+				<div class="content-block about-block"><div class="data"><?= $event['full_text']?></div></div>
+				<? endif; ?>
+				<?
+				// Форма добавления комментариев к мероприятию
+				echo $this->render('event/content-form.phtml');
+
+				// Вывод ленты с комментариями к мероприятию при их наличии
+				if(!is_null($this->vEventComment)) {
+					echo $this->render('event/content-list.phtml');
+				}
+				?>
+			</div>
+			<div class="content-sub-col">
+				<div class="content-block participants-block">
+					<div class="header">
+						<h3><?= $this->t('Участники');?>: <span id="CntUsers_<?= $event['id']?>"><?= ($event['cnt_users'])?></span></h3>
+						<?
+						if($myCard >= CURRENT_DATE) {
+							if(time() >= strtotime($event['date_start']) - (60 * 30)) {
+								echo '<a href="javascript:void(0);" onclick="popup_show(\'event\', \'check-in\', '. $event['id'].')" class="all">'.$this->t('Все').'</a>';
+							} else {
+								echo '<a href="javascript:void(0);" onclick="popup_show(\'event\', \'user-go\', '. $event['id'].')" class="all">'.$this->t('Все').'</a>';
+							}
+						} else {
+							echo '<a href="javascript:void(0);" class="all" onclick="goBuyCard(\''.$this->t('Список всех участников доступен только для владельцев Клубных карт.').'\')">'.$this->t('Все').'</a>';
+						}
+						?>
+					</div>
+					<div id="EventsUsers_<?= $event['id']?>">
+					<?
+					if(time() >= strtotime($event['date_start']) - (60 * 30)) {
+						if(!empty($event['checkin_users'])) {
+							foreach($event['checkin_users'] as $user) {
+								if($myID != $user['id'] && $myCard >= CURRENT_DATE) echo '<a class="user" href="'. $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$user['uid']),null, true). '">';
+								if($myID != $user['id'] && $myCard < CURRENT_DATE) echo '<a class="user" href="javascript:void(0);" onclick="goBuyCard(\''.$this->t('Чтобы посмотреть профиль пользователя Вам необходима Клубная карта.').'\')">';
+								if($myID == $user['id']) echo '<a class="user" href="'. $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'index'),null, true). '">';
+
+								echo '<img ';
+
+								if($myID == $user['id']) echo 'id="MyICheckInAvatar'.$event['id'].'"';
+
+								echo ' class="user" src="'.$user['avatar'].'" title="';
+
+								if($myID == $user['id']) {
+									echo $user['first_name'];
+								} else {
+									if($myCard >= CURRENT_DATE) echo $user['first_name'];
+									else echo $this->t('Переход на профиль только для владельцев Клубной карты');
+								}
+
+								echo '">';
+								echo '</a>';
+								//if($myID != $user['id']) echo '</a>';
+							}
+						}
+					} else {
+						if(!empty($event['events_users'])) {
+							foreach($event['events_users'] as $user) {
+								if($myID != $user['id'] && $myCard >= CURRENT_DATE) echo '<a class="user" href="'. $this->url(array('module'=>'user', 'controller'=>'people', 'action'=>'profile', 'view'=>$user['uid']),null, true). '">';
+								if($myID != $user['id'] && $myCard < CURRENT_DATE) echo '<a class="user" href="javascript:void(0);" onclick="goBuyCard(\''.$this->t('Чтобы посмотреть профиль пользователя Вам необходима Клубная карта.').'\')">';
+								if($myID == $user['id']) echo '<a class="user" href="'. $this->url(array('module'=>'user', 'controller'=>'profile', 'action'=>'index'),null, true). '">';
+
+								echo '<img ';
+
+								if($myID == $user['id']) echo 'id="MyIGoAvatar'.$event['id'].'"';
+
+								echo ' class="user" src="'.$user['avatar'].'" title="';
+
+								if($myID == $user['id']) {
+									echo $user['first_name'];
+								} else {
+									if($myCard >= CURRENT_DATE) echo $user['first_name'];
+									else echo $this->t('Переход на профиль только для владельцев Клубной карты');
+								}
+
+								echo '">';
+								echo '</a>';
+								//if($myID != $user['id']) echo '</a>';
+							}
+						}
+					}
+					#<a href="profile.html" class="user"><img src="http://www.placehold.it/100x100/eee/aaa&amp;text=no-image"></a>
+					?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

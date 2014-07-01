@@ -1,0 +1,40 @@
+<h4 class="text-success">
+	<? printf($this->t('Вы создаёте новый пароль для аккаунта: %s'), $this->vEmail) ?>
+</h4>
+<? if (!is_null($this->vError)) : // Обработка ошибок
+	echo '<h5 class="text-error">';
+	switch ($this->vError) {
+		case 'NOT_NULL':
+			echo $this->t('Пароль не может быть пустыми.');
+			break;
+
+		case 'NE_RAVNO':
+			echo $this->t('Введённые пароли не совпадают.');
+			break;
+
+		case 'SMALL_STRLEN':
+			echo $this->t('Введенный Вами пароль слишком короткий. Количество символов в пароле должно быть не менее 6-и.');
+			break;
+	}
+	echo '</h5>';
+endif;
+?>
+<form action="<?= $this->url() ?>" method="post" class="form-horizontal">
+	<div class="control-group">
+		<label class="control-label" for="psw"><?= $this->t('Новый пароль') ?>:</label>
+
+		<div class="controls">
+			<input type="text" id="psw" name="psw" placeholder="<?= $this->t('Не менее 6-ти символов') ?>" autocomplete="off">
+		</div>
+	</div>
+	<div class="control-group">
+		<label class="control-label" for="psw1"><?= $this->t('Повторите пароль') ?>:</label>
+
+		<div class="controls">
+			<input type="text" id="psw1" name="psw1" placeholder="<?= $this->t('Не менее 6-ти символов') ?>" autocomplete="off">
+		</div>
+	</div>
+	<p class="text-center">
+		<button type="submit" class="btn btn-dark btn-submit"><?= $this->t('Сохранить новый пароль') ?></button>
+	</p>
+</form>

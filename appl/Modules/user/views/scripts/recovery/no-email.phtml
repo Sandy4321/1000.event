@@ -1,0 +1,13 @@
+<?php
+
+$title = $this->t('Пользователя не существует');
+$this->headTitle($title);
+
+?>
+
+<div class="row-fluid">
+	<div class="span12 text-center">
+		<h2><?= $title?></h2>
+		<h3 class="text-error"><? printf($this->t('Указанный Вами email: %s не найден.'), $this->vEmail)?></h3>
+	</div>
+</div>

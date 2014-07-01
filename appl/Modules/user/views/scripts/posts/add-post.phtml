@@ -1,0 +1,37 @@
+<?
+
+// Подгружаем js для работы с постами пользователей
+$this->inlineScript()->appendFile('/js/posts.js');
+
+$myStatus  = $this->myProfile['current_status'];
+$myCard    = $this->myProfile['club_card_dt'];
+$myBalance = $this->myProfile['balance'];
+
+?>
+<!-- Блок ввода поста -->
+<div class="content-block feed-post" id="post-members">
+	<form id="FormUploadPostsPhoto" method="post" enctype="multipart/form-data" action="<?= $this->url(array('module'=>'user', 'controller'=>'posts', 'action'=>'add-post'), null, true)?>">
+		<input type="hidden" name="redirect" value="<?= $this->url()?>">
+		<textarea class="post-text" name="post_text" maxlength="200" placeholder="<?= ($myStatus < 70) ? $this->t('Возможность публикации доступна только для членов Клуба') : $this->t('Какие у Вас планы на сегодня?');?>"<? if($myStatus < 70) echo ' disabled="disabled"'?>></textarea>
+		<div class="attaches">
+			<div class="photo" style="display:none;">
+				<button class="btn btn-ico btn-ico-delete btn-delete"></button>
+				<img src="">
+			</div>
+		</div>
+		<div class="controls">
+			<div class="btn btn-ico btn-ico-photo-g btn-photo btn-attach"></div>
+			<input type="file" name="post_img" style="display:none" class="image-input" id="attach-file">
+
+			<button class="btn btn-send" <? if($myStatus < 70) echo ' disabled="disabled"'?>><?= $this->t('Опубликовать');?></button>
+			<div class="premium-ckeck">
+			<span><?
+				if($myBalance >= PRICE_VIP_POST) printf($this->t('премиум (%s карат)'), PRICE_VIP_POST);
+				else printf($this->t('<a href="javascript:void(0);" onclick="goBuyKarat(\'%s\')" title="%s">премиум (%s карат)</a>'), $this->t('Для публикации премиум поста не достаточно карат.'), $this->t('Купить караты'), PRICE_VIP_POST);
+				?></span>
+				<input type="checkbox" name="money" value="yes" id="post-premium"<? if($myBalance < PRICE_VIP_POST) echo ' disabled="disabled"'?>>
+			</div>
+		</div>
+	</form>
+</div>
+<!-- /Блок ввода поста -->

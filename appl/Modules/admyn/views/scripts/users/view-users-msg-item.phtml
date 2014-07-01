@@ -1,0 +1,36 @@
+<?php
+
+$item = $this->item;
+$dateCreate = new DateTime($item['date_create']);
+
+?>
+
+<div class="row-fluid">
+	<div class="span5">
+		<h3>
+			<?php if($item['record_type'] == 'money') : ?>
+			<span style="color: green; font-size: 1.5em;">$</span>
+			<?php endif; ?>
+			<a href="/admyn/users/view-profile/id/<?= $item['user_id_from']?>"><?= $item['user_id_from']?></a>
+		</h3>
+		<textarea name="question" rows="4" class="question input-block-level"><?= $item['question']?></textarea>
+		<small>Вопрос написан: <?= $item['date_create']?></small><br>
+		<small>Вопрос прочитан: <?= $item['date_read_question']?></small>
+	</div>
+	<div class="span5">
+		<h3><a href="/admyn/users/view-profile/id/<?= $item['user_id_to']?>"><?= $item['user_id_to']?></a></h3>
+		<textarea name="answer" rows="4" class="answer input-block-level"><?= $item['answer']?></textarea>
+		<small>Ответ написан: <?= $item['date_answer']?></small><br>
+		<small>Ответ прочитан: <?= $item['date_read_answer']?></small>
+	</div>
+	<div class="span2">
+		<? if ($item['question_is_read'] == 'yes') : ?>
+		<h6>Вопрос прочитан</h6>
+		<? endif; ?>
+		<? if ($item['answer_is_read'] == 'yes') : ?>
+			<h6>Ответ прочитан</h6>
+		<? endif; ?>
+		<p class="text-center"><button class="btn btn-success" onclick="return userMsgOk(<?= $item['id']?>)">Проверено</button></p>
+		<p class="text-center"><button class="btn btn-danger" disabled="disabled">Наказать</button></p>
+	</div>
+</div>

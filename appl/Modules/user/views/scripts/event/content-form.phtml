@@ -1,0 +1,9 @@
+<div class="content-block feed-post">
+	<form action="<?= $this->url()?>" method="post">
+	<input type="hidden" name="event_id" value="<?= $this->vEvent['id']?>">
+	<textarea placeholder="Комментарий к событию" name="comment_text"></textarea>
+	<div class="controls">
+		<button class="btn btn-send btn-med btn-dark"><?= $this->t('Опубликовать');?></button>
+	</div>
+	</form>
+</div>

@@ -1,0 +1,25 @@
+<!-- Совпадения -->
+<div class="content-block match ">
+	<div class="header">
+		<h3><?= $this->t('Совпадения');?>:</h3>
+		<div class="preview" onclick="users_preview()">
+			<a href="javascript:void(0);" onclick="popup_show('flirt', 'match')" class="all"><?= $this->vCntMatch;?></a>
+		</div>
+	</div>
+	<div class="data">
+	<?
+	#Sas_Debug::dump($this->vSympathyAll);
+	foreach($this->vSympathyAll as $item) {
+		echo '<div class="flirt-user-box">'.
+			'<a href="'.$item['url_profile'].'"';
+		if($this->myProfile['club_card_dt'] < CURRENT_DATE) {
+			echo ' title="'.$this->t('Полная информация доступна только для владельцев Клубных карт').'"';
+		}
+		echo '><img class="photo" src="'.$item['avatar'].'"> '.
+			'<h1 class="username">'.$item['first_name'].'</h1></a> '.
+			'<h2 class="telephone">'.$item['phone'].'</h2>'.
+		'</div>';
+	}
+	?>
+	</div>
+</div>

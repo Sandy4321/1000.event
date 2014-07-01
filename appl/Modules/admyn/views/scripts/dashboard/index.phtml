@@ -1,0 +1,122 @@
+<?php
+
+$this->headScript()->appendFile('/js_admyn/admyn/new_users.js');
+
+$data = $this->vData;
+#Sas_Debug::dump($data);
+$cntData = count($data);
+?>
+<h1>Dashboard</h1>
+<h2>Новые заявки на регистрацию (<span id="CntNewUser"><?= $cntData?></span>)</h2>
+<?php foreach($data as $item) :?>
+<div  id="NewUser_<?= $item['id']?>">
+	<div class="row-fluid">
+		<div class="span2">
+			<h5 class="text-center"><?= $item['cityName']?></h5>
+			<?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $item['img'].'thumbnail.jpg')) {?>
+				<img class="img-polaroid img-rounded" src="<?= $item['img']?>thumbnail.jpg">
+			<?php } else { ?>
+				<p>Нет фото</p>
+			<?php } ?>
+			<p class="text-center"><?= ($item['sex'] == 'male') ? 'Мужчина' : 'Женщина';?></p>
+		</div>
+		<div class="span7">
+			<small><?= $item['registered_dt']?></small>
+			<h3>
+				<a href="/admyn/users/view-profile/id/<?= $item['id']?>"><?= $item['first_name']?> <?= $item['last_name']?></a>
+				| <small>возраст: <span class="green"><?= Models_User_Model::getAge($item['birthday'])?></span> | ID: <?= $item['id']?> |  <span class="white"><?= $item['lang']?></span></small> <img src="/img/flags/<?= $item['lang']?>.png"></h3>
+			<p>Дата рождения: <?= $item['birthday']?></p>
+			<p>Email: <?= $item['email']?></p>
+			<p>Образование: <?= $item['education']?></p>
+			<p>Работа: <?= $item['company']?></p>
+			<p>Должность: <?= $item['position_job']?></p>
+
+			<!-- Промо код -->
+			<?php if (!empty($item['promocode'])) {?>
+				<p>Промокод: <?= $item['promocode']?></p>
+			<?php } ?>
+
+			<!-- По рекомендации -->
+			<?php
+			if (!empty($item['promo_key_friend'])) {
+				if($item['friendStatus'] < 10) {
+					echo '<p>Рекламная компания (';
+					echo ($item['friendStatus'] == 1) ? 'web' : 'mobile';
+					echo '): <a href="/admyn/advert/view/id/'. $item['friendId'].'" target="_blank">'.$item['friendName'].'</a></p>';
+				} else {
+					echo '<p>По приглашению от: <a href="/admyn/users/view-profile/id/'. $item['friendId'].'" target="_blank">Профиль приглашающего ('.$item['friendName'].')</a></p>';
+				}
+			} ?>
+
+			<!-- Узнал о Клубе от -->
+			<?php if (!empty($item['source'])) {?>
+				<p>Узнал о Клубе от:
+					<?= $item['source']?>
+				</p>
+			<?php } ?>
+		</div>
+		<div class="span3">
+			<?php if (!empty($item['link_vk']) || !empty($item['link_fb']) || !empty($item['link_ln'])) {?>
+				<p>Соц. сети:</p>
+				<? if(!empty($item['link_vk'])):?>
+					<p>
+						<a href="<?= $item['link_vk']?>" target="_blank" title="Открыть в новом окне">vKontakte</a>
+						<span class="linkTextSocNet"><?= $item['link_vk']?></span>
+					</p>
+				<? endif;?>
+				<? if(!empty($item['link_fb'])):?>
+					<p>
+						<a href="<?= $item['link_fb']?>" target="_blank" title="Открыть в новом окне">FaceBook</a>
+						<span class="linkTextSocNet"><?= $item['link_fb']?></span>
+					</p>
+				<? endif;?>
+				<? if(!empty($item['link_ln'])):?>
+					<p>
+						<a href="<?= $item['link_ln']?>" target="_blank" title="Открыть в новом окне">LinkedIn</a>
+						<span class="linkTextSocNet"><?= $item['link_ln']?></span>
+					</p>
+				<? endif;?>
+			<?php } else { ?>
+				<p>Нет ссылок на соц. сети</p>
+			<?php } ?>
+			<hr>
+			<?php if (file_exists($_SERVER['DOCUMENT_ROOT'] . $item['img'].'resume.xxx')) {?>
+				<p>Резюме:
+					<small class="white"><?= file_get_contents($_SERVER['DOCUMENT_ROOT'] . $item['img'].'fileNameResume.txt')?></small>
+				</p>
+				<p><a href="<?= $this->url(array('controller'=>'users', 'action'=>'download-resume', 'id'=>$item['id']))?>">Скачать резюме</a><br><small>(<?= number_format((filesize($_SERVER['DOCUMENT_ROOT'] . $item['img'].'resume.xxx') / 1024), 2, ',', ' ')?>Kb)</small></p>
+			<?php } else { ?>
+				<p>Нет резюме</p>
+			<?php } ?>
+		</div>
+	</div>
+	<div class="row-fluid">
+		<div class="span10 offset2">
+			<button class="btn btn-small btn-danger" onclick="deleteUser(<?= $item['id']?>)">Отклонить</button>
+			<!--<button class="btn btn-small" onclick="requestMoreInfo(<?/*= $item['id']*/?>)">Запросить доп. информацию</button>-->
+			<button class="btn btn-small" onclick="openDopInfo(<?= $item['id']?>)">Запросить доп. информацию</button>
+			<button class="btn btn-small btn-success" onclick="addUser(<?= $item['id']?>)">Принять</button>
+		</div>
+	</div>
+	<div class="row-fluid hide" id="DopInfo_<?= $item['id']?>">
+		<div class="span8">
+			<br>
+			<p>
+				Получатель письма:
+				<input class="input-medium" type="text" name="fio" value="<?= $item['first_name']?>">
+				<input class="input-medium" type="text" name="email" value="<?= $item['email']?>">
+			</p>
+			Тема письма: <input class="input-block-level" type="text" name="theme" value="OnTheList.ru - запрос дополнительных данных / additional information is required"><br>
+			Текст письма: <textarea id="DopInfo_<?= $item['id']?>_text" class="input-block-level" rows="7" name="text"></textarea>
+			<p class="text-center"><button class="btn" onclick="requestMoreInfo(<?= $item['id']?>)"><i class="icon-envelope"></i> Отправить</button></p>
+		</div>
+		<div class="span4">
+			<p>Вставить шаблон:</p>
+			<button class="btn" onclick="addTmlMailPhoto(<?= $item['id']?>)">Запрос фото</button><br><br>
+			<button class="btn" onclick="addTmlMailResume(<?= $item['id']?>)">Запрос резюме</button><br><br>
+			<button class="btn" onclick="addTmlMailPhotoResume(<?= $item['id']?>)">Запрос фото и резюме</button>
+		</div>
+	</div>
+	<hr>
+</div>
+<?php endforeach;?>
